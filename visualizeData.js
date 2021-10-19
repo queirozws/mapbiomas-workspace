@@ -12,7 +12,7 @@ var products = [
         description: 'Dados integrados da coleção 6 do Brasil', // Usar português
         metadata: {
             bands: {
-                suffix: 'transitions_',
+                suffix: 'classification_',
             },
             suffix: 'classification_',
             years: [
@@ -388,11 +388,13 @@ function callback(asset, failure) {
             case "Image":
               
                 // print(ee.String(id).split('/').get(2))
-                print('image:', assetName)
+                // print('image:', assetName)
               
                 image = ee.Image(id);
                 
-                Map.addLayer(image, {}, assetName, true, 1);
+                print(assetName, image.bandNames())
+                
+                // Map.addLayer(image, {}, assetName, true, 1);
                 
                 // ui.Map.Layer(image, {}, 'name')
               
@@ -405,7 +407,7 @@ function callback(asset, failure) {
               
                 image = ee.ImageCollection(asset.id).mosaic()
                 
-                Map.addLayer(image, {}, assetName, true, 1);
+                // Map.addLayer(image, {}, assetName, true, 1);
               
                 return null
                 // break;
