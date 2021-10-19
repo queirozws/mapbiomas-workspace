@@ -3,7 +3,7 @@ var products = [
         initiative: 'brasil', // inglês, minúscula; nome composto usar "-";
         type: 'integration', // usar letras minúsculas
         collection: 6,
-        assetId: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_integration_v1",
+        assetId: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_integration_v1_____",
         description: 'Dados integrados da coleção 6 do Brasil', // Usar português
         metadata: {
             bands: {
@@ -397,7 +397,7 @@ function callback(asset, failure) {
               
                 image = ee.ImageCollection(asset.id).mosaic()
                 
-                Map.addLayer(imgColl, {}, assetName, true, 1);
+                Map.addLayer(image, {}, assetName, true, 1);
               
                 return null
                 // break;
@@ -408,22 +408,31 @@ function callback(asset, failure) {
         }
 
     } else {
-        console.log('Asset não encontrado!')
+        console.log('Asset não encontrado: ',failure)
     }
 }
 
 
 products.forEach(
+// var output = products.map(
     function(asset) {
       
         // console.log(asset.assetId)
         
         ee.data.getAsset(asset.assetId, callback)
+        // return ee.data.getAsset(asset.assetId)//, callback)
         
         // Map.addLayer(ee.Image(obj.assetId), {}, obj.initiative, true, 1)
     })
     
-// print(ee.List(products).length())
+// print('output', output);
+
+//  0: Image projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_integration_v1 (36 bands)
+//    type: Image
+//    id: projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_integration_v1
+//    version: 1630036058990000
+//    bands: List (36 elements)
+//    properties: Object (2 properties)
 
 // var layersList = Map.layers();
 
