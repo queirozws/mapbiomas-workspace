@@ -360,10 +360,10 @@ var products = [
 
 // Function: Identify the data type AND return de asset (e.g.: Image, ImageCollection...)
 
-function getDataType(assetId, callback) {
+// function getDataType(assetId, callback) {
     
-    ee.data.getAsset(assetId, callback)
-}
+//     ee.data.getAsset(assetId, callback)
+// }
 
 function callback(success, failure) {
     if (success) {
@@ -394,7 +394,9 @@ products.forEach(
       
         console.log(asset.assetId)
         
-        getDataType(asset.assetId, callback)
+        ee.data.getAsset(assetId, callback)
+        
+        // getDataType(asset.assetId, callback)
         
         // Map.addLayer(ee.Image(obj.assetId), {}, obj.initiative, true, 1)
     })
