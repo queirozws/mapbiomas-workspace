@@ -376,7 +376,7 @@ function callback(asset, failure) {
             
         var id = asset.id;
         
-        print(asset);
+        // print(asset);
         
         var assetName = id.split('/').slice(-1)[0];
         
