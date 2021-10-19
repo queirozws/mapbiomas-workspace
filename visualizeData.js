@@ -365,23 +365,24 @@ var products = [
 //     ee.data.getAsset(assetId, callback)
 // }
 
-function callback(success, failure) {
-    if (success) {
+function callback(asset, failure) {
+    if (asset) {
         
-        switch ( ee.data.getAsset(assetId, callback).type ) {
+        // switch ( ee.data.getAsset(assetId, callback).type ) {
+        switch ( asset.type ) {
         
             case "Image":
-                return ee.Image(assetId)
+                return ee.Image(asset.id)
         
             case "ImageCollection":
-                return ee.ImageCollection(assetId).mosaic()
+                return ee.ImageCollection(asset.id).mosaic()
         
             default:
                 print('Não é uma Image nem ImageCollection');
         
         }
 
-        console.log('sucess')
+        print('sucess')
 
     } else {
         console.log('failure')
@@ -394,7 +395,7 @@ products.forEach(
       
         console.log(asset.assetId)
         
-        ee.data.getAsset(assetId, callback)
+        ee.data.getAsset(asset.assetId, callback)
         
         // getDataType(asset.assetId, callback)
         
