@@ -1,7 +1,7 @@
 var products = [
     {
         initiative: 'brasil', // inglês, minúscula; nome composto usar "-";
-        type: 'integration', // usar letras minúsculas
+        theme: 'integration', // usar letras minúsculas
         collection: 6,
         assetId: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_integration_v1_____",
         description: 'Dados integrados da coleção 6 do Brasil', // Usar português
@@ -23,7 +23,7 @@ var products = [
     },
     {
         initiative: 'brazil',
-        type: 'transitions',
+        theme: 'transitions',
         collection: 6,
         assetId: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_transitions_v1",
         description: 'Dados de transições da coleção 6 do Brasil',
@@ -39,7 +39,7 @@ var products = [
     },
     {
         initiative: 'brazil',
-        type: 'classification',
+        theme: 'classification',
         collection: 6,
         assetId: "projects/mapbiomas-workspace/COLECAO6/classificacao",
         description: 'Dados de classificação da coleção 6 do Brasil',
@@ -60,7 +60,7 @@ var products = [
     },
     {
         initiative: 'pampa',
-        type: 'transitions',
+        theme: 'transitions',
         collection: 6,
         assetId: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_transitions_v1",
         description: '',
@@ -77,7 +77,7 @@ var products = [
     },
     {
         initiative: 'pampa',
-        type: 'Integration',
+        theme: 'Integration',
         collection: 6,
         assetId: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_integration_v1",
         description: '',
@@ -94,7 +94,7 @@ var products = [
     },
     {
         initiative: 'pampa',
-        type: 'quality',
+        theme: 'quality',
         collection: 6,
         assetId: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_quality_v1",
         description: '',
@@ -111,7 +111,7 @@ var products = [
     },
     {
         initiative: 'chaco',
-        type: 'transitions',
+        theme: 'transitions',
         collection: 6,
         assetId: "projects/mapbiomas-chaco/public/collection2/mapbiomas_chaco_collection2_transitions_v1",
         description: '',
@@ -128,7 +128,7 @@ var products = [
     },
     {
         initiative: 'chaco',
-        type: 'Integration',
+        theme: 'Integration',
         collection: 6,
         assetId: "projects/mapbiomas-chaco/public/collection2/mapbiomas_chaco_collection2_integration_v1_",
         description: '',
@@ -145,7 +145,7 @@ var products = [
     },
     {
         initiative: 'chaco',
-        type: 'Integration',
+        theme: 'Integration',
         collection: 6,
         assetId: "projects/mapbiomas-chaco/public/collection2/mapbiomas_chaco_collection2_integration_v1",
         description: '',
@@ -162,7 +162,7 @@ var products = [
     },
     {
         initiative: 'indonésia',
-        type: 'Integration',
+        theme: 'Integration',
         collection: 6,
         assetId: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_integration_v1",
         description: '',
@@ -179,7 +179,7 @@ var products = [
     },
     {
         initiative: 'indonésia',
-        type: 'quality',
+        theme: 'quality',
         collection: 6,
         assetId: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_quality_v1",
         description: '',
@@ -196,7 +196,7 @@ var products = [
     },
     {
         initiative: 'indonésia',
-        type: 'transitions',
+        theme: 'transitions',
         collection: 6,
         assetId: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_transitions_v1",
         description: '',
@@ -213,7 +213,7 @@ var products = [
     },
     {
         initiative: 'indonésia',
-        type: 'transitions',
+        theme: 'transitions',
         collection: 6,
         assetId: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_transitions_v2",
         description: '',
@@ -229,7 +229,7 @@ var products = [
     },
     {
         initiative: 'raisg',
-        type: 'quality',
+        theme: 'quality',
         collection: 6,
         assetId: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_quality_v1",
         description: '',
@@ -245,7 +245,7 @@ var products = [
     },
     {
         initiative: 'raisg',
-        type: 'Integration',
+        theme: 'Integration',
         collection: 6,
         assetId: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_integration_v1",
         description: '',
@@ -261,7 +261,7 @@ var products = [
     },
     {
         initiative: 'raisg',
-        type: 'Integration',
+        theme: 'Integration',
         collection: 6,
         assetId: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_integration_v2",
         description: '',
@@ -277,7 +277,7 @@ var products = [
     },
     {
         initiative: 'raisg',
-        type: 'transitions',
+        theme: 'transitions',
         collection: 6,
         assetId: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_transitions_v1",
         description: '',
@@ -293,7 +293,7 @@ var products = [
     },
     {
         initiative: 'raisg',
-        type: 'transitions',
+        theme: 'transitions',
         collection: 6,
         assetId: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_transitions_v2",
         description: '',
@@ -309,7 +309,7 @@ var products = [
     },
     {
         initiative: 'af-trinacional',
-        type: 'Integration',
+        theme: 'Integration',
         collection: 6,
         assetId: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_integration_v1",
         description: '',
@@ -325,7 +325,7 @@ var products = [
     },
     {
         initiative: 'af-trinacional',
-        type: 'quality',
+        theme: 'quality',
         collection: 6,
         assetId: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_quality_v1",
         description: '',
@@ -341,7 +341,7 @@ var products = [
     },
     {
         initiative: 'af-trinacional',
-        type: 'transitions',
+        theme: 'transitions',
         collection: 6,
         assetId: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_transitions_v1",
         description: '',
