@@ -377,6 +377,10 @@ function getDataType(assetId) {
 
 }
 
+function callback(success, failure) {
+    
+}
+
 
 products.forEach(
     function(asset) {
