@@ -31,7 +31,7 @@ var products = [
             bands: {
                 suffix: 'transitions_',
             },
-            years: [ ], // [first year, last year]
+            years: [ ],
             biome: "biome",
             type: 'transitions-multiband',
             version: '1'
