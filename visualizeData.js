@@ -1,3 +1,8 @@
+/**
+ * @Author: Wildson Queiroz
+ * 
+ */
+
 var products = [
     {
         initiative: 'brasil', // inglês, minúscula; nome composto usar "-";
