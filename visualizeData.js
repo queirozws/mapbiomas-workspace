@@ -372,6 +372,8 @@ function callback(asset, failure) {
         
         var assetName = id.split('/').slice(-1)[0];
         
+        var image = ee.Image();
+        
         // switch ( ee.data.getAsset(assetId, callback).type ) {
         switch ( asset.type ) {
           
