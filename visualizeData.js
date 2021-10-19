@@ -397,7 +397,7 @@ function callback(asset, failure) {
                 return null
         
             default:
-                print('Não é uma Image nem ImageCollection');
+                print('Não é uma Image ou ImageCollection');
         
         }
 
