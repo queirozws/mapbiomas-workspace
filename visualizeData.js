@@ -8,7 +8,7 @@ var products = [
         initiative: 'brasil', // inglês, minúscula; nome composto usar "-";
         theme: 'integration', // usar letras minúsculas
         collection: 6,
-        assetId: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_integration_v1_____",
+        assetId: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_integration_v1",
         description: 'Dados integrados da coleção 6 do Brasil', // Usar português
         metadata: {
             bands: {
