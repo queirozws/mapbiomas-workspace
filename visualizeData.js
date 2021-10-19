@@ -380,25 +380,25 @@ function callback(asset, failure) {
                 // print(ee.String(id).split('/').get(2))
                 print('image:', assetName)
               
-                var image = ee.Image(id);
+                image = ee.Image(id);
                 
                 Map.addLayer(image, {}, assetName, true, 1);
                 
                 // ui.Map.Layer(image, {}, 'name')
               
-                // return null
-                break
+                return null
+                // break;
         
             case "ImageCollection":
 
                 print('imageCollection:', assetName)
               
-                var imgColl = ee.ImageCollection(asset.id)
+                image = ee.ImageCollection(asset.id).mosaic()
                 
                 Map.addLayer(imgColl, {}, assetName, true, 1);
               
-                // return null
-                break
+                return null
+                // break;
         
             default:
                 print('Não é uma Image ou ImageCollection');
