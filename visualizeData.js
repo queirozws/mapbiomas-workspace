@@ -1,10 +1,14 @@
 var products = [
     {
-        initiative: 'Brasil',
-        // name: 'Brasil Integration',
-        type: 'integration',
+        initiative: 'brasil', // inglês, minúscula; nome composto usar "-";
+        type: 'integration', // usar letras minúsculas
+        collection: 6,
         assetId: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_integration_v1",
+        description: 'Dados integrados da coleção 6 do Brasil', // Usar português
         metadata: {
+            bands: {
+                suffix: 'transitions_',
+            },
             suffix: 'classification_',
             years: [
                 "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993",
@@ -12,216 +16,343 @@ var products = [
                 "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011",
                 "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"
               ],
-            biome: "biome"
+            biome: "biome",
+            type: 'transitions-multiband', // | "classification-singleband" | "mosaic-multiband",
+            version: '1' // exemplo | "1" (padrão usado João)
         },
     },
     {
-        description: 'Dados de transições da coleção 6 do Brasil', // Usar português
-        initiative: 'Brazil', // inglês, minúscula; nome composto usar "-";
-        type: 'transitions', // usar letras minúsculas
+        initiative: 'brazil',
+        type: 'transitions',
+        collection: 6,
         assetId: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_transitions_v1",
+        description: 'Dados de transições da coleção 6 do Brasil',
         metadata: {
             bands: {
                 suffix: 'transitions_',
             },
-            years: [
-                [1985, 1986],
-                [1986, 1987],
-                [1987, 1988]
-            ], // [first year, last year]
+            years: [ ], // [first year, last year]
             biome: "biome",
-            type: 'transitions-multiband', // | "classification-singleband" | "mosaic-multiband",
-            version: '1' // exemplo | "1" (padrão usado João)
-            
+            type: 'transitions-multiband',
+            version: '1'
         },
     },
     {
-        initiative: 'Pampa',
-        // name: 'Pampa Transitions',
-        type: 'Transitions',
+        initiative: 'brazil',
+        type: 'classification',
+        collection: 6,
+        assetId: "projects/mapbiomas-workspace/COLECAO6/classificacao",
+        description: 'Dados de classificação da coleção 6 do Brasil',
+        metadata: {
+            bands: {
+                suffix: 'classification_',
+            },
+            years: [
+                "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993",
+                "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002",
+                "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011",
+                "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"
+              ], // [first year, last year]
+            biome: "biome",
+            type: 'mosaic-singleband',
+            version: '1'
+        },
+    },
+    {
+        initiative: 'pampa',
+        type: 'transitions',
+        collection: 6,
         assetId: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_transitions_v1",
+        description: '',
         metadata: {
+            bands: {
+                suffix: 'transitions_',
+            },
             suffix: 'classification_',
-            years: [2000, 2001, 2002, ...  2019], // fazer todos os anos
-            biome: "biome"
+            years: [2000, 2001, 2002, 2019], // fazer todos os anos
+            biome: "biome",
+            type: 'transitions-multiband',
+            version: '1'
         },
     },
     {
-        initiative: 'Pampa',
-        // name: 'Pampa Integration',
+        initiative: 'pampa',
         type: 'Integration',
+        collection: 6,
         assetId: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_integration_v1",
+        description: '',
         metadata: {
+            bands: {
+                suffix: 'transitions_',
+            },
             suffix: 'classification_',
             year: "year",
-            biome: "biome"
+            biome: "biome",
+            type: 'transitions-multiband',
+            version: '1'
         },
     },
     {
-        initiative: 'Pampa',
-        // name: 'Pampa Quality',
-        type: 'Quality',
+        initiative: 'pampa',
+        type: 'quality',
+        collection: 6,
         assetId: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_quality_v1",
+        description: '',
         metadata: {
+            bands: {
+                suffix: 'transitions_',
+            },
             suffix: 'classification_',
             year: "year",
-            biome: "biome"
+            biome: "biome",
+            type: 'transitions-multiband',
+            version: '1'
         },
     },
     {
-        initiative: 'Chaco',
-        // name: 'Chaco Transitions',
-        type: 'Transitions',
+        initiative: 'chaco',
+        type: 'transitions',
+        collection: 6,
         assetId: "projects/mapbiomas-chaco/public/collection2/mapbiomas_chaco_collection2_transitions_v1",
+        description: '',
         metadata: {
+            bands: {
+                suffix: 'transitions_',
+            },
             suffix: 'classification_',
             year: "year",
-            biome: "biome"
+            biome: "biome",
+            type: 'transitions-multiband',
+            version: '1'
         },
     },
     {
-        initiative: 'Chaco',
-        // name: 'Chaco Integration',
+        initiative: 'chaco',
         type: 'Integration',
+        collection: 6,
         assetId: "projects/mapbiomas-chaco/public/collection2/mapbiomas_chaco_collection2_integration_v1_",
+        description: '',
         metadata: {
+            bands: {
+                suffix: 'transitions_',
+            },
             suffix: 'classification_',
             year: "year",
-            biome: "biome"
+            biome: "biome",
+            type: 'transitions-multiband',
+            version: '1'
         },
     },
     {
-        initiative: 'Chaco',
-        // name: 'Chaco Integration',
+        initiative: 'chaco',
         type: 'Integration',
+        collection: 6,
         assetId: "projects/mapbiomas-chaco/public/collection2/mapbiomas_chaco_collection2_integration_v1",
+        description: '',
         metadata: {
+            bands: {
+                suffix: 'transitions_',
+            },
             suffix: 'classification_',
             year: "year",
-            biome: "biome"
+            biome: "biome",
+            type: 'transitions-multiband',
+            version: '1'
         },
     },
     {
-        initiative: 'Indonésia',
-        // name: 'Indonésia Integration',
+        initiative: 'indonésia',
         type: 'Integration',
+        collection: 6,
         assetId: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_integration_v1",
+        description: '',
         metadata: {
+            bands: {
+                suffix: 'transitions_',
+            },
             suffix: 'classification_',
             year: "year",
-            biome: "biome"
+            biome: "biome",
+            type: 'transitions-multiband',
+            version: '1'
         },
     },
     {
-        initiative: 'Indonésia',
-        // name: 'Indonésia Quality',
-        type: 'Quality',
+        initiative: 'indonésia',
+        type: 'quality',
+        collection: 6,
         assetId: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_quality_v1",
+        description: '',
         metadata: {
+            bands: {
+                suffix: 'transitions_',
+            },
             suffix: 'classification_',
             year: "year",
-            biome: "biome"
+            biome: "biome",
+            type: 'transitions-multiband',
+            version: '1'
         },
     },
     {
-        initiative: 'Indonésia',
-        // name: 'Indonésia Transitions',
-        type: 'Transitions',
+        initiative: 'indonésia',
+        type: 'transitions',
+        collection: 6,
         assetId: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_transitions_v1",
+        description: '',
         metadata: {
+            bands: {
+                suffix: 'transitions_',
+            },
             suffix: 'classification_',
             year: "year",
-            biome: "biome"
+            biome: "biome",
+            type: 'transitions-multiband',
+            version: '1'
         },
     },
     {
-        initiative: 'Indonésia',
-        // name: 'Indonésia Transitions',
-        type: 'Transitions',
+        initiative: 'indonésia',
+        type: 'transitions',
+        collection: 6,
         assetId: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_transitions_v2",
+        description: '',
         metadata: {
+            bands: {
+                suffix: 'transitions_',
+            },
             year: "year",
-            biome: "biome"
+            biome: "biome",
+            type: 'transitions-multiband',
+            version: '1'
         },
     },
     {
-        initiative: 'RAISG',
-        // name: 'RAISG Quality',
-        type: 'Quality',
+        initiative: 'raisg',
+        type: 'quality',
+        collection: 6,
         assetId: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_quality_v1",
+        description: '',
         metadata: {
+            bands: {
+                suffix: 'transitions_',
+            },
             year: "year",
-            biome: "biome"
+            biome: "biome",
+            type: 'transitions-multiband',
+            version: '1'
         },
     },
     {
-        initiative: 'RAISG',
-        // name: 'RAISG Integration',
+        initiative: 'raisg',
         type: 'Integration',
+        collection: 6,
         assetId: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_integration_v1",
+        description: '',
         metadata: {
+            bands: {
+                suffix: 'transitions_',
+            },
             year: "year",
-            biome: "biome"
+            biome: "biome",
+            type: 'transitions-multiband',
+            version: '1'
         },
     },
     {
-        initiative: 'RAISG',
-        // name: 'RAISG Integration',
+        initiative: 'raisg',
         type: 'Integration',
+        collection: 6,
         assetId: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_integration_v2",
+        description: '',
         metadata: {
+            bands: {
+                suffix: 'transitions_',
+            },
             year: "year",
-            biome: "biome"
+            biome: "biome",
+            type: 'transitions-multiband',
+            version: '1'
         },
     },
     {
-        initiative: 'RAISG',
-        // name: 'RAISG Transitions',
-        type: 'Transitions',
+        initiative: 'raisg',
+        type: 'transitions',
+        collection: 6,
         assetId: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_transitions_v1",
+        description: '',
         metadata: {
+            bands: {
+                suffix: 'transitions_',
+            },
             year: "year",
-            biome: "biome"
+            biome: "biome",
+            type: 'transitions-multiband',
+            version: '1'
         },
     },
     {
-        initiative: 'RAISG',
-        // name: 'RAISG Transitions',
-        type: 'Transitions',
+        initiative: 'raisg',
+        type: 'transitions',
+        collection: 6,
         assetId: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_transitions_v2",
+        description: '',
         metadata: {
+            bands: {
+                suffix: 'transitions_',
+            },
             year: "year",
-            biome: "biome"
+            biome: "biome",
+            type: 'transitions-multiband',
+            version: '1'
         },
     },
     {
-        initiative: 'AF Trinacional',
-        // name: 'AF Trinacional Integration',
+        initiative: 'af-trinacional',
         type: 'Integration',
+        collection: 6,
         assetId: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_integration_v1",
+        description: '',
         metadata: {
+            bands: {
+                suffix: 'transitions_',
+            },
             year: "year",
-            biome: "biome"
+            biome: "biome",
+            type: 'transitions-multiband',
+            version: '1'
         },
     },
     {
-        initiative: 'AF Trinacional',
-        // name: 'AF Trinacional Quality',
-        type: 'Quality',
+        initiative: 'af-trinacional',
+        type: 'quality',
+        collection: 6,
         assetId: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_quality_v1",
+        description: '',
         metadata: {
+            bands: {
+                suffix: 'transitions_',
+            },
             year: "year",
-            biome: "biome"
+            biome: "biome",
+            type: 'transitions-multiband',
+            version: '1'
         },
     },
     {
-        initiative: 'AF Trinacional',
-        // name: 'AF Trinacional Transitions',
-        type: 'Transitions',
+        initiative: 'af-trinacional',
+        type: 'transitions',
+        collection: 6,
         assetId: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_transitions_v1",
+        description: '',
         metadata: {
+            bands: {
+                suffix: 'transitions_',
+            },
             year: "year",
-            biome: "biome"
+            biome: "biome",
+            type: 'transitions-multiband',
+            version: '1'
         },
     },
 
@@ -229,14 +360,14 @@ var products = [
 
 products.forEach(
     function(obj) {
-        print(obj.initiative)
+        console.log(obj.assetId)
         
         // Map.addLayer(ee.Image(obj.assetId), {}, obj.initiative, true, 1)
     })
     
-print(ee.List(products).length())
+// print(ee.List(products).length())
 
-var layersList = Map.layers();
+// var layersList = Map.layers();
 
 // 
-print(layersList);
+// print(layersList);
