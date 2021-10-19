@@ -366,14 +366,17 @@ var products = [
 // }
 
 function callback(asset, failure) {
+
     if (asset) {
-        
+            
         var id = asset.id;
+        
+        print(asset);
         
         var assetName = id.split('/').slice(-1)[0];
         
         var image = ee.Image();
-        
+            
         // switch ( ee.data.getAsset(assetId, callback).type ) {
         switch ( asset.type ) {
           
@@ -408,7 +411,7 @@ function callback(asset, failure) {
         }
 
     } else {
-        console.log('Asset não encontrado: ',failure)
+        console.log('Asset não encontrado: ', assetName)
     }
 }
 
@@ -416,6 +419,8 @@ function callback(asset, failure) {
 products.forEach(
 // var output = products.map(
     function(asset) {
+      
+        var foo = 'string'
       
         // console.log(asset.assetId)
         
