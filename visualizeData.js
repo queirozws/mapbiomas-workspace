@@ -372,7 +372,15 @@ function callback(asset, failure) {
         switch ( asset.type ) {
         
             case "Image":
-                return ee.Image(asset.id)
+              
+                var id = asset.id
+                
+                // print(ee.String(id).split('/').get(2))
+                print(id.split('/').slice(-1)[0])
+              
+                var image = ee.Image(id)
+              
+                return ui.Map.Layer(image, {}, 'name')
         
             case "ImageCollection":
                 return ee.ImageCollection(asset.id).mosaic()
@@ -382,10 +390,8 @@ function callback(asset, failure) {
         
         }
 
-        print('sucess')
-
     } else {
-        console.log('failure')
+        console.log('Asset não encontrado!')
     }
 }
 
@@ -393,11 +399,9 @@ function callback(asset, failure) {
 products.forEach(
     function(asset) {
       
-        console.log(asset.assetId)
+        // console.log(asset.assetId)
         
         ee.data.getAsset(asset.assetId, callback)
-        
-        // getDataType(asset.assetId, callback)
         
         // Map.addLayer(ee.Image(obj.assetId), {}, obj.initiative, true, 1)
     })
