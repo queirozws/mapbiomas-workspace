@@ -378,7 +378,11 @@ function getDataType(assetId) {
 }
 
 function callback(success, failure) {
-    
+    if (success) {
+        console.log(`${success}\n`)
+    } else {
+        console.log(`${failure}\n`)
+    }
 }
 
 
