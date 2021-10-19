@@ -360,14 +360,30 @@ var products = [
 
 // Function: Identify the data type AND return de asset (e.g.: Image, ImageCollection...)
 
-getDataType() {
+function getDataType(assetId) {
     
+    switch ( ee.data.getAsset(assetId).type ) {
+
+        case "Image":
+            return ee.Image(assetId)
+    
+        case "ImageCollection":
+            return ee.ImageCollection(assetId).mosaic()
+    
+        default:
+            print('Não é uma Image nem ImageCollection');
+    
+    }
+
 }
 
 
 products.forEach(
-    function(obj) {
-        console.log(obj.assetId)
+    function(asset) {
+      
+        console.log(asset.assetId)
+        
+        getDataType(asset.assetId)
         
         // Map.addLayer(ee.Image(obj.assetId), {}, obj.initiative, true, 1)
     })
