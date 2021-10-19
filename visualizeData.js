@@ -362,24 +362,27 @@ var products = [
 
 function getDataType(assetId, callback) {
     
-    switch ( ee.data.getAsset(assetId).type ) {
-
-        case "Image":
-            return ee.Image(assetId)
-    
-        case "ImageCollection":
-            return ee.ImageCollection(assetId).mosaic()
-    
-        default:
-            print('Não é uma Image nem ImageCollection');
-    
-    }
-
+    ee.data.getAsset(assetId, callback)
 }
 
 function callback(success, failure) {
     if (success) {
+        
+        switch ( ee.data.getAsset(assetId, callback).type ) {
+        
+            case "Image":
+                return ee.Image(assetId)
+        
+            case "ImageCollection":
+                return ee.ImageCollection(assetId).mosaic()
+        
+            default:
+                print('Não é uma Image nem ImageCollection');
+        
+        }
+
         console.log('sucess')
+
     } else {
         console.log('failure')
     }
