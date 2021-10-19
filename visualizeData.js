@@ -358,6 +358,13 @@ var products = [
 
 ]
 
+// Function: Identify the data type AND return de asset (e.g.: Image, ImageCollection...)
+
+getDataType() {
+    
+}
+
+
 products.forEach(
     function(obj) {
         console.log(obj.assetId)
