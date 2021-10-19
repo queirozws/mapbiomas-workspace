@@ -368,7 +368,9 @@ var products = [
 function callback(asset, failure) {
     if (asset) {
         
-        var id = asset.id
+        var id = asset.id;
+        
+        var assetName = id.split('/').slice(-1)[0];
         
         // switch ( ee.data.getAsset(assetId, callback).type ) {
         switch ( asset.type ) {
@@ -376,25 +378,27 @@ function callback(asset, failure) {
             case "Image":
               
                 // print(ee.String(id).split('/').get(2))
-                print('image:', id.split('/').slice(-1)[0])
+                print('image:', assetName)
               
-                var image = ee.Image(id)
+                var image = ee.Image(id);
                 
-                Map.addLayer(image)
+                Map.addLayer(image, {}, assetName, true, 1);
                 
                 // ui.Map.Layer(image, {}, 'name')
               
-                return null
+                // return null
+                break
         
             case "ImageCollection":
 
-                print('imageCollection:', id.split('/').slice(-1)[0])
-                
+                print('image:', assetName)
+              
                 var imgColl = ee.ImageCollection(asset.id)
                 
-                Map.addLayer(imgColl)
+                Map.addLayer(imgColl, {}, assetName, true, 1);
               
-                return null
+                // return null
+                break
         
             default:
                 print('Não é uma Image ou ImageCollection');
