@@ -391,7 +391,7 @@ function callback(asset, failure) {
         
             case "ImageCollection":
 
-                print('image:', assetName)
+                print('imageCollection:', assetName)
               
                 var imgColl = ee.ImageCollection(asset.id)
                 
