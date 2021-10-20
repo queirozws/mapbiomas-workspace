@@ -1013,13 +1013,6 @@ var products = [
 
 ]
 
-// Function: Identify the data type AND return de asset (e.g.: Image, ImageCollection...)
-
-// function getDataType(assetId, callback) {
-    
-//     ee.data.getAsset(assetId, callback)
-// }
-
 
 function callback(assetInfo, failure) {
 
