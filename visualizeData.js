@@ -1,7 +1,12 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var imageCollection = ee.ImageCollection("projects/mapbiomas-workspace/COLECAO6/classificacao");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
 /**
  * @Author: Wildson Queiroz
  * 
  */
+ 
+// print(imageCollection.mosaic());
 
 var products = [
     {
@@ -12,15 +17,15 @@ var products = [
         description: 'Dados de classificação da coleção 6 do Brasil',
         metadata: {
             bands: {
-                suffix: 'classification_',
-                bandNames: xxxxxxx,
+                suffix: 'classification',
+                bandNames: [],
             },
             years: [
                 "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993",
                 "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002",
                 "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011",
                 "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"
-              ], // [first year, last year]
+              ],
             biome: "all",
             countries: [],
             type: 'mosaic-singleband',
@@ -28,8 +33,8 @@ var products = [
         },
     },
     {
-        initiative: 'brazil', // inglês, minúscula; nome composto usar "-";
-        theme: 'integration', // usar letras minúsculas
+        initiative: 'brazil',
+        theme: 'integration',
         collection: 6,
         assetId: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_integration_v1",
         description: 'Dados integrados da coleção 6 do Brasil', // Usar português
@@ -1028,6 +1033,8 @@ function callback(assetInfo, failure) {
         
         var assetName = id.split('/').slice(-1)[0];
         
+        var bandNames = assetInfo.metadata.bands.bandNames;
+        
         var image = ee.Image();
             
         // switch ( ee.data.getAsset(assetId, callback).type ) {
@@ -1042,10 +1049,8 @@ function callback(assetInfo, failure) {
                 
                 print(assetName, image.bandNames())
                 
-                // Map.addLayer(image, {}, assetName, true, 1);s
+                Map.addLayer(image.select(bandNames), {}, assetName, true, 1);s
                 
-                // ui.Map.Layer(image, {}, 'name')
-              
                 // break;
                 return 'Image'
         
@@ -1055,7 +1060,7 @@ function callback(assetInfo, failure) {
               
                 image = ee.ImageCollection(assetInfo.id).mosaic()
                 
-                // Map.addLayer(image, {}, assetName, true, 1);
+                Map.addLayer(image, {}, assetName, true, 1);
               
                 // break;
                 return 'ImageCollection'
