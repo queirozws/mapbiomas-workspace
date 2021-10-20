@@ -29,43 +29,6 @@ var assetIdList = [
 
 var products = [
     {
-        initiative: 'brazil', // inglês, minúscula; nome composto usar "-";
-        theme: 'integration', // usar letras minúsculas
-        collection: 6,
-        assetId: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_integration_v1",
-        description: 'Dados integrados da coleção 6 do Brasil', // Usar português
-        metadata: {
-            bands: {
-                suffix: 'classification_',
-            },
-            years: [
-                "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993",
-                "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002",
-                "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011",
-                "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"
-              ],
-            biome: "biome",
-            type: 'transitions-multiband', // | "classification-singleband" | "mosaic-multiband",
-            version: '1' // exemplo | "1" (padrão usado João)
-        },
-    },
-    {
-        initiative: 'brazil',
-        theme: 'transitions',
-        collection: 6,
-        assetId: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_transitions_v1",
-        description: 'Dados de transições da coleção 6 do Brasil',
-        metadata: {
-            bands: {
-                suffix: 'transitions_',
-            },
-            years: [ ],
-            biome: "biome",
-            type: 'transitions-multiband',
-            version: '1'
-        },
-    },
-    {
         initiative: 'brazil',
         theme: 'classification',
         collection: 6,
@@ -81,24 +44,47 @@ var products = [
                 "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011",
                 "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"
               ], // [first year, last year]
-            biome: "biome",
+            biome: "all",
+            countries: [],
             type: 'mosaic-singleband',
             version: '1'
         },
     },
     {
-        initiative: 'pampa',
+        initiative: 'brazil', // inglês, minúscula; nome composto usar "-";
+        theme: 'integration', // usar letras minúsculas
+        collection: 6,
+        assetId: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_integration_v1",
+        description: 'Dados integrados da coleção 6 do Brasil', // Usar português
+        metadata: {
+            bands: {
+                suffix: 'classification_',
+            },
+            years: [
+                "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993",
+                "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002",
+                "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011",
+                "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"
+              ],
+            biome: "all",
+            countries: [],
+            type: 'transitions-multiband', // | "classification-singleband" | "mosaic-multiband",
+            version: '1' // exemplo | "1" (padrão usado João)
+        },
+    },
+    {
+        initiative: 'brazil',
         theme: 'transitions',
         collection: 6,
-        assetId: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_transitions_v1",
-        description: '',
+        assetId: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_transitions_v1",
+        description: 'Dados de transições da coleção 6 do Brasil',
         metadata: {
             bands: {
                 suffix: 'transitions_',
             },
-            suffix: 'classification_',
-            years: [2000, 2001, 2002, 2019], // fazer todos os anos
-            biome: "biome",
+            years: [ ],
+            biome: "all",
+            countries: [],
             type: 'transitions-multiband',
             version: '1'
         },
@@ -106,16 +92,37 @@ var products = [
     {
         initiative: 'pampa',
         theme: 'Integration',
-        collection: 6,
+        collection: 1,
         assetId: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_integration_v1",
-        description: '',
+        description: 'Dados de integração da coleção 1 do Pampa',
+        metadata: {
+            bands: {
+                suffix: 'classification_',
+            },
+            year: [
+                "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009",
+                "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"
+            ],
+            biome: "pampa",
+            countries: ['brazil', 'argentina', 'uruguay'],
+            type: 'transitions-multiband',
+            version: '1'
+        },
+    },
+    {
+        initiative: 'pampa',
+        theme: 'transitions',
+        collection: 1,
+        assetId: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_transitions_v1",
+        description: 'Dados de transição da coleção 1 do Pampa',
         metadata: {
             bands: {
                 suffix: 'transitions_',
             },
             suffix: 'classification_',
-            year: "year",
+            years: [2000, 2001, 2002, 2019], // fazer todos os anos
             biome: "biome",
+            countries: ['brazil', 'argentina', 'uruguay'],
             type: 'transitions-multiband',
             version: '1'
         },
@@ -123,9 +130,9 @@ var products = [
     {
         initiative: 'pampa',
         theme: 'quality',
-        collection: 6,
+        collection: 1,
         assetId: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_quality_v1",
-        description: '',
+        description: 'Dados de qualidade da coleção 1 do Pampa',
         metadata: {
             bands: {
                 suffix: 'transitions_',
@@ -133,6 +140,7 @@ var products = [
             suffix: 'classification_',
             year: "year",
             biome: "biome",
+            countries: ['brazil', 'argentina', 'uruguay'],
             type: 'transitions-multiband',
             version: '1'
         },
@@ -150,6 +158,7 @@ var products = [
             suffix: 'classification_',
             year: "year",
             biome: "biome",
+            countries: [],
             type: 'transitions-multiband',
             version: '1'
         },
@@ -167,6 +176,7 @@ var products = [
             suffix: 'classification_',
             year: "year",
             biome: "biome",
+            countries: [],
             type: 'transitions-multiband',
             version: '1'
         },
@@ -184,6 +194,7 @@ var products = [
             suffix: 'classification_',
             year: "year",
             biome: "biome",
+            countries: [],
             type: 'transitions-multiband',
             version: '1'
         },
@@ -201,6 +212,7 @@ var products = [
             suffix: 'classification_',
             year: "year",
             biome: "biome",
+            countries: [],
             type: 'transitions-multiband',
             version: '1'
         },
@@ -218,6 +230,7 @@ var products = [
             suffix: 'classification_',
             year: "year",
             biome: "biome",
+            countries: [],
             type: 'transitions-multiband',
             version: '1'
         },
@@ -235,6 +248,7 @@ var products = [
             suffix: 'classification_',
             year: "year",
             biome: "biome",
+            countries: [],
             type: 'transitions-multiband',
             version: '1'
         },
@@ -251,6 +265,7 @@ var products = [
             },
             year: "year",
             biome: "biome",
+            countries: [],
             type: 'transitions-multiband',
             version: '1'
         },
@@ -267,6 +282,7 @@ var products = [
             },
             year: "year",
             biome: "biome",
+            countries: [],
             type: 'transitions-multiband',
             version: '1'
         },
@@ -283,6 +299,7 @@ var products = [
             },
             year: "year",
             biome: "biome",
+            countries: [],
             type: 'transitions-multiband',
             version: '1'
         },
@@ -299,6 +316,7 @@ var products = [
             },
             year: "year",
             biome: "biome",
+            countries: [],
             type: 'transitions-multiband',
             version: '1'
         },
@@ -315,6 +333,7 @@ var products = [
             },
             year: "year",
             biome: "biome",
+            countries: [],
             type: 'transitions-multiband',
             version: '1'
         },
@@ -331,6 +350,7 @@ var products = [
             },
             year: "year",
             biome: "biome",
+            countries: [],
             type: 'transitions-multiband',
             version: '1'
         },
@@ -347,6 +367,7 @@ var products = [
             },
             year: "year",
             biome: "biome",
+            countries: [],
             type: 'transitions-multiband',
             version: '1'
         },
@@ -363,6 +384,7 @@ var products = [
             },
             year: "year",
             biome: "biome",
+            countries: [],
             type: 'transitions-multiband',
             version: '1'
         },
@@ -379,6 +401,7 @@ var products = [
             },
             year: "year",
             biome: "biome",
+            countries: [],
             type: 'transitions-multiband',
             version: '1'
         },
