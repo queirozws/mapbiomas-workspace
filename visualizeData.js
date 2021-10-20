@@ -117,10 +117,26 @@ var products = [
         description: 'Dados de transição da coleção 1 do Pampa',
         metadata: {
             bands: {
-                suffix: 'transitions_',
+                suffix: 'transition_',
+                bandNames: [
+                    "transition_2000_2001", "transition_2001_2002", "transition_2002_2003",
+                    "transition_2003_2004", "transition_2004_2005", "transition_2005_2006",
+                    "transition_2006_2007", "transition_2007_2008", "transition_2008_2009",
+                    "transition_2009_2010", "transition_2010_2011", "transition_2011_2012",
+                    "transition_2012_2013", "transition_2013_2014", "transition_2014_2015",
+                    "transition_2015_2016", "transition_2016_2017", "transition_2017_2018",
+                    "transition_2018_2019", "transition_2000_2005", "transition_2005_2010",
+                    "transition_2010_2015", "transition_2015_2019", "transition_2000_2010",
+                    "transition_2010_2019", "transition_2000_2019"
+                  ]
             },
-            suffix: 'classification_',
-            years: [2000, 2001, 2002, 2019], // fazer todos os anos
+            years: [
+                [2000, 2001], [2001, 2002], [2002, 2003], [2003, 2004], [2004, 2005], [2005, 2006],
+                [2006, 2007], [2007, 2008], [2008, 2009], [2009, 2010], [2010, 2011], [2011, 2012],
+                [2012, 2013], [2013, 2014], [2014, 2015], [2015, 2016], [2016, 2017], [2017, 2018],
+                [2018, 2019], [2000, 2005], [2005, 2010], [2010, 2015], [2015, 2019], [2000, 2010],
+                [2010, 2019], [2000, 2019]
+              ],
             biome: "biome",
             countries: ['brazil', 'argentina', 'uruguay'],
             type: 'transitions-multiband',
@@ -416,12 +432,6 @@ var products = [
 //     ee.data.getAsset(assetId, callback)
 // }
 
-
-// assetIdList.forEach(
-//     function(assetId) {
-        
-//     }
-// )
 
 function callback(assetInfo, failure) {
 
