@@ -1074,6 +1074,8 @@ function dict(obj, keys) {
 products.forEach(
     function(obj) {
       
+        obj = ee.Dictionary(obj)
+      
         obj = dict(obj, ['metadata', 'bands', 'bandNames']);
         
         print(obj)
