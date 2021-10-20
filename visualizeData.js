@@ -1011,15 +1011,60 @@ var products = [
 ]
 
 
-function callback(assetInfo, failure) {
+// function callback(assetInfo, failure) {
+
+//     if (assetInfo) {
+      
+//         var id = assetInfo.id;
+        
+//         var assetName = id.split('/').slice(-1)[0];
+        
+//         var image = ee.Image();
+            
+//         switch ( assetInfo.type ) {
+          
+//             case "Image":
+              
+//                 image = ee.Image(id);
+                
+//                 print(assetName, image.bandNames())
+                
+//                 Map.addLayer(image.select(firstBand), {}, assetName, true, 1);
+                
+//                 // break;
+//                 return 'Image'
+        
+//             case "ImageCollection":
+
+//                 print('imageCollection:', assetName)
+              
+//                 image = ee.ImageCollection(assetInfo.id).mosaic()
+                
+//                 Map.addLayer(image.select(firstBand), {}, assetName, true, 1);
+              
+//                 // break;
+//                 return 'ImageCollection'
+        
+//             default:
+//                 print('Não é uma Image ou ImageCollection');
+        
+//         }
+        
+//     } else {
+      
+//         console.log('Asset não encontrado: ', assetName)
+    
+//     }
+
+// }
+
+function addAssetToMap(assetInfo, bandName) {
 
     if (assetInfo) {
-            
+      
         var id = assetInfo.id;
         
         var assetName = id.split('/').slice(-1)[0];
-        
-        var firstBand = assetInfo.metadata.bands.bandNames[0];
         
         var image = ee.Image();
             
@@ -1031,7 +1076,7 @@ function callback(assetInfo, failure) {
                 
                 print(assetName, image.bandNames())
                 
-                Map.addLayer(image.select(firstBand), {}, assetName, true, 1);s
+                Map.addLayer(image.select(bandName), {}, assetName, true, 1);
                 
                 // break;
                 return 'Image'
@@ -1042,7 +1087,7 @@ function callback(assetInfo, failure) {
               
                 image = ee.ImageCollection(assetInfo.id).mosaic()
                 
-                Map.addLayer(image.select(firstBand), {}, assetName, true, 1);
+                Map.addLayer(image.select(bandName), {}, assetName, true, 1);
               
                 // break;
                 return 'ImageCollection'
@@ -1064,9 +1109,18 @@ function callback(assetInfo, failure) {
 products.forEach(
     function(obj) {
       
-        var foo = 'string'
+        var foo = 'foo string'
+        print('1', foo);
       
-        ee.data.getAsset(obj.assetId, callback)
+        // ee.data.getAsset(obj.assetId, callback)
+        var assetInfo = ee.data.getAsset(obj.assetId)
+        
+        addAssetToMap(assetInfo, obj.metadata.bands.bandNames[0])
 
     })
+
+
+
+
+
 
