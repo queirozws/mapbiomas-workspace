@@ -6,8 +6,6 @@ var imageCollection = ee.ImageCollection("projects/mapbiomas-workspace/COLECAO6/
  * 
  */
  
-// print(imageCollection.mosaic());
-
 var products = [
     {
         initiative: 'brazil',
