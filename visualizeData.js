@@ -27,7 +27,7 @@ var products = [
                 "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"
               ],
             biome: "all",
-            countries: [],
+            countries: ['brazil'],
             type: 'mosaic-singleband',
             version: '1'
         },
@@ -87,7 +87,7 @@ var products = [
                 "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"
               ],
             biome: "all",
-            countries: [],
+            countries: ['brazil'],
             type: 'transitions-multiband', // | "classification-singleband" | "mosaic-multiband",
             version: '1' // exemplo | "1" (padrão usado João)
         },
@@ -164,7 +164,7 @@ var products = [
             },
             years: [ ],
             biome: "all",
-            countries: [],
+            countries: ['brazil'],
             type: 'transitions-multiband',
             version: '1'
         },
