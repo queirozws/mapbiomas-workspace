@@ -1,6 +1,6 @@
 /**
  * @Author: Wildson Queiroz
- * 
+ * @Data: 20/10/2021
  */
  
 var products = [
