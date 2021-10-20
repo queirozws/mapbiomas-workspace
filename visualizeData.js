@@ -29,7 +29,7 @@ var assetIdList = [
 
 var products = [
     {
-        initiative: 'brasil', // inglês, minúscula; nome composto usar "-";
+        initiative: 'brazil', // inglês, minúscula; nome composto usar "-";
         theme: 'integration', // usar letras minúsculas
         collection: 6,
         assetId: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_integration_v1",
@@ -38,7 +38,6 @@ var products = [
             bands: {
                 suffix: 'classification_',
             },
-            suffix: 'classification_',
             years: [
                 "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993",
                 "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002",
@@ -425,7 +424,7 @@ function callback(assetInfo, failure) {
                 
                 print(assetName, image.bandNames())
                 
-                // Map.addLayer(image, {}, assetName, true, 1);
+                // Map.addLayer(image, {}, assetName, true, 1);s
                 
                 // ui.Map.Layer(image, {}, 'name')
               
