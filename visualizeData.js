@@ -11,6 +11,7 @@ var products = [
         assetId: "projects/mapbiomas-workspace/COLECAO6/classsssificacao",
         description: 'Dados de classificação da coleção 6 do Brasil',
         metadata: {
+            imageId: 'imageName',
             bands: {
                 suffix: 'classification',
                 bandNames: ['classification'],
@@ -34,6 +35,7 @@ var products = [
         assetId: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_integration_v1",
         description: 'Dados integrados da coleção 6 do Brasil', // Usar português
         metadata: {
+            imageId: 'imageName',
             bands: {
                 suffix: 'classification_',
                 bandNames: [
@@ -94,6 +96,7 @@ var products = [
         assetId: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_transitions_v1",
         description: 'Dados de transições da coleção 6 do Brasil',
         metadata: {
+            imageId: 'imageName',
             bands: {
                 suffix: 'transitions_',
                 bandNames: [
@@ -171,6 +174,7 @@ var products = [
         assetId: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_transitions_v1",
         description: 'Dados de transição da coleção 1 do Pampa',
         metadata: {
+            imageId: 'imageName',
             bands: {
                 suffix: 'transition_',
                 bandNames: [
@@ -225,6 +229,7 @@ var products = [
         assetId: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_integration_v1",
         description: 'Dados de integração da coleção 1 do Pampa',
         metadata: {
+            imageId: 'imageName',
             bands: {
                 suffix: 'classification_',
                 bandNames: [
@@ -267,6 +272,7 @@ var products = [
         assetId: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_quality_v1",
         description: 'Dados de qualidade da coleção 1 do Pampa',
         metadata: {
+            imageId: 'imageName',
             bands: {
                 suffix: 'transitions_',
                 bandNames: [
@@ -307,6 +313,7 @@ var products = [
         assetId: "projects/mapbiomas-chaco/public/collection2/mapbiomas_chaco_collection2_transitions_v1",
         description: '',
         metadata: {
+            imageId: 'imageName',
             bands: {
                 suffix: 'transition_',
                 bandNames: [
@@ -353,6 +360,7 @@ var products = [
         assetId: "projects/mapbiomas-chaco/public/collection2/mapbiomas_chaco_collection2_integration_v1",
         description: '',
         metadata: {
+            imageId: 'imageName',
             bands: {
                 suffix: 'transitions_',
                 bandNames: [
@@ -393,6 +401,7 @@ var products = [
         assetId: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_transitions_v1",
         description: '',
         metadata: {
+            imageId: 'imageName',
             bands: {
                 suffix: 'transition_',
                 bandNames: [
@@ -444,6 +453,7 @@ var products = [
         assetId: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_integration_v1",
         description: '',
         metadata: {
+            imageId: 'imageName',
             bands: {
                 suffix: 'classification_',
                 bandNames: [
@@ -484,6 +494,7 @@ var products = [
         assetId: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_quality_v1",
         description: '',
         metadata: {
+            imageId: 'imageName',
             bands: {
                 suffix: 'quality_',
                 bandNames: [
@@ -524,6 +535,7 @@ var products = [
         assetId: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_transitions_v2",
         description: '',
         metadata: {
+            imageId: 'imageName',
             bands: {
                 suffix: 'transition_',
                 bandNames: [
@@ -574,6 +586,7 @@ var products = [
         assetId: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_quality_v1",
         description: '',
         metadata: {
+            imageId: 'imageName',
             bands: {
                 suffix: 'quality_',
                 bandNames: [
@@ -629,6 +642,7 @@ var products = [
         assetId: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_integration_v1",
         description: '',
         metadata: {
+            imageId: 'imageName',
             bands: {
                 suffix: 'classification_',
                 bandNames: [
@@ -684,6 +698,7 @@ var products = [
         assetId: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_integration_v2",
         description: '',
         metadata: {
+            imageId: 'imageName',
             bands: {
                 suffix: 'classification_',
                 bandNames: [
@@ -739,6 +754,7 @@ var products = [
         assetId: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_transitions_v1",
         description: '',
         metadata: {
+            imageId: 'imageName',
             bands: {
                 suffix: 'transition_',
                 bandNames: [
@@ -813,6 +829,7 @@ var products = [
         assetId: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_transitions_v2",
         description: '',
         metadata: {
+            imageId: 'imageName',
             bands: {
                 suffix: 'transition_',
                 bandNames: [
@@ -887,6 +904,7 @@ var products = [
         assetId: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_integration_v1",
         description: '',
         metadata: {
+            imageId: 'imageName',
             bands: {
                 suffix: 'transition_',
                 bandNames: [
@@ -926,6 +944,7 @@ var products = [
         assetId: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_quality_v1",
         description: '',
         metadata: {
+            imageId: 'imageName',
             bands: {
                 suffix: 'transition_',
                 bandNames: [
@@ -965,6 +984,7 @@ var products = [
         assetId: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_transitions_v1",
         description: '',
         metadata: {
+            imageId: 'imageName',
             bands: {
                 suffix: 'transition_',
                 bandNames: [
