@@ -16,7 +16,7 @@ var products = [
         metadata: {
             bands: {
                 suffix: 'classification',
-                bandNames: [],
+                bandNames: ['classification'],
             },
             years: [
                 "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993",
@@ -1022,7 +1022,7 @@ function callback(assetInfo, failure) {
         
         var assetName = id.split('/').slice(-1)[0];
         
-        var bandNames = assetInfo.metadata.bands.bandNames;
+        var firstBand = assetInfo.metadata.bands.bandNames[0];
         
         var image = ee.Image();
             
@@ -1034,7 +1034,7 @@ function callback(assetInfo, failure) {
                 
                 print(assetName, image.bandNames())
                 
-                Map.addLayer(image.select(bandNames), {}, assetName, true, 1);s
+                Map.addLayer(image.select(firstBand), {}, assetName, true, 1);s
                 
                 // break;
                 return 'Image'
@@ -1045,7 +1045,7 @@ function callback(assetInfo, failure) {
               
                 image = ee.ImageCollection(assetInfo.id).mosaic()
                 
-                Map.addLayer(image, {}, assetName, true, 1);
+                Map.addLayer(image.select(firstBand), {}, assetName, true, 1);
               
                 // break;
                 return 'ImageCollection'
