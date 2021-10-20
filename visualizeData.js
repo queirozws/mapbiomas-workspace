@@ -8,7 +8,7 @@ var products = [
         initiative: 'brazil',
         theme: 'classification',
         collection: 6,
-        assetId: "projects/mapbiomas-workspace/COLECAO6/classificacao",
+        assetId: "projects/mapbiomas-workspace/COLECAO6/classsssificacao",
         description: 'Dados de classificação da coleção 6 do Brasil',
         metadata: {
             bands: {
@@ -1019,6 +1019,8 @@ function callback(assetInfo, failure) {
         
         var assetName = id.split('/').slice(-1)[0];
         
+        var image = ee.Image(id);
+        
         switch ( assetInfo.type ) {
           
             case "Image":
@@ -1050,16 +1052,33 @@ function callback(assetInfo, failure) {
         
     } else {
       
-        console.log('Asset não encontrado: ', assetName)
+        console.log('Asset não encontrado: ', obj)
     
     }
+
+}
+
+function dict(obj, keys) {
+  
+    keys.forEach(
+        function (key) {
+          
+            obj = ee.Dictionary(obj).get(key).getInfo();
+            
+        });
+        
+    // print(obj)
 
 }
 
 products.forEach(
     function(obj) {
       
-        ee.data.getAsset(obj.assetId, callback)
+        obj = dict(obj, ['metadata', 'bands', 'bandNames']);
+        
+        print(obj)
+      
+        // ee.data.getAsset(obj.assetId, callback)
 
     })
 
