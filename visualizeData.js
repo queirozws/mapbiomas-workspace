@@ -1,6 +1,3 @@
-/**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var imageCollection = ee.ImageCollection("projects/mapbiomas-workspace/COLECAO6/classificacao");
-/***** End of imports. If edited, may not auto-convert in the playground. *****/
 /**
  * @Author: Wildson Queiroz
  * 
