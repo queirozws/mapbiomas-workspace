@@ -1029,7 +1029,7 @@ function callback(assetInfo, failure) {
                 
                 print(assetName, image.bandNames())
                 
-                Map.addLayer(image.select(firstBand), {}, assetName, true, 1);
+                Map.addLayer(image, {}, assetName, true, 1);
                 
                 // break;
                 return 'Image'
@@ -1040,7 +1040,7 @@ function callback(assetInfo, failure) {
               
                 image = ee.ImageCollection(assetInfo.id).mosaic()
                 
-                Map.addLayer(image.select(firstBand), {}, assetName, true, 1);
+                Map.addLayer(image, {}, assetName, true, 1);
               
                 // break;
                 return 'ImageCollection'
@@ -1057,6 +1057,13 @@ function callback(assetInfo, failure) {
     }
 
 }
+
+products.forEach(
+    function(obj) {
+      
+        ee.data.getAsset(obj.assetId, callback)
+
+    })
 
 // function addAssetToMap(assetInfo, bandName) {
 
@@ -1106,15 +1113,14 @@ function callback(assetInfo, failure) {
 // }
 
 
-products.forEach(
-    function(obj) {
+// products.forEach(
+//     function(obj) {
       
-        ee.data.getAsset(obj.assetId, callback)
         // var assetInfo = ee.data.getAsset(obj.assetId)
         
         // addAssetToMap(assetInfo, obj.metadata.bands.bandNames[0])
 
-    })
+    // })
 
 
 
