@@ -435,7 +435,7 @@ var products = [
             suffix: 'classification_',
             year: "year",
             biome: "biome",
-            countries: [],
+            countries: ['indonésia'],
             type: 'transitions-multiband',
             version: '1'
         },
@@ -475,7 +475,7 @@ var products = [
             suffix: 'classification_',
             year: "year",
             biome: "biome",
-            countries: [],
+            countries: ['indonésia'],
             type: 'transitions-multiband',
             version: '1'
         },
@@ -515,7 +515,7 @@ var products = [
             suffix: 'classification_',
             year: "year",
             biome: "biome",
-            countries: [],
+            countries: ['indonésia'],
             type: 'transitions-multiband',
             version: '1'
         },
@@ -565,7 +565,7 @@ var products = [
             },
             year: "year",
             biome: "biome",
-            countries: [],
+            countries: ['indonésia'],
             type: 'transitions-multiband',
             version: '1'
         },
