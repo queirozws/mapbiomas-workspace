@@ -78,8 +78,8 @@ var metadataList = assetIdList.map(
 
 print(metadataList);
 
-var str = 'Ouviram do Ipiranga às margens plácidas, de um povo um heróico brado retumbante';
+var str = 'projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_integration_v1';
 
-print(ee.String(str).match("marg"));
+print( ee.String(str).match("collection", "g") );
 
 
