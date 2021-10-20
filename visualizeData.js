@@ -1078,31 +1078,11 @@ function callback(assetInfo, failure) {
 
 
 products.forEach(
-// var output = products.map(
     function(obj) {
       
         var foo = 'string'
       
-        // print(obj.initiative)
-        
         ee.data.getAsset(obj.assetId, callback)
-        // var output = ee.data.getAsset(obj.assetId)//, callback)
-        
-        // return ee.data.getAsset(asset.assetId)//, callback)
-        
-        // Map.addLayer(ee.Image(obj.assetId), {}, obj.initiative, true, 1)
+
     })
-    
-// print('output', output);
 
-//  0: Image projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_integration_v1 (36 bands)
-//    type: Image
-//    id: projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_integration_v1
-//    version: 1630036058990000
-//    bands: List (36 elements)
-//    properties: Object (2 properties)
-
-// var layersList = Map.layers();
-
-// 
-// print(layersList);
