@@ -1020,21 +1020,15 @@ function callback(assetInfo, failure) {
             
         var id = assetInfo.id;
         
-        // print(asset);
-        
         var assetName = id.split('/').slice(-1)[0];
         
         var bandNames = assetInfo.metadata.bands.bandNames;
         
         var image = ee.Image();
             
-        // switch ( ee.data.getAsset(assetId, callback).type ) {
         switch ( assetInfo.type ) {
           
             case "Image":
-              
-                // print(ee.String(id).split('/').get(2))
-                // print('image:', assetName)
               
                 image = ee.Image(id);
                 
