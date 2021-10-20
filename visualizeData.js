@@ -1019,8 +1019,6 @@ function callback(assetInfo, failure) {
         
         var assetName = id.split('/').slice(-1)[0];
         
-        var image = ee.Image();
-            
         switch ( assetInfo.type ) {
           
             case "Image":
