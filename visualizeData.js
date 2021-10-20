@@ -401,11 +401,11 @@ var products = [
 //     }
 // )
 
-function callback(asset, failure) {
+function callback(assetInfo, failure) {
 
-    if (asset) {
+    if (assetInfo) {
             
-        var id = asset.id;
+        var id = assetInfo.id;
         
         // print(asset);
         
@@ -414,7 +414,7 @@ function callback(asset, failure) {
         var image = ee.Image();
             
         // switch ( ee.data.getAsset(assetId, callback).type ) {
-        switch ( asset.type ) {
+        switch ( assetInfo.type ) {
           
             case "Image":
               
@@ -429,40 +429,45 @@ function callback(asset, failure) {
                 
                 // ui.Map.Layer(image, {}, 'name')
               
-                return null
                 // break;
+                return 'Image'
         
             case "ImageCollection":
 
                 print('imageCollection:', assetName)
               
-                image = ee.ImageCollection(asset.id).mosaic()
+                image = ee.ImageCollection(assetInfo.id).mosaic()
                 
                 // Map.addLayer(image, {}, assetName, true, 1);
               
-                return null
                 // break;
+                return 'ImageCollection'
         
             default:
                 print('Não é uma Image ou ImageCollection');
         
         }
-
+        
     } else {
+      
         console.log('Asset não encontrado: ', assetName)
+    
     }
+
 }
 
 
 products.forEach(
 // var output = products.map(
-    function(asset) {
+    function(obj) {
       
         var foo = 'string'
       
-        // console.log(asset.assetId)
+        // print(obj.initiative)
         
-        ee.data.getAsset(asset.assetId, callback)
+        ee.data.getAsset(obj.assetId, callback)
+        // var output = ee.data.getAsset(obj.assetId)//, callback)
+        
         // return ee.data.getAsset(asset.assetId)//, callback)
         
         // Map.addLayer(ee.Image(obj.assetId), {}, obj.initiative, true, 1)
