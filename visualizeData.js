@@ -1011,54 +1011,7 @@ var products = [
 ]
 
 
-// function callback(assetInfo, failure) {
-
-//     if (assetInfo) {
-      
-//         var id = assetInfo.id;
-        
-//         var assetName = id.split('/').slice(-1)[0];
-        
-//         var image = ee.Image();
-            
-//         switch ( assetInfo.type ) {
-          
-//             case "Image":
-              
-//                 image = ee.Image(id);
-                
-//                 print(assetName, image.bandNames())
-                
-//                 Map.addLayer(image.select(firstBand), {}, assetName, true, 1);
-                
-//                 // break;
-//                 return 'Image'
-        
-//             case "ImageCollection":
-
-//                 print('imageCollection:', assetName)
-              
-//                 image = ee.ImageCollection(assetInfo.id).mosaic()
-                
-//                 Map.addLayer(image.select(firstBand), {}, assetName, true, 1);
-              
-//                 // break;
-//                 return 'ImageCollection'
-        
-//             default:
-//                 print('Não é uma Image ou ImageCollection');
-        
-//         }
-        
-//     } else {
-      
-//         console.log('Asset não encontrado: ', assetName)
-    
-//     }
-
-// }
-
-function addAssetToMap(assetInfo, bandName) {
+function callback(assetInfo, failure) {
 
     if (assetInfo) {
       
@@ -1076,7 +1029,7 @@ function addAssetToMap(assetInfo, bandName) {
                 
                 print(assetName, image.bandNames())
                 
-                Map.addLayer(image.select(bandName), {}, assetName, true, 1);
+                Map.addLayer(image.select(firstBand), {}, assetName, true, 1);
                 
                 // break;
                 return 'Image'
@@ -1087,7 +1040,7 @@ function addAssetToMap(assetInfo, bandName) {
               
                 image = ee.ImageCollection(assetInfo.id).mosaic()
                 
-                Map.addLayer(image.select(bandName), {}, assetName, true, 1);
+                Map.addLayer(image.select(firstBand), {}, assetName, true, 1);
               
                 // break;
                 return 'ImageCollection'
@@ -1105,17 +1058,61 @@ function addAssetToMap(assetInfo, bandName) {
 
 }
 
+// function addAssetToMap(assetInfo, bandName) {
+
+//     if (assetInfo) {
+      
+//         var id = assetInfo.id;
+        
+//         var assetName = id.split('/').slice(-1)[0];
+        
+//         var image = ee.Image();
+            
+//         switch ( assetInfo.type ) {
+          
+//             case "Image":
+              
+//                 image = ee.Image(id);
+                
+//                 print(assetName, /*image.bandNames()*/)
+                
+//                 Map.addLayer(image.select(bandName), {}, assetName, true, 1);
+                
+//                 // break;
+//                 return 'Image'
+        
+//             case "ImageCollection":
+
+//                 print('imageCollection:', assetName)
+              
+//                 image = ee.ImageCollection(assetInfo.id).mosaic()
+                
+//                 Map.addLayer(image.select(bandName), {}, assetName, true, 1);
+              
+//                 // break;
+//                 return 'ImageCollection'
+        
+//             default:
+//                 print('Não é uma Image ou ImageCollection');
+        
+//         }
+        
+//     } else {
+      
+//         console.log('Asset não encontrado: ', assetName)
+    
+//     }
+
+// }
+
 
 products.forEach(
     function(obj) {
       
-        var foo = 'foo string'
-        print('1', foo);
-      
-        // ee.data.getAsset(obj.assetId, callback)
-        var assetInfo = ee.data.getAsset(obj.assetId)
+        ee.data.getAsset(obj.assetId, callback)
+        // var assetInfo = ee.data.getAsset(obj.assetId)
         
-        addAssetToMap(assetInfo, obj.metadata.bands.bandNames[0])
+        // addAssetToMap(assetInfo, obj.metadata.bands.bandNames[0])
 
     })
 
