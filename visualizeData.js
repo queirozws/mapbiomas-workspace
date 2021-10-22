@@ -1,33 +1,34 @@
 /**
  * @Author: Wildson Queiroz
  * @Data: 18/10/2021
+ * @Name: visualizeData.js
  */
  
 var products = [
-    // {
-    //     initiative: 'brazil',
-    //     theme: 'classification',
-    //     collection: 6,
-    //     assetId: "projects/mapbiomas-workspace/COLECAO6/classsssificacao",
-    //     description: 'Dados de classificação da coleção 6 do Brasil',
-    //     metadata: {
-    //         imageId: 'none',
-    //         bands: {
-    //             suffix: 'classification',
-    //             bandNames: ['classification'],
-    //         },
-    //         years: [
-    //             "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993",
-    //             "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002",
-    //             "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011",
-    //             "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"
-    //           ],
-    //         biome: "all",
-    //         countries: ['brazil'],
-    //         type: 'mosaic-singleband',
-    //         version: '1'
-    //     },
-    // },
+    {
+        initiative: 'brazil',
+        theme: 'classification',
+        collection: 6,
+        assetId: "projects/mapbiomas-workspace/COLECAO6/classificacao",
+        description: 'Dados de classificação da coleção 6 do Brasil',
+        metadata: {
+            imageId: 'none',
+            bands: {
+                suffix: 'classification',
+                bandNames: ['classification'],
+            },
+            years: [
+                "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993",
+                "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002",
+                "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011",
+                "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"
+              ],
+            biome: "all",
+            countries: ['brazil'],
+            type: 'mosaic-singleband',
+            version: '1'
+        },
+    },
     {
         initiative: 'brazil',
         theme: 'integration',
@@ -574,7 +575,7 @@ function callback(assetInfo, failure) {
               
                 image = ee.Image(id);
                 
-                print(assetName, image.bandNames())
+                print(assetName, 'bandas: ', image.bandNames())
                 
                 Map.addLayer(image, {}, assetName, true, 1);
                 
@@ -605,23 +606,8 @@ function callback(assetInfo, failure) {
 
 }
 
-// function dict(obj, keys) {
-  
-//     keys.forEach(
-//         function (key) {
-          
-//             obj = ee.Dictionary(obj).get(key).getInfo();
-            
-//         });
-        
-    // print(obj)
-
-// }
-
 products.forEach(
     function(obj) {
-      
-        print(obj.assetId)
       
         ee.data.getAsset(obj.assetId, callback)
 
