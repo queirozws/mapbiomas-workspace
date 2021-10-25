@@ -137,7 +137,7 @@ var products = [
         description: 'Dados de integração da coleção 1 do Pampa',
         collection: 1,
         initiative: 'pampa',
-        theme: 'Integration',
+        theme: 'integration',
         type: 'transitions-multiband',
         countries: ['brazil', 'argentina', 'uruguay'],
         source: ["source1", "source2"],
@@ -227,7 +227,7 @@ var products = [
         description: '',
         collection: 2,
         initiative: 'chaco',
-        theme: 'Integration',
+        theme: 'integration',
         type: 'transitions-multiband',
         countries: [],
         source: ["source1", "source2"],
@@ -291,7 +291,7 @@ var products = [
         description: '',
         collection: 1,
         initiative: 'indonésia',
-        theme: 'Integration',
+        theme: 'integration',
         type: 'transitions-multiband',
         countries: ['indonésia'],
         source: ["source1", "source2"],
@@ -415,7 +415,7 @@ var products = [
         description: '',
         collection: 3,
         initiative: 'raisg',
-        theme: 'Integration',
+        theme: 'integration',
         type: 'transitions-multiband',
         countries: [],
         source: ["source1", "source2"],
@@ -446,7 +446,7 @@ var products = [
         description: '',
         collection: 3,
         initiative: 'raisg',
-        theme: 'Integration',
+        theme: 'integration',
         type: 'transitions-multiband',
         countries: [],
         source: ["source1", "source2"],
@@ -553,7 +553,7 @@ var products = [
         description: '',
         collection: 1,
         initiative: 'af-trinacional',
-        theme: 'Integration',
+        theme: 'integration',
         type: 'transitions-multiband',
         countries: [],
         source: ["source1", "source2"],
@@ -686,7 +686,7 @@ result.forEach(
         // function getDict(obj, key) {return ee.Dictionary(obj).get(key);
         
         // print(initiative, asset_id, years);
-        print(ee.String("Dados de ").cat(theme).cat(initiative).cat(" coleção ").cat(ee.Dictionary(metadata).get("version")));
+        print(ee.String(theme).cat(" data from collection ").cat(ee.Dictionary(obj).get("collection")).cat(" (").cat(initiative).cat(") "));
         
     })
     
