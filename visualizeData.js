@@ -686,7 +686,7 @@ result.forEach(
         // function getDict(obj, key) {return ee.Dictionary(obj).get(key);
         
         // print(initiative, asset_id, years);
-        print(ee.String(theme).cat(" data from collection ").cat(ee.Dictionary(obj).get("collection")).cat(" (").cat(initiative).cat(") "));
+        print(ee.String(theme).cat(" data from collection ").cat(ee.Dictionary(obj).get("collection")).cat(" (").cat(initiative).cat(")"));
         
     })
     
