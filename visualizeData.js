@@ -393,57 +393,67 @@ var products = [
 
 ]
 
-
-function callback(assetInfo, failure) {
-
-    if (assetInfo) {
-      
-        var id = assetInfo.id;
-        
-        var assetName = id.split('/').slice(-1)[0];
-        
-        var image = ee.Image(id);
-        
-        switch ( assetInfo.type ) {
-          
-            case "Image":
-              
-                image = ee.Image(id);
-                
-                print(assetName, 'bandas: ', image.bandNames())
-                
-                Map.addLayer(image, {}, assetName, true, 1);
-                
-                // break;
-                return 'Image'
-        
-            case "ImageCollection":
-
-                print('imageCollection:', assetName)
-              
-                image = ee.ImageCollection(assetInfo.id).mosaic()
-                
-                Map.addLayer(image, {}, assetName, true, 1);
-              
-                // break;
-                return 'ImageCollection'
-        
-            default:
-                print('Não é uma Image ou ImageCollection');
-        
-        }
-        
-    } else {
-      
-        console.log('Asset não encontrado: ', assetInfo)
+function getValues(obj) {
     
-    }
-
+    obj.metadata.year = ["ano1", "ano2"];
+    
+    
+    return obj
 }
 
-products.forEach(
-    function(obj) {
-      
-        ee.data.getAsset(obj.assetId, callback)
+var result = products.map(getValues);
+print(result);
 
-    })
+// function callback(assetInfo, failure) {
+
+//     if (assetInfo) {
+      
+//         var id = assetInfo.id;
+        
+//         var assetName = id.split('/').slice(-1)[0];
+        
+//         var image = ee.Image(id);
+        
+//         switch ( assetInfo.type ) {
+          
+//             case "Image":
+              
+//                 image = ee.Image(id);
+                
+//                 print(assetName, 'bandas: ', image.bandNames())
+                
+//                 Map.addLayer(image, {}, assetName, true, 1);
+                
+//                 // break;
+//                 return 'Image'
+        
+//             case "ImageCollection":
+
+//                 print('imageCollection:', assetName)
+              
+//                 image = ee.ImageCollection(assetInfo.id).mosaic()
+                
+//                 Map.addLayer(image, {}, assetName, true, 1);
+              
+//                 // break;
+//                 return 'ImageCollection'
+        
+//             default:
+//                 print('Não é uma Image ou ImageCollection');
+        
+//         }
+        
+//     } else {
+      
+//         console.log('Asset não encontrado: ', assetInfo)
+    
+//     }
+
+// }
+
+// products.forEach(
+//     function(obj) {
+      
+//         ee.data.getAsset(obj.assetId, callback)
+
+//     })
