@@ -429,7 +429,7 @@ result.forEach(
         
         // function getDict(obj, key) {return ee.Dictionary(obj).get(key);
         
-        print(initiative, asset_id, years);
+        print(initiative, asset_id, ee.String(years));
         // print();
         
     })
