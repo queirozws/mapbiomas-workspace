@@ -669,22 +669,28 @@ var result = products.map(getValues);
 result.forEach(
     function(obj) {
       
-        var metadata = ee.Dictionary(obj).get("metadata");
+        var asset_id = ee.Dictionary(obj).get("asset_id");
         
         var initiative = ee.Dictionary(obj).get("initiative");
         
-        var asset_id = ee.Dictionary(obj).get("asset_id");
+        var theme = ee.Dictionary(obj).get("theme");
+        
+        var metadata = ee.Dictionary(obj).get("metadata");
         
         var years = ee.Dictionary(metadata).get("years");
+        
+        var version = ee.Dictionary(obj).get("version");
+        
+        var key = ee.Dictionary(obj).get("description");
         
         // function getDict(obj, key) {return ee.Dictionary(obj).get(key);
         
         // print(initiative, asset_id, years);
-        // print();
+        print(ee.String("Dados de ").cat(theme).cat(initiative).cat(" coleção ").cat(ee.Dictionary(metadata).get("version")));
         
     })
     
-print(ee.List(result).getInfo());
+// print(ee.List(result).getInfo());
 
 
 // function callback(assetInfo, failure) {
