@@ -174,7 +174,6 @@ var products = [
             bands: {
                 prefix: 'transitions_',
             },
-            suffix: 'classification_',
             years: [
                 [ '2000' ], [ '2001' ],
                 [ '2002' ], [ '2003' ],
@@ -204,7 +203,6 @@ var products = [
             bands: {
                 prefix: 'transition_',
             },
-            suffix: 'classification_',
             years: [
                 [ '2000', '2001' ], [ '2001', '2002' ],
                 [ '2002', '2003' ], [ '2003', '2004' ],
@@ -237,7 +235,6 @@ var products = [
             bands: {
                 prefix: 'transitions_',
             },
-            suffix: 'classification_',
             years: [
                 [ '2000' ], [ '2001' ],
                 [ '2002' ], [ '2003' ],
@@ -267,7 +264,6 @@ var products = [
             bands: {
                 prefix: 'transition_',
             },
-            suffix: 'classification_',
             years:  [
                 [ '2000', '2001' ], [ '2001', '2002' ],
                 [ '2002', '2003' ], [ '2003', '2004' ],
@@ -303,7 +299,6 @@ var products = [
             bands: {
                 prefix: 'classification_',
             },
-            suffix: 'classification_',
             years:  [
                 [ '2000' ], [ '2001' ],
                 [ '2002' ], [ '2003' ],
@@ -333,7 +328,6 @@ var products = [
             bands: {
                 prefix: 'quality_',
             },
-            suffix: 'classification_',
             years:  [
                 [ '2000' ], [ '2001' ],
                 [ '2002' ], [ '2003' ],
