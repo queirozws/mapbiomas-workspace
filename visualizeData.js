@@ -401,7 +401,7 @@ function getValues(obj) {
     
     // var years = ee.Dictionary(metadata).get("years")
     
-    obj.metadata.year = bandNames;
+    obj.metadata.years = bandNames;
     
     
     return obj
