@@ -415,7 +415,7 @@ function getValues(obj) {
 }
 
 var result = products.map(getValues);
-print(result);
+print(result.getInfo());
 
 // function callback(assetInfo, failure) {
 
