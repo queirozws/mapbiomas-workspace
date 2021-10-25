@@ -106,7 +106,7 @@ var products = [
             bands: {
                 prefix: 'classification_',
             },
-            year: [
+            years: [
                 "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009",
                 "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"
             ],
@@ -128,7 +128,7 @@ var products = [
                 prefix: 'transitions_',
             },
             suffix: 'classification_',
-            year: "year",
+            years: "year",
             biome: ["biome"],
             version: '1',
         }
@@ -147,7 +147,7 @@ var products = [
                 prefix: 'transition_',
             },
             suffix: 'classification_',
-            year: "year",
+            years: "year",
             biome: ["biome"],
             version: '1',
         }
@@ -166,7 +166,7 @@ var products = [
                 prefix: 'transitions_',
             },
             suffix: 'classification_',
-            year: "year",
+            years: "year",
             biome: ["biome"],
             version: '1',
         }
@@ -185,7 +185,7 @@ var products = [
                 prefix: 'transition_',
             },
             suffix: 'classification_',
-            year: "year",
+            years: "year",
             biome: ["biome"],
             version: '1',
         }
@@ -204,7 +204,7 @@ var products = [
                 prefix: 'classification_',
             },
             suffix: 'classification_',
-            year: "year",
+            years: "year",
             biome: ["biome"],
             version: '1',
         }
@@ -223,7 +223,7 @@ var products = [
                 prefix: 'quality_',
             },
             suffix: 'classification_',
-            year: "year",
+            years: "year",
             biome: ["biome"],
             version: '1',
         }
@@ -241,7 +241,7 @@ var products = [
             bands: {
                 prefix: 'transition_',
             },
-            year: "year",
+            years: "year",
             biome: ["biome"],
             version: '1',
         }
@@ -259,7 +259,7 @@ var products = [
             bands: {
                 prefix: 'quality_',
             },
-            year: "year",
+            years: "year",
             biome: ["biome"],
             version: '1',
         }
@@ -277,7 +277,7 @@ var products = [
             bands: {
                 prefix: 'classification_',
             },
-            year: "year",
+            years: "year",
             biome: ["biome"],
             version: '1',
         }
@@ -295,7 +295,7 @@ var products = [
             bands: {
                 prefix: 'classification_',
             },
-            year: "year",
+            years: "year",
             biome: ["biome"],
             version: '1',
         }
@@ -313,7 +313,7 @@ var products = [
             bands: {
                 prefix: 'transition_',
             },
-            year: "year",
+            years: "year",
             biome: ["biome"],
             version: '1',
         }
@@ -331,7 +331,7 @@ var products = [
             bands: {
                 prefix: 'transition_',
             },
-            year: "year",
+            years: "year",
             biome: ["biome"],
             version: '1',
         }
@@ -349,7 +349,7 @@ var products = [
             bands: {
                 prefix: 'transition_',
             },
-            year: "year",
+            years: "year",
             biome: ["biome"],
             version: '1',
         }
@@ -367,7 +367,7 @@ var products = [
             bands: {
                 prefix: 'transition_',
             },
-            year: "year",
+            years: "year",
             biome: ["biome"],
             version: '1',
         }
@@ -385,7 +385,7 @@ var products = [
             bands: {
                 prefix: 'transition_',
             },
-            year: "year",
+            years: "year",
             biome: ["biome"],
             version: '1',
         }
@@ -395,7 +395,13 @@ var products = [
 
 function getValues(obj) {
     
-    obj.metadata.year = ["ano1", "ano2"];
+    var asset_id = ee.Dictionary(obj).get("asset_id");
+    
+    var bandNames = ee.Image(asset_id).bandNames().getInfo();
+    
+    // var years = ee.Dictionary(metadata).get("years")
+    
+    obj.metadata.year = bandNames;
     
     
     return obj
