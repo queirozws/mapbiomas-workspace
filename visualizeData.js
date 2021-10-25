@@ -683,10 +683,12 @@ result.forEach(
         
         var key = ee.Dictionary(obj).get("description");
         
+        var autoDescription = ee.String(theme).cat(" data from collection ").cat(ee.Dictionary(obj).get("collection")).cat(" (").cat(initiative).cat(")");
+        
         // function getDict(obj, key) {return ee.Dictionary(obj).get(key);
         
         // print(initiative, asset_id, years);
-        print(ee.String(theme).cat(" data from collection ").cat(ee.Dictionary(obj).get("collection")).cat(" (").cat(initiative).cat(")"));
+        print(key);
         
     })
     
