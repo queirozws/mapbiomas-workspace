@@ -13,6 +13,7 @@ var products = [
         theme: 'classification',
         type: 'mosaic-singleband',
         countries: ['brazil'],
+        source: ["source1", "source2"],
         metadata: {
             bands: {
                 prefix: 'classification',
@@ -25,7 +26,6 @@ var products = [
               ],
             biome: ["biome"],
             version: '1',
-            source: ["source1", "source2"]
         }
     },
     {
@@ -36,6 +36,7 @@ var products = [
         theme: 'integration',
         type: 'transitions-multiband', // | "classification-singleband" | "mosaic-multiband",
         countries: ['brazil'],
+        source: ["source1", "source2"],
         metadata: {
             bands: {
                 prefix: 'classification_',
@@ -48,7 +49,6 @@ var products = [
               ],
             biome: ["biome"],
             version: '1',
-            source: ["source1", "source2"]
         }
     },
     {
@@ -59,6 +59,7 @@ var products = [
         theme: 'transitions',
         type: 'transitions-multiband',
         countries: ['brazil'],
+        source: ["source1", "source2"],
         metadata: {
             bands: {
                 prefix: 'transitions_',
@@ -66,7 +67,6 @@ var products = [
             years: [ ],
             biome: ["biome"],
             version: '1',
-            source: ["source1", "source2"]
         }
     },
     {
@@ -77,6 +77,7 @@ var products = [
         theme: 'transitions',
         type: 'transitions-multiband',
         countries: ['brazil', 'argentina', 'uruguay'],
+        source: ["source1", "source2"],
         metadata: {
             bands: {
                 prefix: 'transition_',
@@ -90,7 +91,6 @@ var products = [
               ],
             biome: ["biome"],
             version: '1',
-            source: ["source1", "source2"]
         }
     },
     {
@@ -101,6 +101,7 @@ var products = [
         theme: 'Integration',
         type: 'transitions-multiband',
         countries: ['brazil', 'argentina', 'uruguay'],
+        source: ["source1", "source2"],
         metadata: {
             bands: {
                 prefix: 'classification_',
@@ -111,7 +112,6 @@ var products = [
             ],
             biome: ["biome"],
             version: '1',
-            source: ["source1", "source2"]
         }
     },
     {
@@ -122,6 +122,7 @@ var products = [
         theme: 'quality',
         type: 'transitions-multiband',
         countries: ['brazil', 'argentina', 'uruguay'],
+        source: ["source1", "source2"],
         metadata: {
             bands: {
                 prefix: 'transitions_',
@@ -130,7 +131,6 @@ var products = [
             year: "year",
             biome: ["biome"],
             version: '1',
-            source: ["source1", "source2"]
         }
     },
     {
@@ -141,6 +141,7 @@ var products = [
         theme: 'transitions',
         type: 'transitions-multiband',
         countries: [],
+        source: ["source1", "source2"],
         metadata: {
             bands: {
                 prefix: 'transition_',
@@ -149,7 +150,6 @@ var products = [
             year: "year",
             biome: ["biome"],
             version: '1',
-            source: ["source1", "source2"]
         }
     },
     {
@@ -160,6 +160,7 @@ var products = [
         theme: 'Integration',
         type: 'transitions-multiband',
         countries: [],
+        source: ["source1", "source2"],
         metadata: {
             bands: {
                 prefix: 'transitions_',
@@ -168,7 +169,6 @@ var products = [
             year: "year",
             biome: ["biome"],
             version: '1',
-            source: ["source1", "source2"]
         }
     },
     {
@@ -179,6 +179,7 @@ var products = [
         theme: 'transitions',
         type: 'transitions-multiband',
         countries: ['indonésia'],
+        source: ["source1", "source2"],
         metadata: {
             bands: {
                 prefix: 'transition_',
@@ -187,7 +188,6 @@ var products = [
             year: "year",
             biome: ["biome"],
             version: '1',
-            source: ["source1", "source2"]
         }
     },
     {
@@ -198,6 +198,7 @@ var products = [
         theme: 'Integration',
         type: 'transitions-multiband',
         countries: ['indonésia'],
+        source: ["source1", "source2"],
         metadata: {
             bands: {
                 prefix: 'classification_',
@@ -206,7 +207,6 @@ var products = [
             year: "year",
             biome: ["biome"],
             version: '1',
-            source: ["source1", "source2"]
         }
     },
     {
@@ -217,6 +217,7 @@ var products = [
         theme: 'quality',
         type: 'transitions-multiband',
         countries: ['indonésia'],
+        source: ["source1", "source2"],
         metadata: {
             bands: {
                 prefix: 'quality_',
@@ -225,7 +226,6 @@ var products = [
             year: "year",
             biome: ["biome"],
             version: '1',
-            source: ["source1", "source2"]
         }
     },
     {
@@ -236,6 +236,7 @@ var products = [
         theme: 'transitions',
         type: 'transitions-multiband',
         countries: ['indonésia'],
+        source: ["source1", "source2"],
         metadata: {
             bands: {
                 prefix: 'transition_',
@@ -243,7 +244,6 @@ var products = [
             year: "year",
             biome: ["biome"],
             version: '1',
-            source: ["source1", "source2"]
         }
     },
     {
@@ -254,6 +254,7 @@ var products = [
         theme: 'quality',
         type: 'transitions-multiband',
         countries: [],
+        source: ["source1", "source2"],
         metadata: {
             bands: {
                 prefix: 'quality_',
@@ -261,7 +262,6 @@ var products = [
             year: "year",
             biome: ["biome"],
             version: '1',
-            source: ["source1", "source2"]
         }
     },
     {
@@ -272,6 +272,7 @@ var products = [
         theme: 'Integration',
         type: 'transitions-multiband',
         countries: [],
+        source: ["source1", "source2"],
         metadata: {
             bands: {
                 prefix: 'classification_',
@@ -279,7 +280,6 @@ var products = [
             year: "year",
             biome: ["biome"],
             version: '1',
-            source: ["source1", "source2"]
         }
     },
     {
@@ -290,6 +290,7 @@ var products = [
         theme: 'Integration',
         type: 'transitions-multiband',
         countries: [],
+        source: ["source1", "source2"],
         metadata: {
             bands: {
                 prefix: 'classification_',
@@ -297,7 +298,6 @@ var products = [
             year: "year",
             biome: ["biome"],
             version: '1',
-            source: ["source1", "source2"]
         }
     },
     {
@@ -308,6 +308,7 @@ var products = [
         theme: 'transitions',
         type: 'transitions-multiband',
         countries: [],
+        source: ["source1", "source2"],
         metadata: {
             bands: {
                 prefix: 'transition_',
@@ -315,7 +316,6 @@ var products = [
             year: "year",
             biome: ["biome"],
             version: '1',
-            source: ["source1", "source2"]
         }
     },
     {
@@ -326,6 +326,7 @@ var products = [
         theme: 'transitions',
         type: 'transitions-multiband',
         countries: [],
+        source: ["source1", "source2"],
         metadata: {
             bands: {
                 prefix: 'transition_',
@@ -333,7 +334,6 @@ var products = [
             year: "year",
             biome: ["biome"],
             version: '1',
-            source: ["source1", "source2"]
         }
     },
     {
@@ -344,6 +344,7 @@ var products = [
         theme: 'Integration',
         type: 'transitions-multiband',
         countries: [],
+        source: ["source1", "source2"],
         metadata: {
             bands: {
                 prefix: 'transition_',
@@ -351,7 +352,6 @@ var products = [
             year: "year",
             biome: ["biome"],
             version: '1',
-            source: ["source1", "source2"]
         }
     },
     {
@@ -362,6 +362,7 @@ var products = [
         theme: 'quality',
         type: 'transitions-multiband',
         countries: [],
+        source: ["source1", "source2"],
         metadata: {
             bands: {
                 prefix: 'transition_',
@@ -369,7 +370,6 @@ var products = [
             year: "year",
             biome: ["biome"],
             version: '1',
-            source: ["source1", "source2"]
         }
     },
     {
@@ -380,6 +380,7 @@ var products = [
         theme: 'transitions',
         type: 'transitions-multiband',
         countries: [],
+        source: ["source1", "source2"],
         metadata: {
             bands: {
                 prefix: 'transition_',
@@ -387,7 +388,6 @@ var products = [
             year: "year",
             biome: ["biome"],
             version: '1',
-            source: ["source1", "source2"]
         }
     },
 
