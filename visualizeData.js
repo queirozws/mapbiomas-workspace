@@ -399,6 +399,13 @@ function getValues(obj) {
     
     var bandNames = ee.Image(asset_id).bandNames().getInfo(); // >> String >> Image >> List
     
+    bandNames = bandNames.map(
+        function(bandName) {
+
+            return ee.String(bandName).replace("classification_", "").split("_");
+
+        })
+    
     // var years = ee.Dictionary(metadata).get("years")
     
     obj.metadata.years = bandNames;
