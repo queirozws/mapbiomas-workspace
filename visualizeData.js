@@ -411,11 +411,29 @@ function getValues(obj) {
     obj.metadata.years = bandNames;
     
     
-    return obj
+    return ee.Dictionary(obj)
 }
 
 var result = products.map(getValues);
-print(ee.Dictionary(result).getInfo());
+
+result.forEach(
+    function(obj) {
+      
+        var metadata = ee.Dictionary(obj).get("metadata");
+        
+        var initiative = ee.Dictionary(obj).get("initiative");
+        
+        var asset_id = ee.Dictionary(obj).get("asset_id");
+        
+        var years = ee.Dictionary(metadata).get("years");
+        
+        // function getDict(obj, key) {return ee.Dictionary(obj).get(key);
+        
+        print(initiative, asset_id, years);
+        // print();
+        
+    })
+
 
 // function callback(assetInfo, failure) {
 
