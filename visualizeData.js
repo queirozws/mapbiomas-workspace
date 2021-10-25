@@ -415,7 +415,7 @@ function getValues(obj) {
 }
 
 var result = products.map(getValues);
-print(result.getInfo());
+print(ee.Dictionary(result).getInfo());
 
 // function callback(assetInfo, failure) {
 
