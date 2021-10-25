@@ -395,7 +395,7 @@ var products = [
 
 function getValues(obj) {
     
-    var asset_id = ee.Dictionary(obj).get("asset_id"); // >> Object >> Dictionary >> String
+    var asset_id = obj.asset_id; // >> Object >> Dictionary >> String
     
     var bandNames = ee.Image(asset_id).bandNames().getInfo(); // >> String >> Image >> List
     
