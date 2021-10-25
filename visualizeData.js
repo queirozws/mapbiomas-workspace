@@ -395,9 +395,9 @@ var products = [
 
 function getValues(obj) {
     
-    var asset_id = ee.Dictionary(obj).get("asset_id");
+    var asset_id = ee.Dictionary(obj).get("asset_id"); // >> Object >> Dictionary >> String
     
-    var bandNames = ee.Image(asset_id).bandNames().getInfo();
+    var bandNames = ee.Image(asset_id).bandNames().getInfo(); // >> String >> Image >> List
     
     // var years = ee.Dictionary(metadata).get("years")
     
