@@ -36,7 +36,7 @@ var products = [
         description: 'integration data from collection 6 (brazil)',
         type: 'transitions-multiband', // | "classification-singleband" | "mosaic-multiband",
         countries: ['brazil'],
-        source: ["source1", "source2"],
+        source: ["source"],
         metadata: {
             bands: {
                 prefix: 'classification_',
@@ -67,7 +67,7 @@ var products = [
         description: 'transitions data from collection 6 (brazil)',
         type: 'transitions-multiband',
         countries: ['brazil'],
-        source: ["source1", "source2"],
+        source: ["source"],
         metadata: {
             bands: {
                 prefix: 'transitions_',
@@ -106,7 +106,7 @@ var products = [
         description: 'transitions data from collection 1 (pampa)',
         type: 'transitions-multiband',
         countries: ['brazil', 'argentina', 'uruguay'],
-        source: ["source1", "source2"],
+        source: ["source"],
         metadata: {
             bands: {
                 prefix: 'transition_',
@@ -140,7 +140,7 @@ var products = [
         description: "integration data from collection 1 (pampa)",
         type: 'transitions-multiband',
         countries: ['brazil', 'argentina', 'uruguay'],
-        source: ["source1", "source2"],
+        source: ["source"],
         metadata: {
             bands: {
                 prefix: 'classification_',
@@ -169,7 +169,7 @@ var products = [
         description: 'quality data from collection 1 (pampa)',
         type: 'transitions-multiband',
         countries: ['brazil', 'argentina', 'uruguay'],
-        source: ["source1", "source2"],
+        source: ["source"],
         metadata: {
             bands: {
                 prefix: 'transitions_',
@@ -197,8 +197,8 @@ var products = [
         initiative: 'chaco',
         description: 'transitions data from collection 2 (chaco)',
         type: 'transitions-multiband',
-        countries: [],
-        source: ["source1", "source2"],
+        countries: ["argentina", "bolivia", "paraguay"],
+        source: ["source"],
         metadata: {
             bands: {
                 prefix: 'transition_',
@@ -229,8 +229,8 @@ var products = [
         initiative: 'chaco',
         description: 'integration data from collection 2 (chaco)',
         type: 'transitions-multiband',
-        countries: [],
-        source: ["source1", "source2"],
+        countries: ["argentina", "bolivia", "paraguay"],
+        source: ["source"],
         metadata: {
             bands: {
                 prefix: 'transitions_',
@@ -259,7 +259,7 @@ var products = [
         description: 'transitions data from collection 1 (indonésia)',
         type: 'transitions-multiband',
         countries: ['indonésia'],
-        source: ["source1", "source2"],
+        source: ["source"],
         metadata: {
             bands: {
                 prefix: 'transition_',
@@ -294,7 +294,7 @@ var products = [
         description: 'integration data from collection 1 (indonésia)',
         type: 'transitions-multiband',
         countries: ['indonésia'],
-        source: ["source1", "source2"],
+        source: ["source"],
         metadata: {
             bands: {
                 prefix: 'classification_',
@@ -323,7 +323,7 @@ var products = [
         description: 'quality data from collection 1 (indonésia)',
         type: 'transitions-multiband',
         countries: ['indonésia'],
-        source: ["source1", "source2"],
+        source: ["source"],
         metadata: {
             bands: {
                 prefix: 'quality_',
@@ -352,7 +352,7 @@ var products = [
         description: 'transitions data from collection 1 (indonésia)',
         type: 'transitions-multiband',
         countries: ['indonésia'],
-        source: ["source1", "source2"],
+        source: ["source"],
         metadata: {
             bands: {
                 prefix: 'transition_',
@@ -386,8 +386,8 @@ var products = [
         initiative: 'raisg',
         description: 'quality data from collection 3 (raisg)',
         type: 'transitions-multiband',
-        countries: [],
-        source: ["source1", "source2"],
+        countries: ["bolivia", "brazil", "colombia", "ecuador", "french guiana", "guyana", "peru", "suriname", "venezuela"],
+        source: ["source"],
         metadata: {
             bands: {
                 prefix: 'quality_',
@@ -417,8 +417,8 @@ var products = [
         initiative: 'raisg',
         description: 'integration data from collection 3 (raisg)',
         type: 'transitions-multiband',
-        countries: [],
-        source: ["source1", "source2"],
+        countries: ["bolivia", "brazil", "colombia", "ecuador", "french guiana", "guyana", "peru", "suriname", "venezuela"],
+        source: ["source"],
         metadata: {
             bands: {
                 prefix: 'classification_',
@@ -448,8 +448,8 @@ var products = [
         initiative: 'raisg',
         description: 'integration data from collection 3 (raisg)',
         type: 'transitions-multiband',
-        countries: [],
-        source: ["source1", "source2"],
+        countries: ["bolivia", "brazil", "colombia", "ecuador", "french guiana", "guyana", "peru", "suriname", "venezuela"],
+        source: ["source"],
         metadata: {
             bands: {
                 prefix: 'classification_',
@@ -479,8 +479,8 @@ var products = [
         initiative: 'raisg',
         description: 'transitions data from collection 3 (raisg)',
         type: 'transitions-multiband',
-        countries: [],
-        source: ["source1", "source2"],
+        countries: ["bolivia", "brazil", "colombia", "ecuador", "french guiana", "guyana", "peru", "suriname", "venezuela"],
+        source: ["source"],
         metadata: {
             bands: {
                 prefix: 'transition_',
@@ -517,8 +517,8 @@ var products = [
         initiative: 'raisg',
         description: 'transitions data from collection 3 (raisg)',
         type: 'transitions-multiband',
-        countries: [],
-        source: ["source1", "source2"],
+        countries: ["bolivia", "brazil", "colombia", "ecuador", "french guiana", "guyana", "peru", "suriname", "venezuela"],
+        source: ["source"],
         metadata: {
             bands: {
                 prefix: 'transition_',
@@ -555,8 +555,18 @@ var products = [
         initiative: 'af-trinacional',
         description: 'integration data from collection 1 (af-trinacional)',
         type: 'transitions-multiband',
-        countries: [],
-        source: ["source1", "source2"],
+        countries: ["argentina", "brazil", "paraguay"],
+        source: [
+            "Instituto de Biología Subtropical de CONICET",
+            "Facultad de Agronomía de la UBA",
+            "Facultad de Ciencias Forestales",
+            "UNAM",
+            "Estación Experimental INTA Corrientes",
+            "ONG Fundación Vida Silvestre Argentina",
+            "ArcPlan",
+            "SOS Mata Atlântica",
+            "ONG WWF Paraguay"
+        ],
         metadata: {
             bands: {
                 prefix: 'transition_',
@@ -584,8 +594,18 @@ var products = [
         initiative: 'af-trinacional',
         description: 'quality data from collection 1 (af-trinacional)',
         type: 'transitions-multiband',
-        countries: [],
-        source: ["source1", "source2"],
+        countries: ["argentina", "brazil", "paraguay"],
+        source: [
+            "Instituto de Biología Subtropical de CONICET",
+            "Facultad de Agronomía de la UBA",
+            "Facultad de Ciencias Forestales",
+            "UNAM",
+            "Estación Experimental INTA Corrientes",
+            "ONG Fundación Vida Silvestre Argentina",
+            "ArcPlan",
+            "SOS Mata Atlântica",
+            "ONG WWF Paraguay"
+        ],
         metadata: {
             bands: {
                 prefix: 'transition_',
@@ -613,8 +633,18 @@ var products = [
         initiative: 'af-trinacional',
         description: 'transitions data from collection 1 (af-trinacional)',
         type: 'transitions-multiband',
-        countries: [],
-        source: ["source1", "source2"],
+        countries: ["argentina", "brazil", "paraguay"],
+        source: [
+            "Instituto de Biología Subtropical de CONICET",
+            "Facultad de Agronomía de la UBA",
+            "Facultad de Ciencias Forestales",
+            "UNAM",
+            "Estación Experimental INTA Corrientes",
+            "ONG Fundación Vida Silvestre Argentina",
+            "ArcPlan",
+            "SOS Mata Atlântica",
+            "ONG WWF Paraguay"
+        ],
         metadata: {
             bands: {
                 prefix: 'transition_',
