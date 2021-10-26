@@ -673,108 +673,62 @@ var products = [
 
 ]
 
-function getValues(obj) {
-    
-    var asset_id = obj.asset_id; // >> Object >> Dictionary >> String
-    
-    var bandNames = ee.Image(asset_id).bandNames().getInfo(); // >> String >> Image >> List
-    
-    bandNames = bandNames.map(
-        function(bandName) {
 
-            return ee.String(bandName).replace("([a-z]*)_", "").split("_");
+function callback(assetInfo, failure) {
 
-        })
+    if (assetInfo) {
+      
+        var id = assetInfo.id;
+        
+        var assetName = id.split('/').slice(-1)[0];
+        
+        var image = ee.Image(id);
+        
+        switch ( assetInfo.type ) {
+          
+            case "Image":
+              
+                image = ee.Image(id);
+                
+                print(assetName, 'bandas: ', image.bandNames())
+                
+                Map.addLayer(image, {}, assetName, true, 1);
+                
+                // break;
+                return 'Image'
+        
+            case "ImageCollection":
+
+                print('imageCollection:', assetName)
+              
+                image = ee.ImageCollection(assetInfo.id).mosaic()
+                
+                Map.addLayer(image, {}, assetName, true, 1);
+              
+                // break;
+                return 'ImageCollection'
+        
+            default:
+                print('Não é uma Image ou ImageCollection');
+        
+        }
+        
+    } else {
+      
+        console.log('Asset não encontrado: ', assetInfo)
     
-    // var years = ee.Dictionary(metadata).get("years")
-    
-    obj.metadata.years = bandNames;
-    
-    
-    return ee.Dictionary(obj)
+    }
+
 }
 
-var result = products.map(getValues);
-
-result.forEach(
+products.forEach(
     function(obj) {
-      
-        var asset_id = ee.Dictionary(obj).get("asset_id");
-        
-        var initiative = ee.Dictionary(obj).get("initiative");
-        
-        var theme = ee.Dictionary(obj).get("theme");
-        
-        var metadata = ee.Dictionary(obj).get("metadata");
-        
-        var years = ee.Dictionary(metadata).get("years");
-        
-        var version = ee.Dictionary(obj).get("version");
-        
-        var key = ee.Dictionary(obj).get("description");
-        
-        var autoDescription = ee.String(theme).cat(" data from collection ").cat(ee.Dictionary(obj).get("collection")).cat(" (").cat(initiative).cat(")");
-        
-        // function getDict(obj, key) {return ee.Dictionary(obj).get(key);
-        
-        // print(initiative, asset_id, years);
-        print(key);
-        
-    })
-    
-// print(ee.List(result).getInfo());
+        ee.data.getAsset(obj.assetId, callback);
+    });
 
 
-// function callback(assetInfo, failure) {
 
-//     if (assetInfo) {
-      
-//         var id = assetInfo.id;
-        
-//         var assetName = id.split('/').slice(-1)[0];
-        
-//         var image = ee.Image(id);
-        
-//         switch ( assetInfo.type ) {
-          
-//             case "Image":
-              
-//                 image = ee.Image(id);
-                
-//                 print(assetName, 'bandas: ', image.bandNames())
-                
-//                 Map.addLayer(image, {}, assetName, true, 1);
-                
-//                 // break;
-//                 return 'Image'
-        
-//             case "ImageCollection":
 
-//                 print('imageCollection:', assetName)
-              
-//                 image = ee.ImageCollection(assetInfo.id).mosaic()
-                
-//                 Map.addLayer(image, {}, assetName, true, 1);
-              
-//                 // break;
-//                 return 'ImageCollection'
-        
-//             default:
-//                 print('Não é uma Image ou ImageCollection');
-        
-//         }
-        
-//     } else {
-      
-//         console.log('Asset não encontrado: ', assetInfo)
-    
-//     }
 
-// }
 
-// products.forEach(
-//     function(obj) {
-      
-//         ee.data.getAsset(obj.assetId, callback)
-
-//     })
+//xxxxxxxxx
