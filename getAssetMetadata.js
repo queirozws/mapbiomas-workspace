@@ -718,13 +718,14 @@ function callback(assetInfo, failure) {
         console.log('Asset não encontrado: ', assetInfo)
     
     }
-
+    
 }
 
 products.forEach(
     function(obj) {
-        ee.data.getAsset(obj.assetId, callback);
-    });
+        ee.data.getAsset(obj.asset_id, callback);
+    }
+);
 
 
 
