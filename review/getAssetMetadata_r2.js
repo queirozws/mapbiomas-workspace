@@ -2,6 +2,8 @@
  * @Author: Wildson Queiroz
  * @Data: 18/10/2021
  * @Name: visualizeData.js
+ * @Link: https://code.earthengine.google.com/0cfd7c318187ff260548df53158a33aa
+ * 
  */
 
 var products = [
