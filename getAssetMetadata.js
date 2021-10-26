@@ -4,7 +4,7 @@
  * @Name: visualizeData.js
  */
  
-var products = [
+ var products = [
     // {
     //     asset_id: "projects/mapbiomas-workspace/COLECAO6/classificacao",
     //     description: 'Dados de classificação da coleção 6 do Brasil',
