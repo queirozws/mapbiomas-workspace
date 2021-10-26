@@ -673,8 +673,8 @@
 
 ]
 
-function getBands(obj, year) {
-    // return obj.metadata.bands.prefix + this.types[]
+function getBands(obj) {
+    return this.suffix + obj.metadata.years
 }
 
 function callback(obj){
@@ -683,31 +683,23 @@ function callback(obj){
 
         "classification-singleband": {
             suffix: "classification_",
-            getBands: function() {
-
-            }
+            func: getBands
         },
         "transition-singleband":{
-            suffix: "",
-            getBands: function (year) {
-                return obj.metadata.prefix
-            }
+            suffix: "transition_",
+            func: getBands
         },
         "classification-multiband": {
             suffix: "",
-            getBands: function() {
-
-            }
+            func: getBands
         },
         "transition-multiband": {
             suffix: "",
-            getBands: function() {
-
-            }
+            func: getBands
         },
         "collection-classification-multiband": {
             suffix: "_{year}",
-            getBands: function (year) {
+            func: function (year) {
                 return obj.prefix + types[obj.type].sufix
                     .replace("{year}", year)// "classification_2020"
             }
@@ -715,7 +707,7 @@ function callback(obj){
         },
         "collection-transitions-multiband": {
             suffix: "_{year1}_{year2}",
-            getBands: function (years) {
+            func: function (years) {
                 return obj.prefix + types[obj.type].sufix
                     .replace("{year1}", years[0])
                     .replace("{year2}", years[1])// "transition_2019_2020"
@@ -723,16 +715,20 @@ function callback(obj){
         }
     }
 
-    var bandName = obj.metadata.bands.prefix + obj.years[i];
-    console.log(bandName);
+    var bandName = obj.metadata.bands.prefix + obj.metadata.years[0];
+    print(bandName);
 
-    // var image = ee.Image(obj.asset_id).select(obj.metadata.bands.prefix + obj.years[i])
+    var image = ee.Image(obj.asset_id).select(bandName)
 
-    // Map.addLayer()
+    var uiMapLayer = callback(obj);
+    
+    Map.addLayer(uiMapLayer);
+    
+    Map.addLayer()
 
-    var name = obj.initiative + obj.collection + obj.theme;
+    // var name = obj.initiative + obj.collection + obj.theme;
 
-    return ui.Map.Layer(eeObject, {}, name, true, 1);
+    // return ui.Map.Layer(eeObject, {}, name, true, 1);
 
 }
 
@@ -785,15 +781,7 @@ function callback(obj){
     
 // }
 
-products.forEach(
-    function(obj) {
-        // ee.data.getAsset(obj.asset_id, callback);
-
-        var uiMapLayer = callback(obj);
-
-        Map.addLayer(uiMapLayer);
-    }
-);
+products.forEach(callback);
 
 
 
