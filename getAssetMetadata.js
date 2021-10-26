@@ -673,8 +673,12 @@
 
 ]
 
-function getBands(obj) {
-    return this.suffix + obj.metadata.years
+function getClassificationBands(obj, i) {
+    return this.suffix + obj.metadata.years[i]
+}
+
+function getTransitionBands(obj, i) {
+    return this.suffix + obj.metadata.years[i]
 }
 
 function callback(obj){
@@ -682,23 +686,23 @@ function callback(obj){
     var types = {
 
         "classification-singleband": {
-            suffix: "classification_",
-            func: getBands
+            prefix: "classification_",
+            func: getClassificationBands
         },
         "transition-singleband":{
-            suffix: "transition_",
-            func: getBands
+            prefix: "transition_",
+            func: getTransitionBands
         },
         "classification-multiband": {
-            suffix: "",
-            func: getBands
+            prefix: "",
+            func: getClassificationBands
         },
         "transition-multiband": {
-            suffix: "",
+            prefix: "",
             func: getBands
         },
         "collection-classification-multiband": {
-            suffix: "_{year}",
+            prefix: "_{year}",
             func: function (year) {
                 return obj.prefix + types[obj.type].sufix
                     .replace("{year}", year)// "classification_2020"
@@ -706,7 +710,7 @@ function callback(obj){
 
         },
         "collection-transitions-multiband": {
-            suffix: "_{year1}_{year2}",
+            prefix: "_{year1}_{year2}",
             func: function (years) {
                 return obj.prefix + types[obj.type].sufix
                     .replace("{year1}", years[0])
@@ -720,11 +724,11 @@ function callback(obj){
 
     var image = ee.Image(obj.asset_id).select(bandName)
 
-    var uiMapLayer = callback(obj);
+    // var uiMapLayer = callback(obj);
     
-    Map.addLayer(uiMapLayer);
+    // Map.addLayer(uiMapLayer);
     
-    Map.addLayer()
+    // Map.addLayer()
 
     // var name = obj.initiative + obj.collection + obj.theme;
 
@@ -786,5 +790,4 @@ products.forEach(callback);
 
 
 
-
-
+// insert widgets to control
