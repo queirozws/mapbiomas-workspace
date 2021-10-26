@@ -681,6 +681,8 @@ function getTransitionBands(obj, i) {
     return this.suffix + obj.metadata.years[i]
 }
 
+
+// retornar a image a ser exibida
 function callback(obj){
 
     var types = {
@@ -733,8 +735,24 @@ function callback(obj){
     // var name = obj.initiative + obj.collection + obj.theme;
 
     // return ui.Map.Layer(eeObject, {}, name, true, 1);
+    
+    // usar image.visualise()
+    
+    return null // retornar imagem (banda selecionada) colorida
 
 }
+
+// função para receber o resultado da callback
+
+
+function(obj, callback) {
+    
+    var image = callback(obj);
+    
+    Map.addlayer(image);
+}
+
+ 
 
 
 
