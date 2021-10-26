@@ -11,7 +11,7 @@ var products = [
     //     collection: 6,
     //     initiative: 'brazil',
     //     theme: 'classification',
-    //     type: 'mosaic-singleband',
+    //     type: 'mosaic-singleband', // | "classification-singleband" | "mosaic-multiband",
     //     countries: ['brazil'],
     //     source: ["source1", "source2"],
     //     metadata: {
@@ -29,12 +29,12 @@ var products = [
     //     }
     // },
     {
-        asset_id: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_integration_v1",
-        theme: 'integration',
-        collection: 6,
         initiative: 'brazil',
+        collection: 6,
+        theme: 'integration',
+        asset_id: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_integration_v1",
         description: 'integration data from collection 6 (brazil)',
-        type: 'transitions-multiband', // | "classification-singleband" | "mosaic-multiband",
+        type: 'classification-multiband',
         countries: ['brazil'],
         source: ["source"],
         metadata: {
@@ -60,17 +60,17 @@ var products = [
         }
     },
     {
-        asset_id: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_transitions_v1",
-        theme: 'transition',
-        collection: 6,
         initiative: 'brazil',
+        collection: 6,
+        theme: 'transition',
+        asset_id: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_transitions_v1",
         description: 'transitions data from collection 6 (brazil)',
-        type: 'transitions-multiband',
+        type: 'transition-multiband',
         countries: ['brazil'],
         source: ["source"],
         metadata: {
             bands: {
-                prefix: 'transitions_',
+                prefix: 'transition_',
             },
             years: [
                 [ '1985', '1986' ], [ '1986', '1987' ], [ '1987', '1988' ],
@@ -99,12 +99,12 @@ var products = [
         }
     },
     {
-        asset_id: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_transitions_v1",
-        theme: 'transition',
-        collection: 1,
         initiative: 'pampa',
+        collection: 1,
+        theme: 'transition',
+        asset_id: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_transitions_v1",
         description: 'transitions data from collection 1 (pampa)',
-        type: 'transitions-multiband',
+        type: 'transition-multiband',
         countries: ['brazil', 'argentina', 'uruguay'],
         source: ["source"],
         metadata: {
@@ -133,12 +133,12 @@ var products = [
         }
     },
     {
-        asset_id: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_integration_v1",
-        theme: 'integration',
-        collection: 1,
         initiative: 'pampa',
+        collection: 1,
+        theme: 'integration',
+        asset_id: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_integration_v1",
         description: "integration data from collection 1 (pampa)",
-        type: 'transitions-multiband',
+        type: 'classification-multiband',
         countries: ['brazil', 'argentina', 'uruguay'],
         source: ["source"],
         metadata: {
@@ -162,12 +162,12 @@ var products = [
         }
     },
     {
-        asset_id: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_quality_v1",
-        theme: 'quality',
-        collection: 1,
         initiative: 'pampa',
+        collection: 1,
+        theme: 'quality',
+        asset_id: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_quality_v1",
         description: 'quality data from collection 1 (pampa)',
-        type: 'transitions-multiband',
+        type: 'transition-multiband',
         countries: ['brazil', 'argentina', 'uruguay'],
         source: ["source"],
         metadata: {
@@ -191,12 +191,12 @@ var products = [
         }
     },
     {
-        asset_id: "projects/mapbiomas-chaco/public/collection2/mapbiomas_chaco_collection2_transitions_v1",
-        theme: 'transition',
-        collection: 2,
         initiative: 'chaco',
+        collection: 2,
+        theme: 'transition',
+        asset_id: "projects/mapbiomas-chaco/public/collection2/mapbiomas_chaco_collection2_transitions_v1",
         description: 'transitions data from collection 2 (chaco)',
-        type: 'transitions-multiband',
+        type: 'transition-multiband',
         countries: ["argentina", "bolivia", "paraguay"],
         source: ["source"],
         metadata: {
@@ -223,17 +223,17 @@ var products = [
         }
     },
     {
-        asset_id: "projects/mapbiomas-chaco/public/collection2/mapbiomas_chaco_collection2_integration_v1",
-        theme: 'integration',
-        collection: 2,
         initiative: 'chaco',
+        collection: 2,
+        theme: 'integration',
+        asset_id: "projects/mapbiomas-chaco/public/collection2/mapbiomas_chaco_collection2_integration_v1",
         description: 'integration data from collection 2 (chaco)',
-        type: 'transitions-multiband',
+        type: 'classification-multiband',
         countries: ["argentina", "bolivia", "paraguay"],
         source: ["source"],
         metadata: {
             bands: {
-                prefix: 'transitions_',
+                prefix: 'classification_',
             },
             years: [
                 [ '2000' ], [ '2001' ],
@@ -252,12 +252,12 @@ var products = [
         }
     },
     {
-        asset_id: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_transitions_v1",
-        theme: 'transition',
-        collection: 1,
         initiative: 'indonésia',
+        collection: 1,
+        theme: 'transition',
+        asset_id: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_transitions_v1",
         description: 'transitions data from collection 1 (indonésia)',
-        type: 'transitions-multiband',
+        type: 'transition-multiband',
         countries: ['indonésia'],
         source: ["source"],
         metadata: {
@@ -287,12 +287,12 @@ var products = [
         }
     },
     {
-        asset_id: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_integration_v1",
-        theme: 'integration',
-        collection: 1,
         initiative: 'indonésia',
+        collection: 1,
+        theme: 'integration',
+        asset_id: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_integration_v1",
         description: 'integration data from collection 1 (indonésia)',
-        type: 'transitions-multiband',
+        type: 'classification-multiband',
         countries: ['indonésia'],
         source: ["source"],
         metadata: {
@@ -316,12 +316,12 @@ var products = [
         }
     },
     {
-        asset_id: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_quality_v1",
-        theme: 'quality',
-        collection: 1,
         initiative: 'indonésia',
+        collection: 1,
+        theme: 'quality',
+        asset_id: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_quality_v1",
         description: 'quality data from collection 1 (indonésia)',
-        type: 'transitions-multiband',
+        type: 'transition-multiband',
         countries: ['indonésia'],
         source: ["source"],
         metadata: {
@@ -345,12 +345,12 @@ var products = [
         }
     },
     {
-        asset_id: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_transitions_v2",
-        theme: 'transition',
-        collection: 1,
         initiative: 'indonésia',
+        collection: 1,
+        theme: 'transition',
+        asset_id: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_transitions_v2",
         description: 'transitions data from collection 1 (indonésia)',
-        type: 'transitions-multiband',
+        type: 'transition-multiband',
         countries: ['indonésia'],
         source: ["source"],
         metadata: {
@@ -380,12 +380,12 @@ var products = [
         }
     },
     {
-        asset_id: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_quality_v1",
-        theme: 'quality',
-        collection: 3,
         initiative: 'raisg',
+        collection: 3,
+        theme: 'quality',
+        asset_id: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_quality_v1",
         description: 'quality data from collection 3 (raisg)',
-        type: 'transitions-multiband',
+        type: 'transition-multiband',
         countries: ["bolivia", "brazil", "colombia", "ecuador", "french guiana", "guyana", "peru", "suriname", "venezuela"],
         source: ["source"],
         metadata: {
@@ -411,12 +411,12 @@ var products = [
         }
     },
     {
+        initiative: 'raisg',
+        collection: 3,
+        theme: 'integration',
         asset_id: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_integration_v1",
-        theme: 'integration',
-        collection: 3,
-        initiative: 'raisg',
         description: 'integration data from collection 3 (raisg)',
-        type: 'transitions-multiband',
+        type: 'classification-multiband',
         countries: ["bolivia", "brazil", "colombia", "ecuador", "french guiana", "guyana", "peru", "suriname", "venezuela"],
         source: ["source"],
         metadata: {
@@ -442,12 +442,12 @@ var products = [
         }
     },
     {
+        initiative: 'raisg',
+        collection: 3,
+        theme: 'integration',
         asset_id: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_integration_v2",
-        theme: 'integration',
-        collection: 3,
-        initiative: 'raisg',
         description: 'integration data from collection 3 (raisg)',
-        type: 'transitions-multiband',
+        type: 'classification-multiband',
         countries: ["bolivia", "brazil", "colombia", "ecuador", "french guiana", "guyana", "peru", "suriname", "venezuela"],
         source: ["source"],
         metadata: {
@@ -473,12 +473,12 @@ var products = [
         }
     },
     {
+        initiative: 'raisg',
+        collection: 3,
+        theme: 'transition',
         asset_id: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_transitions_v1",
-        theme: 'transition',
-        collection: 3,
-        initiative: 'raisg',
         description: 'transitions data from collection 3 (raisg)',
-        type: 'transitions-multiband',
+        type: 'transition-multiband',
         countries: ["bolivia", "brazil", "colombia", "ecuador", "french guiana", "guyana", "peru", "suriname", "venezuela"],
         source: ["source"],
         metadata: {
@@ -511,12 +511,12 @@ var products = [
         }
     },
     {
+        initiative: 'raisg',
+        collection: 3,
+        theme: 'transition',
         asset_id: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_transitions_v2",
-        theme: 'transition',
-        collection: 3,
-        initiative: 'raisg',
         description: 'transitions data from collection 3 (raisg)',
-        type: 'transitions-multiband',
+        type: 'transition-multiband',
         countries: ["bolivia", "brazil", "colombia", "ecuador", "french guiana", "guyana", "peru", "suriname", "venezuela"],
         source: ["source"],
         metadata: {
@@ -549,12 +549,12 @@ var products = [
         }
     },
     {
-        asset_id: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_integration_v1",
+        initiative: 'af-trinacional',
+        collection: 1,
         theme: 'integration',
-        collection: 1,
-        initiative: 'af-trinacional',
+        asset_id: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_integration_v1",
         description: 'integration data from collection 1 (af-trinacional)',
-        type: 'transitions-multiband',
+        type: 'classification-multiband',
         countries: ["argentina", "brazil", "paraguay"],
         source: [
             "Instituto de Biología Subtropical de CONICET",
@@ -569,7 +569,7 @@ var products = [
         ],
         metadata: {
             bands: {
-                prefix: 'transition_',
+                prefix: 'classification_',
             },
             years:  [
                 [ '2000' ], [ '2001' ],
@@ -588,12 +588,12 @@ var products = [
         }
     },
     {
-        asset_id: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_quality_v1",
+        initiative: 'af-trinacional',
+        collection: 1,
         theme: 'quality',
-        collection: 1,
-        initiative: 'af-trinacional',
+        asset_id: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_quality_v1",
         description: 'quality data from collection 1 (af-trinacional)',
-        type: 'transitions-multiband',
+        type: 'transition-multiband',
         countries: ["argentina", "brazil", "paraguay"],
         source: [
             "Instituto de Biología Subtropical de CONICET",
@@ -627,12 +627,12 @@ var products = [
         }
     },
     {
-        asset_id: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_transitions_v1",
-        theme: 'transition',
-        collection: 1,
         initiative: 'af-trinacional',
+        collection: 1,
+        theme: 'transition',
+        asset_id: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_transitions_v1",
         description: 'transitions data from collection 1 (af-trinacional)',
-        type: 'transitions-multiband',
+        type: 'transition-multiband',
         countries: ["argentina", "brazil", "paraguay"],
         source: [
             "Instituto de Biología Subtropical de CONICET",
@@ -673,57 +673,125 @@ var products = [
 
 ]
 
-
-function callback(assetInfo, failure) {
-
-    if (assetInfo) {
-      
-        var id = assetInfo.id;
-        
-        var assetName = id.split('/').slice(-1)[0];
-        
-        var image = ee.Image(id);
-        
-        switch ( assetInfo.type ) {
-          
-            case "Image":
-              
-                image = ee.Image(id);
-                
-                print(assetName, 'bandas: ', image.bandNames())
-                
-                Map.addLayer(image, {}, assetName, true, 1);
-                
-                // break;
-                return 'Image'
-        
-            case "ImageCollection":
-
-                print('imageCollection:', assetName)
-              
-                image = ee.ImageCollection(assetInfo.id).mosaic()
-                
-                Map.addLayer(image, {}, assetName, true, 1);
-              
-                // break;
-                return 'ImageCollection'
-        
-            default:
-                print('Não é uma Image ou ImageCollection');
-        
-        }
-        
-    } else {
-      
-        console.log('Asset não encontrado: ', assetInfo)
-    
-    }
-    
+function getBands(obj, year) {
+    // return obj.metadata.bands.prefix + this.types[]
 }
+
+function callback(obj){
+
+    var types = {
+
+        "classification-singleband": {
+            suffix: "classification_",
+            getBands: function() {
+
+            }
+        },
+        "transition-singleband":{
+            suffix: "",
+            getBands: function (year) {
+                return obj.metadata.prefix
+            }
+        },
+        "classification-multiband": {
+            suffix: "",
+            getBands: function() {
+
+            }
+        },
+        "transition-multiband": {
+            suffix: "",
+            getBands: function() {
+
+            }
+        },
+        "collection-classification-multiband": {
+            suffix: "_{year}",
+            getBands: function (year) {
+                return obj.prefix + types[obj.type].sufix
+                    .replace("{year}", year)// "classification_2020"
+            }
+
+        },
+        "collection-transitions-multiband": {
+            suffix: "_{year1}_{year2}",
+            getBands: function (years) {
+                return obj.prefix + types[obj.type].sufix
+                    .replace("{year1}", years[0])
+                    .replace("{year2}", years[1])// "transition_2019_2020"
+            }
+        }
+    }
+
+    var bandName = obj.metadata.bands.prefix + obj.years[i];
+    console.log(bandName);
+
+    // var image = ee.Image(obj.asset_id).select(obj.metadata.bands.prefix + obj.years[i])
+
+    // Map.addLayer()
+
+    var name = obj.initiative + obj.collection + obj.theme;
+
+    return ui.Map.Layer(eeObject, {}, name, true, 1);
+
+}
+
+
+
+// function callback(assetInfo, failure) {
+
+//     if (assetInfo) {
+      
+//         var id = assetInfo.id;
+        
+//         var assetName = id.split('/').slice(-1)[0];
+        
+//         var image = ee.Image(id);
+        
+//         switch ( assetInfo.type ) {
+          
+//             case "Image":
+              
+//                 image = ee.Image(id);
+                
+//                 print(assetName, 'bandas: ', image.bandNames())
+                
+//                 Map.addLayer(image, {}, assetName, true, 1);
+                
+//                 // break;
+//                 return 'Image'
+        
+//             case "ImageCollection":
+
+//                 print('imageCollection:', assetName)
+              
+//                 image = ee.ImageCollection(assetInfo.id).mosaic()
+                
+//                 Map.addLayer(image, {}, assetName, true, 1);
+              
+//                 // break;
+//                 return 'ImageCollection'
+        
+//             default:
+//                 print('Não é uma Image ou ImageCollection');
+        
+//         }
+        
+//     } else {
+      
+//         console.log('Asset não encontrado: ', assetInfo)
+    
+//     }
+    
+// }
 
 products.forEach(
     function(obj) {
-        ee.data.getAsset(obj.asset_id, callback);
+        // ee.data.getAsset(obj.asset_id, callback);
+
+        var uiMapLayer = callback(obj);
+
+        Map.addLayer(uiMapLayer);
     }
 );
 
@@ -732,4 +800,3 @@ products.forEach(
 
 
 
-//xxxxxxxxx
