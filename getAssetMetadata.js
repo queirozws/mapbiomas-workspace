@@ -682,59 +682,88 @@ function getClassificationBands(obj, i) {
     return this.suffix + obj.metadata.years[i]
 }
 
-function getFirstBand(obj, i) {
-    return this.suffix + obj.metadata.years[i]
+function getBandNamePattern(obj) {
+    
+    // var bandName = obj.metadata.bands.prefix + obj.metadata.years[0];
+    // print(bandName);
+    
+    // return this.prefix + obj.metadata.years[this.selectedBand];
+    
+    var firstYear = obj.metadata.years[ this.selectedYears ][0] || obj.metadata.years[this.selectedYears];
+    print(firstYear);
+    
+    var secondYear = obj.metadata.years[ this.selectedYears ][1] || obj.metadata.years[this.selectedYears];
+    print(secondYear);
+    
+    var pref = this.prefix;
+    print(pref);
+    
+    var suffix = pref + firstYear;
+    
+    // print(this.prefix);
+    // print(suffix);
+    
+    return suffix;
 }
 
 
 // retornar a image a ser exibida
 function callback(obj){
 
-    var types = {
+    print(obj)
+    
+    var selectedYears = 0;
 
+    var types = {
+      
         "classification-singleband": {
             prefix: "classification_",
-            func: function () {
-            
-                var bandName = obj.metadata.bands.prefix + obj.metadata.years[0];
-                print(bandName);
-            
-            }
+            selectBands: selectedYears,
+            getBand: getBandNamePattern
         },
         "transition-singleband":{
             prefix: "transition_",
-            func: getFirstBand
+            selectBands: selectedYears,
+            getBand: getBandNamePattern
         },
         "classification-multiband": {
-            prefix: "",
-            func: getFirstBand
+            prefix: "classification_",
+            selectBands: selectedYears,
+            getBand: getBandNamePattern
         },
         "transition-multiband": {
-            prefix: "",
-            func: getFirstBand
+            prefix: "transition_",
+            selectedBand: selectedYears, //
+            getBand: getBandNamePattern
         },
-        "collection-classification-multiband": {
-            prefix: "_{year}",
-            func: function (year) {
-                return obj.prefix + types[obj.type].sufix
-                    .replace("{year}", year)// "classification_2020"
-            }
+        // "collection-classification-multiband": {
+        //     prefix: "_{year}",
+        //     func: function (year) {
+        //         return obj.prefix + types[obj.type].sufix
+        //             .replace("{year}", year)// "classification_2020"
+        //     }
 
-        },
-        "collection-transitions-multiband": {
-            prefix: "_{year1}_{year2}",
-            func: function (years) {
-                return obj.prefix + types[obj.type].sufix
-                    .replace("{year1}", years[0])
-                    .replace("{year2}", years[1])// "transition_2019_2020"
-            }
-        }
+        // },
+        // "collection-transitions-multiband": {
+        //     prefix: "_{year1}_{year2}",
+        //     func: function (years) {
+        //         return obj.prefix + types[obj.type].sufix
+        //             .replace("{year1}", years[0])
+        //             .replace("{year2}", years[1])// "transition_2019_2020"
+        //     }
+        // }
     }
     
+    print(obj)
     print(obj.asset_id)
+    print(obj.type)
+    print(types)
     
-    var image = types[obj.type].prefix
-    print(image)
+    
+    var bands = types[obj.type].getBand(obj); // transition_1985_1986
+    
+    var image = ee.Image(obj.asset_id).select(bands);
+    print(image);
     
     // function getFirstBand() {
     
@@ -743,7 +772,7 @@ function callback(obj){
     
     // }
 
-    // var image = ee.Image(obj.asset_id).select(getFirstBand)
+    // image = 0;
 
     // var uiMapLayer = callback(obj);
     
@@ -757,18 +786,19 @@ function callback(obj){
     
     // usar image.visualise()
     
-    return ee.Image() // retornar imagem (banda selecionada) colorida
+    return ( image || ee.Image(1) ) // || retornar imagem com os limites do Brasil com certo padrão
 
 }
 
 // função para receber o resultado da callback
 
-
 function viewImage(obj, callback) {
     
     var image = callback(obj);
     
-    // Map.addLayer(image);
+    print(image)
+    
+    Map.addLayer(image);
 }
 
 viewImage(products[0], callback);
@@ -824,7 +854,7 @@ viewImage(products[0], callback);
     
 // }
 
-products.forEach(callback);
+// products.forEach(callback);
 
 
 
