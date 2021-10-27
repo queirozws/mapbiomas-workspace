@@ -682,7 +682,7 @@ function getClassificationBands(obj, i) {
     return this.suffix + obj.metadata.years[i]
 }
 
-function getBands(obj, i) {
+function getFirstBand(obj, i) {
     return this.suffix + obj.metadata.years[i]
 }
 
@@ -694,19 +694,24 @@ function callback(obj){
 
         "classification-singleband": {
             prefix: "classification_",
-            func: getClassificationBands
+            func: function () {
+            
+                var bandName = obj.metadata.bands.prefix + obj.metadata.years[0];
+                print(bandName);
+            
+            }
         },
         "transition-singleband":{
             prefix: "transition_",
-            func: getTransitionBands
+            func: getFirstBand
         },
         "classification-multiband": {
             prefix: "",
-            func: getClassificationBands
+            func: getFirstBand
         },
         "transition-multiband": {
             prefix: "",
-            func: getBands
+            func: getFirstBand
         },
         "collection-classification-multiband": {
             prefix: "_{year}",
@@ -725,11 +730,20 @@ function callback(obj){
             }
         }
     }
+    
+    print(obj.asset_id)
+    
+    var image = types[obj.type].prefix
+    print(image)
+    
+    // function getFirstBand() {
+    
+    //     var bandName = obj.metadata.bands.prefix + obj.metadata.years[0];
+    //     print(bandName);
+    
+    // }
 
-    var bandName = obj.metadata.bands.prefix + obj.metadata.years[0];
-    print(bandName);
-
-    var image = ee.Image(obj.asset_id).select(bandName)
+    // var image = ee.Image(obj.asset_id).select(getFirstBand)
 
     // var uiMapLayer = callback(obj);
     
@@ -754,7 +768,7 @@ function viewImage(obj, callback) {
     
     var image = callback(obj);
     
-    Map.addLayer(image);
+    // Map.addLayer(image);
 }
 
 viewImage(products[0], callback);
