@@ -815,4 +815,4 @@ products.forEach(callback);
 
 
 
-// insert widgets to control
+// insert widgets to control | 27/10 - 00:35
