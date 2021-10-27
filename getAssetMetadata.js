@@ -674,10 +674,15 @@
 ]
 
 function getClassificationBands(obj, i) {
+  
+    // Image.visualize() ;
+    
+    // paleta de cores última coleção 6
+    
     return this.suffix + obj.metadata.years[i]
 }
 
-function getTransitionBands(obj, i) {
+function getBands(obj, i) {
     return this.suffix + obj.metadata.years[i]
 }
 
@@ -738,19 +743,21 @@ function callback(obj){
     
     // usar image.visualise()
     
-    return null // retornar imagem (banda selecionada) colorida
+    return ee.Image() // retornar imagem (banda selecionada) colorida
 
 }
 
 // função para receber o resultado da callback
 
 
-function(obj, callback) {
+function viewImage(obj, callback) {
     
     var image = callback(obj);
     
-    Map.addlayer(image);
+    Map.addLayer(image);
 }
+
+viewImage(products[0], callback);
 
  
 
