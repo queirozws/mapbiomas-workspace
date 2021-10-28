@@ -37,3 +37,5 @@ products.forEach(
         print(obj)
     })
     
+
+print( Object.keys(products[0]["metadata"]["version"]) )
