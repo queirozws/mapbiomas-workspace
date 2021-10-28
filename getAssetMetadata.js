@@ -712,10 +712,8 @@ function eeImageCollection(obj) {
 
 function getImage(obj, selectedYears){
 
-    print(obj)
-    // print(obj.asset_id)
-    // print(obj.type)
-    
+    print(obj);
+
     var types = {
       
         "classification-singleband": {
