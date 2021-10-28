@@ -730,7 +730,7 @@ function callback(obj){
             getBand: getBandName,
             constructor: eeImage
         },
-        "transition-singleband":{
+        "transition-singleband": {
             // prefix: "transition_",
             selectedYears: selectedYears,
             getBand: getBandName,
