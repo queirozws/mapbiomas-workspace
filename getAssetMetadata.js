@@ -6,14 +6,14 @@
  
  var products = [
     {
+        initiative: 'brazil',
+        collection: 6,
+        theme: 'classification',
         asset_id: "projects/mapbiomas-workspace/COLECAO6/classificacao",
         description: 'Dados de classificação da coleção 6 do Brasil',
-        collection: 6,
-        initiative: 'brazil',
-        theme: 'classification',
-        type: 'mosaic-singleband', // | "classification-singleband" | "mosaic-multiband",
+        type: 'collection-classification-multiband', // | "classification-singleband" | "mosaic-multiband",
         countries: ['brazil'],
-        source: ["source1", "source2"],
+        source: ["imazon", "..."],
         metadata: {
             bands: {
                 prefix: 'classification',
@@ -728,14 +728,11 @@ function callback(obj){
         //     selectedYears: selectedYears,
         //     getBand: getBandName
         // },
-        // "collection-classification-multiband": {
-        //     prefix: "_{year}",
-        //     func: function (year) {
-        //         return obj.prefix + types[obj.type].sufix
-        //             .replace("{year}", year)// "classification_2020"
-        //     }
-
-        // },
+        "collection-classification-multiband": {
+            prefix: "classification_",
+            selectedYears: selectedYears, //
+            getBand: getBandName
+        },
         // "collection-transitions-multiband": {
         //     prefix: "_{year1}_{year2}",
         //     func: function (years) {
