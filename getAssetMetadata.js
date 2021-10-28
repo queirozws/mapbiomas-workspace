@@ -167,12 +167,12 @@
         theme: 'quality',
         asset_id: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_quality_v1",
         description: 'quality data from collection 1 (pampa)',
-        type: 'transition-multiband',
+        type: 'classification-multiband', // Is the quality asset type classification or transition?
         countries: ['brazil', 'argentina', 'uruguay'],
         source: ["source"],
         metadata: {
             bands: {
-                prefix: 'transitions_',
+                prefix: 'quality_',
             },
             years: [
                 [ '2000' ], [ '2001' ],
@@ -321,7 +321,7 @@
         theme: 'quality',
         asset_id: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_quality_v1",
         description: 'quality data from collection 1 (indonésia)',
-        type: 'transition-multiband',
+        type: 'classification-multiband', // Is the quality asset type classification or transition?
         countries: ['indonésia'],
         source: ["source"],
         metadata: {
@@ -385,7 +385,7 @@
         theme: 'quality',
         asset_id: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_quality_v1",
         description: 'quality data from collection 3 (raisg)',
-        type: 'transition-multiband',
+        type: 'classification-multiband', // Is the quality asset type classification or transition?
         countries: ["bolivia", "brazil", "colombia", "ecuador", "french guiana", "guyana", "peru", "suriname", "venezuela"],
         source: ["source"],
         metadata: {
@@ -593,7 +593,7 @@
         theme: 'quality',
         asset_id: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_quality_v1",
         description: 'quality data from collection 1 (af-trinacional)',
-        type: 'transition-multiband',
+        type: 'classification-multiband', // Is the quality asset type classification or transition?
         countries: ["argentina", "brazil", "paraguay"],
         source: [
             "Instituto de Biología Subtropical de CONICET",
@@ -608,7 +608,7 @@
         ],
         metadata: {
             bands: {
-                prefix: 'transition_',
+                prefix: 'quality_',
             },
             years:  [
                 [ '2000' ], [ '2001' ],
@@ -673,30 +673,17 @@
 
 ]
 
-function getClassificationBands(obj, i) {
-  
-    // Image.visualize() ;
-    
-    // paleta de cores última coleção 6
-    
-    return this.suffix + obj.metadata.years[i]
-}
-
 function getBandNamePattern(obj) {
     
-    var prefix = this.prefix;
+    var prefix = obj.metadata.bands.prefix;
     
-    var valor = [1]
+    var firstYear = obj.metadata.years[ this.selectedYears ][0];
+    // print( 'First year: ', ( firstYear || "doesn't exist" ) );
+    
+    var secondYear = obj.metadata.years[ this.selectedYears ][1] || "";
+    // print( 'Second year: ', (secondYear || "doesn't exist") );
 
-    var firstYear = obj.metadata.years[ this.selectedYears ][0] || ""//obj.metadata.years[ this.selectedYears ];
-    print('First year: ' + (obj.metadata.years[ this.selectedYears ][0] || "doesn't exist") );
-    
-    var secondYear = obj.metadata.years[ this.selectedYears ][1] || undefined;
-    print('Second year ' + (obj.metadata.years[ this.selectedYears ][1] || "is undefined") );
-    print( secondYear === undefined  );
-    
-    var suffix = prefix + firstYear + ( secondYear || "_" + secondYear );
-    // var suffix = prefix + ( ( firstYear + ("_" && secondYear )) || firstYear );
+    var suffix = prefix + firstYear + (secondYear && "_" + secondYear);
     print(suffix);
     
     return suffix;
@@ -708,8 +695,8 @@ function getBandNamePattern(obj) {
 function callback(obj){
 
     print(obj)
-    print(obj.asset_id)
-    print(obj.type)
+    // print(obj.asset_id)
+    // print(obj.type)
     
     var selectedYears = 0;
 
@@ -735,6 +722,12 @@ function callback(obj){
             selectedYears: selectedYears, //
             getBand: getBandNamePattern
         },
+        "classification-singleband": {
+            prefix: "classification_",
+            selectedYears: selectedYears,
+            getBand: getBandNamePattern
+        },
+
         // "collection-classification-multiband": {
         //     prefix: "_{year}",
         //     func: function (year) {
@@ -753,13 +746,12 @@ function callback(obj){
         // }
     }
     
-    print(types)
-    
-    
     var bands = types[obj.type].getBand(obj); // transition_1985_1986
     
     var image = ee.Image(obj.asset_id).select(bands);
     print(image);
+    
+    Map.addLayer(image, {}, obj.initiative+"-"+obj.collection+"-"+obj.theme, true, 1);
     
     // function getFirstBand() {
     
@@ -782,6 +774,10 @@ function callback(obj){
     
     // usar image.visualise()
     
+    // Image.visualize() ;
+    
+    // paleta de cores última coleção 6
+
     return ( image || ee.Image(1) ) // || retornar imagem com os limites do Brasil com certo padrão
 
 }
@@ -797,7 +793,7 @@ function viewImage(obj, callback) {
     Map.addLayer(image);
 }
 
-viewImage(products[18], callback);
+// viewImage(products[0], callback);
 
  
 
@@ -850,7 +846,7 @@ viewImage(products[18], callback);
     
 // }
 
-// products.forEach(callback);
+products.forEach(callback);
 
 
 
