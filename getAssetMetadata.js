@@ -16,7 +16,7 @@
         source: ["imazon", "..."],
         metadata: {
             bands: {
-                prefix: 'classification',
+                prefix: 'classification_',
             },
             years: [
                 [ "1985" ], [ "1986" ], [ "1987" ],
@@ -691,26 +691,26 @@ function getBandName(obj) {
     var secondYear = obj.metadata.years[ this.selectedYears ][1] || "";
     print( 'Second year: ', (secondYear || "doesn't exist") );
 
-    var suffix = prefix + firstYear + (secondYear && "_" + secondYear);
-    print(suffix);
+    var bandName = prefix + firstYear + (secondYear && "_" + secondYear);
+    print( "Selected band is: ", bandName);
     
-    return suffix;
+    return bandName;
     
 }
 
 function eeImage(obj, types) {
   
-    var bands = types[obj.type].getBand(obj);
+    // var bands = types[obj.type].getBand(obj);
     
-    return ee.Image(obj.asset_id).select(bands)
+    return ee.Image(obj.asset_id)//.select(bands)
     
 }
 
 function eeImageCollection(obj, types) {
 
-    var bands = types[obj.type].getBand(obj);
+    // var bands = types[obj.type].getBand(obj);
     
-    return ee.ImageCollection(obj.asset_id).mosaic().select(bands)
+    return ee.ImageCollection(obj.asset_id).mosaic()//.select(bands)
 }
 
 // retornar a image a ser exibida
@@ -754,6 +754,12 @@ function callback(obj){
             getBand: getBandName,
             constructor: eeImage
         },
+        "quality-multiband": {
+            // prefix: "classification_",
+            selectedYears: selectedYears,
+            getBand: getBandName,
+            constructor: eeImage
+        },
         "collection-classification-multiband": {
             // prefix: "classification_",
             selectedYears: selectedYears, //
@@ -770,111 +776,36 @@ function callback(obj){
         // }
     }
     
-    // var bands = types[obj.type].getBand(obj);
+    var bandName = types[obj.type].getBand(obj);
+
+    var image = types[obj.type].constructor(obj, types).select(bandName);
     
-    var image = types[obj.type].constructor(obj, types);
+    var layerName = obj.initiative+"-"+"collection-" + obj.collection+"-"+obj.theme;
     
-    // var image = ee.Image(obj.asset_id).select(bands);
     print(image);
     
-    Map.addLayer(image, {}, obj.initiative+"-"+obj.collection+"-"+obj.theme, true, 1);
+    // Usar Image.visualize() ou paleta de cores última coleção 6;
+    Map.addLayer(image, {}, layerName, true, 1);
     
-    // function getFirstBand() {
-    
-    //     var bandName = obj.metadata.bands.prefix + obj.metadata.years[0];
-    //     print(bandName);
-    
-    // }
-
-    // image = 0;
-
     // var uiMapLayer = callback(obj);
     
     // Map.addLayer(uiMapLayer);
     
-    // Map.addLayer()
-
-    // var name = obj.initiative + obj.collection + obj.theme;
-
     // return ui.Map.Layer(eeObject, {}, name, true, 1);
     
-    // usar image.visualise()
-    
-    // Image.visualize() ;
-    
-    // paleta de cores última coleção 6
-
-    return ( image || ee.Image(1) ) // || retornar imagem com os limites do Brasil com certo padrão
+    return ( image || ee.Image(1) ) // || retornar imagem com os limites do Brasil quando erro?
 
 }
-
-// função para receber o resultado da callback
 
 function viewImage(obj, callback) {
     
     var image = callback(obj);
     
-    print(image)
-    
     // Map.addLayer(image);
 }
 
-viewImage(products[0], callback);
+// viewImage(products[10], callback);
 
- 
-
-
-
-// function callback(assetInfo, failure) {
-
-//     if (assetInfo) {
-      
-//         var id = assetInfo.id;
-        
-//         var assetName = id.split('/').slice(-1)[0];
-        
-//         var image = ee.Image(id);
-        
-//         switch ( assetInfo.type ) {
-          
-//             case "Image":
-              
-//                 image = ee.Image(id);
-                
-//                 print(assetName, 'bandas: ', image.bandNames())
-                
-//                 Map.addLayer(image, {}, assetName, true, 1);
-                
-//                 // break;
-//                 return 'Image'
-        
-//             case "ImageCollection":
-
-//                 print('imageCollection:', assetName)
-              
-//                 image = ee.ImageCollection(assetInfo.id).mosaic()
-                
-//                 Map.addLayer(image, {}, assetName, true, 1);
-              
-//                 // break;
-//                 return 'ImageCollection'
-        
-//             default:
-//                 print('Não é uma Image ou ImageCollection');
-        
-//         }
-        
-//     } else {
-      
-//         console.log('Asset não encontrado: ', assetInfo)
-    
-//     }
-    
-// }
-
-// products.forEach(callback);
-
-
-
+products.forEach(callback);
 
 // insert widgets to control | 27/10 - 00:35
