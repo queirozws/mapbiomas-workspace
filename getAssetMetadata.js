@@ -710,14 +710,12 @@ function eeImageCollection(obj) {
     
 }
 
-function getImage(obj){
+function getImage(obj, selectedYears){
 
     print(obj)
     // print(obj.asset_id)
     // print(obj.type)
     
-    var selectedYears = 0; // 0: first year / period; 1: second year / period...
-
     var types = {
       
         "classification-singleband": {
@@ -787,9 +785,11 @@ function getImage(obj){
 
 function viewImages(obj) {
     
+    var selectedYears = 0; // 0: first year / period; 1: second year / period...
+
     var layerName = obj.initiative+"-"+"collection-" + obj.collection+"-"+obj.theme;
     
-    var image = getImage(obj);
+    var image = getImage(obj, selectedYears);
     
     Map.addLayer(image, {}, layerName, true, 1);
 }
