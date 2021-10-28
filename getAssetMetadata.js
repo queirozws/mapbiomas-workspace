@@ -736,7 +736,7 @@ function getImage(obj, selectedYears){
         },
         "transition-multiband": {
             // prefix: "transition_",
-            selectedYears: selectedYears, //
+            selectedYears: selectedYears,
             bandName: getBandName,
             constructor: eeImage
         },
