@@ -717,7 +717,7 @@ function getImage(obj, selectedYears){
     var types = {
       
         "classification-singleband": {
-            // prefix: "classification_",
+            // prefix: "classification_", // Usar prefix de types ou prefix do objeto assets?
             selectedYears: selectedYears,
             bandName: getBandName,
             constructor: eeImage
