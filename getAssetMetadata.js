@@ -683,7 +683,7 @@
 
 function getBandName(obj) {
     
-    var prefix = obj.metadata.bands.prefix;
+    var prefix = obj.metadata.bands.prefix; // OR this.prefix ???
     
     var firstYear = obj.metadata.years[ this.selectedYears ][0];
     print( 'First year: ', ( firstYear || "doesn't exist" ) );
