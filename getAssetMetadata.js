@@ -9,7 +9,7 @@
         initiative: 'brazil',
         collection: 6,
         theme: 'classification',
-        asset_id: "projects/mapbiomas-workspace/COLECAO6/classificacao",
+        asset_id: "projects/mapbiomas-workspace/COLECAO6/mapbiomas-collection60-integration-v0-12",
         description: 'Dados de classificação da coleção 6 do Brasil',
         type: 'collection-classification-multiband', // | "classification-singleband" | "mosaic-multiband",
         countries: ['brazil'],
@@ -19,10 +19,18 @@
                 prefix: 'classification',
             },
             years: [
-                "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993",
-                "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002",
-                "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011",
-                "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"
+                [ "1985" ], [ "1986" ], [ "1987" ],
+                [ "1988" ], [ "1989" ], [ "1990" ],
+                [ "1991" ], [ "1992" ], [ "1993" ],
+                [ "1994" ], [ "1995" ], [ "1996" ],
+                [ "1997" ], [ "1998" ], [ "1999" ],
+                [ "2000" ], [ "2001" ], [ "2002" ],
+                [ "2003" ], [ "2004" ], [ "2005" ],
+                [ "2006" ], [ "2007" ], [ "2008" ],
+                [ "2009" ], [ "2010" ], [ "2011" ],
+                [ "2012" ], [ "2013" ], [ "2014" ],
+                [ "2015" ], [ "2016" ], [ "2017" ],
+                [ "2018" ], [ "2019" ], [ "2020" ]
               ],
             biome: ["biome"],
             version: '1',
@@ -167,7 +175,7 @@
         theme: 'quality',
         asset_id: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_quality_v1",
         description: 'quality data from collection 1 (pampa)',
-        type: 'classification-multiband', // Is the quality asset type classification or transition?
+        type: 'quality-multiband', // Is the quality asset type classification or transition?
         countries: ['brazil', 'argentina', 'uruguay'],
         source: ["source"],
         metadata: {
@@ -321,7 +329,7 @@
         theme: 'quality',
         asset_id: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_quality_v1",
         description: 'quality data from collection 1 (indonésia)',
-        type: 'classification-multiband', // Is the quality asset type classification or transition?
+        type: 'quality-multiband', // Is the quality asset type classification or transition?
         countries: ['indonésia'],
         source: ["source"],
         metadata: {
@@ -385,7 +393,7 @@
         theme: 'quality',
         asset_id: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_quality_v1",
         description: 'quality data from collection 3 (raisg)',
-        type: 'classification-multiband', // Is the quality asset type classification or transition?
+        type: 'quality-multiband', // Is the quality asset type classification or transition?
         countries: ["bolivia", "brazil", "colombia", "ecuador", "french guiana", "guyana", "peru", "suriname", "venezuela"],
         source: ["source"],
         metadata: {
@@ -593,7 +601,7 @@
         theme: 'quality',
         asset_id: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_quality_v1",
         description: 'quality data from collection 1 (af-trinacional)',
-        type: 'classification-multiband', // Is the quality asset type classification or transition?
+        type: 'quality-multiband', // Is the quality asset type classification or transition?
         countries: ["argentina", "brazil", "paraguay"],
         source: [
             "Instituto de Biología Subtropical de CONICET",
@@ -678,10 +686,10 @@ function getBandName(obj) {
     var prefix = obj.metadata.bands.prefix;
     
     var firstYear = obj.metadata.years[ this.selectedYears ][0];
-    // print( 'First year: ', ( firstYear || "doesn't exist" ) );
+    print( 'First year: ', ( firstYear || "doesn't exist" ) );
     
     var secondYear = obj.metadata.years[ this.selectedYears ][1] || "";
-    // print( 'Second year: ', (secondYear || "doesn't exist") );
+    print( 'Second year: ', (secondYear || "doesn't exist") );
 
     var suffix = prefix + firstYear + (secondYear && "_" + secondYear);
     print(suffix);
@@ -690,6 +698,20 @@ function getBandName(obj) {
     
 }
 
+function eeImage(obj, types) {
+  
+    var bands = types[obj.type].getBand(obj);
+    
+    return ee.Image(obj.asset_id).select(bands)
+    
+}
+
+function eeImageCollection(obj, types) {
+
+    var bands = types[obj.type].getBand(obj);
+    
+    return ee.ImageCollection(obj.asset_id).mosaic().select(bands)
+}
 
 // retornar a image a ser exibida
 function callback(obj){
@@ -703,35 +725,40 @@ function callback(obj){
     var types = {
       
         "classification-singleband": {
-            prefix: "classification_",
+            // prefix: "classification_",
             selectedYears: selectedYears,
-            getBand: getBandName
+            getBand: getBandName,
+            constructor: eeImage
         },
         "transition-singleband":{
-            prefix: "transition_",
+            // prefix: "transition_",
             selectedYears: selectedYears,
-            getBand: getBandName
+            getBand: getBandName,
+            constructor: eeImage
         },
         "classification-multiband": {
-            prefix: "classification_",
+            // prefix: "classification_",
             selectedYears: selectedYears,
-            getBand: getBandName
+            getBand: getBandName,
+            constructor: eeImage
         },
         "transition-multiband": {
-            prefix: "transition_",
+            // prefix: "transition_",
             selectedYears: selectedYears, //
-            getBand: getBandName
+            getBand: getBandName,
+            constructor: eeImage
         },
-        // inserir nova chave ou tratar como "classification-*"
-        // "quality-singleband": {
-        //     prefix: "classification_",
-        //     selectedYears: selectedYears,
-        //     getBand: getBandName
-        // },
+        "quality-singleband": {
+            // prefix: "classification_",
+            selectedYears: selectedYears,
+            getBand: getBandName,
+            constructor: eeImage
+        },
         "collection-classification-multiband": {
-            prefix: "classification_",
+            // prefix: "classification_",
             selectedYears: selectedYears, //
-            getBand: getBandName
+            getBand: getBandName,
+            constructor: eeImageCollection
         },
         // "collection-transitions-multiband": {
         //     prefix: "_{year1}_{year2}",
@@ -743,9 +770,11 @@ function callback(obj){
         // }
     }
     
-    var bands = types[obj.type].getBand(obj); // transition_1985_1986
+    // var bands = types[obj.type].getBand(obj);
     
-    var image = ee.Image(obj.asset_id).select(bands);
+    var image = types[obj.type].constructor(obj, types);
+    
+    // var image = ee.Image(obj.asset_id).select(bands);
     print(image);
     
     Map.addLayer(image, {}, obj.initiative+"-"+obj.collection+"-"+obj.theme, true, 1);
