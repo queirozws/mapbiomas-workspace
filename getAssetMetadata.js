@@ -685,14 +685,19 @@ function getClassificationBands(obj, i) {
 function getBandNamePattern(obj) {
     
     var prefix = this.prefix;
+    
+    var valor = [1]
 
     var firstYear = obj.metadata.years[ this.selectedYears ][0] || ""//obj.metadata.years[ this.selectedYears ];
     print('First year: ' + (obj.metadata.years[ this.selectedYears ][0] || "doesn't exist") );
     
-    var secondYear = obj.metadata.years[ this.selectedYears ][1] || "";
-    print('Second year ' + (obj.metadata.years[ this.selectedYears ][1] || "doesn't exist") );
+    var secondYear = obj.metadata.years[ this.selectedYears ][1] || undefined;
+    print('Second year ' + (obj.metadata.years[ this.selectedYears ][1] || "is undefined") );
+    print( secondYear === undefined  );
     
-    var suffix = prefix + firstYear + (secondYear || "_" + secondYear);
+    var suffix = prefix + firstYear + ( secondYear || "_" + secondYear );
+    // var suffix = prefix + ( ( firstYear + ("_" && secondYear )) || firstYear );
+    print(suffix);
     
     return suffix;
     
@@ -792,7 +797,7 @@ function viewImage(obj, callback) {
     Map.addLayer(image);
 }
 
-viewImage(products[0], callback);
+viewImage(products[18], callback);
 
  
 
