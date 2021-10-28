@@ -673,7 +673,7 @@
 
 ]
 
-function getBandNamePattern(obj) {
+function getBandName(obj) {
     
     var prefix = obj.metadata.bands.prefix;
     
@@ -705,29 +705,29 @@ function callback(obj){
         "classification-singleband": {
             prefix: "classification_",
             selectedYears: selectedYears,
-            getBand: getBandNamePattern
+            getBand: getBandName
         },
         "transition-singleband":{
             prefix: "transition_",
             selectedYears: selectedYears,
-            getBand: getBandNamePattern
+            getBand: getBandName
         },
         "classification-multiband": {
             prefix: "classification_",
             selectedYears: selectedYears,
-            getBand: getBandNamePattern
+            getBand: getBandName
         },
         "transition-multiband": {
             prefix: "transition_",
             selectedYears: selectedYears, //
-            getBand: getBandNamePattern
+            getBand: getBandName
         },
-        "classification-singleband": {
-            prefix: "classification_",
-            selectedYears: selectedYears,
-            getBand: getBandNamePattern
-        },
-
+        // inserir nova chave ou tratar como "classification-*"
+        // "quality-singleband": {
+        //     prefix: "classification_",
+        //     selectedYears: selectedYears,
+        //     getBand: getBandName
+        // },
         // "collection-classification-multiband": {
         //     prefix: "_{year}",
         //     func: function (year) {
@@ -790,10 +790,10 @@ function viewImage(obj, callback) {
     
     print(image)
     
-    Map.addLayer(image);
+    // Map.addLayer(image);
 }
 
-// viewImage(products[0], callback);
+viewImage(products[0], callback);
 
  
 
@@ -846,7 +846,7 @@ function viewImage(obj, callback) {
     
 // }
 
-products.forEach(callback);
+// products.forEach(callback);
 
 
 
