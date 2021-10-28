@@ -698,19 +698,15 @@ function getBandName(obj) {
     
 }
 
-function eeImage(obj, types) {
+function eeImage(obj) {
   
-    // var bands = types[obj.type].getBand(obj);
-    
-    return ee.Image(obj.asset_id)//.select(bands)
+    return ee.Image(obj.asset_id)
     
 }
 
-function eeImageCollection(obj, types) {
+function eeImageCollection(obj) {
 
-    // var bands = types[obj.type].getBand(obj);
-    
-    return ee.ImageCollection(obj.asset_id).mosaic()//.select(bands)
+    return ee.ImageCollection(obj.asset_id).mosaic()
 }
 
 // retornar a image a ser exibida
@@ -786,12 +782,6 @@ function callback(obj){
     
     // Usar Image.visualize() ou paleta de cores última coleção 6;
     Map.addLayer(image, {}, layerName, true, 1);
-    
-    // var uiMapLayer = callback(obj);
-    
-    // Map.addLayer(uiMapLayer);
-    
-    // return ui.Map.Layer(eeObject, {}, name, true, 1);
     
     return ( image || ee.Image(1) ) // || retornar imagem com os limites do Brasil quando erro?
 
