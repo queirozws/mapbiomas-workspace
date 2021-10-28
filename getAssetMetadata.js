@@ -1,7 +1,6 @@
 /**
- * @Author: Wildson Queiroz
- * @Data: 18/10/2021
- * @Name: visualizeData.js
+ * @Author Wildson Queiroz
+ * 
  */
  
  var products = [
@@ -710,6 +709,12 @@ function eeImageCollection(obj) {
     
 }
 
+/**
+ * 
+ * @param {Object} obj 
+ * @param {number} selectedYears 
+ * @returns {ee.Image}
+ */
 function getImage(obj, selectedYears){
 
     print(obj);
