@@ -699,67 +699,67 @@ function getBandName(obj) {
 }
 
 function eeImage(obj) {
-  
+
     return ee.Image(obj.asset_id)
     
 }
 
 function eeImageCollection(obj) {
-
+    
     return ee.ImageCollection(obj.asset_id).mosaic()
+    
 }
 
-// retornar a image a ser exibida
-function callback(obj){
+function getImage(obj){
 
     print(obj)
     // print(obj.asset_id)
     // print(obj.type)
     
-    var selectedYears = 0;
+    var selectedYears = 0; // 0: first year / period; 1: second year / period...
 
     var types = {
       
         "classification-singleband": {
             // prefix: "classification_",
             selectedYears: selectedYears,
-            getBand: getBandName,
+            bandName: getBandName,
             constructor: eeImage
         },
         "transition-singleband": {
             // prefix: "transition_",
             selectedYears: selectedYears,
-            getBand: getBandName,
+            bandName: getBandName,
             constructor: eeImage
         },
         "classification-multiband": {
             // prefix: "classification_",
             selectedYears: selectedYears,
-            getBand: getBandName,
+            bandName: getBandName,
             constructor: eeImage
         },
         "transition-multiband": {
             // prefix: "transition_",
             selectedYears: selectedYears, //
-            getBand: getBandName,
+            bandName: getBandName,
             constructor: eeImage
         },
         "quality-singleband": {
             // prefix: "classification_",
             selectedYears: selectedYears,
-            getBand: getBandName,
+            bandName: getBandName,
             constructor: eeImage
         },
         "quality-multiband": {
             // prefix: "classification_",
             selectedYears: selectedYears,
-            getBand: getBandName,
+            bandName: getBandName,
             constructor: eeImage
         },
         "collection-classification-multiband": {
             // prefix: "classification_",
             selectedYears: selectedYears, //
-            getBand: getBandName,
+            bandName: getBandName,
             constructor: eeImageCollection
         },
         // "collection-transitions-multiband": {
@@ -772,30 +772,30 @@ function callback(obj){
         // }
     }
     
-    var bandName = types[obj.type].getBand(obj);
+    var bandName = types[obj.type].bandName(obj);
 
     var image = types[obj.type].constructor(obj, types).select(bandName);
-    
-    var layerName = obj.initiative+"-"+"collection-" + obj.collection+"-"+obj.theme;
     
     print(image);
     
     // Usar Image.visualize() ou paleta de cores última coleção 6;
-    Map.addLayer(image, {}, layerName, true, 1);
+    // Map.addLayer(image, {}, layerName, true, 1);
     
     return ( image || ee.Image(1) ) // || retornar imagem com os limites do Brasil quando erro?
 
 }
 
-function viewImage(obj, callback) {
+function viewImages(obj) {
     
-    var image = callback(obj);
+    var layerName = obj.initiative+"-"+"collection-" + obj.collection+"-"+obj.theme;
     
-    // Map.addLayer(image);
+    var image = getImage(obj);
+    
+    Map.addLayer(image, {}, layerName, true, 1);
 }
 
 // viewImage(products[10], callback);
 
-products.forEach(callback);
+products.forEach(viewImages);
 
 // insert widgets to control | 27/10 - 00:35
