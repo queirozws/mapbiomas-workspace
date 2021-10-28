@@ -684,26 +684,18 @@ function getClassificationBands(obj, i) {
 
 function getBandNamePattern(obj) {
     
-    // var bandName = obj.metadata.bands.prefix + obj.metadata.years[0];
-    // print(bandName);
+    var prefix = this.prefix;
+
+    var firstYear = obj.metadata.years[ this.selectedYears ][0] || ""//obj.metadata.years[ this.selectedYears ];
+    print('First year: ' + (obj.metadata.years[ this.selectedYears ][0] || "doesn't exist") );
     
-    // return this.prefix + obj.metadata.years[this.selectedBand];
+    var secondYear = obj.metadata.years[ this.selectedYears ][1] || "";
+    print('Second year ' + (obj.metadata.years[ this.selectedYears ][1] || "doesn't exist") );
     
-    var firstYear = obj.metadata.years[ this.selectedYears ][0] || obj.metadata.years[this.selectedYears];
-    print(firstYear);
-    
-    var secondYear = obj.metadata.years[ this.selectedYears ][1] || obj.metadata.years[this.selectedYears];
-    print(secondYear);
-    
-    var pref = this.prefix;
-    print(pref);
-    
-    var suffix = pref + firstYear;
-    
-    // print(this.prefix);
-    // print(suffix);
+    var suffix = prefix + firstYear + (secondYear || "_" + secondYear);
     
     return suffix;
+    
 }
 
 
@@ -711,6 +703,8 @@ function getBandNamePattern(obj) {
 function callback(obj){
 
     print(obj)
+    print(obj.asset_id)
+    print(obj.type)
     
     var selectedYears = 0;
 
@@ -718,22 +712,22 @@ function callback(obj){
       
         "classification-singleband": {
             prefix: "classification_",
-            selectBands: selectedYears,
+            selectedYears: selectedYears,
             getBand: getBandNamePattern
         },
         "transition-singleband":{
             prefix: "transition_",
-            selectBands: selectedYears,
+            selectedYears: selectedYears,
             getBand: getBandNamePattern
         },
         "classification-multiband": {
             prefix: "classification_",
-            selectBands: selectedYears,
+            selectedYears: selectedYears,
             getBand: getBandNamePattern
         },
         "transition-multiband": {
             prefix: "transition_",
-            selectedBand: selectedYears, //
+            selectedYears: selectedYears, //
             getBand: getBandNamePattern
         },
         // "collection-classification-multiband": {
@@ -754,9 +748,6 @@ function callback(obj){
         // }
     }
     
-    print(obj)
-    print(obj.asset_id)
-    print(obj.type)
     print(types)
     
     
