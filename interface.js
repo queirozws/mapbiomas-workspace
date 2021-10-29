@@ -5,22 +5,28 @@
 
 // print(Date())
 
-var initiatives = {
+// obj["Brasil"]["collections"]["Collection 5"]["themes"] = collections: {}
+
+var obj = {
     
     "Brasil": {
-        collections: {
+        "collections": {
             "Collection 5": {
-                themes: "classification",
+                "themes": [
+                    "classification",
+                    "transition",
+                    "integration"
+                ],
             },
             "Collection 6": {
-                themes: "classification",
+                "themes": ["classification"],
             }
         }
     },
     "Chaco": {
-        collections: {
+        "collections": {
             "Collection 2": {
-                themes: "transition",
+                "themes": "transition",
             }
         }
     },
@@ -34,49 +40,53 @@ var initiatives = {
 
 function uiSelect(obj) {
 
-    // print(obj)
+    var select = ui.Select({
+        items: Object.keys(obj),
+        onChange: function(key) {
+            
+            // print("obj: ", obj, key);
+            
+            var obj2 = obj[key];
+            var keyList = Object.keys(obj2);
+            
+            // print("obj2: ", obj2, keyList);
+            
+            // print( (typeof obj2[keyList[0]] === "object") && key + " contém um objeto" )
+            // print( (typeof obj2[keyList[0]] === "object") && uiSelect(obj2) )
+            
+            // print(typeof obj2)
+            
+            var obj3 = obj2[keyList[0]]
+            
+            // print("Console limpo ______________________")
+
+            
+            // var key2 = Object.keys(obj[key]);
+            
+            // print(obj2)
+            // print(obj2[keys2])
+            
+            if ((typeof obj2[keyList[0]] === "object")) {
+                        
+                print(uiSelect( obj2 ));
+                    
+            } else {
+              
+                print(obj3)
+              
+                // print(key + " não contém um objeto")
+                
+            }
+
+            
+        },
+        placeholder: "Choose a option"
+    })
     
-    if (typeof obj === 'object') {
+    // print(select)
     
-        var select = ui.Select({
-        // return ui.Select({
-            items: Object.keys(obj),
-            onChange: function(key) {
-                
-                var obj2 = obj[Object.keys(obj)[0]];
-                
-                var keys2 = Object.keys(obj2);
-                
-    print("Console limpo ______________________")
+    return select
     
-                // print(obj2)
-                // print(obj[key])
-                
-                // var key2 = Object.keys(obj[key]);
-                // print(key2)
-                
-                // var newSelect = uiSelect()
-                
-                // print(key)
-                
-                // if (typeof key ==)
-                
-                uiSelect( obj2[keys2] );
-    
-                // print(  newSelect);
-    
-                
-            },
-            placeholder: "Choose a option"
-        })
-        
-        print(select)
-        
-        // return select
-    
-    } else {
-        return "Fim"
-    }
     
     // print(obj2);
     
@@ -95,7 +105,7 @@ function uiSelect(obj) {
 
 // print(select);
 
-uiSelect(initiatives);
+print(uiSelect(obj));
 
 
 // var panel = ui.Panel().add(select)
