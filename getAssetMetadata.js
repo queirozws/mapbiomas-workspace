@@ -797,8 +797,10 @@ function viewImages(obj) {
     Map.addLayer(image, {}, layerName, true, 1);
 }
 
+
+
 // viewImage(products[10], callback);
 
-products.forEach(viewImages);
+// products.forEach(viewImages);
 
 // insert widgets to control | 27/10 - 00:35
