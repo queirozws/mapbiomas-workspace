@@ -799,15 +799,62 @@ function viewImages(obj) {
 
 var items = ["initiative", "collection", "theme"] // ui.Select() options
 
-function selectAssets(array) {
-    array.forEach(function() {
-        
-    })
-    
-    return 
+var metadataModel = {
+    initiative: "af-trinacional",
+    collection: 1,
+    theme: "transition",
+    asset_id: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_transitions_v1",
+    description: "transitions data from collection 1 (af-trinacional)",
+    type: "transition-multiband",
+    countries: ["argentina", "brazil", "paraguay"],
+    source: [
+        "Instituto de Biología Subtropical de CONICET",
+        "Facultad de Agronomía de la UBA",
+        "Facultad de Ciencias Forestales",
+        "UNAM",
+        "Estación Experimental INTA Corrientes",
+        "ONG Fundación Vida Silvestre Argentina",
+        "ArcPlan",
+        "SOS Mata Atlântica",
+        "ONG WWF Paraguay"
+    ],
+    metadata: {
+        bands: {
+            prefix: "transition_",
+        },
+        years:  [
+            [ "2000", "2001" ], [ "2001", "2002" ],
+            [ "2002", "2003" ], [ "2003", "2004" ],
+            [ "2004", "2005" ], [ "2005", "2006" ],
+            [ "2006", "2007" ], [ "2007", "2008" ],
+            [ "2008", "2009" ], [ "2009", "2010" ],
+            [ "2010", "2011" ], [ "2011", "2012" ],
+            [ "2012", "2013" ], [ "2013", "2014" ],
+            [ "2014", "2015" ], [ "2015", "2016" ],
+            [ "2016", "2017" ], [ "2017", "2018" ],
+            [ "2018", "2019" ], [ "2000", "2005" ],
+            [ "2005", "2010" ], [ "2010", "2015" ],
+            [ "2015", "2019" ], [ "2000", "2010" ],
+            [ "2010", "2019" ], [ "2008", "2019" ],
+            [ "2012", "2019" ], [ "2002", "2010" ],
+            [ "2010", "2016" ], [ "2000", "2019" ]
+        ],
+        biome: ["biome"],
+        version: "1",
+    }
 }
 
-var selectedAssets = products.filter
+function selectAssets(obj) {
+    
+    return (obj.initiative === this.initiative || obj.theme === this.theme)
+
+}
+
+var selectedAssets = products.filter(selectAssets, {initiative: "brazil", theme: "transition"});
+
+print(selectedAssets)
+
+
 
 
 // viewImage(products[10], callback);
