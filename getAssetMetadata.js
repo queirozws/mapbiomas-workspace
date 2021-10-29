@@ -804,3 +804,5 @@ function viewImages(obj) {
 // products.forEach(viewImages);
 
 // insert widgets to control | 27/10 - 00:35
+
+// // 
