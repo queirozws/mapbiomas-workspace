@@ -824,10 +824,10 @@ var metadataModel = {
             prefix: "string_",
         },
         years:  [
-            [ "0000", "0000" ], [ "0000", "0000" ], [ "0000", "0000" ] 
+            [ "0000", "0000" ], [ "0000", "0000" ], [ "0000", "0000" ]
         ],
         biome: ["string"],
-        version: "0", // string || integer?
+        version: "0", // string || integer ?
     }
 }
 
