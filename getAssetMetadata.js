@@ -799,9 +799,9 @@ function viewImages(obj) {
 
 
 
-// viewImage(products[10], callback);
+// viewImages(products[10], getImage);
 
-// products.forEach(viewImages);
+products.forEach(viewImages);
 
 // insert widgets to control | 27/10 - 00:35
 
