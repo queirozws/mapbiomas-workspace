@@ -674,3 +674,5 @@ var products = [
     },
 
 ];
+
+exports.products
