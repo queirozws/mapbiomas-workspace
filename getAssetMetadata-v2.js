@@ -862,24 +862,24 @@ function selectAssets(obj) {
 
 var selectedAssets = products.filter(selectAssets, selector);
 
-print(selectedAssets)
+// print(selectedAssets)
 
 Object.keys(metadataModel).forEach(
-  function(key) {
-      print("metadataModel: " + metadataModel[key])
+    function(key) {
+        
+        var select = ui.Select({
+            items: [key],
+            onChange: function(key) {
+                
+                
+                
+            },
+            placeholder: "Choose a " + key
+        })
+
+        print(select);
+
   })
-
-var select1 = ui.Select({
-    items: Object.keys(selector),
-    onChange: function(key) {
-        
-        
-        
-    },
-    placeholder: "Choose a option"
-})
-
-print(select1);
 
 
 // viewImage(products[10], callback);
