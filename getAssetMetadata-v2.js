@@ -3,7 +3,7 @@
  * 
  */
  
- var products = [
+var products = [
     {
         initiative: 'brazil',
         collection: 6,
