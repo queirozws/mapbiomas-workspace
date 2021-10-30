@@ -799,87 +799,15 @@ function viewImages(obj) {
 
 var items = ["initiative", "collection", "theme"] // ui.Select() options
 
-/**
- * 
- * @param {object}
- */
-
-// var selector = function(???) {
-
-
-//     return obj
-// }
-
-var metadataModel = {
-    initiative: "string",
-    collection: 0,
-    theme: "string",
-    asset_id: "string",
-    description: "string",
-    type: "string",
-    countries: ["string", "string", "string"],
-    source: [ "string", "string", "string", "string", "string", "string", "string", "string", "string" ],
-    metadata: {
-        bands: {
-            prefix: "string_",
-        },
-        years:  [
-            [ "0000", "0000" ], [ "0000", "0000" ], [ "0000", "0000" ]
-        ],
-        biome: ["string"],
-        version: "0", // string || integer?
-    }
-}
-
-// Após escolha dos seletores, deverá ser retornado um objeto com as chaves correspondentes
-var selector = {
-    initiative: ["brazil", "pampa", "raisg"],
-    collection: 1,
-    theme: "string",
-    asset_id: "string",
-    description: "string",
-    type: "string",
-    countries: ["string", "string", "string"],
-    source: [ "string", "string", "string", "string", "string", "string", "string", "string", "string" ],
-    metadata: {
-        bands: {
-            prefix: "string_",
-        },
-        years:  [
-            [ "0000", "0000" ], [ "0000", "0000" ], [ "0000", "0000" ]
-        ],
-        biome: ["string"],
-        version: "0", // string || integer?
-    }
-}
-
-
-function selectAssets(obj) {
+function selectAssets(array) {
+    array.forEach(function() {
+        
+    })
     
-    return (obj.initiative === this.initiative || obj.theme === this.theme)
-
+    return 
 }
 
-var selectedAssets = products.filter(selectAssets, selector);
-
-print(selectedAssets)
-
-Object.keys(metadataModel).forEach(
-  function(key) {
-      print("metadataModel: " + metadataModel[key])
-  })
-
-var select1 = ui.Select({
-    items: Object.keys(selector),
-    onChange: function(key) {
-        
-        
-        
-    },
-    placeholder: "Choose a option"
-})
-
-print(select1);
+var selectedAssets = products.filter
 
 
 // viewImage(products[10], callback);
