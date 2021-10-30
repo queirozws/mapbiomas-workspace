@@ -3,6 +3,8 @@
  * 
  */
  
+var products = require("users/queirozws/mb-workspace:assetMetadataList.js")
+
 // var products = [
 //     {
 //         initiative: 'brazil',
