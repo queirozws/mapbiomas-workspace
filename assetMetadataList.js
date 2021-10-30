@@ -675,4 +675,4 @@ var products = [
 
 ];
 
-exports.products
+module.exports = products
