@@ -797,17 +797,6 @@ function viewImages(obj) {
     Map.addLayer(image, {}, layerName, true, 1);
 }
 
-var items = ["initiative", "collection", "theme"] // ui.Select() options
-
-function selectAssets(array) {
-    array.forEach(function() {
-        
-    })
-    
-    return 
-}
-
-var selectedAssets = products.filter
 
 
 // viewImage(products[10], callback);
