@@ -827,15 +827,30 @@ var metadataModel = {
             [ "0000", "0000" ], [ "0000", "0000" ], [ "0000", "0000" ]
         ],
         biome: ["string"],
-        version: "0",
+        version: "0", // string || integer?
     }
 }
 
 // Após escolha dos seletores, deverá ser retornado um objeto com as chaves correspondentes
-
 var selector = {
-    initiative: "brazil",
-    theme: "transition"
+    initiative: "indonésia",
+    collection: 1,
+    theme: "string",
+    asset_id: "string",
+    description: "string",
+    type: "string",
+    countries: ["string", "string", "string"],
+    source: [ "string", "string", "string", "string", "string", "string", "string", "string", "string" ],
+    metadata: {
+        bands: {
+            prefix: "string_",
+        },
+        years:  [
+            [ "0000", "0000" ], [ "0000", "0000" ], [ "0000", "0000" ]
+        ],
+        biome: ["string"],
+        version: "0", // string || integer?
+    }
 }
 
 
