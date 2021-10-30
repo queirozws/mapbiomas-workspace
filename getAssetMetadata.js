@@ -833,7 +833,7 @@ var metadataModel = {
 
 // Após escolha dos seletores, deverá ser retornado um objeto com as chaves correspondentes
 var selector = {
-    initiative: "indonésia",
+    initiative: ["brazil", "pampa", "raisg"],
     collection: 1,
     theme: "string",
     asset_id: "string",
@@ -864,7 +864,22 @@ var selectedAssets = products.filter(selectAssets, selector);
 
 print(selectedAssets)
 
+Object.keys(metadataModel).forEach(
+  function(key) {
+      print("metadataModel: " + metadataModel[key])
+  })
 
+var select1 = ui.Select({
+    items: Object.keys(selector),
+    onChange: function(key) {
+        
+        
+        
+    },
+    placeholder: "Choose a option"
+})
+
+print(select1);
 
 
 // viewImage(products[10], callback);
