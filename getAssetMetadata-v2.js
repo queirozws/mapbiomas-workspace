@@ -834,23 +834,31 @@ var metadataModel = {
 // Após escolha dos seletores, deverá ser retornado um objeto com as chaves correspondentes
 var selector = {
     initiative: ["brazil", "pampa", "raisg", "chaco", "indonésia", "af-trinacional"],
-    collection: 1,
-    theme: "string",
-    asset_id: "string",
-    description: "string",
-    type: "string",
-    countries: ["string", "string", "string"],
-    source: [ "string", "string", "string", "string", "string", "string", "string", "string", "string" ],
-    metadata: {
-        bands: {
-            prefix: "string_",
-        },
-        years:  [
-            [ "0000", "0000" ], [ "0000", "0000" ], [ "0000", "0000" ]
-        ],
-        biome: ["string"],
-        version: "0", // string || integer?
-    }
+    collection: ["1","2","3","4","5","6"],
+    theme: ["classification", "transition", "integration", "quality"],
+    // asset_id: "string",
+    // description: "string",
+    type: [
+        "classification-singleband",
+        "transition-singleband",
+        "classification-multiband",
+        "transition-multiband",
+        "quality-singleband",
+        "quality-multiband",
+        "collection-classification-multiband"
+    ],
+    countries: ["Brasil", "Bolívia", "Colômbia", "Equador", "Guiana", "Guiana Francesa", "Peru", "Suriname", "Venezuela"],
+    source: [ "imazon", "LAPIG/UFG", "Solved", "IPAM", "outros..."],
+    // metadata: {
+    //     bands: {
+    //         prefix: "string_",
+    //     },
+    //     years:  [
+    //         [ "0000", "0000" ], [ "0000", "0000" ], [ "0000", "0000" ]
+    //     ],
+    //     biome: ["string"],
+    //     version: "0", // string || integer?
+    // }
 }
 
 
@@ -864,11 +872,11 @@ var selectedAssets = products.filter(selectAssets, selector);
 
 // print(selectedAssets)
 
-Object.keys(metadataModel).forEach(
+Object.keys(selector).forEach(
     function(key) {
-        
+      
         var select = ui.Select({
-            items: [key],
+            items: selector[key],
             onChange: function(key) {
                 
 
