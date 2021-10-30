@@ -871,8 +871,7 @@ Object.keys(metadataModel).forEach(
             items: [key],
             onChange: function(key) {
                 
-                
-                
+
             },
             placeholder: "Choose a " + key
         })
