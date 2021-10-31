@@ -680,7 +680,10 @@ var products = [
 ];
 
 // exports.key = products;
-exports.obj = function(products) {
+exports.key = function() {
+    
+    print(products)
+    
     return products["obj"]
 }
 
