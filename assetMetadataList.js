@@ -679,4 +679,5 @@ var products = [
 
 ];
 
-exports.products = products
+exports.products = products;
+
