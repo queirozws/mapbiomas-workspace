@@ -679,7 +679,7 @@ var products = [
 
 ];
 
-exports.key = "nome";
+exports.key = { "nome" };
 // exports.key = function() {
     
 //     // print(products)
