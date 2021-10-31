@@ -3,13 +3,13 @@
  * 
  */
  
-var obj = require("users/queirozws/mb-workspace:assetMetadataList.js");
+var products = require("users/queirozws/mb-workspace:assetMetadataList.js").products;
 
-var products = obj.products
+// var products = obj.products;
 
-print(products)
+print(products);
 
-Map.setCenter(-50, -10, 4)
+Map.setCenter(-50, -10, 4);
 
 function getBandName(obj) {
     
