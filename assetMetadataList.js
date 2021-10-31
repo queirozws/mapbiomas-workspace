@@ -679,7 +679,7 @@ var products = [
 
 ];
 
-exports.obj = products
+exports.key = products
 // exports.obj = function() {
 //     return products["products"]
 // }
