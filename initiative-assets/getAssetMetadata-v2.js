@@ -10,6 +10,9 @@ print(products);
 
 Map.setCenter(-50, -10, 4);
 
+/**
+ * 
+ */
 function getBandName(obj) {
     
     var prefix = obj.metadata.bands.prefix; // OR this.prefix ???
@@ -27,12 +30,18 @@ function getBandName(obj) {
     
 }
 
+/**
+ * 
+ */
 function eeImage(obj) {
     
     return ee.Image(obj.asset_id)
     
 }
 
+/**
+ * 
+ */
 function eeImageCollection(obj) {
     
     return ee.ImageCollection(obj.asset_id).mosaic()
@@ -116,6 +125,9 @@ function getImage(obj, selectedYears){
 
 }
 
+/**
+ * 
+ */
 function viewImages(obj) {
     
     var selectedYears = 0; // 0: first year / period; 1: second year / period...
@@ -126,6 +138,15 @@ function viewImages(obj) {
     
     Map.addLayer(image, {}, layerName, true, 1);
 }
+
+// viewImages(products[10]);
+
+// products.forEach(viewImages);
+
+/**
+ * Interface
+ * 
+ */
 
 var items = ["initiative", "collection", "theme"] // ui.Select() options
 
@@ -219,10 +240,3 @@ Object.keys(selector).forEach(
   })
 
 
-viewImages(products[10], getImage);
-
-// products.forEach(viewImages);
-
-// insert widgets to control | 27/10 - 00:35
-
-// // 
