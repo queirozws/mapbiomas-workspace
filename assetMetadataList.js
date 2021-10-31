@@ -679,5 +679,4 @@ var products = [
 
 ];
 
-// exports.key = { "nome" };
-exports.key = products.key
+exports.products = products
