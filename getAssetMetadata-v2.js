@@ -9,6 +9,8 @@ var products = obj.products
 
 print(products)
 
+Map.setCenter(-50, -10, 4)
+
 function getBandName(obj) {
     
     var prefix = obj.metadata.bands.prefix; // OR this.prefix ???
