@@ -219,7 +219,7 @@ Object.keys(selector).forEach(
   })
 
 
-viewImages(products[10], callback);
+viewImages(products[10], getImage);
 
 // products.forEach(viewImages);
 
