@@ -680,10 +680,4 @@ var products = [
 ];
 
 // exports.key = { "nome" };
-exports.key = function() {
-    
-    // print(products)
-    
-    return products.key
-}
-
+exports.key = products.key
