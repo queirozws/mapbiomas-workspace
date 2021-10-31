@@ -678,3 +678,7 @@ var products = [
     },
 
 ];
+
+exports.products = function(products) {
+    return products[products]
+}
