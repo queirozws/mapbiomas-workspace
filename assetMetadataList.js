@@ -684,6 +684,6 @@ exports.key = function() {
     
     // print(products)
     
-    return products["key"]
+    return products.key
 }
 
