@@ -2,7 +2,7 @@
  * @module
  */
 
-exports.products = [
+var products = [
     {
         initiative: 'brazil',
         collection: 6,
