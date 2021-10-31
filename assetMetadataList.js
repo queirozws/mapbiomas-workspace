@@ -1,4 +1,4 @@
-var products = [
+exports.products = [
     {
         initiative: 'brazil',
         collection: 6,
@@ -674,5 +674,3 @@ var products = [
     },
 
 ];
-
-module.exports = products
