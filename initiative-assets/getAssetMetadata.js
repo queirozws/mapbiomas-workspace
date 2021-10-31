@@ -3,7 +3,7 @@
  * 
  */
  
-var obj = require("users/queirozws/mb-workspace:assetMetadataList.js");
+var obj = require("users/queirozws/mb-workspace:initiative-assets/assetMetadataList.js");
 
 var products = obj.products
 
