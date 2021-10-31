@@ -17,10 +17,10 @@ function getBandName(obj) {
     var firstYear = obj.metadata.years[ this.selectedYears ][0];
     print( 'First year: ', ( firstYear || "doesn't exist" ) );
     
-    var secondYear = obj.metadata.years[ this.selectedYears ][1] || ""; // if secondYear undefined: return ""
+    var secondYear = obj.metadata.years[ this.selectedYears ][1] || ""; // if secondYear === undefined: return ""
     print( 'Second year: ', (secondYear || "doesn't exist") );
 
-    var bandName = prefix + firstYear + (secondYear && "_" + secondYear);
+    var bandName = prefix + firstYear + (secondYear && "_" + secondYear); // if secondYear !== undefined: return "_" + secondYear
     print( "Selected band is: ", bandName);
     
     return bandName;
@@ -28,7 +28,7 @@ function getBandName(obj) {
 }
 
 function eeImage(obj) {
-
+    
     return ee.Image(obj.asset_id)
     
 }
@@ -219,7 +219,7 @@ Object.keys(selector).forEach(
   })
 
 
-// viewImage(products[10], callback);
+viewImages(products[10], callback);
 
 // products.forEach(viewImages);
 
