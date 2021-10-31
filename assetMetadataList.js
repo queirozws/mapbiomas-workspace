@@ -1,3 +1,9 @@
+/**
+ * 
+ * @module
+ * 
+ */
+
 exports.products = [
     {
         initiative: 'brazil',
