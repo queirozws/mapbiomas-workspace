@@ -682,8 +682,8 @@ var products = [
 // exports.key = products;
 exports.key = function() {
     
-    print(products)
+    // print(products)
     
-    return products["obj"]
+    return products
 }
 
