@@ -106,7 +106,7 @@ function getImage(obj, selectedYears){
     
     var bandName = types[obj.type].bandName(obj);
 
-    var image = types[obj.type].constructor(obj, types).select(bandName);
+    var image = types[obj.type].constructor(obj).select(bandName);
     
     print(image);
     
