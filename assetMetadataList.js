@@ -679,11 +679,11 @@ var products = [
 
 ];
 
-// exports.key = products;
-exports.key = function() {
+exports.key = "nome";
+// exports.key = function() {
     
-    // print(products)
+//     // print(products)
     
-    return products["key"]
-}
+//     return products["key"]
+// }
 
