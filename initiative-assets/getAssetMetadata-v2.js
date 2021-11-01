@@ -250,7 +250,9 @@ var visualizeImages = ui.Button({
         
         print(selectedAssets);
         
-        viewImages(selectedAssets);
+        // viewImages(selectedAssets);
+        
+        selectedAssets.forEach(viewImages);
         
     }
 });
@@ -259,8 +261,6 @@ print(visualizeImages);
 
 // var selectedAssets = products.filter(selectAssets, {initiative: "brazil"});
 // print(selectedAssets)
-
-// selectedAssets.forEach(viewImages);
 
 // viewImages(products[10]);
 
