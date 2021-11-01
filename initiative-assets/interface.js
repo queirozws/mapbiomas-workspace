@@ -28,29 +28,8 @@ var items = ["initiative", "collection", "theme"] // ui.Select() options
  * @param {object}
  */
 
-var metadataModel = {
-    initiative: "string",
-    collection: 0,
-    theme: "string",
-    asset_id: "string",
-    description: "string",
-    type: "string",
-    countries: ["string", "string", "string"],
-    source: [ "string", "string", "string", "string", "string", "string", "string", "string", "string" ],
-    metadata: {
-        bands: {
-            prefix: "string_",
-        },
-        years:  [
-            [ "0000", "0000" ], [ "0000", "0000" ], [ "0000", "0000" ]
-        ],
-        biome: ["string"],
-        version: "0", // string || integer ?
-    }
-}
-
 // Após escolha dos seletores, deverá ser retornado um objeto com as chaves correspondentes
-var selector = {
+var selectors = {
     initiative: ["brazil", "pampa", "raisg", "chaco", "indonésia", "af-trinacional"],
     collection: ["1","2","3","4","5","6"],
     theme: ["classification", "transition", "integration", "quality"],
@@ -86,13 +65,13 @@ function selectAssets(obj) {
 
 }
 
-var keys = Object.keys(selector);
+var keys = Object.keys(selectors);
 
 keys.forEach(
     function(key) {
       
         var select = ui.Select({
-            items: selector[key],
+            items: selectors[key],
             onChange: function(option) {
                 
                 selectedOptions[key] = option
