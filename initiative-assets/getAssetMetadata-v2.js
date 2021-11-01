@@ -3,13 +3,6 @@
  * 
  */
  
-var products = require("users/queirozws/mb-workspace:initiative-assets/assetMetadataList.js").products;
-// var products = obj.products;
-
-// print(products);
-
-Map.setCenter(-50, -10, 4);
-
 /**
  * 
  */
@@ -128,7 +121,7 @@ function getImage(obj, selectedYears){
 /**
  * 
  */
-function viewImages(obj) {
+exports.viewImages = function viewImages(obj) {
   
     var selectedYears = 0; // 0: first year / period; 1: second year / period...
 
@@ -139,132 +132,5 @@ function viewImages(obj) {
     Map.addLayer(image, {}, layerName, true, 1);
 }
 
-/**
- * Interface
- * 
- */
-
-var items = ["initiative", "collection", "theme"] // ui.Select() options
-
-/**
- * 
- * @param {object}
- */
-
-// var selector = function(???) {
-
-
-//     return obj
-// }
-
-var metadataModel = {
-    initiative: "string",
-    collection: 0,
-    theme: "string",
-    asset_id: "string",
-    description: "string",
-    type: "string",
-    countries: ["string", "string", "string"],
-    source: [ "string", "string", "string", "string", "string", "string", "string", "string", "string" ],
-    metadata: {
-        bands: {
-            prefix: "string_",
-        },
-        years:  [
-            [ "0000", "0000" ], [ "0000", "0000" ], [ "0000", "0000" ]
-        ],
-        biome: ["string"],
-        version: "0", // string || integer ?
-    }
-}
-
-// Após escolha dos seletores, deverá ser retornado um objeto com as chaves correspondentes
-var selector = {
-    initiative: ["brazil", "pampa", "raisg", "chaco", "indonésia", "af-trinacional"],
-    collection: ["1","2","3","4","5","6"],
-    theme: ["classification", "transition", "integration", "quality"],
-    // asset_id: "string",
-    // description: "string",
-    type: [
-        "classification-singleband",
-        "transition-singleband",
-        "classification-multiband",
-        "transition-multiband",
-        "quality-singleband",
-        "quality-multiband",
-        "collection-classification-multiband"
-    ],
-    countries: ["Brasil", "Bolívia", "Colômbia", "Equador", "Guiana", "Guiana Francesa", "Peru", "Suriname", "Venezuela"],
-    source: [ "imazon", "LAPIG/UFG", "Solved", "IPAM", "outros..."],
-    // metadata: {
-    //     bands: {
-    //         prefix: "string_",
-    //     },
-    //     years:  [
-    //         [ "0000", "0000" ], [ "0000", "0000" ], [ "0000", "0000" ]
-    //     ],
-    //     biome: ["string"],
-    //     version: "0", // string || integer?
-    // }
-}
-
-
-function selectAssets(obj) {
-    
-    return (obj.initiative === this.initiative || obj.theme === this.theme)
-
-}
-
-var objeto = {};
-
-var keys = Object.keys(selector);
-
-keys.forEach(
-    function(key) {
-      
-        var select = ui.Select({
-            items: selector[key],
-            onChange: function(option) {
-                
-                objeto[key] = option
-                
-                // print(objeto)
-                
-                
-
-            },
-            placeholder: "Choose a " + key
-        })
-
-        print(select);
-
-  })
-
-var visualizeImages = ui.Button({
-    label: '*** VISUALIZE IMAGES ***',
-    onClick: function() {
-
-        print(objeto);
-
-        var selectedAssets = products.filter(selectAssets, objeto);
-        
-        print(selectedAssets);
-        
-        // viewImages(selectedAssets);
-        
-        selectedAssets.forEach(viewImages);
-        
-    }
-});
-
-print(visualizeImages);
-
-// var selectedAssets = products.filter(selectAssets, {initiative: "brazil"});
-// print(selectedAssets)
-
-// viewImages(products[10]);
-
-// products.forEach(viewImages);
-        
 
 // 14:08
