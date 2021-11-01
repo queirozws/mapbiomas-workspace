@@ -114,7 +114,7 @@ function getImage(obj, selectedYears){
     // Usar Image.visualize() ou paleta de cores última coleção 6;
     // Map.addLayer(image, {}, layerName, true, 1);
     
-    return ( image || ee.Image(1) ) // || retornar imagem com os limites do Brasil quando erro?
+    return image // || retornar imagem com os limites do Brasil quando erro?
 
 }
 
