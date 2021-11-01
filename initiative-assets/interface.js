@@ -24,11 +24,9 @@ Map.setCenter(-50, -10, 4);
 var items = ["initiative", "collection", "theme"] // ui.Select() options
 
 /**
- * 
+ * Após escolha dos seletores, deverá ser retornado um objeto com as chaves correspondentes
  * @param {object}
  */
-
-// Após escolha dos seletores, deverá ser retornado um objeto com as chaves correspondentes
 var selectors = {
     initiative: ["brazil", "pampa", "raisg", "chaco", "indonésia", "af-trinacional"],
     collection: ["1","2","3","4","5","6"],
@@ -60,8 +58,24 @@ var selectors = {
 
 
 function selectAssets(obj) {
+  
+    // var comparados = Object.keys(this).forEach(
+    //     function(key) {
+            
+            
+    //         return (obj[key] = this[key])
+            
+            
+    //     })
     
-    return (obj.initiative === this.initiative || obj.theme === this.theme)
+    // return comparados
+    return (
+        obj.initiative === this.initiative ||
+        obj.collection === this.collection  ||
+        obj.theme === this.theme ||
+        obj.type === this.type  ||
+        obj.countries === this.countries
+    )
 
 }
 
@@ -78,8 +92,6 @@ keys.forEach(
                 
                 // print(selectedOptions)
                 
-                
-
             },
             placeholder: key.toUpperCase() // TODO: 
         })
@@ -96,8 +108,6 @@ var visualizeImages = ui.Button({
         
         Map.clear();
         
-        print(selectedOptions);
-
         var selectedAssets = products.filter(selectAssets, selectedOptions);
         
         print(selectedAssets);
