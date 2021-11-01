@@ -267,4 +267,4 @@ print(visualizeImages);
 // products.forEach(viewImages);
         
 
-// 31/10 21:11
+// 14:08
