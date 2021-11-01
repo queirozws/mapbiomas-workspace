@@ -1,5 +1,5 @@
 /**
- * 
+ * @Author: Wildson Queiroz
  * 
  */
  
@@ -8,11 +8,11 @@ var products = require("users/queirozws/mb-workspace:initiative-assets/assetMeta
 
 var viewImages = require("users/queirozws/mb-workspace:initiative-assets/getAssetMetadata-v2.js").viewImages;
 
-var objeto = {};
+var selectedOptions = {}; // Object with selected options from select buttons
 
 // print(products);
 
-var label = ui.Label('Selecione os assets por uma ou mais categoria abaixo:');
+var label = ui.Label('Selecione uma das opções abaixo para filtrar os assets a serem exibidos:'); // TODO Melhorar redação
 print(label);
 
 Map.setCenter(-50, -10, 4);
@@ -27,12 +27,6 @@ var items = ["initiative", "collection", "theme"] // ui.Select() options
  * 
  * @param {object}
  */
-
-// var selector = function(???) {
-
-
-//     return obj
-// }
 
 var metadataModel = {
     initiative: "string",
@@ -101,9 +95,9 @@ keys.forEach(
             items: selector[key],
             onChange: function(option) {
                 
-                objeto[key] = option
+                selectedOptions[key] = option
                 
-                // print(objeto)
+                // print(selectedOptions)
                 
                 
 
@@ -119,9 +113,13 @@ var visualizeImages = ui.Button({
     label: '*** VISUALIZE IMAGES ***',
     onClick: function() {
 
-        print(objeto);
+        // ui.Panel().clear()
+        
+        Map.clear();
+        
+        print(selectedOptions);
 
-        var selectedAssets = products.filter(selectAssets, objeto);
+        var selectedAssets = products.filter(selectAssets, selectedOptions);
         
         print(selectedAssets);
         
@@ -134,10 +132,5 @@ var visualizeImages = ui.Button({
 
 print(visualizeImages);
 
-// var selectedAssets = products.filter(selectAssets, {initiative: "brazil"});
-// print(selectedAssets)
 
-// viewImages(products[10]);
-
-// products.forEach(viewImages);
-        
+// 16:25
