@@ -11,13 +11,13 @@ function getBandName(obj) {
     var prefix = obj.metadata.bands.prefix; // OR this.prefix ???
     
     var firstYear = obj.metadata.years[ this.selectedYears ][0];
-    print( 'First year: ', ( firstYear || "doesn't exist" ) );
+    // print( 'First year: ', ( firstYear || "doesn't exist" ) );
     
     var secondYear = obj.metadata.years[ this.selectedYears ][1] || ""; // if secondYear === undefined: return ""
-    print( 'Second year: ', (secondYear || "doesn't exist") );
+    // print( 'Second year: ', (secondYear || "doesn't exist") );
 
     var bandName = prefix + firstYear + (secondYear && "_" + secondYear); // if secondYear !== undefined: return "_" + secondYear
-    print( "Selected band is: ", bandName);
+    // print( "Selected band is: ", bandName);
     
     return bandName;
     
