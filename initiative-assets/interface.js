@@ -1,9 +1,19 @@
+/**
+ * 
+ * 
+ */
+ 
 var products = require("users/queirozws/mb-workspace:initiative-assets/assetMetadataList.js").products;
 // var products = obj.products;
 
 var viewImages = require("users/queirozws/mb-workspace:initiative-assets/getAssetMetadata-v2.js").viewImages;
 
+var objeto = {};
+
 // print(products);
+
+var label = ui.Label('Selecione os assets por uma ou mais categoria abaixo:');
+print(label);
 
 Map.setCenter(-50, -10, 4);
 
@@ -11,7 +21,6 @@ Map.setCenter(-50, -10, 4);
  * Interface
  * 
  */
-
 var items = ["initiative", "collection", "theme"] // ui.Select() options
 
 /**
@@ -83,8 +92,6 @@ function selectAssets(obj) {
 
 }
 
-var objeto = {};
-
 var keys = Object.keys(selector);
 
 keys.forEach(
@@ -101,7 +108,7 @@ keys.forEach(
                 
 
             },
-            placeholder: "Choose a " + key
+            placeholder: key.toUpperCase() // TODO: 
         })
 
         print(select);
