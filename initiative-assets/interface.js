@@ -59,16 +59,6 @@ var selectors = {
 
 function selectAssets(obj) {
   
-    // var comparados = Object.keys(this).forEach(
-    //     function(key) {
-            
-            
-    //         return (obj[key] = this[key])
-            
-            
-    //     })
-    
-    // return comparados
     return (
         obj.initiative === this.initiative ||
         obj.collection === this.collection  ||
