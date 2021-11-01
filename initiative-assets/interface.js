@@ -122,4 +122,4 @@ var visualizeImages = ui.Button({
 print(visualizeImages);
 
 
-// 16:25
+// 18:23
