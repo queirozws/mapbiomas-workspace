@@ -243,10 +243,12 @@ keys.forEach(
 var visualizeImages = ui.Button({
     label: '*** VISUALIZE IMAGES ***',
     onClick: function() {
-        
+
+        print(objeto);
+
         var selectedAssets = products.filter(selectAssets, objeto);
         
-        print(selectedAssets)
+        print(selectedAssets);
         
         viewImages(selectedAssets);
         
@@ -255,7 +257,7 @@ var visualizeImages = ui.Button({
 
 print(visualizeImages);
 
-var selectedAssets = products.filter(selectAssets, objeto);
+// var selectedAssets = products.filter(selectAssets, {initiative: "brazil"});
 // print(selectedAssets)
 
 // selectedAssets.forEach(viewImages);
