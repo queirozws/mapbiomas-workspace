@@ -109,7 +109,7 @@ function getImage(obj, selectedYears){
 
     var image = types[obj.type].constructor(obj).select(bandName);
     
-    print(image);
+    // print(image);
     
     // Usar Image.visualize() ou paleta de cores última coleção 6;
     // Map.addLayer(image, {}, layerName, true, 1);
