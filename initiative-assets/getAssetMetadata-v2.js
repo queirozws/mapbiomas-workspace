@@ -56,7 +56,7 @@ function eeImageCollection(obj) {
  */
 function getImage(obj, selectedYears){
 
-    print(obj);
+    // print(obj);
 
     var types = {
       
@@ -228,7 +228,7 @@ keys.forEach(
                 
                 objeto[key] = option
                 
-                print(objeto)
+                // print(objeto)
                 
                 
 
@@ -250,12 +250,19 @@ var visualizeImages = ui.Button({
         
         viewImages(selectedAssets);
         
-        // selectedAssets.forEach(viewImages);
-        
     }
 });
 
 print(visualizeImages);
 
+var selectedAssets = products.filter(selectAssets, objeto);
+// print(selectedAssets)
+
+// selectedAssets.forEach(viewImages);
+
+// viewImages(products[10]);
+
+// products.forEach(viewImages);
+        
 
 // 31/10 21:11
