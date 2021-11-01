@@ -6,7 +6,7 @@
 var products = require("users/queirozws/mb-workspace:initiative-assets/assetMetadataList.js").products;
 // var products = obj.products;
 
-print(products);
+// print(products);
 
 Map.setCenter(-50, -10, 4);
 
@@ -129,7 +129,7 @@ function getImage(obj, selectedYears){
  * 
  */
 function viewImages(obj) {
-    
+  
     var selectedYears = 0; // 0: first year / period; 1: second year / period...
 
     var layerName = obj.initiative+"-"+"collection-" + obj.collection+"-"+obj.theme;
@@ -138,10 +138,6 @@ function viewImages(obj) {
     
     Map.addLayer(image, {}, layerName, true, 1);
 }
-
-// viewImages(products[10]);
-
-// products.forEach(viewImages);
 
 /**
  * Interface
@@ -219,16 +215,21 @@ function selectAssets(obj) {
 
 }
 
-var selectedAssets = products.filter(selectAssets, selector);
+var objeto = {};
 
-// print(selectedAssets)
+var keys = Object.keys(selector);
 
-Object.keys(selector).forEach(
+keys.forEach(
     function(key) {
       
         var select = ui.Select({
             items: selector[key],
-            onChange: function(key) {
+            onChange: function(option) {
+                
+                objeto[key] = option
+                
+                print(objeto)
+                
                 
 
             },
@@ -238,5 +239,22 @@ Object.keys(selector).forEach(
         print(select);
 
   })
+
+var visualizeImages = ui.Button({
+    label: '*** VISUALIZE IMAGES ***',
+    onClick: function() {
+        
+        var selectedAssets = products.filter(selectAssets, objeto);
+        
+        print(selectedAssets)
+        
+        viewImages(selectedAssets);
+        
+        // selectedAssets.forEach(viewImages);
+        
+    }
+});
+
+print(visualizeImages);
 
 
