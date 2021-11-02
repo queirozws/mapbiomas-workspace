@@ -1,27 +1,19 @@
 /**
  * @Author: Wildson Queiroz
- * 
+ * Interface
  */
  
 var products = require("users/queirozws/mb-workspace:initiative-assets/assetMetadataList.js").products;
-// var products = obj.products;
+// OR >> var products = obj.products; ?
 
 var viewImages = require("users/queirozws/mb-workspace:initiative-assets/getAssetMetadata-v2.js").viewImages;
 
 var selectedOptions = {}; // Object with selected options from select buttons
 
-// print(products);
-
-var label = ui.Label('Selecione uma das opções abaixo para filtrar os assets a serem exibidos:'); // TODO Melhorar redação
+var label = ui.Label('Utilize as opções abaixo para selecionar os assets a serem exibidos:'); // TODO Melhorar redação
 print(label);
 
 Map.setCenter(-50, -10, 4);
-
-/**
- * Interface
- * 
- */
-var items = ["initiative", "collection", "theme"] // ui.Select() options
 
 /**
  * Após escolha dos seletores, deverá ser retornado um objeto com as chaves correspondentes
@@ -42,7 +34,7 @@ var selectors = {
         "quality-multiband",
         "collection-classification-multiband"
     ],
-    countries: ["Brasil", "Bolívia", "Colômbia", "Equador", "Guiana", "Guiana Francesa", "Peru", "Suriname", "Venezuela"],
+    countries: ["Brasil", "Bolívia", "Colômbia", "Equador", "Guiana", "Guiana Francesa", "Peru", "Suriname", "Venezuela", "Paraguay"],
     source: [ "imazon", "LAPIG/UFG", "Solved", "IPAM", "outros..."],
     // metadata: {
     //     bands: {
@@ -59,13 +51,17 @@ var selectors = {
 
 function selectAssets(obj) {
   
-    return (
-        obj.initiative === this.initiative ||
-        obj.collection === this.collection  ||
-        obj.theme === this.theme ||
-        obj.type === this.type  ||
-        obj.countries === this.countries
-    )
+    var keys = Object.keys(obj);
+    
+    var filtered = keys.filter(
+        
+        function(key) {
+          
+            return (obj[key] === this[key])
+            
+        }, selectedOptions)
+    
+    return filtered.length > 0 // If the objects have some key with the same value, its size will be greater than 0
 
 }
 
@@ -83,7 +79,7 @@ keys.forEach(
                 // print(selectedOptions)
                 
             },
-            placeholder: key.toUpperCase() // TODO: 
+            placeholder: "FILTER BY " + key.toUpperCase() // TODO:
         })
 
         print(select);
@@ -100,11 +96,15 @@ var visualizeImages = ui.Button({
         
         var selectedAssets = products.filter(selectAssets, selectedOptions);
         
-        print(selectedAssets);
-        
-        // viewImages(selectedAssets);
-        
-        selectedAssets.forEach(viewImages);
+        if (selectedAssets.length === 0) {
+  
+            print("Selecione alguma das opções acima!")
+          
+        } else {
+            
+            selectedAssets.forEach(viewImages);
+            
+        }
         
     }
 });
@@ -114,4 +114,4 @@ print(visualizeImages);
 
 
 
-// 20:06
+// 21:02
