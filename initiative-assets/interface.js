@@ -76,7 +76,7 @@ var selectedOptions = {}; // Object with selected options from select buttons
 var options = {
     initiative: ["brazil", "pampa", "raisg", "chaco", "indonésia", "af-trinacional"],
     collection: ["1","2","3","4","5","6"],
-    theme: ["classification", "transition", "integration", "quality"],
+    theme: ["classification", "integration", "transition", "quality"],
     // asset_id: "string",
     // description: "string",
     type: [
