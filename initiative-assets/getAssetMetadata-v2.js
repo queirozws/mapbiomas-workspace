@@ -155,7 +155,7 @@ exports.viewImages = function viewImages(obj) {
   
     var selectedYears = 0; // 0: first year / period; 1: second year / period...
 
-    var layerName = obj.initiative+"-"+"collection-" + obj.collection+"-"+obj.theme;
+    var layerName = obj.initiative + "-" + "collection-" + obj.collection + "-" + obj.theme;
     
     var image = getImage(obj, selectedYears);
     
