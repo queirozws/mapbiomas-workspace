@@ -84,10 +84,12 @@ var options = {
         "singleband-integration",
         "singleband-transition",
         "singleband-quality",
+        
         "multiband-classification",
         "multiband-integration",
         "multiband-transition",
         "multiband-quality",
+        
         "multiband-classification-collection",
         "multiband-integration-collection",
         "multiband-transition-collection",
