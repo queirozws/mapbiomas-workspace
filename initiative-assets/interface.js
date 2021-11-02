@@ -74,15 +74,13 @@ function selectAssets(obj) {
             
         }, selectedOptions)
     
-    print(filtered);
+    ( filtered.length || print(filtered.length) );
     
     // var quantidade = (filtered.length > filtered.length);
     
-    var quantidade = 0;
+    // quantidade = filtered.length + quantidade; // 0
     
-    quantidade = filtered.length + quantidade; // 0
-    
-    return filtered.length > quantidade // If the objects have some key with the same value, its size will be greater than 0
+    return filtered.length > 0 // If the objects have some key with the same value, its size will be greater than 0
 
 }
 
@@ -93,6 +91,8 @@ Map.setCenter(-50, -10, 4);
 
 var keys = Object.keys(options);
 
+var quantidade = 0;
+  
 keys.forEach(
     function(key) {
 
