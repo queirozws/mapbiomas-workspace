@@ -74,7 +74,15 @@ function selectAssets(obj) {
             
         }, selectedOptions)
     
-    return filtered.length > 0 // If the objects have some key with the same value, its size will be greater than 0
+    print(filtered);
+    
+    // var quantidade = (filtered.length > filtered.length);
+    
+    var quantidade = 0;
+    
+    quantidade = filtered.length + quantidade; // 0
+    
+    return filtered.length > quantidade // If the objects have some key with the same value, its size will be greater than 0
 
 }
 
@@ -96,11 +104,15 @@ keys.forEach(
                 
                 selectedOptions[key] = option;
                 
+                // print(selectedOptions);
+                
                 // print(typeof options[key])
                 
-                selectedAssets = products.filter(selectAssets, selectedOptions);
+                // print(products);
                 
-                print(selectedAssets);
+                products = products.filter(selectAssets, selectedOptions);
+                
+                // print(products);
                 
             },
             placeholder: "FILTER BY " + key.toUpperCase() // TODO:
@@ -120,13 +132,13 @@ var visualizeImages = ui.Button({
         
         // var selectedAssets = products.filter(selectAssets, selectedOptions);
         
-        if (selectedAssets.length === 0) {
+        if (products.length === 0) {
   
             print("Selecione alguma das opções acima!")
           
         } else {
             
-            selectedAssets.forEach(viewImages);
+            products.forEach(viewImages);
             
         }
         
