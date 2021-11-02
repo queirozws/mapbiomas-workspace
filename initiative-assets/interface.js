@@ -73,14 +73,6 @@ function selectAssets(obj) {
             return ( (obj[key] === this[key]) /*||*/ /*obj[key].some(function() {return el === this[key]})*/ )
             
         }, selectedOptions)
-        
-    print(filtered.length)
-    
-    ( filtered.length || console.log(filtered.length) );
-    
-    // var quantidade = (filtered.length > filtered.length);
-    
-    // quantidade = filtered.length + quantidade; // 0
     
     return filtered.length > 0 // If the objects have some key with the same value, its size will be greater than 0
 
@@ -104,17 +96,19 @@ keys.forEach(
                 
                 // print(options, key)
                 
+                selectedOptions = {};
+                
                 selectedOptions[key] = option;
                 
                 // print(selectedOptions);
                 
                 // print(typeof options[key])
                 
-                // print(products);
-                
                 products = products.filter(selectAssets, selectedOptions);
                 
-                // print(products);
+                print(products.length + " assets atendem os critérios acima: ", products);
+                
+                // ( (products.length === 0) && print("Não existe asset que atenda as categorias escolhidas") );
                 
             },
             placeholder: "FILTER BY " + key.toUpperCase() // TODO:
