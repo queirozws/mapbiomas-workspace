@@ -9,7 +9,7 @@ var products = [
         theme: "classification",
         asset_id: "projects/mapbiomas-workspace/COLECAO6/mapbiomas-collection60-integration-v0-12",
         description: "Dados de classificação da coleção 6 do Brasil",
-        type: "collection-classification-multiband", // | "classification-singleband" | "mosaic-multiband",
+        type: "multiband-classification-collection", // | "classification-singleband" | "mosaic-multiband",
         countries: ["brazil"],
         source: ["imazon", "..."],
         metadata: {
