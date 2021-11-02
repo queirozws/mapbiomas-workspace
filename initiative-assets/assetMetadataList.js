@@ -40,7 +40,7 @@ var products = [
         theme: "integration",
         asset_id: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_integration_v1",
         description: "integration data from collection 6 (brazil)",
-        type: "classification-multiband",
+        type: "multiband-classification",
         countries: ["brazil"],
         source: ["source"],
         metadata: {
@@ -71,7 +71,7 @@ var products = [
         theme: "transition",
         asset_id: "projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_transitions_v1",
         description: "transitions data from collection 6 (brazil)",
-        type: "transition-multiband",
+        type: "multiband-transition",
         countries: ["brazil"],
         source: ["source"],
         metadata: {
@@ -110,7 +110,7 @@ var products = [
         theme: "transition",
         asset_id: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_transitions_v1",
         description: "transitions data from collection 1 (pampa)",
-        type: "transition-multiband",
+        type: "multiband-transition",
         countries: ["brazil", "argentina", "uruguay"],
         source: ["source"],
         metadata: {
@@ -144,7 +144,7 @@ var products = [
         theme: "integration",
         asset_id: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_integration_v1",
         description: "integration data from collection 1 (pampa)",
-        type: "classification-multiband",
+        type: "multiband-classification",
         countries: ["brazil", "argentina", "uruguay"],
         source: ["source"],
         metadata: {
@@ -173,7 +173,7 @@ var products = [
         theme: "quality",
         asset_id: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_quality_v1",
         description: "quality data from collection 1 (pampa)",
-        type: "quality-multiband", // Is the quality asset type classification or transition?
+        type: "multiband-quality", // Is the quality asset type classification or transition?
         countries: ["brazil", "argentina", "uruguay"],
         source: ["source"],
         metadata: {
@@ -202,7 +202,7 @@ var products = [
         theme: "transition",
         asset_id: "projects/mapbiomas-chaco/public/collection2/mapbiomas_chaco_collection2_transitions_v1",
         description: "transitions data from collection 2 (chaco)",
-        type: "transition-multiband",
+        type: "multiband-transition",
         countries: ["argentina", "bolivia", "paraguay"],
         source: ["source"],
         metadata: {
@@ -234,7 +234,7 @@ var products = [
         theme: "integration",
         asset_id: "projects/mapbiomas-chaco/public/collection2/mapbiomas_chaco_collection2_integration_v1",
         description: "integration data from collection 2 (chaco)",
-        type: "classification-multiband",
+        type: "multiband-classification",
         countries: ["argentina", "bolivia", "paraguay"],
         source: ["source"],
         metadata: {
@@ -263,7 +263,7 @@ var products = [
         theme: "transition",
         asset_id: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_transitions_v1",
         description: "transitions data from collection 1 (indonésia)",
-        type: "transition-multiband",
+        type: "multiband-transition",
         countries: ["indonésia"],
         source: ["source"],
         metadata: {
@@ -298,7 +298,7 @@ var products = [
         theme: "integration",
         asset_id: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_integration_v1",
         description: "integration data from collection 1 (indonésia)",
-        type: "classification-multiband",
+        type: "multiband-classification",
         countries: ["indonésia"],
         source: ["source"],
         metadata: {
@@ -327,7 +327,7 @@ var products = [
         theme: "quality",
         asset_id: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_quality_v1",
         description: "quality data from collection 1 (indonésia)",
-        type: "quality-multiband", // Is the quality asset type classification or transition?
+        type: "multiband-quality", // Is the quality asset type classification or transition?
         countries: ["indonésia"],
         source: ["source"],
         metadata: {
@@ -356,7 +356,7 @@ var products = [
         theme: "transition",
         asset_id: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_transitions_v2",
         description: "transitions data from collection 1 (indonésia)",
-        type: "transition-multiband",
+        type: "multiband-transition",
         countries: ["indonésia"],
         source: ["source"],
         metadata: {
@@ -391,7 +391,7 @@ var products = [
         theme: "quality",
         asset_id: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_quality_v1",
         description: "quality data from collection 3 (raisg)",
-        type: "quality-multiband", // Is the quality asset type classification or transition?
+        type: "multiband-quality", // Is the quality asset type classification or transition?
         countries: ["bolivia", "brazil", "colombia", "ecuador", "french guiana", "guyana", "peru", "suriname", "venezuela"],
         source: ["source"],
         metadata: {
@@ -422,7 +422,7 @@ var products = [
         theme: "integration",
         asset_id: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_integration_v1",
         description: "integration data from collection 3 (raisg)",
-        type: "classification-multiband",
+        type: "multiband-classification",
         countries: ["bolivia", "brazil", "colombia", "ecuador", "french guiana", "guyana", "peru", "suriname", "venezuela"],
         source: ["source"],
         metadata: {
@@ -453,7 +453,7 @@ var products = [
         theme: "integration",
         asset_id: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_integration_v2",
         description: "integration data from collection 3 (raisg)",
-        type: "classification-multiband",
+        type: "multiband-classification",
         countries: ["bolivia", "brazil", "colombia", "ecuador", "french guiana", "guyana", "peru", "suriname", "venezuela"],
         source: ["source"],
         metadata: {
@@ -484,7 +484,7 @@ var products = [
         theme: "transition",
         asset_id: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_transitions_v1",
         description: "transitions data from collection 3 (raisg)",
-        type: "transition-multiband",
+        type: "multiband-transition",
         countries: ["bolivia", "brazil", "colombia", "ecuador", "french guiana", "guyana", "peru", "suriname", "venezuela"],
         source: ["source"],
         metadata: {
@@ -522,7 +522,7 @@ var products = [
         theme: "transition",
         asset_id: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_transitions_v2",
         description: "transitions data from collection 3 (raisg)",
-        type: "transition-multiband",
+        type: "multiband-transition",
         countries: ["bolivia", "brazil", "colombia", "ecuador", "french guiana", "guyana", "peru", "suriname", "venezuela"],
         source: ["source"],
         metadata: {
@@ -560,7 +560,7 @@ var products = [
         theme: "integration",
         asset_id: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_integration_v1",
         description: "integration data from collection 1 (af-trinacional)",
-        type: "classification-multiband",
+        type: "multiband-classification",
         countries: ["argentina", "brazil", "paraguay"],
         source: [
             "Instituto de Biología Subtropical de CONICET",
@@ -599,7 +599,7 @@ var products = [
         theme: "quality",
         asset_id: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_quality_v1",
         description: "quality data from collection 1 (af-trinacional)",
-        type: "quality-multiband", // Is the quality asset type classification or transition?
+        type: "multiband-quality", // Is the quality asset type classification or transition?
         countries: ["argentina", "brazil", "paraguay"],
         source: [
             "Instituto de Biología Subtropical de CONICET",
@@ -638,7 +638,7 @@ var products = [
         theme: "transition",
         asset_id: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_transitions_v1",
         description: "transitions data from collection 1 (af-trinacional)",
-        type: "transition-multiband",
+        type: "multiband-transition",
         countries: ["argentina", "brazil", "paraguay"],
         source: [
             "Instituto de Biología Subtropical de CONICET",
