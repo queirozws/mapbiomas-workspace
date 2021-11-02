@@ -53,49 +53,49 @@ function getImage(obj, selectedYears){
 
     var types = {
       
-        "classification-singleband": {
+        "singleband-classification": {
             // prefix: "classification_", // Usar prefix de types ou prefix do objeto assets?
             selectedYears: selectedYears,
             bandName: getBandName,
             constructor: eeImage
         },
-        "transition-singleband": {
+        "singleband-transition": {
             // prefix: "transition_",
             selectedYears: selectedYears,
             bandName: getBandName,
             constructor: eeImage
         },
-        "classification-multiband": {
+        "multiband-classification": {
             // prefix: "classification_",
             selectedYears: selectedYears,
             bandName: getBandName,
             constructor: eeImage
         },
-        "transition-multiband": {
+        "multiband-transition": {
             // prefix: "transition_",
             selectedYears: selectedYears,
             bandName: getBandName,
             constructor: eeImage
         },
-        "quality-singleband": {
+        "singleband-quality": {
             // prefix: "classification_",
             selectedYears: selectedYears,
             bandName: getBandName,
             constructor: eeImage
         },
-        "quality-multiband": {
+        "multiband-quality": {
             // prefix: "classification_",
             selectedYears: selectedYears,
             bandName: getBandName,
             constructor: eeImage
         },
-        "collection-classification-multiband": {
+        "multiband-classification-collection": {
             // prefix: "classification_",
             selectedYears: selectedYears, //
             bandName: getBandName,
             constructor: eeImageCollection
         },
-        // "collection-transitions-multiband": {
+        // "multiband-transitions-collection": {
         //     prefix: "_{year1}_{year2}",
         //     func: function (years) {
         //         return obj.prefix + types[obj.type].sufix
