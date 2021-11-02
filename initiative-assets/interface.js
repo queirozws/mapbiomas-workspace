@@ -92,15 +92,15 @@ keys.forEach(
             items: options[key],
             onChange: function(option) {
                 
-                selectedAssets = products.filter(selectAssets, selectedOptions);
-                
-                print(selectedAssets);
-                
                 // print(options, key)
                 
                 selectedOptions[key] = option;
                 
                 // print(typeof options[key])
+                
+                selectedAssets = products.filter(selectAssets, selectedOptions);
+                
+                print(selectedAssets);
                 
             },
             placeholder: "FILTER BY " + key.toUpperCase() // TODO:
