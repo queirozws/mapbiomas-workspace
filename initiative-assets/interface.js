@@ -9,69 +9,70 @@ var viewImages = require("users/queirozws/mb-workspace:initiative-assets/getAsse
 
 var selectedOptions = {}; // Object with selected options from select buttons
 
-var options = {
-    "brazil": {
-        "collection 6": {
-            "type": {
-                "classification-singleband": {
+// var options = {
+//     "brazil": {
+//         "collection 6": {
+//             "type": {
+//                 "classification-singleband": {
                     
-                },
-                "transition-singleband": {
+//                 },
+//                 "transition-singleband": {
                     
-                },
-                "classification-multiband": {
+//                 },
+//                 "classification-multiband": {
                     
-                },
-                "transition-multiband": {
+//                 },
+//                 "transition-multiband": {
                     
-                },
-                "quality-singleband": {
+//                 },
+//                 "quality-singleband": {
                     
-                },
-                "quality-multiband": {
+//                 },
+//                 "quality-multiband": {
                     
-                },
-                "collection-classification-multiband": {
+//                 },
+//                 "collection-classification-multiband": {
                     
-                },
-            }
-            "theme": [
-                "classification": {
-                    "type": [
-                        "singleband-classification",
-                        "multiband-classification",
-                        "singleband-classification-collection",
-                        "multiband-classification-collection"
-                    ],
-                },
-                "transition": {
-                    "type": [
-                        "singleband-transition",
-                        "multiband-transition",
-                        "singleband-transition-collection",
-                        "multiband-transition-collection"
-                    ],
-                },
-                "integration":: {
-                    "type": [
-                        "singleband-integration",
-                        "multiband-integration",
-                        "singleband-integration-collection",
-                        "multiband-integration-collection"
-                    ],
-                },
-                "quality": {
-                    "type": [
-                        "singleband-quality",
-                        "multiband-quality",
-                        "singleband-quality-collection",
-                        "multiband-quality-collection"
-                    ],
-                },
-            ]
-        }
-    }
-}
+//                 },
+//             }
+//             "theme": [
+//                 "classification": {
+//                     "type": [
+//                         "singleband-classification",
+//                         "multiband-classification",
+//                         "singleband-classification-collection",
+//                         "multiband-classification-collection"
+//                     ],
+//                 },
+//                 "transition": {
+//                     "type": [
+//                         "singleband-transition",
+//                         "multiband-transition",
+//                         "singleband-transition-collection",
+//                         "multiband-transition-collection"
+//                     ],
+//                 },
+//                 "integration":: {
+//                     "type": [
+//                         "singleband-integration",
+//                         "multiband-integration",
+//                         "singleband-integration-collection",
+//                         "multiband-integration-collection"
+//                     ],
+//                 },
+//                 "quality": {
+//                     "type": [
+//                         "singleband-quality",
+//                         "multiband-quality",
+//                         "singleband-quality-collection",
+//                         "multiband-quality-collection"
+//                     ],
+//                 },
+//             ]
+//         }
+//     }
+// }
+
 var options = {
     initiative: ["brazil", "pampa", "raisg", "chaco", "indonésia", "af-trinacional"],
     collection: ["1","2","3","4","5","6"],
@@ -79,13 +80,13 @@ var options = {
     // asset_id: "string",
     // description: "string",
     type: [
-        "classification-singleband",
-        "transition-singleband",
-        "classification-multiband",
-        "transition-multiband",
-        "quality-singleband",
-        "quality-multiband",
-        "collection-classification-multiband"
+        "singleband-classification",
+        "singleband-transition",
+        "multiband-classification",
+        "multiband-transition",
+        "singleband-quality",
+        "multiband-quality",
+        "multiband-classification-collection"
     ],
     countries: ["Brasil", "Bolívia", "Colômbia", "Equador", "Guiana", "Guiana Francesa", "Peru", "Suriname", "Venezuela", "Paraguay"],
     source: [ "imazon", "LAPIG/UFG", "Solved", "IPAM", "outros..."],
