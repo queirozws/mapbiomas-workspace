@@ -49,78 +49,76 @@ function eeImageCollection(obj) {
  */
 function getImage(obj, selectedYears){
 
-    // print(obj);
-
     var types = {
       
         "singleband-classification": {
-            // prefix: "classification_", // Usar prefix de types ou prefix do objeto assets?
+            prefix: "classification_", // Usar prefix de types ou prefix do objeto assets?
             selectedYears: selectedYears,
             bandName: getBandName,
             constructor: eeImage
         },
         "singleband-integration": {
-            // prefix: "transition_",
+            prefix: "transition_",
             selectedYears: selectedYears,
             bandName: getBandName,
             constructor: eeImage
         },
         "singleband-transition": {
-            // prefix: "transition_",
+            prefix: "transition_",
             selectedYears: selectedYears,
             bandName: getBandName,
             constructor: eeImage
         },
         "singleband-quality": {
-            // prefix: "classification_",
+            prefix: "quality_",
             selectedYears: selectedYears,
             bandName: getBandName,
             constructor: eeImage
         },
         "multiband-classification": {
-            // prefix: "classification_",
+            prefix: "classification_",
             selectedYears: selectedYears,
             bandName: getBandName,
             constructor: eeImage
         },
         "multiband-integration": {
-            // prefix: "classification_",
+            prefix: "classification_",
             selectedYears: selectedYears,
             bandName: getBandName,
             constructor: eeImage
         },
         "multiband-transition": {
-            // prefix: "transition_",
+            prefix: "transition_",
             selectedYears: selectedYears,
             bandName: getBandName,
             constructor: eeImage
         },
         "multiband-quality": {
-            // prefix: "classification_",
+            prefix: "quality_",
             selectedYears: selectedYears,
             bandName: getBandName,
             constructor: eeImage
         },
         "multiband-classification-collection": {
-            // prefix: "classification_",
+            prefix: "classification_",
             selectedYears: selectedYears, //
             bandName: getBandName,
             constructor: eeImageCollection
         },
         "multiband-integration-collection": {
-            // prefix: "classification_",
+            prefix: "classification_",
             selectedYears: selectedYears, //
             bandName: getBandName,
             constructor: eeImageCollection
         },
         "multiband-transition-collection": {
-            // prefix: "classification_",
+            prefix: "classification_",
             selectedYears: selectedYears, //
             bandName: getBandName,
             constructor: eeImageCollection
         },
         "multiband-quality-collection": {
-            // prefix: "classification_",
+            prefix: "quality_",
             selectedYears: selectedYears, //
             bandName: getBandName,
             constructor: eeImageCollection
