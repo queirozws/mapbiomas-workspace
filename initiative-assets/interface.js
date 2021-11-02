@@ -73,8 +73,10 @@ function selectAssets(obj) {
             return ( (obj[key] === this[key]) /*||*/ /*obj[key].some(function() {return el === this[key]})*/ )
             
         }, selectedOptions)
+        
+    print(filtered.length)
     
-    ( filtered.length || print(filtered.length) );
+    ( filtered.length || console.log(filtered.length) );
     
     // var quantidade = (filtered.length > filtered.length);
     
