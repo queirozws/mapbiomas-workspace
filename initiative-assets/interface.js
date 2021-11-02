@@ -3,23 +3,13 @@
  * Interface
  */
  
-var products = require("users/queirozws/mb-workspace:initiative-assets/assetMetadataList.js").products;
-// OR >> var products = obj.products; ?
+var products = require("users/queirozws/mb-workspace:initiative-assets/assetMetadataList.js").products; // OR >> var products = obj.products; ?
 
 var viewImages = require("users/queirozws/mb-workspace:initiative-assets/getAssetMetadata-v2.js").viewImages;
 
 var selectedOptions = {}; // Object with selected options from select buttons
 
-var label = ui.Label('Utilize as opções abaixo para selecionar os assets a serem exibidos:'); // TODO Melhorar redação
-print(label);
-
-Map.setCenter(-50, -10, 4);
-
-/**
- * Após escolha dos seletores, deverá ser retornado um objeto com as chaves correspondentes
- * @param {object}
- */
-var selectors = {
+var options = {
     initiative: ["brazil", "pampa", "raisg", "chaco", "indonésia", "af-trinacional"],
     collection: ["1","2","3","4","5","6"],
     theme: ["classification", "transition", "integration", "quality"],
@@ -48,16 +38,30 @@ var selectors = {
     // }
 }
 
-
+/**
+ * Após escolha dos seletores, deverá ser retornado um objeto com as chaves correspondentes
+ * @param {object}
+ */
 function selectAssets(obj) {
-  
+    
+    // var compare = {
+    //     "string": obj[key] === this
+    // };
+    
     var keys = Object.keys(obj);
     
-    var filtered = keys.filter(
+    // var hasValue = keys.some(
+    //     function(key) {
+    //         obj[key]
+    //     })
+    
+    var filtered = keys.filter( // TODO substituir .filter() por .some()
         
         function(key) {
           
-            return (obj[key] === this[key])
+            // print(this[key], typeof obj[key])
+          
+            return ( (obj[key] === this[key]) /*||*/ /*obj[key].some(function() {return el === this[key]})*/ )
             
         }, selectedOptions)
     
@@ -65,18 +69,25 @@ function selectAssets(obj) {
 
 }
 
-var keys = Object.keys(selectors);
+var label = ui.Label('Utilize as opções abaixo para selecionar os assets a serem exibidos:'); // TODO Melhorar redação
+print(label);
+
+Map.setCenter(-50, -10, 4);
+
+var keys = Object.keys(options);
 
 keys.forEach(
     function(key) {
-      
+
         var select = ui.Select({
-            items: selectors[key],
+            items: options[key],
             onChange: function(option) {
+                
+                print(options, key)
                 
                 selectedOptions[key] = option
                 
-                // print(selectedOptions)
+                print(typeof options[key])
                 
             },
             placeholder: "FILTER BY " + key.toUpperCase() // TODO:
