@@ -129,15 +129,19 @@ var visualizeImages = ui.Button({
         
         // var selectedAssets = products.filter(selectAssets, selectedOptions);
         
-        if (products.length === 0) {
+        ( (products.length === 0) && print("Selecione alguma das opções acima!") );
+        
+        ( (products.length === 0) || products.forEach(viewImages) );
+
+        // if (products.length === 0) {
   
-            print("Selecione alguma das opções acima!")
+        //     print("Selecione alguma das opções acima!")
           
-        } else {
+        // } else {
             
-            products.forEach(viewImages);
+        //     products.forEach(viewImages);
             
-        }
+        // }
         
     },
     style: {"color": "blue", "width": "300px"}
