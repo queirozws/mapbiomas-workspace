@@ -106,12 +106,13 @@ keys.forEach(
                 
                 products = products.filter(selectAssets, selectedOptions);
                 
-                print(products.length + " assets atendem os critérios acima: ", products);
+                console.log("Os critérios acima retornaram: " + products.length + " assets", products);
                 
                 // ( (products.length === 0) && print("Não existe asset que atenda as categorias escolhidas") );
                 
             },
-            placeholder: "FILTER BY " + key.toUpperCase() // TODO:
+            placeholder: "FILTER BY " + key.toUpperCase(), // TODO:
+            style: {"width": "300px"}
         })
 
         print(select);
@@ -138,7 +139,8 @@ var visualizeImages = ui.Button({
             
         }
         
-    }
+    },
+    style: {"color": "blue", "width": "300px"}
 });
 
 print(visualizeImages);
