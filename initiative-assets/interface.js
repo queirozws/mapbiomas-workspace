@@ -112,7 +112,7 @@ keys.forEach(
                 
             },
             placeholder: "FILTER BY " + key.toUpperCase(), // TODO:
-            style: {"width": "300px"}
+            style: {"width": "350px"}
         })
 
         print(select);
@@ -144,7 +144,7 @@ var visualizeImages = ui.Button({
         // }
         
     },
-    style: {"color": "blue", "width": "300px"}
+    style: {"color": "blue", "width": "350px"}
 });
 
 print(visualizeImages);
