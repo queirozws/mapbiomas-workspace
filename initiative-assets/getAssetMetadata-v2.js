@@ -158,11 +158,11 @@ function getImage(obj, selectedYears){
 }
 
 /**
- * Ret
+ * Retorna os resultados da chamada mapId
  * @param {Object} obj
  * @returns {RawMapId}
  */
-exports.viewImages = function viewImages(obj) { // TODO: Melhorar nome função; inserir segundo param selectedYears
+exports.viewImages = function getMapId(obj) { // TODO: Melhorar nome função; inserir segundo param selectedYears
   
     var selectedYears = 0; // 0: first year / period; 1: second year / period...
 
@@ -175,7 +175,5 @@ exports.viewImages = function viewImages(obj) { // TODO: Melhorar nome função;
     return ee.data.getMapId( {image: image} )
 
 }
-
-viewImages(products[0]);
 
 // 14:50
