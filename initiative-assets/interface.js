@@ -159,7 +159,7 @@ var visualizeImages = ui.Button({
         
         ( (products.length === 0) && print("Selecione alguma das opções acima!") );
         
-        ( (products.length === 0) || products.forEach(getMapId) );
+        ( (products.length === 0) || products.forEach( getMapId ) );
 
         // if (products.length === 0) {
   
