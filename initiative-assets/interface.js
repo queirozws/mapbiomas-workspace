@@ -1,6 +1,6 @@
 /**
+ * App interface
  * @Author: Wildson Queiroz
- * Interface
  */
 
 // TODO: replace products to metadataList {}
