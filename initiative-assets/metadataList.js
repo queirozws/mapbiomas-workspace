@@ -9,7 +9,7 @@ var products = [
         theme: "classification",
         asset_id: "projects/mapbiomas-workspace/COLECAO6/mapbiomas-collection60-integration-v0-12",
         description: "Dados de classificação da coleção 6 do Brasil",
-        type: "multiband-classification-collection", // | "classification-singleband" | "mosaic-multiband",
+        type: "multiband-classification-collection",
         countries: ["brazil"],
         source: ["imazon", "..."],
         metadata: {
@@ -173,7 +173,7 @@ var products = [
         theme: "quality",
         asset_id: "projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_quality_v1",
         description: "quality data from collection 1 (pampa)",
-        type: "multiband-quality", // Is the quality asset type classification or transition?
+        type: "multiband-quality",
         countries: ["brazil", "argentina", "uruguay"],
         source: ["source"],
         metadata: {
@@ -327,7 +327,7 @@ var products = [
         theme: "quality",
         asset_id: "projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_quality_v1",
         description: "quality data from collection 1 (indonésia)",
-        type: "multiband-quality", // Is the quality asset type classification or transition?
+        type: "multiband-quality",
         countries: ["indonésia"],
         source: ["source"],
         metadata: {
@@ -391,7 +391,7 @@ var products = [
         theme: "quality",
         asset_id: "projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_quality_v1",
         description: "quality data from collection 3 (raisg)",
-        type: "multiband-quality", // Is the quality asset type classification or transition?
+        type: "multiband-quality",
         countries: ["bolivia", "brazil", "colombia", "ecuador", "french guiana", "guyana", "peru", "suriname", "venezuela"],
         source: ["source"],
         metadata: {
@@ -599,7 +599,7 @@ var products = [
         theme: "quality",
         asset_id: "projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_quality_v1",
         description: "quality data from collection 1 (af-trinacional)",
-        type: "multiband-quality", // Is the quality asset type classification or transition?
+        type: "multiband-quality",
         countries: ["argentina", "brazil", "paraguay"],
         source: [
             "Instituto de Biología Subtropical de CONICET",
