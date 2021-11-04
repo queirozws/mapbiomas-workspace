@@ -3,8 +3,7 @@
  * @Author: Wildson Queiroz
  */
 
-// TODO: replace products to metadataList {}
-var metadataObj = require("users/queirozws/mb-workspace:initiative-assets/metadataList.js"); // OR >> var products = obj.products; ?
+var metadataObj = require("users/queirozws/mb-workspace:initiative-assets/metadataList.js");
 
 var dataObj = require("users/queirozws/mb-workspace:initiative-assets/getData.js");
 
