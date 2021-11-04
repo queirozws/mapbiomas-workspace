@@ -155,7 +155,9 @@ exports.getMapId = function getMapId(obj, selectedYears) {
 
     var image = getImage(obj, selectedYears);
     
-    return ee.data.getMapId( {image: image} )
+    var rawMapId = ee.data.getMapId( {image: image} );
+    
+    return rawMapId
 
 }
 
