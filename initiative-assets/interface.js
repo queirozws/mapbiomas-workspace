@@ -5,10 +5,10 @@
 
 // TODO: replace products to metadataList {}
 // var products = require("users/queirozws/mb-workspace:initiative-assets/assetMetadataList.js").products; // OR >> var products = obj.products; ?
-var metadataObj = require("users/queirozws/mb-workspace:initiative-assets/metadataList.js.js"); // OR >> var products = obj.products; ?
+var metadataObj = require("users/queirozws/mb-workspace:initiative-assets/metadataList.js"); // OR >> var products = obj.products; ?
 
 // var viewImages = require("users/queirozws/mb-workspace:initiative-assets/getAssetMetadata-v2.js").viewImages;
-var dataObj = require("users/queirozws/mb-workspace:initiative-assets/getAssetMetadata-v2.js");
+var dataObj = require("users/queirozws/mb-workspace:initiative-assets/getData.js");
 
 var products = metadataObj.products;
 
@@ -159,7 +159,7 @@ var visualizeImages = ui.Button({
         
         ( (products.length === 0) && print("Selecione alguma das opções acima!") );
         
-        ( (products.length === 0) || products.forEach(viewImages) );
+        ( (products.length === 0) || products.forEach(getMapId) );
 
         // if (products.length === 0) {
   
@@ -180,19 +180,19 @@ print(visualizeImages);
 
 // Usar Image.visualize() ou paleta de cores última coleção 6;
 
-function viewImages(obj) { // TODO: Melhorar nome função; inserir segundo param selectedYears
+// function viewImages(obj) { // TODO: Melhorar nome função; inserir segundo param selectedYears
   
-    var selectedYears = 0; // 0: first year / period; 1: second year / period...
+//     var selectedYears = 0; // 0: first year / period; 1: second year / period...
 
-    var layerName = obj.initiative + "-" + "collection-" + obj.collection + "-" + obj.theme;
+//     var layerName = obj.initiative + "-" + "collection-" + obj.collection + "-" + obj.theme;
     
-    var image = getImage(obj, selectedYears);
+//     var image = getImage(obj, selectedYears);
     
-    // Map.addLayer(image, {}, layerName, true, 1);
+//     // Map.addLayer(image, {}, layerName, true, 1);
 
-    return ee.data.getMapId({image: image})
+//     return ee.data.getMapId({image: image})
 
-}
+// }
 
 
 // var options = {
