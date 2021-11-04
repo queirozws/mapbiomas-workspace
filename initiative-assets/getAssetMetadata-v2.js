@@ -140,7 +140,7 @@ function getImage(obj, selectedYears){
 
     var image = types[obj.type].constructor(obj).select(bandName);
     
-    return image // || retornar uma imagem padrão quando erro?
+    return image // || imagem padrão quando erro?
 
 }
 
