@@ -4,10 +4,8 @@
  */
 
 // TODO: replace products to metadataList {}
-// var products = require("users/queirozws/mb-workspace:initiative-assets/assetMetadataList.js").products; // OR >> var products = obj.products; ?
 var metadataObj = require("users/queirozws/mb-workspace:initiative-assets/metadataList.js"); // OR >> var products = obj.products; ?
 
-// var viewImages = require("users/queirozws/mb-workspace:initiative-assets/getAssetMetadata-v2.js").viewImages;
 var dataObj = require("users/queirozws/mb-workspace:initiative-assets/getData.js");
 
 var products = metadataObj.products;
@@ -16,8 +14,17 @@ var getMapId = dataObj.getMapId;
 
 var selectedAssets = [1];
 
-var selectedOptions = {}; // Object with selected options from select buttons
+// Object with initial selected options
+var selectedOptions = {
+    initiative: null,
+    collection: null,
+    theme: null,
+    type: null,
+    countries: null,
+    source: null,
+};
 
+// Object with select button options
 var options = {
     initiative: [
         "brazil",
