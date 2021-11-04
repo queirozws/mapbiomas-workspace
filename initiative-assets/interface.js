@@ -88,28 +88,18 @@ var options = {
  */
 function selectAssets(obj) {
     
-    // var compare = {
-    //     "string": obj[key] === this
-    // };
-    
     var keys = Object.keys(obj);
-    
-    // var hasValue = keys.some(
-    //     function(key) {
-    //         obj[key]
-    //     })
     
     var filtered = keys.filter( // TODO substituir .filter() por .some() ?
         
         function(key) {
           
-            // print(this[key], typeof obj[key])
-          
             return ( (obj[key] === this[key]) /*||*/ /*obj[key].some(function() {return el === this[key]})*/ )
             
         }, selectedOptions)
     
-    return filtered.length > 0 // If the objects have some key with the same value, its size will be greater than 0
+    // If the objects have some key with the same value, its size will be greater than 0
+    return filtered.length > 0
 
 }
 
