@@ -4,19 +4,26 @@
  */
  
 /**
- * 
+ * Retorna o nome da banda
+ * @param {Object} obj
+ * @return {string}
  */
 function getBandName(obj) {
     
     var prefix = this.prefix
     
     var firstYear = obj.metadata.years[ this.selectedYears ][0];
+    
     // print( 'First year: ', ( firstYear || "doesn't exist" ) );
     
-    var secondYear = obj.metadata.years[ this.selectedYears ][1] || ""; // if secondYear === undefined: return ""
+    // if secondYear === undefined: return ""
+    var secondYear = obj.metadata.years[ this.selectedYears ][1] || "";
+    
     // print( 'Second year: ', (secondYear || "doesn't exist") );
 
-    var bandName = prefix + firstYear + (secondYear && "_" + secondYear); // if secondYear !== undefined: return "_" + secondYear
+    // if secondYear !== undefined: return "_" + secondYear
+    var bandName = prefix + firstYear + (secondYear && "_" + secondYear);
+    
     // print( "Selected band is: ", bandName);
     
     return bandName;
@@ -24,7 +31,9 @@ function getBandName(obj) {
 }
 
 /**
- * 
+ * Retorna uma imagem
+ * @param {Object} obj
+ * @return {ee.Image}
  */
 function eeImage(obj) {
     
@@ -33,7 +42,9 @@ function eeImage(obj) {
 }
 
 /**
- * 
+ * Retorna uma coleção de imagens
+ * @param {Object} obj
+ * @return {ee.ImageCollection}
  */
 function eeImageCollection(obj) {
     
@@ -43,7 +54,7 @@ function eeImageCollection(obj) {
 
 /**
  * 
- * @param {Object} obj 
+ * @param {Object} obj
  * @param {number} selectedYears // adaptar para receber um array
  * @returns {ee.Image}
  */
