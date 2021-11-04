@@ -115,7 +115,7 @@ function selectAssets(obj) {
 
 // Usar Image.visualize() ou paleta de cores última coleção 6;
 
-function visualizeData(obj) { // TODO: Melhorar nome função; inserir segundo param selectedYears
+function visualizeData(obj, selectedYears) {
   
     var selectedYears = 0;
 
@@ -123,11 +123,7 @@ function visualizeData(obj) { // TODO: Melhorar nome função; inserir segundo p
     
     var layerName = obj.initiative + "-" + "collection-" + obj.collection + "-" + obj.theme;
     
-    // var image = getImage(obj, selectedYears);
-    
     Map.addLayer(mapId, {}, layerName, true, 1);
-
-    // return ee.data.getMapId({image: image})
 
 }
 
