@@ -8,7 +8,7 @@ var metadataObj = require("users/queirozws/mb-workspace:initiative-assets/metada
 
 var dataObj = require("users/queirozws/mb-workspace:initiative-assets/getData.js");
 
-var palette = require("users/mapbiomas/modules:Palettes.js").get('classification6');
+var palette = require("users/mapbiomas/modules:Palettes.js").get('classification5');
 
 var products = metadataObj.products;
 
@@ -110,13 +110,13 @@ function selectAssets(obj) {
  */
 function visualizeData(obj, selectedYears) {
   
-    selectedYears = 3;
+    selectedYears = 0;
 
     var mapId = getMapId(obj, selectedYears);
     
     var layerName = obj.initiative + "-" + "collection-" + obj.collection + "-" + obj.theme;
     
-    Map.addLayer(mapId, {palette: palette}, layerName, true, 1);
+    Map.addLayer(mapId, {min: 0, max: 49, palette: palette}, layerName, true, 1);
 
 }
 
