@@ -2,19 +2,38 @@
  * @Author: Wildson Queiroz
  * Interface
  */
- 
-var products = require("users/queirozws/mb-workspace:initiative-assets/assetMetadataList.js").products; // OR >> var products = obj.products; ?
 
-var viewImages = require("users/queirozws/mb-workspace:initiative-assets/getAssetMetadata-v2.js").viewImages;
+// TODO: replace products to metadataList {}
+// var products = require("users/queirozws/mb-workspace:initiative-assets/assetMetadataList.js").products; // OR >> var products = obj.products; ?
+var metadataObj = require("users/queirozws/mb-workspace:initiative-assets/assetMetadataList.js"); // OR >> var products = obj.products; ?
+
+// var viewImages = require("users/queirozws/mb-workspace:initiative-assets/getAssetMetadata-v2.js").viewImages;
+var dataObj = require("users/queirozws/mb-workspace:initiative-assets/getAssetMetadata-v2.js");
+
+var products = metadataObj.products;
+
+var viewImages = dataObj.viewImages;
 
 var selectedAssets = [1];
 
 var selectedOptions = {}; // Object with selected options from select buttons
 
 var options = {
-    initiative: ["brazil", "pampa", "raisg", "chaco", "indonésia", "af-trinacional"],
-    collection: ["1","2","3","4","5","6"],
-    theme: ["classification", "integration", "transition", "quality"],
+    initiative: [
+        "brazil",
+        "pampa",
+        "raisg",
+        "chaco",
+        "indonésia",
+        "af-trinacional"
+    ],
+    collection: ["1", "2", "3", "4", "5", "6"],
+    theme: [
+        "classification",
+        "integration",
+        "transition",
+        "quality"
+    ],
     // asset_id: "string",
     // description: "string",
     type: [
@@ -22,19 +41,28 @@ var options = {
         "singleband-integration",
         "singleband-transition",
         "singleband-quality",
-        
         "multiband-classification",
         "multiband-integration",
         "multiband-transition",
         "multiband-quality",
-        
         "multiband-classification-collection",
         "multiband-integration-collection",
         "multiband-transition-collection",
         "multiband-quality-collection",
     ],
-    countries: ["Brasil", "Bolívia", "Colômbia", "Equador", "Guiana", "Guiana Francesa", "Peru", "Suriname", "Venezuela", "Paraguay"],
-    source: [ "imazon", "LAPIG/UFG", "Solved", "IPAM", "outros..."],
+    countries: [
+        "Brasil",
+        "Bolívia",
+        "Colômbia",
+        "Equador",
+        "Guiana",
+        "Guiana Francesa",
+        "Peru",
+        "Suriname",
+        "Venezuela",
+        "Paraguay"
+    ],
+    source: [ "imazon", "LAPIG/UFG", "Solved", "IPAM", "outros..." ],
     // metadata: {
     //     bands: {
     //         prefix: "string_",

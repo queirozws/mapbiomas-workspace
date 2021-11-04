@@ -8,7 +8,7 @@
  */
 function getBandName(obj) {
     
-    var prefix = this.prefix // OR obj.metadata.bands.prefix; ???
+    var prefix = this.prefix
     
     var firstYear = obj.metadata.years[ this.selectedYears ][0];
     // print( 'First year: ', ( firstYear || "doesn't exist" ) );
@@ -44,7 +44,7 @@ function eeImageCollection(obj) {
 /**
  * 
  * @param {Object} obj 
- * @param {number} selectedYears 
+ * @param {number} selectedYears // adaptar para receber um array
  * @returns {ee.Image}
  */
 function getImage(obj, selectedYears){
@@ -149,7 +149,7 @@ function getImage(obj, selectedYears){
 /**
  * 
  */
-exports.viewImages = function viewImages(obj) {
+exports.viewImages = function viewImages(obj) { // TODO: Melhorar nome função; inserir segundo param selectedYears
   
     var selectedYears = 0; // 0: first year / period; 1: second year / period...
 
@@ -158,6 +158,9 @@ exports.viewImages = function viewImages(obj) {
     var image = getImage(obj, selectedYears);
     
     Map.addLayer(image, {}, layerName, true, 1);
+
+    // TODO: return url mapId
+
 }
 
 
