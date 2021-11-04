@@ -67,7 +67,7 @@ var options = {
         "Venezuela",
         "Paraguay"
     ],
-    source: [ "imazon", "LAPIG/UFG", "Solved", "IPAM", "outros..." ],
+    source: [ "imazon", "LAPIG/UFG", "Solved", "IPAM", "outros..." ]
     // metadata: {
     //     bands: {
     //         prefix: "string_",
@@ -108,7 +108,7 @@ function selectAssets(obj) {
  */
 function visualizeData(obj, selectedYears) {
   
-    selectedYears = 3
+    selectedYears = 3;
 
     var mapId = getMapId(obj, selectedYears);
     
