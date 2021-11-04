@@ -5,7 +5,7 @@
 
 // TODO: replace products to metadataList {}
 // var products = require("users/queirozws/mb-workspace:initiative-assets/assetMetadataList.js").products; // OR >> var products = obj.products; ?
-var metadataObj = require("users/queirozws/mb-workspace:initiative-assets/assetMetadataList.js"); // OR >> var products = obj.products; ?
+var metadataObj = require("users/queirozws/mb-workspace:initiative-assets/metadataList.js.js"); // OR >> var products = obj.products; ?
 
 // var viewImages = require("users/queirozws/mb-workspace:initiative-assets/getAssetMetadata-v2.js").viewImages;
 var dataObj = require("users/queirozws/mb-workspace:initiative-assets/getAssetMetadata-v2.js");
