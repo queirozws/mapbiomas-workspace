@@ -140,7 +140,7 @@ function getImage(obj, selectedYears){
 
     var image = types[obj.type].constructor(obj).select(bandName);
     
-    return image // OR retornar imagem com os limites do Brasil quando erro?
+    return image // || retornar uma imagem padrão quando erro?
 
 }
 
