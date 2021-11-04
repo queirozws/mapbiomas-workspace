@@ -96,7 +96,7 @@ function selectAssets(obj) {
         
         function(key) {
           
-            return ( (obj[key] === this[key]) /*||*/ /*obj[key].some(function() {return el === this[key]})*/ )
+            return ( (obj[key] === this[key]) )
             
         }, selectedOptions)
     
@@ -105,7 +105,6 @@ function selectAssets(obj) {
 
 }
 
-// Usar Image.visualize() ou paleta de cores última coleção 6;
 /**
  * Visualiza os assets selecionados
  * @param {object}
@@ -124,7 +123,7 @@ function visualizeData(obj, selectedYears) {
 
 }
 
-var label = ui.Label('Utilize as opções abaixo para selecionar os assets a serem exibidos:'); // TODO Melhorar redação
+var label = ui.Label('Utilize as opções abaixo para selecionar os assets a serem exibidos:');
 print(label);
 
 Map.setCenter(-50, -10, 4);
@@ -153,7 +152,7 @@ keys.forEach(
                 console.log("Os critérios acima retornaram: " + products.length + " assets", products);
                 
             },
-            placeholder: "FILTER BY " + key.toUpperCase(), // TODO:
+            placeholder: "FILTER BY " + key.toUpperCase(),
             style: {"width": "350px"}
         })
 
