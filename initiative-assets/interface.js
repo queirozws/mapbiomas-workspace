@@ -104,12 +104,15 @@ function selectAssets(obj) {
 }
 
 // Usar Image.visualize() ou paleta de cores última coleção 6;
-
+/**
+ * Visualiza os assets selecionados
+ * @param {object}
+ */
 function visualizeData(obj, selectedYears) {
   
     selectedYears = 0;
 
-    var mapId = getMapId(obj);
+    var mapId = getMapId(obj, selectedYears);
     
     var layerName = obj.initiative + "-" + "collection-" + obj.collection + "-" + obj.theme;
     
