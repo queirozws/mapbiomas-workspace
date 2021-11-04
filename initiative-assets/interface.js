@@ -148,17 +148,9 @@ keys.forEach(
                 
                 ( (option === 'classification') && (visParams = {min: 0, max: 49, palette: palette}));
                 
-                print(visParams);
-                
-                // print(selectedOptions);
-                
-                // print(typeof options[key])
-                
                 products = products.filter(selectAssets, selectedOptions);
                 
                 console.log("Os critérios acima retornaram: " + products.length + " assets", products);
-                
-                // ( (products.length === 0) && print("Não existe asset que atenda as categorias escolhidas") );
                 
             },
             placeholder: "FILTER BY " + key.toUpperCase(), // TODO:
