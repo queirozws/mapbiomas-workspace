@@ -143,12 +143,12 @@ keys.forEach(
             style: {"width": "350px"}
         })
 
-        print(select);
+        print(select);p
 
   })
 
 var visualizeImages = ui.Button({
-    label: '*** VISUALIZE IMAGES ***',
+    label: 'VISUALIZE IMAGES',
     onClick: function() {
 
         // ui.Panel().clear()
