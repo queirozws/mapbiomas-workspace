@@ -138,8 +138,6 @@ keys.forEach(
             items: options[key],
             onChange: function(option) {
                 
-                // print(options, key)
-                
                 selectedOptions = {};
                 
                 selectedOptions[key] = option;
@@ -186,70 +184,4 @@ var visualizeImages = ui.Button({
 });
 
 print(visualizeImages);
-
-
-
-// var options = {
-//     "brazil": {
-//         "collection 6": {
-//             "type": {
-//                 "classification-singleband": {
-                    
-//                 },
-//                 "transition-singleband": {
-                    
-//                 },
-//                 "classification-multiband": {
-                    
-//                 },
-//                 "transition-multiband": {
-                    
-//                 },
-//                 "quality-singleband": {
-                    
-//                 },
-//                 "quality-multiband": {
-                    
-//                 },
-//                 "collection-classification-multiband": {
-                    
-//                 },
-//             }
-//             "theme": [
-//                 "classification": {
-//                     "type": [
-//                         "singleband-classification",
-//                         "multiband-classification",
-//                         "singleband-classification-collection",
-//                         "multiband-classification-collection"
-//                     ],
-//                 },
-//                 "transition": {
-//                     "type": [
-//                         "singleband-transition",
-//                         "multiband-transition",
-//                         "singleband-transition-collection",
-//                         "multiband-transition-collection"
-//                     ],
-//                 },
-//                 "integration":: {
-//                     "type": [
-//                         "singleband-integration",
-//                         "multiband-integration",
-//                         "singleband-integration-collection",
-//                         "multiband-integration-collection"
-//                     ],
-//                 },
-//                 "quality": {
-//                     "type": [
-//                         "singleband-quality",
-//                         "multiband-quality",
-//                         "singleband-quality-collection",
-//                         "multiband-quality-collection"
-//                     ],
-//                 },
-//             ]
-//         }
-//     }
-// }
 
