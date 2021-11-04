@@ -63,7 +63,7 @@ function getImage(obj, selectedYears){
     var types = {
       
         "singleband-classification": {
-            prefix: "classification_", // Usar prefix de types ou prefix do objeto assets?
+            prefix: "classification_",
             selectedYears: selectedYears,
             bandName: getBandName,
             constructor: eeImage
@@ -112,36 +112,28 @@ function getImage(obj, selectedYears){
         },
         "multiband-classification-collection": {
             prefix: "classification_",
-            selectedYears: selectedYears, //
+            selectedYears: selectedYears,
             bandName: getBandName,
             constructor: eeImageCollection
         },
         "multiband-integration-collection": {
             prefix: "classification_",
-            selectedYears: selectedYears, //
+            selectedYears: selectedYears,
             bandName: getBandName,
             constructor: eeImageCollection
         },
         "multiband-transition-collection": {
             prefix: "classification_",
-            selectedYears: selectedYears, //
+            selectedYears: selectedYears,
             bandName: getBandName,
             constructor: eeImageCollection
         },
         "multiband-quality-collection": {
             prefix: "quality_",
-            selectedYears: selectedYears, //
+            selectedYears: selectedYears,
             bandName: getBandName,
             constructor: eeImageCollection
-        },
-        // "multiband-transitions-collection": {
-        //     prefix: "_{year1}_{year2}",
-        //     func: function (years) {
-        //         return obj.prefix + types[obj.type].sufix
-        //             .replace("{year1}", years[0])
-        //             .replace("{year2}", years[1])// "transition_2019_2020"
-        //     }
-        // }
+        }
     }
     
     var bandName = types[obj.type].bandName(obj);
