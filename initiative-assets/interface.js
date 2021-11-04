@@ -14,7 +14,7 @@ var products = metadataObj.products;
 
 var getMapId = dataObj.getMapId;
 
-var visParams = {min: 0, max: 49, palette: palette};
+var visParams = {min: null, max: null, palette: null};
 
 // Object with initial selected options
 var selectedOptions = {
@@ -146,7 +146,9 @@ keys.forEach(
                 
                 selectedOptions[key] = option;
                 
-                ( (option !== 'classification') && visParams = {});
+                ( (option === 'classification') && (visParams = {min: 0, max: 49, palette: palette}));
+                
+                print(visParams);
                 
                 // print(selectedOptions);
                 
