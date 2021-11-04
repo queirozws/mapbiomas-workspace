@@ -12,7 +12,7 @@ var dataObj = require("users/queirozws/mb-workspace:initiative-assets/getAssetMe
 
 var products = metadataObj.products;
 
-var viewImages = dataObj.viewImages;
+var getMapId = dataObj.getMapId;
 
 var selectedAssets = [1];
 
@@ -176,6 +176,24 @@ var visualizeImages = ui.Button({
 });
 
 print(visualizeImages);
+
+
+// Usar Image.visualize() ou paleta de cores última coleção 6;
+
+function viewImages(obj) { // TODO: Melhorar nome função; inserir segundo param selectedYears
+  
+    var selectedYears = 0; // 0: first year / period; 1: second year / period...
+
+    var layerName = obj.initiative + "-" + "collection-" + obj.collection + "-" + obj.theme;
+    
+    var image = getImage(obj, selectedYears);
+    
+    // Map.addLayer(image, {}, layerName, true, 1);
+
+    return ee.data.getMapId({image: image})
+
+}
+
 
 // var options = {
 //     "brazil": {
