@@ -108,7 +108,7 @@ function selectAssets(obj) {
  */
 function visualizeData(obj, selectedYears) {
   
-    // selectedYears = 0;
+    selectedYears = 3
 
     var mapId = getMapId(obj, selectedYears);
     
