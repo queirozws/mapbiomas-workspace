@@ -7,7 +7,7 @@ var metadataObj = require("users/queirozws/mb-workspace:initiative-assets/metada
 
 var dataObj = require("users/queirozws/mb-workspace:initiative-assets/getData.js");
 
-var palette = require("users/mapbiomas/modules:Palettes.js").get('classification5');
+var palette = require("users/mapbiomas/modules:Palettes.js").get('classification6');
 
 var products = metadataObj.products;
 
