@@ -12,8 +12,6 @@ var products = metadataObj.products;
 
 var getMapId = dataObj.getMapId;
 
-var selectedAssets = [1];
-
 // Object with initial selected options
 var selectedOptions = {
     initiative: null,
@@ -168,8 +166,6 @@ var visualizeImages = ui.Button({
         // ui.Panel().clear()
         
         Map.clear();
-        
-        // var selectedAssets = products.filter(selectAssets, selectedOptions);
         
         ( (products.length === 0) && print("Selecione alguma das opções acima!") );
         
