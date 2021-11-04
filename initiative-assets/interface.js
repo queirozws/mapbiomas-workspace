@@ -113,6 +113,24 @@ function selectAssets(obj) {
 
 }
 
+// Usar Image.visualize() ou paleta de cores última coleção 6;
+
+function visualizeData(obj) { // TODO: Melhorar nome função; inserir segundo param selectedYears
+  
+    var selectedYears = 0;
+
+    var mapId = getMapId(obj);
+    
+    var layerName = obj.initiative + "-" + "collection-" + obj.collection + "-" + obj.theme;
+    
+    var image = getImage(obj, selectedYears);
+    
+    Map.addLayer(image, {}, layerName, true, 1);
+
+    // return ee.data.getMapId({image: image})
+
+}
+
 var label = ui.Label('Utilize as opções abaixo para selecionar os assets a serem exibidos:'); // TODO Melhorar redação
 print(label);
 
@@ -166,7 +184,7 @@ var visualizeImages = ui.Button({
         
         ( (products.length === 0) && print("Selecione alguma das opções acima!") );
         
-        ( (products.length === 0) || products.forEach( getMapId ) );
+        ( (products.length === 0) || products.forEach( visualizeData ) );
 
         // if (products.length === 0) {
   
@@ -184,22 +202,6 @@ var visualizeImages = ui.Button({
 
 print(visualizeImages);
 
-
-// Usar Image.visualize() ou paleta de cores última coleção 6;
-
-// function viewImages(obj) { // TODO: Melhorar nome função; inserir segundo param selectedYears
-  
-//     var selectedYears = 0; // 0: first year / period; 1: second year / period...
-
-//     var layerName = obj.initiative + "-" + "collection-" + obj.collection + "-" + obj.theme;
-    
-//     var image = getImage(obj, selectedYears);
-    
-//     // Map.addLayer(image, {}, layerName, true, 1);
-
-//     return ee.data.getMapId({image: image})
-
-// }
 
 
 // var options = {
