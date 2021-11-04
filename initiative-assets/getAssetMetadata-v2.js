@@ -53,7 +53,7 @@ function eeImageCollection(obj) {
 }
 
 /**
- * 
+ * Retorna uma imagem contendo uma banda do ano selecionado
  * @param {Object} obj
  * @param {number} selectedYears // adaptar para receber um array
  * @returns {ee.Image}
@@ -158,7 +158,9 @@ function getImage(obj, selectedYears){
 }
 
 /**
- * 
+ * Ret
+ * @param {Object} obj
+ * @returns {RawMapId}
  */
 exports.viewImages = function viewImages(obj) { // TODO: Melhorar nome função; inserir segundo param selectedYears
   
@@ -168,11 +170,12 @@ exports.viewImages = function viewImages(obj) { // TODO: Melhorar nome função;
     
     var image = getImage(obj, selectedYears);
     
-    Map.addLayer(image, {}, layerName, true, 1);
+    // Map.addLayer(image, {}, layerName, true, 1);
 
-    // TODO: return url mapId
+    return ee.data.getMapId( {image: image} )
 
 }
 
+viewImages(products[0]);
 
 // 14:50
