@@ -8,7 +8,7 @@ var metadataObj = require("users/queirozws/mb-workspace:initiative-assets/metada
 
 var dataObj = require("users/queirozws/mb-workspace:initiative-assets/getData.js");
 
-var palettes = require("users/mapbiomas/modules:Palettes.js").get('classification6');
+var palette = require("users/mapbiomas/modules:Palettes.js").get('classification6');
 
 var products = metadataObj.products;
 
@@ -116,7 +116,7 @@ function visualizeData(obj, selectedYears) {
     
     var layerName = obj.initiative + "-" + "collection-" + obj.collection + "-" + obj.theme;
     
-    Map.addLayer(mapId, {}, layerName, true, 1);
+    Map.addLayer(mapId, {palette: palette}, layerName, true, 1);
 
 }
 
