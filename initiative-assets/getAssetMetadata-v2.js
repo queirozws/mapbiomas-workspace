@@ -149,17 +149,14 @@ function getImage(obj, selectedYears){
  * @param {Object} obj
  * @returns {RawMapId}
  */
-exports.viewImages = function getMapId(obj) { // TODO: Melhorar nome função; inserir segundo param selectedYears
+exports.getMapId = function getMapId(obj, selectedYears) {
   
-    var selectedYears = 0; // 0: first year / period; 1: second year / period...
+    selectedYears = 0;
 
-    var layerName = obj.initiative + "-" + "collection-" + obj.collection + "-" + obj.theme;
-    
     var image = getImage(obj, selectedYears);
     
-    // Map.addLayer(image, {}, layerName, true, 1);
-
     return ee.data.getMapId( {image: image} )
 
 }
+
 
