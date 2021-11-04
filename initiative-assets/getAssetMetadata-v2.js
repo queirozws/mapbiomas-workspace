@@ -176,4 +176,3 @@ exports.viewImages = function getMapId(obj) { // TODO: Melhorar nome função; i
 
 }
 
-// 14:50
