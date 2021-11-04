@@ -14,6 +14,8 @@ var products = metadataObj.products;
 
 var getMapId = dataObj.getMapId;
 
+var visParams = {min: 0, max: 49, palette: palette};
+
 // Object with initial selected options
 var selectedOptions = {
     initiative: null,
@@ -116,7 +118,9 @@ function visualizeData(obj, selectedYears) {
     
     var layerName = obj.initiative + "-" + "collection-" + obj.collection + "-" + obj.theme;
     
-    Map.addLayer(mapId, {min: 0, max: 49, palette: palette}, layerName, true, 1);
+    
+    
+    Map.addLayer(mapId, visParams, layerName, true, 1);
 
 }
 
@@ -141,6 +145,8 @@ keys.forEach(
                 selectedOptions = {};
                 
                 selectedOptions[key] = option;
+                
+                ( (option !== 'classification') && visParams = {});
                 
                 // print(selectedOptions);
                 
