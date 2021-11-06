@@ -4,6 +4,7 @@ var init = function () {
     
 }
 
+var function2 = function () {}
 
 var App = {
     
