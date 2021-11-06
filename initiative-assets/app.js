@@ -8,8 +8,15 @@ var function2 = function () {}
 
 var App = {
     
-    options: {},
-    
+    options: {
+        
+    },
+    functions: {
+        
+    },
+    ui: {
+        
+    },
     init: init
 }
 
