@@ -135,13 +135,13 @@ var App = {
     ui: {
         widget: {
             select: {
-                builder: function(obj, onOff) {
+                builder: function(obj, onOff, panel) {
                     
                     var select = ui.Select(obj);
                     
                     ( onOff && print(select) );
                 },
-                batchBuilder: function(obj, onOff) {
+                batchBuilder: function(obj, onOff, panel) {
                     
                     var keyList = Object.keys(obj);
                     
@@ -162,7 +162,7 @@ var App = {
                             
                             // print(select);
                             
-                            ( onOff && App.ui.form.mainPanel.add(select) );
+                            ( onOff && panel.add(select) );
                             
                             // callback(key)
                         }
@@ -174,9 +174,9 @@ var App = {
                     
                     var label = ui.Label(text);
                     
-                    print(label);
+                    // print(label);
                     
-                    // panel.add(label);
+                    panel.add(label);
                 }
               
             }
@@ -200,21 +200,21 @@ var App = {
                 // position: "top-right"
             })
             
+            var title = 'Utilize as opções abaixo para selecionar os assets a serem exibidos:';
+            
+            App.ui.widget.label.builder(title, mainPanel)
+            
             // getParams
             
             var params = App.data.uiData.select1;
             
             print(params)
             
-            App.ui.widget.select.batchBuilder( params, true )
-            
-            var title = 'Utilize as opções abaixo para selecionar os assets a serem exibidos:';
-            
-            App.ui.form.mainPanel.add( App.ui.widget.label.builder(title, mainPanel) )
+            App.ui.widget.select.batchBuilder( params, true, mainPanel )
             
             // print(ui.Panel.))
         
-            ui.root.add(App.ui.form.mainPanel)
+            // ui.root.add(App.ui.form.mainPanel)
             // Map.add(App.ui.form.mainPanel)
             
 
