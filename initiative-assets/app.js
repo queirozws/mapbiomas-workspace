@@ -84,6 +84,7 @@ var App = {
     },
     functions: {
         main: function() {},
+        getData: function() {},
         objIterate: function(obj, callback) {
             var keyList = Object.keys(obj)
             
@@ -160,7 +161,9 @@ var App = {
         
         // getParams
         
-        // var params = App.ui.widget.select.params();
+        var params = App.data.uiData.select1;
+        
+        print(params)
         
         App.ui.widget.select.batchBuilder( params, true )
         
