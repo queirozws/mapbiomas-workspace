@@ -141,16 +141,15 @@ var App = {
                     
                     var keyList = Object.keys(obj);
                     
-                    var params = App.ui.params[App.data.widgetType]
-                    
                     keyList.forEach(
                         function(key) {
                             
-                            // var params = App.functions.getParams()
+                            // var params = App.functions.getParams(obj, key)
                             
+                            // var select = ui.Select( params )
                             var select = ui.Select({
                                 items: obj[key],
-                                placeholder: null,
+                                placeholder: "Select an option " + "(" + key + ")",
                                 value: null,
                                 onChange: null,
                                 disabled: null,
