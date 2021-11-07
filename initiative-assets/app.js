@@ -3,6 +3,9 @@
  * 
  */
 
+var palettes = require('users/mapbiomas/modules:Palettes.js');
+
+// var metadata = require('users/queirozws/mb-workspace:initiative-assets/metadataList.js');
 
 var App = {
     data: {
@@ -13,7 +16,7 @@ var App = {
                 theme: null,
                 type: null,
                 countries: null,
-                source: null,
+                source: null
             },
             select1: {
                 initiative: [
@@ -45,7 +48,7 @@ var App = {
                     "multiband-classification-collection",
                     "multiband-integration-collection",
                     "multiband-transition-collection",
-                    "multiband-quality-collection",
+                    "multiband-quality-collection"
                 ],
                 countries: [
                     "Brasil",
@@ -59,8 +62,13 @@ var App = {
                     "Venezuela",
                     "Paraguay"
                 ],
-                source: [ "imazon", "LAPIG/UFG", "Solved", "IPAM", "outros..." ]
+                source: [ "imazon", "LAPIG/UFG", "Solved", "IPAM", "outros..." ],
                 // TODO: metadata: {}
+            },
+            palette: {
+                "classification": palettes.get("classification6"),
+                "transition": ['ffa500', 'ff0000', '818181', '06ff00', '4169e1', '8a2be2'],
+                "quality": ['d73027', 'fef9b6', '1d6a37']
             },
         // params: {
         //     "select": function() {
@@ -97,9 +105,10 @@ var App = {
             
             return params[App.data.widgetType](obj)
             
-        }
+        },
 
-        }
+        },
+        rawData: {}
     },
     functions: {
         objIterate: function(obj, callback) {
