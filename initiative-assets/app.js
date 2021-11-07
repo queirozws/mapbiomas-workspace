@@ -153,7 +153,7 @@ var App = {
         
         // var params = App.ui.widget.select.params();
         
-        App.ui.widget.select.build( null, true )
+        App.ui.widget.select.build( params, true )
         
     }
 }
