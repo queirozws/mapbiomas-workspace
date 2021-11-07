@@ -175,8 +175,11 @@ var App = {
             mainPanel: ui.Panel(),
             // this.mainPanel.
         },
+        style: {
+            
+        },
         init: function() {
-            App.ui.form.mainPanel
+            App.ui.form.mainPanel.style().set({width: "300px"})
             
             Map.add(App.ui.form.mainPanel)
         }
