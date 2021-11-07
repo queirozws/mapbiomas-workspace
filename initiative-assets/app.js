@@ -102,10 +102,10 @@ var App = {
         getParams: function(obj) {
             
             var params = {
-                "select": function(obj) {
+                "select": function(obj, key) {
 
                     return {
-                        items: null,
+                        items: obj[key],
                         placeholder: null,
                         value: null,
                         onChange: null,
@@ -145,7 +145,23 @@ var App = {
                     
                     keyList.forEach(
                         function(key) {
-                            callback(key)
+                            
+                            // var params = App.functions.getParams()
+                            
+                            var select = ui.Select({
+                                items: obj[key],
+                                placeholder: null,
+                                value: null,
+                                onChange: null,
+                                disabled: null,
+                                style: null
+                            });
+                            
+                            print(select)
+                            
+                            // ( onOff && print(select) );
+                            
+                            // callback(key)
                         }
                     )
                 }
