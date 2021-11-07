@@ -162,18 +162,5 @@ var App = {
 // var select = App.ui.select( returnObj )
 
 
-
-// print( Object.keys(ui.Select.prototype) )
-
 App.init();
 
-// map1.set('a', 1);
-
-// map1.nome = "Wildson"
-
-// console.log(map1);
-
-// print(map1)
-
-
-// 04:02
