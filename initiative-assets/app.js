@@ -172,9 +172,11 @@ var App = {
             label: {
                 builder: function(text, panel) {
                     
-                    var label = ui.Label();
+                    var label = ui.Label(text);
                     
-                    panel.add(label);
+                    print(label);
+                    
+                    // panel.add(label);
                 }
               
             }
@@ -208,7 +210,7 @@ var App = {
             
             var title = 'Utilize as opções abaixo para selecionar os assets a serem exibidos:';
             
-            App.ui.form.mainPanel.add(App.ui.widget.label.builder(title, mainPanel))
+            App.ui.form.mainPanel.add( App.ui.widget.label.builder(title, mainPanel) )
             
             // print(ui.Panel.))
         
