@@ -179,7 +179,14 @@ var App = {
             
         },
         init: function() {
-            App.ui.form.mainPanel.style().set({width: "300px"})
+          
+            App.ui.form.mainPanel.style().set({
+                height:  "300px",
+                width: "300px",
+                textAlign: "right",
+                stretch: "horizontal",
+                position: "top-right"
+            })
             
             Map.add(App.ui.form.mainPanel)
         }
