@@ -163,7 +163,7 @@ var App = {
         
         App.ui.widget.select.build( params, true )
         
-        
+    }
 }
 
 // var select = App.ui.select.constructor( App.data.selectButtons.initiative, "placeHolder", "brazil" )
