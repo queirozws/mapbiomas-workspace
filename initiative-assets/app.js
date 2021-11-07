@@ -1,11 +1,15 @@
 /**
- * 
+ * @Author: Wildson Queiroz
  * 
  */
 
+var metadataObj = require("users/queirozws/mb-workspace:initiative-assets/metadataList.js");
+
 var palettes = require('users/mapbiomas/modules:Palettes.js');
 
-// var metadata = require('users/queirozws/mb-workspace:initiative-assets/metadataList.js');
+var products = metadataObj.products;
+
+// var getMapId = dataObj.getMapId;
 
 var App = {
     data: {
@@ -137,7 +141,7 @@ var App = {
                     
                     ( onOff && print(select) );
                 },
-                batchBuilder: function(obj) {
+                batchBuilder: function(obj, onOff) {
                     
                     var keyList = Object.keys(obj);
                     
@@ -156,9 +160,9 @@ var App = {
                                 style: null
                             });
                             
-                            print(select)
+                            // print(select);
                             
-                            // ( onOff && print(select) );
+                            ( onOff && print(select) );
                             
                             // callback(key)
                         }
@@ -167,10 +171,23 @@ var App = {
             },
             label: {}
         },
+        form: {
+            mainPanel: ui.Panel(),
+            // this.mainPanel.
+        },
+        init: function() {
+            App.ui.form.mainPanel
+            
+            Map.add(App.ui.form.mainPanel)
+        }
     },
     init: function () {
     
         print("Iniciando o app...");
+        
+        Map.setCenter(-50, -10, 4);
+
+        App.ui.init();
         
         // Obter imagens
         
@@ -181,6 +198,8 @@ var App = {
         print(params)
         
         App.ui.widget.select.batchBuilder( params, true )
+        
+        // print(ui.Panel.))
         
     }
 }
