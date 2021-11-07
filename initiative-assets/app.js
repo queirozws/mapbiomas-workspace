@@ -130,7 +130,21 @@ var App = {
             return params[App.data.widgetType](obj)
             
         },
-
+        uiBehavior: {
+            func1: function(option) {
+                    
+                    selectedOptions = {};
+                    
+                    selectedOptions[key] = option;
+                    
+                    ( (option === 'classification') && (visParams = {min: 0, max: 49, palette: palette}));
+                    
+                    products = products.filter(selectAssets, selectedOptions);
+                    
+                    console.log("Os critérios acima retornaram: " + products.length + " assets", products);
+                    
+            }
+        }
     },
     ui: {
         widget: {
@@ -141,7 +155,7 @@ var App = {
                     
                     ( onOff && print(select) );
                 },
-                batchBuilder: function(obj, onOff, panel) {
+                batchBuilder: function(obj, callback, panel) {
                     
                     var keyList = Object.keys(obj);
                     
@@ -155,14 +169,16 @@ var App = {
                                 items: obj[key],
                                 placeholder: "Select an option " + "(" + key + ")",
                                 value: null,
-                                onChange: null,
+                                onChange: callback,
                                 disabled: null,
                                 style: null
                             });
                             
                             // print(select);
                             
-                            ( onOff && panel.add(select) );
+                            panel.add(select)
+                            
+                            // ( onOff && panel.add(select) );
                             
                             // callback(key)
                         }
@@ -170,11 +186,9 @@ var App = {
                 }
             },
             label: {
-                builder: function(text, panel) {
+                builder: function(obj, panel) {
                     
-                    var label = ui.Label(text);
-                    
-                    // print(label);
+                    var label = ui.Label(obj.text);
                     
                     panel.add(label);
                 }
@@ -192,6 +206,8 @@ var App = {
             
             var mainPanel = App.ui.form.mainPanel;
             
+            ui.root.add(mainPanel);
+
             App.ui.form.mainPanel.style().set({
                 height:  "300px",
                 width: "500px",
@@ -200,9 +216,12 @@ var App = {
                 // position: "top-right"
             })
             
-            var title = 'Utilize as opções abaixo para selecionar os assets a serem exibidos:';
+            var labelParams = {
+                text: 'Utilize as opções abaixo para selecionar os assets a serem exibidos:',
+                // style: {}
+            };
             
-            App.ui.widget.label.builder(title, mainPanel)
+            App.ui.widget.label.builder(labelParams, mainPanel)
             
             // getParams
             
@@ -210,13 +229,10 @@ var App = {
             
             print(params)
             
-            App.ui.widget.select.batchBuilder( params, true, mainPanel )
+            App.ui.widget.select.batchBuilder( params, App.functions.uiBehavior.func1, mainPanel )
             
             // print(ui.Panel.))
         
-            // ui.root.add(App.ui.form.mainPanel)
-            // Map.add(App.ui.form.mainPanel)
-            
 
         }
     },
@@ -230,12 +246,10 @@ var App = {
         
         // Obter imagens
         
+        // Exibir imagens no mapa
+        
     }
 }
-
-// var select = App.ui.select.constructor( App.data.selectButtons.initiative, "placeHolder", "brazil" )
-// var select = App.ui.select( returnObj )
-
 
 App.init();
 
