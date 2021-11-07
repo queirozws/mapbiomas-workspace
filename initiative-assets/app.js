@@ -83,7 +83,17 @@ var App = {
             
             var params = {
                 "select": function(obj) {
-                    
+
+                    return {
+                        items: null,
+                        placeholder: null,
+                        value: null,
+                        onChange: null,
+                        disabled: null,
+                        style: null,
+                    }
+
+
                 },
                 "label": function(obj) {
                     
@@ -124,16 +134,6 @@ var App = {
                     var select = ui.Select(obj);
                     
                     ( onOff && print(select) );
-                },
-                params: function() {
-                    return {
-                        items: null,
-                        placeholder: null,
-                        value: null,
-                        onChange: null,
-                        disabled: null,
-                        style: null,
-                    }
                 },
                 batchBuilder: function(obj) {
                     
