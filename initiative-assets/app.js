@@ -70,15 +70,34 @@ var App = {
                 "transition": ['ffa500', 'ff0000', '818181', '06ff00', '4169e1', '8a2be2'],
                 "quality": ['d73027', 'fef9b6', '1d6a37']
             },
-        // params: {
-        //     "select": function() {
+            // params: {
+            //     "select": function() {
+                    
+            //     },
+            //     "label": function() {
+                    
+            //     },
                 
-        //     },
-        //     "label": function() {
-                
-        //     },
+            // },
+        },
+        rawData: {}
+    },
+    functions: {
+        main: function() {},
+        objIterate: function(obj, callback) {
+            var keyList = Object.keys(obj)
             
-        // },
+            keyList.forEach(
+                function(key) {
+                    callback(key)
+                }
+            )
+        },
+        createWidget: function(widget, params) {
+
+            print(widget)
+
+        },
         getParams: function(obj) {
             
             var params = {
@@ -107,25 +126,6 @@ var App = {
             
         },
 
-        },
-        rawData: {}
-    },
-    functions: {
-        objIterate: function(obj, callback) {
-            var keyList = Object.keys(obj)
-            
-            keyList.forEach(
-                function(key) {
-                    callback(key)
-                }
-            )
-        },
-        createWidget: function(widget, params) {
-            
-            
-            
-            print(widget)
-        }
     },
     ui: {
         widget: {
@@ -162,7 +162,7 @@ var App = {
         
         // var params = App.ui.widget.select.params();
         
-        App.ui.widget.select.build( params, true )
+        App.ui.widget.select.batchBuilder( params, true )
         
     }
 }
