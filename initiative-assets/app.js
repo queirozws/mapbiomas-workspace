@@ -135,7 +135,7 @@ var App = {
     ui: {
         widget: {
             select: {
-                build: function(obj, onOff) {
+                builder: function(obj, onOff) {
                     
                     var select = ui.Select(obj);
                     
@@ -162,14 +162,22 @@ var App = {
                             
                             // print(select);
                             
-                            ( onOff && print(select) );
+                            ( onOff && App.ui.form.mainPanel.add(select) );
                             
                             // callback(key)
                         }
                     )
                 }
             },
-            label: {}
+            label: {
+                builder: function(text, panel) {
+                    
+                    var label = ui.Label();
+                    
+                    panel.add(label);
+                }
+              
+            }
         },
         form: {
             mainPanel: ui.Panel(),
@@ -179,16 +187,35 @@ var App = {
             
         },
         init: function() {
-          
+            
+            var mainPanel = App.ui.form.mainPanel;
+            
             App.ui.form.mainPanel.style().set({
                 height:  "300px",
-                width: "300px",
+                width: "500px",
                 textAlign: "right",
-                stretch: "horizontal",
-                position: "top-right"
+                // stretch: "horizontal",
+                // position: "top-right"
             })
             
-            Map.add(App.ui.form.mainPanel)
+            // getParams
+            
+            var params = App.data.uiData.select1;
+            
+            print(params)
+            
+            App.ui.widget.select.batchBuilder( params, true )
+            
+            var title = 'Utilize as opções abaixo para selecionar os assets a serem exibidos:';
+            
+            App.ui.form.mainPanel.add(App.ui.widget.label.builder(title, mainPanel))
+            
+            // print(ui.Panel.))
+        
+            ui.root.add(App.ui.form.mainPanel)
+            // Map.add(App.ui.form.mainPanel)
+            
+
         }
     },
     init: function () {
@@ -200,16 +227,6 @@ var App = {
         App.ui.init();
         
         // Obter imagens
-        
-        // getParams
-        
-        var params = App.data.uiData.select1;
-        
-        print(params)
-        
-        App.ui.widget.select.batchBuilder( params, true )
-        
-        // print(ui.Panel.))
         
     }
 }
