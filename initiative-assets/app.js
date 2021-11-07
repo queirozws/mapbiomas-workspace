@@ -151,9 +151,9 @@ var App = {
         
         // getParams
         
-        var params = App.ui.widget.select.params();
+        // var params = App.ui.widget.select.params();
         
-        App.ui.widget.select.build( params, true )
+        App.ui.widget.select.build( null, true )
         
     }
 }
