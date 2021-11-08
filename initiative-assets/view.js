@@ -13,8 +13,7 @@ var App = {
             data: null,
             parent: "mainPanel",
             style: {
-              height: "350px",
-              width: "350px",
+              width: "450px",
             },
             child: "none"
           },
@@ -41,48 +40,8 @@ var App = {
   }
 }
 
-var obj = {
-  a: "nome",
-  b: this
-}
 
-var params = {
-    widgets: null,
-    layout: null,
-    style: {
-        height: "350px",
-        width: "350px",
-    }
-}
-
-var panel = ui.Panel( params );
-
-var header = ui.Panel({ style: {width: "100px"} });
-
-// ui.root.add(panel);
-
-var params = {
-    items: null,
-    placeholder: null,
-    value: null,
-    onChange: null,
-    disabled: null,
-    style: obj.style
-}
-
-var select = ui.Select();
-
-var select2 = ui.Select();
-
-// panel.add(header);
-
-// panel.add(select);
-
-// panel.add(select2);
-
-
-
-// print(obj);
+print(App);
 print(App.view.ui[0].child[0].parent)
 
 function render(obj) {
