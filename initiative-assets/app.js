@@ -7,6 +7,8 @@ var metadataObj = require("users/queirozws/mb-workspace:initiative-assets/metada
 
 var palettes = require('users/mapbiomas/modules:Palettes.js');
 
+var logos = require('users/mapbiomas/modules:Logos.js');
+
 var products = metadataObj.products;
 
 // var getMapId = dataObj.getMapId;
@@ -205,6 +207,8 @@ var App = {
         init: function() {
             
             var mainPanel = App.ui.form.mainPanel;
+            
+            mainPanel.add(logos.mapbiomas);
             
             ui.root.add(mainPanel);
 
