@@ -199,6 +199,7 @@ var App = {
         },
         form: {
             mainPanel: ui.Panel(),
+            header: ui.Panel(),
             // this.mainPanel.
         },
         style: {
@@ -208,10 +209,26 @@ var App = {
             
             var mainPanel = App.ui.form.mainPanel;
             
-            mainPanel.add(logos.mapbiomas);
+            var header = App.ui.form.header;
+            
+            // var logo = ui.Thumbnail({
+            //     image: logos.mapbiomas,
+            //     style: {position: "top-center"}
+              
+            // });
+            
+            header.style().set({textAlign: "center", position: "top-center"})
+            
+            header.add(logos.mapbiomas);
+            
+            mainPanel.add(App.ui.form.header);
+            
+            // mainPanel.add();
             
             ui.root.add(mainPanel);
-
+            
+            // print(header)
+            
             App.ui.form.mainPanel.style().set({
                 height:  "300px",
                 width: "500px",
@@ -257,5 +274,5 @@ var App = {
 
 App.init();
 
-// 22:37
+// 23:11
 
