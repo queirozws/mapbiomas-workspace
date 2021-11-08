@@ -251,5 +251,42 @@ var App = {
     }
 }
 
+
+var obj = {
+    interface: {
+        panel: {
+            type: "uiPanel",
+            params: {},
+            childs: [
+                {
+                    type: "uiLabel",
+                    number: 1
+                },
+                {
+                    type: "uiSelect",
+                    // params: {
+                    //     items: null,
+                    //     placeholder: null,
+                    //     value: null,
+                    //     onChange: null,
+                    //     disabled: null,
+                    //     style: null
+                    // },
+                    uiData: App.data.uiData,
+
+
+
+                    number: 7
+                },
+                {
+                    type: "uiButton",
+                    params: {},
+                    repeat: false
+                },
+            ]
+        }
+    }
+};
+
 App.init();
 
