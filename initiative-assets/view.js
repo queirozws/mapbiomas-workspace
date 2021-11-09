@@ -62,7 +62,7 @@ var App = {
 // print(App);
 // print(App.view.ui[0].child[0].parent)
 
-var widgets = [];
+var widgets = {};
 
 function render(obj) {
   
@@ -84,9 +84,9 @@ function render(obj) {
                 
                 // var key = obj.name;
                 
-                var widget = {};
+                // var widget = {};
                 
-                widget[obj.name] = panel;
+                widgets[obj.name] = panel;
                 
                 widgets.push( widget );
                 
