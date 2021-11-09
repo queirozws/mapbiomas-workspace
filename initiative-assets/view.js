@@ -78,13 +78,17 @@ function render(obj) {
                 
                 var panel = ui.Panel( params );
                 
+                ui.root.add(panel);
+                
                 // print(obj.name, panel)
                 
                 var key = obj.name;
                 
-                widgets.push( {key: panel} );
+                var widget = {
+                    key: panel
+                }
                 
-                ui.root.add(panel);
+                widgets.push( widget );
                 
             },
         },
@@ -127,7 +131,7 @@ function render(obj) {
                 
                 var parent = obj.parent;
                 
-                widgets[parent].add(select);
+                // widgets[parent].add(select);
                 
                 // print(button);
 
@@ -139,8 +143,6 @@ function render(obj) {
     type[obj.type].constructor(obj);
   
 }
-
-print(widgets);
 
 function isArray(currentLevel) {
     return currentLevel
@@ -231,6 +233,10 @@ function isArray(currentLevel) {
 // }
 
 loop(App.view.ui, render);
+
+print(widgets);
+
+
 
 // render(App.view.ui[0].child[0]);
 // render(App.view.ui[0].child[1]);
