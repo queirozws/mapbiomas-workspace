@@ -212,7 +212,7 @@ function isArray(currentLevel) {
 //   // callback()
 // }
 
-loop(App.view.ui, render)
+loop(App.view.ui, render);
 
 // render(App.view.ui[0].child[0]);
 // render(App.view.ui[0].child[1]);
