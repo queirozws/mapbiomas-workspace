@@ -24,7 +24,7 @@ var App = {
                         data: null,
                         parent: "mainPanel",
                         style: {width: "450px",},
-                        child: [1,2,3]
+                        child: []
                     },
                     {
                         type: "select",
