@@ -90,7 +90,7 @@ function render(obj) {
                     
                 } else {
                   
-                    widgets[obj.name] = panel;
+                    widgets[parent].add(button);
                     
                 }
                 
