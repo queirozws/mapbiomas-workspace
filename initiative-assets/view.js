@@ -82,15 +82,15 @@ function render(obj) {
                 
                 print(typeof obj.name)
                 
-                var key = obj.name;
+                var key = obj.name.valueOf();
                 
-                // function getWidget(obj, widget) {
-                //     return {obj.name: widget}
-                // }
+                function getWidget(key, widget) {
+                    return {key: widget}
+                }
                 
-                // var widget = getWidget(obj, panel)
+                var widget = getWidget(key, panel)
                 
-                // widgets.push( widget );
+                widgets.push( widget );
                 
             },
         },
