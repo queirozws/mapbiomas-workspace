@@ -88,7 +88,7 @@ function render(obj) {
                 
                 widgets[obj.name] = panel;
                 
-                widgets.push( widget );
+                // widgets.push( widget );
                 
             },
         },
@@ -131,7 +131,7 @@ function render(obj) {
                 
                 var parent = obj.parent;
                 
-                widgets[parent].add(select);
+                widgets[parent].add(button);
                 
                 // print(button);
 
