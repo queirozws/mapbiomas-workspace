@@ -58,6 +58,14 @@ var App = {
                         style: {},
                         child: [],
                     },
+                    {
+                        type: "button",
+                        name: "button 3",
+                        data: null,
+                        parent: "auxPanel",
+                        style: {},
+                        child: [],
+                    },
                 ]
             },
             {
@@ -83,10 +91,12 @@ function render(obj) {
     var type = {
         "panel": {
             constructor: function (obj) {
-              
+                
+                var layout = ui.Panel.Layout.absolute;
+                
                 var params = {
                     widgets: null,
-                    layout: "flow",
+                    layout: layout,
                     style: obj.style
                 }
                 
@@ -161,90 +171,6 @@ function render(obj) {
 function isArray(currentLevel) {
     return currentLevel
 }
-
-// function loop(currentLevel, callback) {
-    
-//     print(currentLevel);
-    
-//     var filtered = currentLevel.filter(
-        
-//         function(obj) {
-
-//             render(obj);
-            
-//             print(obj.type + "/" + obj.name); // || render function
-            
-//             // ( (child > 0) && print(obj.type + "/" + obj.name + " has child") );
-            
-//             // ( (child !== 0) || print(obj.type + "/" + obj.name + " hasn't child") );
-            
-//             // loop(obj.child);
-            
-//             return obj.child.length > 0
-        
-//         }
-        
-//     )
-    
-//     // var child = obj.child.length;
-    
-//     // var filtered = currentLevel.filter(function(obj) {return obj.child.length > 0});
-    
-//     filtered.forEach(
-//         function (obj) {
-            
-//             var nextLevel = obj.child;
-            
-//             nextLevel.filter(
-//                 function (obj) {
-                    
-//                     // render(obj)
-                    
-//                     print(obj.type + "/" + obj.name);
-                    
-//                     return obj.child.length > 0
-//                 }
-//             );
-            
-            
-//         });
-    
-//     // add sub elements
-//     // filtered.forEach(
-//     //     function (obj){
-            
-//     //         var newList = obj.child;
-            
-//     //         newList.forEach(
-//     //             function (obj) {
-                    
-//     //                 render(obj)
-                    
-//     //             }
-//     //         );
-            
-//     //     }
-//     // )
-    
-    
-//   // var keyList = Object.keys(obj);
-  
-//   // keyList.forEach(
-//   //     function (key) {
-        
-//   //       // obj[key];
-        
-//   //       console.log(key+" key")
-        
-//   //     }
-//   // )
-  
-//   // print(keyList);
-
-
-  
-//   // callback()
-// }
 
 loop(App.view.ui, render);
 
