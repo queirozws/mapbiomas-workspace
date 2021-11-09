@@ -62,6 +62,8 @@ var App = {
 // print(App);
 // print(App.view.ui[0].child[0].parent)
 
+var widgets = [];
+
 function render(obj) {
   
     var type = {
@@ -76,12 +78,16 @@ function render(obj) {
                 
                 var panel = ui.Panel( params );
                 
+                widgets.push(obj.name: panel);
+                
                 ui.root.add(panel);
                 
             },
         },
         "select": {
             constructor: function (obj) {
+              
+                obj.parent
               
                 var params = {
                     items: ["1","2","3","4","5"],
@@ -94,7 +100,7 @@ function render(obj) {
                 
                 var select = ui.Select(params);
                 
-                panel.add(select);
+                widget[obj.parent].add(select);
                 
                 // print(select);
 
@@ -113,7 +119,7 @@ function render(obj) {
                 
                 var button = ui.Button(params);
                 
-                panel.add(select);
+                widget[obj.parent].add(select);
                 
                 // print(button);
 
