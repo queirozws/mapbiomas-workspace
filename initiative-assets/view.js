@@ -125,7 +125,9 @@ function render(obj) {
                 
                 var button = ui.Button(params);
                 
-                widgets[obj.parent].add(select);
+                var parent = obj.parent;
+                
+                widgets[parent].add(select);
                 
                 // print(button);
 
