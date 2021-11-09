@@ -50,7 +50,7 @@ var App = {
                 name: "auxPanel",
                 data: null,
                 style: {width: "90px", border: "1px solid black", backgroundColor: "red"},
-                parent: "root",
+                parent: "mainParent",
                 child: [],
             }
         ],
