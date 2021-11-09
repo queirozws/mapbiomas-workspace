@@ -84,9 +84,11 @@ function render(obj) {
                 
                 var key = obj.name;
                 
-                var widget = {
-                    key: panel
+                function getWidget(obj, widget) {
+                    return {obj.name: widget}
                 }
+                
+                var widget = getWidget(obj, panel)
                 
                 widgets.push( widget );
                 
