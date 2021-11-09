@@ -1,65 +1,60 @@
-function component(obj, type) {
-
-    var obj2 = {
-        type: "panel",
-        name: "header",
-        data: null,
-        parent: "mainPanel",
-        style: {
-            width: "450px",
-        },
-        child: "none"
-    }
-    
-    this.type = "string";
-
-    // print(this.type)
-
-}
-
-component(null, "olá").type;
-
+/**
+ * 
+ * 
+ */
 
 var App = {
-  view: {
-    ui: [
-      {
-        type: "panel",
-        name: "mainPanel",
-        data: null,
-        parent: "root",
-        child: [
-          {
-            type: "panel",
-            name: "header",
-            data: null,
-            parent: "mainPanel",
-            style: {
-              width: "450px",
+
+    view: {
+  
+        ui: [
+            {
+                type: "panel",
+                name: "mainPanel",
+                data: null,
+                style: {width: "90px"},
+                parent: "root",
+                child: [
+        
+                    // {
+                    //     type: "panel",
+                    //     name: "header",
+                    //     data: null,
+                    //     parent: "mainPanel",
+                    //     style: {width: "450px",},
+                    //     child: "none"
+                    // },
+                    {
+                        type: "select",
+                        name: "Choose an option",
+                        data: null,
+                        parent: "mainPanel",
+                        style: {},
+                        child: "none",
+                    },
+                    {
+                        type: "button",
+                        name: "Visualize data",
+                        data: null,
+                        parent: "mainPanel",
+                        style: {},
+                        child: "none",
+                    }          
+        
+                ]
             },
-            child: "none"
-          },
-          {
-            type: "select",
-            name: "Choose an option",
-            data: null,
-            parent: "mainPanel",
-            style: {},
-            child: "none",
-          },
-          {
-            type: "button",
-            name: "Visualize data",
-            data: null,
-            parent: "mainPanel",
-            style: {},
-            child: "none",
-          }          
-        ]
-      },
-    ],
-    uiData: null
-  }
+            {
+                type: "panel",
+                name: "auxPanel",
+                data: null,
+                style: {width: "90px", border: "1px solid black", backgroundColor: "gray"},
+                parent: "root",
+                child: [],
+            }
+        ],
+  
+    }
+
 }
 
 // print(App);
@@ -127,34 +122,74 @@ function render(obj) {
   
 }
 
-function walk(obj, callback) {
+function loop(list, callback) {
   
-  var nodeList = obj.view.ui;
-  
-  print(nodeList);
-  
-  var keyList = Object.keys(obj);
-  
-  keyList.forEach(
-      function (key) {
+    // var list = obj.view.ui;
+    
+    print(list);
+    
+    list.forEach(
         
-        // obj[key];
+        function(obj) {
+
+            render(obj);
+            
+            print(obj.type + "/" + obj.name); // || render function
+            
+            var child = obj.child.length;
+            
+            var filtered = list.filter(function(obj) {return obj.child.length > 0});
+            
+            // add sub elements
+            filtered.forEach(
+                function (obj){
+                    
+                    var newList = obj.child;
+                    
+                    newList.forEach(
+                        function (obj) {
+                            
+                            render(obj)
+                            
+                        }
+                    );
+                    
+                }
+            )
+            
+            // ( (child > 0) && print(obj.type + "/" + obj.name + " has child") );
+            
+            // ( (child !== 0) || print(obj.type + "/" + obj.name + " hasn't child") );
+            
+            // loop(obj.child);
         
-        console.log(key+" key")
+        }
         
-      }
-  )
+    )
   
-  print(keyList);
+  // var keyList = Object.keys(obj);
+  
+  // keyList.forEach(
+  //     function (key) {
+        
+  //       // obj[key];
+        
+  //       console.log(key+" key")
+        
+  //     }
+  // )
+  
+  // print(keyList);
 
   
   // callback()
 }
 
+loop(App.view.ui)
 
-render(App.view.ui[0].child[0]);
-render(App.view.ui[0].child[1]);
-render(App.view.ui[0].child[2]);
+// render(App.view.ui[0].child[0]);
+// render(App.view.ui[0].child[1]);
+// render(App.view.ui[0].child[2]);
 
 // print(ui.root.widgets())
 // print(panel.widgets())
