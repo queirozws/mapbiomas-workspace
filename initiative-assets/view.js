@@ -28,7 +28,13 @@ var App = {
                     {
                         type: "panel",
                         name: "header",
-                        params: null,
+                        params: {
+                            widgets: null,
+                            layout: null,
+                            style: {
+                                width: "450px"
+                            }
+                        },
                         data: null,
                         parent: "mainPanel",
                         style: {border: "1px solid black", backgroundColor: "blue"},
@@ -84,7 +90,13 @@ var App = {
             {
                 type: "panel",
                 name: "auxPanel",
-                params: null,
+                params: {
+                    widgets: null,
+                    layout: null,
+                    style: {
+                        width: "450px"
+                    }
+                },
                 data: null,
                 style: {border: "1px solid black", backgroundColor: "red"},
                 parent: "mainPanel",
