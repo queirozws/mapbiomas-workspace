@@ -104,7 +104,9 @@ function render(obj) {
                 
                 var select = ui.Select(params);
                 
-                widgets[obj.parent].add(select);
+                var parent = obj.parent;
+                
+                widgets.parent.add(select);
                 
                 // print(select);
 
