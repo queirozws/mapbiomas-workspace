@@ -94,9 +94,9 @@ function render(obj) {
                 
                 var select = ui.Select(params);
                 
-                // panel.add(select);
+                panel.add(select);
                 
-                print(select);
+                // print(select);
 
             }
               
@@ -113,7 +113,9 @@ function render(obj) {
                 
                 var button = ui.Button(params);
                 
-                print(button);
+                panel.add(select);
+                
+                // print(button);
 
             }
         },
