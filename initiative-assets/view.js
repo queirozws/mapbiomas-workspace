@@ -50,7 +50,7 @@ var App = {
                 name: "auxPanel",
                 data: null,
                 style: {width: "90px", border: "1px solid black", backgroundColor: "red"},
-                parent: "mainParent",
+                parent: "mainPanel",
                 child: [],
             }
         ],
@@ -79,6 +79,9 @@ function render(obj) {
                 var panel = ui.Panel( params );
                 
                 if (obj.parent === "root") {
+                    
+                    print("root");
+                    
                     ui.root.add(panel);
                 } else {
                     widgets[obj.name] = panel;
