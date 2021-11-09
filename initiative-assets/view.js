@@ -162,6 +162,8 @@ function loop(currentLevel, callback) {
             nextLevel.filter(
                 function (obj) {
                     
+                    // render(obj)
+                    
                     print(obj.type + "/" + obj.name);
                     
                     return obj.child.length > 0
@@ -218,6 +220,4 @@ loop(App.view.ui)
 // print(panel.widgets())
 
 
-
-
-// 00:31
+// 00:37
