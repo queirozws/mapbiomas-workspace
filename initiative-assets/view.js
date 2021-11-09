@@ -88,12 +88,6 @@ function render(obj) {
                 
                 widget[key] = panel
                 
-                // function getWidget(key, widget) {
-                //     return {key: widget}
-                // }
-                
-                // var widget = getWidget(key, panel)
-                
                 widgets.push( widget );
                 
             },
