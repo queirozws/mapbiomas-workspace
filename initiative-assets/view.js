@@ -14,7 +14,7 @@ var App = {
                 type: "panel",
                 name: "mainPanel",
                 data: null,
-                style: {width: "90px"},
+                style: {},
                 parent: "root",
                 child: [
         
