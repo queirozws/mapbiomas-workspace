@@ -80,17 +80,17 @@ function render(obj) {
                 
                 ui.root.add(panel);
                 
-                // print(obj.name, panel)
+                print(typeof obj.name)
                 
                 var key = obj.name;
                 
-                function getWidget(obj, widget) {
-                    return {obj.name: widget}
-                }
+                // function getWidget(obj, widget) {
+                //     return {obj.name: widget}
+                // }
                 
-                var widget = getWidget(obj, panel)
+                // var widget = getWidget(obj, panel)
                 
-                widgets.push( widget );
+                // widgets.push( widget );
                 
             },
         },
