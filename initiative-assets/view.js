@@ -66,7 +66,7 @@ var widgets = {};
 
 function render(obj) {
     
-    print(obj.name)
+    print(obj.name);
     
     var type = {
         "panel": {
