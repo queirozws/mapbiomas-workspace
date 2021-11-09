@@ -92,7 +92,8 @@ function render(obj) {
         "panel": {
             constructor: function (obj) {
                 
-                var layout = ui.Panel.Layout.absolute;
+                // var layout = ui.Panel.Layout.absolute();
+                var layout = ui.Panel.Layout.flow("vertical", false);
                 
                 var params = {
                     widgets: null,
@@ -100,7 +101,7 @@ function render(obj) {
                     style: obj.style
                 }
                 
-                var panel = ui.Panel( params );
+                var panel = ui.Panel( obj.params || params );
                 
                 if (obj.parent === "root") {
                     
