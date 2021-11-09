@@ -78,9 +78,11 @@ function render(obj) {
                 
                 var panel = ui.Panel( params );
                 
-                ui.root.add(panel);
-                
-                widgets[obj.name] = panel;
+                if (obj.parent === "root") {
+                    ui.root.add(panel);
+                } else {
+                    widgets[obj.name] = panel;
+                }
                 
             },
         },
