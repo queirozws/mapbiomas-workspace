@@ -78,7 +78,7 @@ function render(obj) {
                 
                 var panel = ui.Panel( params );
                 
-                widgets.push(obj.name: panel);
+                widgets.push({obj.name: panel});
                 
                 ui.root.add(panel);
                 
