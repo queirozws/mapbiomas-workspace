@@ -122,9 +122,9 @@ function render(obj) {
                 var layout = ui.Panel.Layout.flow("vertical", false);
                 
                 var params = {
-                    widgets: obj.params.widgets || null,
-                    layout: obj.params.layout || null,
-                    style: obj.style || null
+                    widgets: obj.params.widgets || null, // || default params
+                    layout: obj.params.layout || {width: "700px"}, // || default params
+                    style: obj.params.style || null // || default params
                 }
                 
                 var panel = ui.Panel( params );
