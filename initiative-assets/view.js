@@ -86,6 +86,8 @@ function render(obj) {
                     
                     ui.root.add(panel);
                     
+                    widgets[obj.name] = panel;
+                    
                 } else {
                   
                     widgets[obj.name] = panel;
