@@ -3,6 +3,8 @@
  * 
  */
 
+var loop = require("users/queirozws/packages:js/arrayFunctions.js").loop;
+
 var App = {
 
     view: {
@@ -126,89 +128,89 @@ function isArray(currentLevel) {
     return currentLevel
 }
 
-function loop(currentLevel, callback) {
+// function loop(currentLevel, callback) {
     
-    print(currentLevel);
+//     print(currentLevel);
     
-    var filtered = currentLevel.filter(
+//     var filtered = currentLevel.filter(
         
-        function(obj) {
+//         function(obj) {
 
-            render(obj);
+//             render(obj);
             
-            print(obj.type + "/" + obj.name); // || render function
+//             print(obj.type + "/" + obj.name); // || render function
             
-            // ( (child > 0) && print(obj.type + "/" + obj.name + " has child") );
+//             // ( (child > 0) && print(obj.type + "/" + obj.name + " has child") );
             
-            // ( (child !== 0) || print(obj.type + "/" + obj.name + " hasn't child") );
+//             // ( (child !== 0) || print(obj.type + "/" + obj.name + " hasn't child") );
             
-            // loop(obj.child);
+//             // loop(obj.child);
             
-            return obj.child.length > 0
+//             return obj.child.length > 0
         
-        }
+//         }
         
-    )
+//     )
     
-    // var child = obj.child.length;
+//     // var child = obj.child.length;
     
-    // var filtered = currentLevel.filter(function(obj) {return obj.child.length > 0});
+//     // var filtered = currentLevel.filter(function(obj) {return obj.child.length > 0});
     
-    filtered.forEach(
-        function (obj) {
+//     filtered.forEach(
+//         function (obj) {
             
-            var nextLevel = obj.child;
+//             var nextLevel = obj.child;
             
-            nextLevel.filter(
-                function (obj) {
+//             nextLevel.filter(
+//                 function (obj) {
                     
-                    // render(obj)
+//                     // render(obj)
                     
-                    print(obj.type + "/" + obj.name);
+//                     print(obj.type + "/" + obj.name);
                     
-                    return obj.child.length > 0
-                }
-            );
+//                     return obj.child.length > 0
+//                 }
+//             );
             
             
-        });
+//         });
     
-    // add sub elements
-    // filtered.forEach(
-    //     function (obj){
+//     // add sub elements
+//     // filtered.forEach(
+//     //     function (obj){
             
-    //         var newList = obj.child;
+//     //         var newList = obj.child;
             
-    //         newList.forEach(
-    //             function (obj) {
+//     //         newList.forEach(
+//     //             function (obj) {
                     
-    //                 render(obj)
+//     //                 render(obj)
                     
-    //             }
-    //         );
+//     //             }
+//     //         );
             
-    //     }
-    // )
+//     //     }
+//     // )
     
     
-  // var keyList = Object.keys(obj);
+//   // var keyList = Object.keys(obj);
   
-  // keyList.forEach(
-  //     function (key) {
+//   // keyList.forEach(
+//   //     function (key) {
         
-  //       // obj[key];
+//   //       // obj[key];
         
-  //       console.log(key+" key")
+//   //       console.log(key+" key")
         
-  //     }
-  // )
+//   //     }
+//   // )
   
-  // print(keyList);
+//   // print(keyList);
 
 
   
-  // callback()
-}
+//   // callback()
+// }
 
 loop(App.view.ui)
 
