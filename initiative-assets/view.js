@@ -1,3 +1,25 @@
+function component(obj, type) {
+
+    var obj2 = {
+        type: "panel",
+        name: "header",
+        data: null,
+        parent: "mainPanel",
+        style: {
+            width: "450px",
+        },
+        child: "none"
+    }
+    
+    this.type = "string";
+
+    // print(this.type)
+
+}
+
+component(null, "olá").type;
+
+
 var App = {
   view: {
     ui: [
@@ -40,9 +62,8 @@ var App = {
   }
 }
 
-
-print(App);
-print(App.view.ui[0].child[0].parent)
+// print(App);
+// print(App.view.ui[0].child[0].parent)
 
 function render(obj) {
   
@@ -135,7 +156,7 @@ render(App.view.ui[0].child[0]);
 render(App.view.ui[0].child[1]);
 render(App.view.ui[0].child[2]);
 
-print(ui.root.widgets())
+// print(ui.root.widgets())
 // print(panel.widgets())
 
 
