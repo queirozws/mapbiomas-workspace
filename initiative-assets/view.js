@@ -23,12 +23,12 @@ var App = {
                         name: "header",
                         data: null,
                         parent: "mainPanel",
-                        style: {width: "90px",},
+                        style: {border: "1px solid black", backgroundColor: "blue"},
                         child: []
                     },
                     {
                         type: "select",
-                        name: "Choose an option",
+                        name: "select",
                         data: null,
                         parent: "mainPanel",
                         style: {},
@@ -36,7 +36,7 @@ var App = {
                     },
                     {
                         type: "button",
-                        name: "button1",
+                        name: "button 1",
                         data: null,
                         parent: "mainPanel",
                         style: {},
@@ -44,7 +44,7 @@ var App = {
                     },
                     {
                         type: "button",
-                        name: "button2",
+                        name: "button 2",
                         data: null,
                         parent: "auxPanel",
                         style: {},
@@ -52,7 +52,7 @@ var App = {
                     },
                     {
                         type: "button",
-                        name: "button3",
+                        name: "button 3",
                         data: null,
                         parent: "header",
                         style: {},
@@ -64,7 +64,7 @@ var App = {
                 type: "panel",
                 name: "auxPanel",
                 data: null,
-                style: {width: "90px", border: "1px solid black", backgroundColor: "red"},
+                style: {border: "1px solid black", backgroundColor: "red"},
                 parent: "mainPanel",
                 child: [],
             }
@@ -73,9 +73,6 @@ var App = {
     }
 
 }
-
-// print(App);
-// print(App.view.ui[0].child[0].parent)
 
 var widgets = {};
 
