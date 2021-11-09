@@ -16,14 +16,14 @@ var App = {
                 parent: "root",
                 child: [
         
-                    // {
-                    //     type: "panel",
-                    //     name: "header",
-                    //     data: null,
-                    //     parent: "mainPanel",
-                    //     style: {width: "450px",},
-                    //     child: "none"
-                    // },
+                    {
+                        type: "panel",
+                        name: "header",
+                        data: null,
+                        parent: "mainPanel",
+                        style: {width: "450px",},
+                        child: [1,2,3]
+                    },
                     {
                         type: "select",
                         name: "Choose an option",
@@ -47,7 +47,7 @@ var App = {
                 type: "panel",
                 name: "auxPanel",
                 data: null,
-                style: {width: "90px", border: "1px solid black", backgroundColor: "gray"},
+                style: {width: "90px", border: "1px solid black", backgroundColor: "red"},
                 parent: "root",
                 child: [],
             }
@@ -122,13 +122,15 @@ function render(obj) {
   
 }
 
-function loop(list, callback) {
-  
-    // var list = obj.view.ui;
+function isArray(currentLevel) {
+    return currentLevel
+}
+
+function loop(currentLevel, callback) {
     
-    print(list);
+    print(currentLevel);
     
-    list.forEach(
+    var filtered = currentLevel.filter(
         
         function(obj) {
 
@@ -136,37 +138,54 @@ function loop(list, callback) {
             
             print(obj.type + "/" + obj.name); // || render function
             
-            var child = obj.child.length;
-            
-            var filtered = list.filter(function(obj) {return obj.child.length > 0});
-            
-            // add sub elements
-            filtered.forEach(
-                function (obj){
-                    
-                    var newList = obj.child;
-                    
-                    newList.forEach(
-                        function (obj) {
-                            
-                            render(obj)
-                            
-                        }
-                    );
-                    
-                }
-            )
-            
             // ( (child > 0) && print(obj.type + "/" + obj.name + " has child") );
             
             // ( (child !== 0) || print(obj.type + "/" + obj.name + " hasn't child") );
             
             // loop(obj.child);
+            
+            return obj.child.length > 0
         
         }
         
     )
-  
+    
+    // var child = obj.child.length;
+    
+    // var filtered = currentLevel.filter(function(obj) {return obj.child.length > 0});
+    
+    filtered.forEach(
+        function (obj) {
+            
+            obj.child.filter(
+                function () {
+                    
+                    print(obj.type + "/" + obj.name);
+                    
+                    return obj.child.length > 0
+                });
+            
+            
+        });
+    
+    // add sub elements
+    // filtered.forEach(
+    //     function (obj){
+            
+    //         var newList = obj.child;
+            
+    //         newList.forEach(
+    //             function (obj) {
+                    
+    //                 render(obj)
+                    
+    //             }
+    //         );
+            
+    //     }
+    // )
+    
+    
   // var keyList = Object.keys(obj);
   
   // keyList.forEach(
@@ -197,6 +216,4 @@ loop(App.view.ui)
 
 
 
-
-
-
+// 00:31
