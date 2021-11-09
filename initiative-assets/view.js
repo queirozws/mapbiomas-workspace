@@ -106,7 +106,7 @@ function render(obj) {
                 
                 var parent = obj.parent;
                 
-                widgets[parent].add(select);
+                // widgets[parent].add(select);
                 
                 // print(select);
 
@@ -139,6 +139,8 @@ function render(obj) {
     type[obj.type].constructor(obj);
   
 }
+
+print(widgets);
 
 function isArray(currentLevel) {
     return currentLevel
