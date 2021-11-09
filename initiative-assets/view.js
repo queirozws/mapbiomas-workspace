@@ -106,7 +106,7 @@ function render(obj) {
                 
                 var parent = obj.parent;
                 
-                widgets.parent.add(select);
+                widgets[parent].add(select);
                 
                 // print(select);
 
