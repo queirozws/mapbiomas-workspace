@@ -74,7 +74,7 @@ var App = {
 
 }
 
-var widgets = {};
+var painels = {};
 
 function render(obj) {
     
@@ -86,7 +86,7 @@ function render(obj) {
               
                 var params = {
                     widgets: null,
-                    layout: null,
+                    layout: "flow",
                     style: obj.style
                 }
                 
@@ -98,13 +98,13 @@ function render(obj) {
                     
                     ui.root.add(panel);
                     
-                    widgets[obj.name] = panel;
+                    painels[obj.name] = panel;
                     
                 } else {
                   
-                    widgets[obj.parent].add(panel);
+                    painels[obj.parent].add(panel);
 
-                    widgets[obj.name] = panel;
+                    painels[obj.name] = panel;
 
                 }
                 
@@ -128,7 +128,7 @@ function render(obj) {
                 
                 var parent = obj.parent;
                 
-                widgets[parent].add(select);
+                painels[parent].add(select);
                 
             }
               
@@ -147,7 +147,7 @@ function render(obj) {
                 
                 var parent = obj.parent;
                 
-                widgets[parent].add(button);
+                painels[parent].add(button);
                 
             }
         },
@@ -248,16 +248,6 @@ function isArray(currentLevel) {
 
 loop(App.view.ui, render);
 
-print(widgets);
+print(painels);
 
-
-
-// render(App.view.ui[0].child[0]);
-// render(App.view.ui[0].child[1]);
-// render(App.view.ui[0].child[2]);
-
-// print(ui.root.widgets())
-// print(panel.widgets())
-
-
-// 17:28
+// 19:49
