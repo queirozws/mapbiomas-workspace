@@ -13,7 +13,7 @@ var App = {
             {
                 type: "panel",
                 name: "mainPanel",
-                params: null,
+                params: {},
                 data: null,
                 style: {width: "450px"},
                 parent: "root",
@@ -103,13 +103,13 @@ function render(obj) {
                 // var layout = ui.Panel.Layout.absolute();
                 var layout = ui.Panel.Layout.flow("vertical", false);
                 
-                var params = {
+                var defaultParams = {
                     widgets: null,
                     layout: layout,
                     style: obj.style
                 }
                 
-                var panel = ui.Panel( obj.params || params );
+                var panel = ui.Panel( obj.params || defaultParams );
                 
                 if (obj.parent === "root") {
                     
