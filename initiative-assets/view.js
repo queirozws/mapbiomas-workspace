@@ -80,15 +80,7 @@ function render(obj) {
                 
                 ui.root.add(panel);
                 
-                print(typeof obj.name)
-                
-                // var key = obj.name;
-                
-                // var widget = {};
-                
                 widgets[obj.name] = panel;
-                
-                // widgets.push( widget );
                 
             },
         },
@@ -112,8 +104,6 @@ function render(obj) {
                 
                 widgets[parent].add(select);
                 
-                // print(select);
-
             }
               
         },
@@ -133,8 +123,6 @@ function render(obj) {
                 
                 widgets[parent].add(button);
                 
-                // print(button);
-
             }
         },
 
