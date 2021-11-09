@@ -36,13 +36,28 @@ var App = {
                     },
                     {
                         type: "button",
-                        name: "Visualize data",
+                        name: "button1",
                         data: null,
                         parent: "mainPanel",
                         style: {},
                         child: [],
-                    }          
-        
+                    },
+                    {
+                        type: "button",
+                        name: "button2",
+                        data: null,
+                        parent: "auxPanel",
+                        style: {},
+                        child: [],
+                    },
+                    {
+                        type: "button",
+                        name: "button3",
+                        data: null,
+                        parent: "header",
+                        style: {},
+                        child: [],
+                    },
                 ]
             },
             {
@@ -90,8 +105,10 @@ function render(obj) {
                     
                 } else {
                   
-                    widgets[parent].add(button);
-                    
+                    widgets[obj.parent].add(panel);
+
+                    widgets[obj.name] = panel;
+
                 }
                 
             },
