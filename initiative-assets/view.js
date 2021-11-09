@@ -32,7 +32,7 @@ var App = {
                         data: null,
                         parent: "mainPanel",
                         style: {},
-                        child: "none",
+                        child: [],
                     },
                     {
                         type: "button",
@@ -40,7 +40,7 @@ var App = {
                         data: null,
                         parent: "mainPanel",
                         style: {},
-                        child: "none",
+                        child: [],
                     }          
         
                 ]
