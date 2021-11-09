@@ -13,6 +13,7 @@ var App = {
             {
                 type: "panel",
                 name: "mainPanel",
+                params: null,
                 data: null,
                 style: {width: "450px"},
                 parent: "root",
@@ -21,6 +22,7 @@ var App = {
                     {
                         type: "panel",
                         name: "header",
+                        params: null,
                         data: null,
                         parent: "mainPanel",
                         style: {border: "1px solid black", backgroundColor: "blue"},
@@ -29,6 +31,7 @@ var App = {
                     {
                         type: "select",
                         name: "select",
+                        params: null,
                         data: null,
                         parent: "mainPanel",
                         style: {},
@@ -37,6 +40,7 @@ var App = {
                     {
                         type: "button",
                         name: "button 1",
+                        params: null,
                         data: null,
                         parent: "mainPanel",
                         style: {},
@@ -45,6 +49,7 @@ var App = {
                     {
                         type: "button",
                         name: "button 2",
+                        params: null,
                         data: null,
                         parent: "auxPanel",
                         style: {},
@@ -53,6 +58,7 @@ var App = {
                     {
                         type: "button",
                         name: "button 3",
+                        params: null,
                         data: null,
                         parent: "header",
                         style: {},
@@ -61,6 +67,7 @@ var App = {
                     {
                         type: "button",
                         name: "button 3",
+                        params: null,
                         data: null,
                         parent: "auxPanel",
                         style: {},
@@ -71,6 +78,7 @@ var App = {
             {
                 type: "panel",
                 name: "auxPanel",
+                params: null,
                 data: null,
                 style: {border: "1px solid black", backgroundColor: "red"},
                 parent: "mainPanel",
