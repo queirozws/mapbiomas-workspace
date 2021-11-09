@@ -80,7 +80,9 @@ function render(obj) {
                 
                 // print(obj.name, panel)
                 
-                widgets.push( {obj["name"]: panel} );
+                var key = obj.name;
+                
+                widgets.push( {key: panel} );
                 
                 ui.root.add(panel);
                 
