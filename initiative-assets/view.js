@@ -157,13 +157,16 @@ function loop(currentLevel, callback) {
     filtered.forEach(
         function (obj) {
             
-            obj.child.filter(
-                function () {
+            var nextLevel = obj.child;
+            
+            nextLevel.filter(
+                function (obj) {
                     
                     print(obj.type + "/" + obj.name);
                     
                     return obj.child.length > 0
-                });
+                }
+            );
             
             
         });
@@ -199,6 +202,7 @@ function loop(currentLevel, callback) {
   // )
   
   // print(keyList);
+
 
   
   // callback()
