@@ -82,11 +82,11 @@ function render(obj) {
                 
                 print(typeof obj.name)
                 
-                var key = obj.name;
+                // var key = obj.name;
                 
                 var widget = {};
                 
-                widget[key] = panel
+                widget[obj.name] = panel;
                 
                 widgets.push( widget );
                 
