@@ -23,7 +23,7 @@ var App = {
                         name: "header",
                         data: null,
                         parent: "mainPanel",
-                        // style: {width: "450px",},
+                        style: {width: "90px",},
                         child: []
                     },
                     {
