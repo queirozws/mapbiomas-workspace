@@ -65,7 +65,9 @@ var App = {
 var widgets = {};
 
 function render(obj) {
-  
+    
+    print(obj.name)
+    
     var type = {
         "panel": {
             constructor: function (obj) {
@@ -83,8 +85,11 @@ function render(obj) {
                     print("root");
                     
                     ui.root.add(panel);
+                    
                 } else {
+                  
                     widgets[obj.name] = panel;
+                    
                 }
                 
             },
