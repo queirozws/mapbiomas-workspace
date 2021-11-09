@@ -21,7 +21,6 @@ var App = {
                     }
                 },
                 data: null,
-                style: {width: "450px"},
                 parent: "root",
                 child: [
         
@@ -32,12 +31,12 @@ var App = {
                             widgets: null,
                             layout: null,
                             style: {
-                                width: "450px"
+                                border: "1px solid black",
+                                backgroundColor: "blue"
                             }
                         },
                         data: null,
                         parent: "mainPanel",
-                        style: {border: "1px solid black", backgroundColor: "blue"},
                         child: []
                     },
                     {
@@ -94,7 +93,8 @@ var App = {
                     widgets: null,
                     layout: null,
                     style: {
-                        width: "450px"
+                        border: "1px solid black",
+                        backgroundColor: "red"
                     }
                 },
                 data: null,
@@ -124,7 +124,7 @@ function render(obj) {
                 var params = {
                     widgets: obj.params.widgets || null,
                     layout: obj.params.layout || null,
-                    style: obj.params.style || null
+                    style: obj.style || null
                 }
                 
                 var panel = ui.Panel( params );
