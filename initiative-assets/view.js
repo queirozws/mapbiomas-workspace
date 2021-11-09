@@ -102,7 +102,7 @@ function render(obj) {
                 
                 var select = ui.Select(params);
                 
-                widget[obj.parent].add(select);
+                widgets[obj.parent].add(select);
                 
                 // print(select);
 
@@ -121,7 +121,7 @@ function render(obj) {
                 
                 var button = ui.Button(params);
                 
-                widget[obj.parent].add(select);
+                widgets[obj.parent].add(select);
                 
                 // print(button);
 
