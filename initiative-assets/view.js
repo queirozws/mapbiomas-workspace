@@ -54,9 +54,7 @@ var App = {
                         name: "button 1",
                         params: {
                             onClick: function() {print("olá")},
-                            style: {
-                                
-                            }
+                            style: {}
                         },
                         parent: "main",
                         child: [],
@@ -66,9 +64,7 @@ var App = {
                         name: "button 2",
                         params: {
                             onClick: function() {print("olá")},
-                            style: {
-                                
-                            }
+                            style: {}
                         },
                         parent: "header",
                         child: [],
@@ -78,9 +74,7 @@ var App = {
                         name: "button 3",
                         params: {
                             onClick: function() {print("olá")},
-                            style: {
-                                
-                            }
+                            style: {}
                         },
                         parent: "auxiliar",
                         child: [],
@@ -90,9 +84,7 @@ var App = {
                         name: "button 4",
                         params: {
                             onClick: function() {print("olá")},
-                            style: {
-                                
-                            }
+                            style: {}
                         },
                         parent: "auxiliar",
                         child: [],
@@ -183,8 +175,8 @@ function render(obj) {
                 var params = {
                     label: obj.params.label || null, // || default value
                     onClick: obj.params.onClick || null, // || default value
-                    disabled: obj.params.disabled || null, // || default value
-                    style: obj.params.style || null // || default value
+                    disabled: obj.params.disabled || true, // || default value
+                    style: obj.params.style || {} // || default value
                 };
                 
                 var button = ui.Button(params);
