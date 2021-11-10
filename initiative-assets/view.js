@@ -182,10 +182,10 @@ function render(obj) {
             constructor: function (obj) {
               
                 var params = {
-                    label: obj.name,
-                    onClick: null,
-                    disabled: null,
-                    style: obj.style
+                    label: obj.params.label || null, // || default value
+                    onClick: obj.params.onClick || null, // || default value
+                    disabled: obj.params.disabled || null, // || default value
+                    style: obj.params.style || null // || default value
                 };
                 
                 var button = ui.Button(params);
