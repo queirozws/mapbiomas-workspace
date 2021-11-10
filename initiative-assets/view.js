@@ -273,4 +273,4 @@ loop(App.view.ui, render);
 
 print(painels);
 
-// 19:49
+// 01:02
