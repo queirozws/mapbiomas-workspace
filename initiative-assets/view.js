@@ -6,9 +6,7 @@
 var loop = require("users/queirozws/packages:js/arrayFunctions.js").loop;
 
 var App = {
-
     view: {
-  
         ui: [
             {
                 type: "panel",
@@ -17,7 +15,8 @@ var App = {
                     widgets: null,
                     layout: null,
                     style: {
-                        width: "450px"
+                        width: "450px",
+                        backgroundColor: "#222e3c"
                     }
                 },
                 parentId: "root",
@@ -30,7 +29,7 @@ var App = {
                             layout: null,
                             style: {
                                 border: "1px solid black",
-                                backgroundColor: "blue",
+                                backgroundColor: "#222e3c",
                                 margin: "15px 30px 15px 30px"
                             }
                         },
@@ -44,7 +43,10 @@ var App = {
                             label: "Insira aqui um título para o painel",
                             targetUrl: "",
                             style: {
-                                backgroundColor: "yellow"
+                                backgroundColor: "#222e3c",
+                                color: "white",
+                                fontSize: "20px",
+                                position: "bottom-center"
                             }
                         },
                         parentId: "auxiliar",
@@ -55,7 +57,7 @@ var App = {
                         id: "select",
                         params: {
                             placeholder: "Escolha uma das opções",
-                            onChange: function() {print("olá")},
+                            // onChange: function() {print("olá")},
                             style: {
                                 stretch: "horizontal"
                             },
@@ -127,11 +129,12 @@ var App = {
                 id: "auxiliar",
                 params: {
                     widgets: null,
-                    layout: ui.Panel.Layout.Flow("horizontal"),
+                    // layout: ui.Panel.Layout.absolute(),
                     style: {
                         border: "1px solid black",
-                        backgroundColor: "red",
-                        margin: "5px 10px 5px 10px"
+                        backgroundColor: "222e3c",
+                        margin: "5px 10px 5px 10px",
+                        position: "bottom-right"
                     }
                 },
                 index: 1,
@@ -148,7 +151,7 @@ var painels = {};
 
 function render(obj) {
     
-    print(obj.id);
+    // print(obj.id);
     
     var type = {
         "panel": {
@@ -167,8 +170,9 @@ function render(obj) {
                 
                 if (obj.parentId === "root") {
                     
-                    print(panel);
-                    // ui.root.add(panel);
+                    // print(panel);
+                    // Map.add(panel);
+                    ui.root.add(panel);
                     
                     painels[obj.id] = panel;
                     
@@ -270,6 +274,6 @@ function isArray(currentLevel) {
 
 loop(App.view.ui, render);
 
-print(painels);
+// print(painels);
 
 // 01:07
