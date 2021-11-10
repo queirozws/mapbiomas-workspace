@@ -67,7 +67,7 @@ var App = {
                         name: "button 1",
                         params: {
                             label: "button 1",
-                            onClick: function() {print("olá")},
+                            // onClick: function() {print("olá")},
                             style: {}
                         },
                         parent: "main",
@@ -78,7 +78,7 @@ var App = {
                         name: "button 2",
                         params: {
                             label: "button 2",
-                            onClick: function() {print("olá")},
+                            // onClick: function() {print("olá")},
                             style: {}
                         },
                         parent: "header",
@@ -89,7 +89,7 @@ var App = {
                         name: "button 3",
                         params: {
                             label: "button 3",
-                            onClick: function() {print("olá")},
+                            // onClick: function() {print("olá")},
                             style: {}
                         },
                         parent: "auxiliar",
@@ -100,7 +100,7 @@ var App = {
                         name: "button 4",
                         params: {
                             label: "button 4",
-                            onClick: function() {print("olá")},
+                            // onClick: function() {print("olá")},
                             style: {}
                         },
                         parent: "auxiliar",
@@ -191,7 +191,7 @@ function render(obj) {
               
                 var params = {
                     label: obj.params.label || "button (" + obj.parent + " panel)", // || default value
-                    onClick: obj.params.onClick || null, // || default value
+                    onClick: obj.params.onClick || function () {print("button (" + obj.parent + " panel)")}, // || default value
                     disabled: obj.params.disabled || false, // || default value
                     style: obj.params.style || {} // || default value
                 };
