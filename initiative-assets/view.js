@@ -40,9 +40,10 @@ var App = {
                         type: "select",
                         name: "select",
                         params: {
+                            placeholder: "Escolha uma das opções",
                             onChange: function() {print("olá")},
                             style: {
-                                placeholder: "Escolha uma das opções"
+                                
                             },
                         },
                         parent: "main",
@@ -166,7 +167,7 @@ function render(obj) {
                     value: obj.params.value || null,
                     onChange: obj.params.onChange || null,
                     disabled: obj.params.disabled || null,
-                    style: obj.style
+                    style: obj.params.style || null
                 }
                 
                 var select = ui.Select(params);
