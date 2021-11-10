@@ -237,13 +237,13 @@ function render(obj) {
         "map": {
             constructor: function (obj) {
               
-                // var params = {
-                //     value: obj.params.value || "some label (" + obj.parent + " panel)", // || default value
-                //     targetUrl: obj.params.targetUrl || "", // || default value
-                //     style: obj.params.style || {} // || default value
-                // };
+                var params = {
+                    center: obj.params.value || {lat: -50, lon: -4}, // || default value
+                    onClick: obj.params.targetUrl || null, // || default value
+                    style: obj.params.style || {} // || default value
+                };
                 
-                var map = ui.Map( obj.params );
+                var map = ui.Map( params );
                 
                 painels[obj.parent].add(map);
                 
