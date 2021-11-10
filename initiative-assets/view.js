@@ -171,9 +171,7 @@ function render(obj) {
                 
                 var select = ui.Select(params);
                 
-                var parent = obj.parent;
-                
-                painels[parent].add(select);
+                painels[obj.parent].add(select);
                 
             }
               
@@ -190,9 +188,7 @@ function render(obj) {
                 
                 var button = ui.Button(params);
                 
-                var parent = obj.parent;
-                
-                painels[parent].add(button);
+                painels[obj.parent].add(button);
                 
             }
         },
