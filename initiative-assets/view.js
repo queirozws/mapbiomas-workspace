@@ -47,7 +47,7 @@ var App = {
                                 backgroundColor: "yellow"
                             }
                         },
-                        parent: "header",
+                        parent: "auxiliar",
                         child: []
                     },
                     {
@@ -106,7 +106,7 @@ var App = {
                                 stretch: "horizontal"
                             }
                         },
-                        parent: "auxiliar",
+                        parent: "header",
                         child: [],
                     },
                     {
@@ -224,7 +224,7 @@ function render(obj) {
             constructor: function (obj) {
               
                 var params = {
-                    value: obj.params.value || "some label (" + obj.parent + " panel)", // || default value
+                    value: obj.params.label || "some label (" + obj.parent + " panel)", // || default value
                     targetUrl: obj.params.targetUrl || "", // || default value
                     style: obj.params.style || {} // || default value
                 };
@@ -241,7 +241,7 @@ function render(obj) {
                 var params = {
                     center: obj.params.value || {lat: -6, lon: -50, zoom: 3}, // || default value
                     onClick: obj.params.targetUrl || null, // || default value
-                    style: obj.params.style || {} // || default value
+                    style: obj.params.style || {margin: "15px"} // || default value
                 };
                 
                 var map = ui.Map( params );
