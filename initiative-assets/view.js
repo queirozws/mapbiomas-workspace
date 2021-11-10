@@ -12,7 +12,7 @@ var App = {
         ui: [
             {
                 type: "panel",
-                name: "main",
+                id: "main",
                 params: {
                     widgets: null,
                     layout: null,
@@ -20,11 +20,11 @@ var App = {
                         width: "450px"
                     }
                 },
-                parent: "root",
+                parentId: "root",
                 child: [
                     {
                         type: "panel",
-                        name: "header",
+                        id: "header",
                         params: {
                             widgets: null,
                             layout: null,
@@ -34,12 +34,12 @@ var App = {
                                 margin: "15px 30px 15px 30px"
                             }
                         },
-                        parent: "main",
+                        parentId: "main",
                         child: []
                     },
                     {
                         type: "label",
-                        name: "header",
+                        id: "header",
                         params: {
                             label: "Insira aqui um título para o painel",
                             targetUrl: "",
@@ -47,12 +47,12 @@ var App = {
                                 backgroundColor: "yellow"
                             }
                         },
-                        parent: "auxiliar",
+                        parentId: "auxiliar",
                         child: []
                     },
                     {
                         type: "select",
-                        name: "select",
+                        id: "select",
                         params: {
                             placeholder: "Escolha uma das opções",
                             onChange: function() {print("olá")},
@@ -60,45 +60,45 @@ var App = {
                                 stretch: "horizontal"
                             },
                         },
-                        parent: "main",
+                        parentId: "main",
                         child: [],
                     },
                     {
                         type: "button",
-                        name: "button 1",
+                        id: "button 1",
                         params: {
                             label: "button 1",
                             // onClick: function() {print("olá")},
                             style: {}
                         },
-                        parent: "main",
+                        parentId: "main",
                         child: [],
                     },
                     {
                         type: "button",
-                        name: "button 2",
+                        id: "button 2",
                         params: {
                             label: "button 2",
                             // onClick: function() {print("olá")},
                             style: {}
                         },
-                        parent: "header",
+                        parentId: "header",
                         child: [],
                     },
                     {
                         type: "button",
-                        name: "button 3",
+                        id: "button 3",
                         params: {
                             label: "button 3",
                             // onClick: function() {print("olá")},
                             style: {}
                         },
-                        parent: "header",
+                        parentId: "header",
                         child: [],
                     },
                     {
                         type: "button",
-                        name: "button 4",
+                        id: "button 4",
                         params: {
                             label: "button 4",
                             // onClick: function() {print("olá")},
@@ -106,25 +106,25 @@ var App = {
                                 stretch: "horizontal"
                             }
                         },
-                        parent: "header",
+                        parentId: "header",
                         child: [],
                     },
                     {
                         type: "map",
-                        name: "Map 1",
+                        id: "Map 1",
                         params: {
                             center: null,
                             onClick: null,
                             style: null
                         },
-                        parent: "main",
+                        parentId: "main",
                         child: [],
                     },
                 ]
             },
             {
                 type: "panel",
-                name: "auxiliar",
+                id: "auxiliar",
                 params: {
                     widgets: null,
                     layout: ui.Panel.Layout.Flow("horizontal"),
@@ -135,7 +135,7 @@ var App = {
                     }
                 },
                 index: 1,
-                parent: "main",
+                parentId: "main",
                 child: [],
             }
         ],
@@ -148,7 +148,7 @@ var painels = {};
 
 function render(obj) {
     
-    print(obj.name);
+    print(obj.id);
     
     var type = {
         "panel": {
@@ -165,17 +165,17 @@ function render(obj) {
                 
                 var panel = ui.Panel( params );
                 
-                if (obj.parent === "root") {
+                if (obj.parentId === "root") {
                     
                     ui.root.add(panel);
                     
-                    painels[obj.name] = panel;
+                    painels[obj.id] = panel;
                     
                 } else {
                   
-                    painels[obj.parent].add(panel);
+                    painels[obj.parentId].add(panel);
 
-                    painels[obj.name] = panel;
+                    painels[obj.id] = panel;
 
                 }
                 
@@ -184,7 +184,7 @@ function render(obj) {
         "select": {
             constructor: function (obj) {
               
-                obj.parent
+                obj.parentId
               
                 var params = {
                     items: obj.params.items || ["1","2","3","4","5"],
@@ -197,7 +197,7 @@ function render(obj) {
                 
                 var select = ui.Select(params);
                 
-                painels[obj.parent].add(select);
+                painels[obj.parentId].add(select);
                 
             }
               
@@ -206,15 +206,15 @@ function render(obj) {
             constructor: function (obj) {
               
                 var params = {
-                    label: obj.params.label || "button (" + obj.parent + " panel)", // || default value
-                    onClick: obj.params.onClick || function () {print("button (" + obj.parent + " panel)")}, // || default value
+                    label: obj.params.label || "button (" + obj.parentId + " panel)", // || default value
+                    onClick: obj.params.onClick || function () {print("button (" + obj.parentId + " panel)")}, // || default value
                     disabled: obj.params.disabled || false, // || default value
                     style: obj.params.style || {} // || default value
                 };
                 
                 var button = ui.Button(params);
                 
-                painels[obj.parent].add(button);
+                painels[obj.parentId].add(button);
                 
             }
         },
@@ -222,14 +222,14 @@ function render(obj) {
             constructor: function (obj) {
               
                 var params = {
-                    value: obj.params.label || "some label (" + obj.parent + " panel)", // || default value
+                    value: obj.params.label || "some label (" + obj.parentId + " panel)", // || default value
                     targetUrl: obj.params.targetUrl || "", // || default value
                     style: obj.params.style || {} // || default value
                 };
                 
                 var button = ui.Label( params );
                 
-                painels[obj.parent].add(button);
+                painels[obj.parentId].add(button);
                 
             }
         },
@@ -244,16 +244,16 @@ function render(obj) {
                 
                 var map = ui.Map( params );
                 
-                painels[obj.parent].insert(1, map);
+                painels[obj.parentId].insert(1, map);
                 
             }
         },
 
     };
     
-    if (painels[obj.parent] === "undefined" ) {
+    if (painels[obj.parentId] === "undefined" ) {
     
-        print("O painel selecionado para o widget " + obj.name + " não existe!")
+        print("O painel selecionado para o widget " + obj.id + " não existe!")
 
     } else {
         
