@@ -136,6 +136,7 @@ var App = {
                         margin: "5px 10px 5px 10px"
                     }
                 },
+                index: 1,
                 parent: "main",
                 child: [],
             }
@@ -238,14 +239,14 @@ function render(obj) {
             constructor: function (obj) {
               
                 var params = {
-                    center: obj.params.value || {lat: -50, lon: -4}, // || default value
+                    center: obj.params.value || {lat: -6, lon: -50, zoom: 3}, // || default value
                     onClick: obj.params.targetUrl || null, // || default value
                     style: obj.params.style || {} // || default value
                 };
                 
                 var map = ui.Map( params );
                 
-                painels[obj.parent].add(map);
+                painels[obj.parent].insert(1, map);
                 
             }
         },
