@@ -220,11 +220,14 @@ function render(obj) {
 
     };
     
-    if (type[obj.type] !== "undefined") {
+    if (painels[obj.parent] === "undefined" ) {
     
-        type[obj.type].constructor(obj);
-    } else {
         print("O painel selecionado para o widget " + obj.name + " não existe!")
+
+    } else {
+        
+        type[obj.type].constructor(obj);
+        
     }
   
 }
