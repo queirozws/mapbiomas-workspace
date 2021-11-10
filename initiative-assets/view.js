@@ -113,9 +113,9 @@ var App = {
                         type: "map",
                         id: "Map 1",
                         params: {
-                            center: null,
+                            center: {lat: -6, lon: -54, zoom: 3},
                             onClick: null,
-                            style: null
+                            style: {margin: "15px"}
                         },
                         parentId: "main",
                         child: [],
@@ -167,7 +167,8 @@ function render(obj) {
                 
                 if (obj.parentId === "root") {
                     
-                    ui.root.add(panel);
+                    print(panel);
+                    // ui.root.add(panel);
                     
                     painels[obj.id] = panel;
                     
@@ -244,7 +245,7 @@ function render(obj) {
                 
                 var map = ui.Map( params );
                 
-                painels[obj.parentId].insert(1, map);
+                painels[obj.parentId].insert(2, map);
                 
             }
         },
