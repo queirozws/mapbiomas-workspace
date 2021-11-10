@@ -62,7 +62,7 @@ var App = {
                         name: "button 2",
                         params: null,
                         data: null,
-                        parent: "auxPanel",
+                        parent: "header",
                         style: {},
                         child: [],
                     },
@@ -71,13 +71,13 @@ var App = {
                         name: "button 3",
                         params: null,
                         data: null,
-                        parent: "header",
+                        parent: "auxPanel",
                         style: {},
                         child: [],
                     },
                     {
                         type: "button",
-                        name: "button 3",
+                        name: "button 4",
                         params: null,
                         data: null,
                         parent: "auxPanel",
@@ -123,15 +123,13 @@ function render(obj) {
                 
                 var params = {
                     widgets: obj.params.widgets || null, // || default params
-                    layout: obj.params.layout || {width: "700px"}, // || default params
-                    style: obj.params.style || null // || default params
+                    layout: obj.params.layout || layout, // || default params
+                    style: obj.params.style || {width: "700px"} // || default params
                 }
                 
                 var panel = ui.Panel( params );
                 
                 if (obj.parent === "root") {
-                    
-                    print("root");
                     
                     ui.root.add(panel);
                     
