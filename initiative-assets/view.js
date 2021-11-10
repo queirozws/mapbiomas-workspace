@@ -52,7 +52,7 @@ var App = {
                         type: "button",
                         name: "button 1",
                         params: {
-                            onChange: function() {print("olá")},
+                            onClick: function() {print("olá")},
                             style: {
                                 
                             }
@@ -64,7 +64,7 @@ var App = {
                         type: "button",
                         name: "button 2",
                         params: {
-                            onChange: function() {print("olá")},
+                            onClick: function() {print("olá")},
                             style: {
                                 
                             }
@@ -76,7 +76,7 @@ var App = {
                         type: "button",
                         name: "button 3",
                         params: {
-                            onChange: function() {print("olá")},
+                            onClick: function() {print("olá")},
                             style: {
                                 
                             }
@@ -88,7 +88,7 @@ var App = {
                         type: "button",
                         name: "button 4",
                         params: {
-                            onChange: function() {print("olá")},
+                            onClick: function() {print("olá")},
                             style: {
                                 
                             }
