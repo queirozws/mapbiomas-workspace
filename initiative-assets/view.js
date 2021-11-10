@@ -113,11 +113,9 @@ var App = {
                         type: "map",
                         name: "Map 1",
                         params: {
-                            eeObject: ee.Image(),
-                            visParams: {},
-                            name: "Map",
-                            shown: true,
-                            opacity: 1
+                            center: null,
+                            onClick: null,
+                            style: {}
                         },
                         parent: "main",
                         child: [],
@@ -239,8 +237,8 @@ function render(obj) {
             constructor: function (obj) {
               
                 var params = {
-                    center: obj.params.value || {lat: -6, lon: -50, zoom: 3}, // || default value
-                    onClick: obj.params.targetUrl || null, // || default value
+                    center: obj.params.center || {lat: -6, lon: -50, zoom: 3}, // || default value
+                    onClick: obj.params.onClick || null, // || default value
                     style: obj.params.style || {margin: "15px"} // || default value
                 };
                 
