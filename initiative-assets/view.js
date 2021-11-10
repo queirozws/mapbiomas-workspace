@@ -37,6 +37,19 @@ var App = {
                         child: []
                     },
                     {
+                        type: "label",
+                        name: "header",
+                        params: {
+                            label: "Insira aqui um título para o painel",
+                            targetUrl: "",
+                            style: {
+                                backgroundColor: "yellow"
+                            }
+                        },
+                        parent: "header",
+                        child: []
+                    },
+                    {
                         type: "select",
                         name: "select",
                         params: {
@@ -53,6 +66,7 @@ var App = {
                         type: "button",
                         name: "button 1",
                         params: {
+                            label: "button 1",
                             onClick: function() {print("olá")},
                             style: {}
                         },
@@ -63,6 +77,7 @@ var App = {
                         type: "button",
                         name: "button 2",
                         params: {
+                            label: "button 2",
                             onClick: function() {print("olá")},
                             style: {}
                         },
@@ -73,6 +88,7 @@ var App = {
                         type: "button",
                         name: "button 3",
                         params: {
+                            label: "button 3",
                             onClick: function() {print("olá")},
                             style: {}
                         },
@@ -83,6 +99,7 @@ var App = {
                         type: "button",
                         name: "button 4",
                         params: {
+                            label: "button 4",
                             onClick: function() {print("olá")},
                             style: {}
                         },
@@ -173,9 +190,9 @@ function render(obj) {
             constructor: function (obj) {
               
                 var params = {
-                    label: obj.params.label || null, // || default value
+                    label: obj.params.label || "button (" + obj.parent + " panel)", // || default value
                     onClick: obj.params.onClick || null, // || default value
-                    disabled: obj.params.disabled || true, // || default value
+                    disabled: obj.params.disabled || false, // || default value
                     style: obj.params.style || {} // || default value
                 };
                 
@@ -185,10 +202,30 @@ function render(obj) {
                 
             }
         },
+        "label": {
+            constructor: function (obj) {
+              
+                var params = {
+                    value: obj.params.value || "some label (" + obj.parent + " panel)", // || default value
+                    targetUrl: obj.params.targetUrl || "", // || default value
+                    style: obj.params.style || {} // || default value
+                };
+                
+                var button = ui.Label( params );
+                
+                painels[obj.parent].add(button);
+                
+            }
+        },
 
     };
     
-    type[obj.type].constructor(obj);
+    if (type[obj.type] !== "undefined") {
+    
+        type[obj.type].constructor(obj);
+    } else {
+        print("O painel selecionado para o widget " + obj.name + " não existe!")
+    }
   
 }
 
