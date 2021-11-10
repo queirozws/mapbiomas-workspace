@@ -23,7 +23,7 @@ var App = {
                 child: [
                     {
                         type: "panel",
-                        id: "header",
+                        id: "auxiliar",
                         params: {
                             widgets: null,
                             layout: null,
@@ -40,7 +40,7 @@ var App = {
                         type: "label",
                         id: "header",
                         params: {
-                            label: "Insira aqui um título para o painel",
+                            label: "Painel de controle",
                             targetUrl: "",
                             style: {
                                 backgroundColor: "#222e3c",
@@ -49,7 +49,7 @@ var App = {
                                 position: "bottom-center"
                             }
                         },
-                        parentId: "auxiliar",
+                        parentId: "header",
                         child: []
                     },
                     {
@@ -71,7 +71,10 @@ var App = {
                         params: {
                             label: "button 1",
                             // onClick: function() {print("olá")},
-                            style: {}
+                            style: {
+                                backgroundColor: "red",
+                                color: "blue"
+                            }
                         },
                         parentId: "main",
                         child: [],
@@ -82,9 +85,12 @@ var App = {
                         params: {
                             label: "button 2",
                             // onClick: function() {print("olá")},
-                            style: {}
+                            style: {
+                                backgroundColor: "red",
+                                color: "blue"
+                            }
                         },
-                        parentId: "header",
+                        parentId: "auxiliar",
                         child: [],
                     },
                     {
@@ -93,9 +99,12 @@ var App = {
                         params: {
                             label: "button 3",
                             // onClick: function() {print("olá")},
-                            style: {}
+                            style: {
+                                backgroundColor: "red",
+                                color: "blue"
+                            }
                         },
-                        parentId: "header",
+                        parentId: "auxiliar",
                         child: [],
                     },
                     {
@@ -108,7 +117,7 @@ var App = {
                                 stretch: "horizontal"
                             }
                         },
-                        parentId: "header",
+                        parentId: "auxiliar",
                         child: [],
                     },
                     {
@@ -126,7 +135,7 @@ var App = {
             },
             {
                 type: "panel",
-                id: "auxiliar",
+                id: "header",
                 params: {
                     widgets: null,
                     // layout: ui.Panel.Layout.absolute(),
@@ -134,6 +143,7 @@ var App = {
                         border: "1px solid black",
                         backgroundColor: "222e3c",
                         margin: "5px 10px 5px 10px",
+                        textAlign: "center",
                         position: "bottom-right"
                     }
                 },
