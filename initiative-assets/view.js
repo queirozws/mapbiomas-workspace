@@ -115,7 +115,7 @@ var App = {
                         params: {
                             center: null,
                             onClick: null,
-                            style: {}
+                            style: null
                         },
                         parent: "main",
                         child: [],
@@ -237,7 +237,7 @@ function render(obj) {
             constructor: function (obj) {
               
                 var params = {
-                    center: obj.params.center || {lat: -6, lon: -50, zoom: 3}, // || default value
+                    center: obj.params.center || {lat: -6, lon: -54, zoom: 3}, // || default value
                     onClick: obj.params.onClick || null, // || default value
                     style: obj.params.style || {margin: "15px"} // || default value
                 };
