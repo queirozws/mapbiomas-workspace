@@ -23,6 +23,21 @@ var App = {
                 child: [
                     {
                         type: "panel",
+                        id: "description",
+                        params: {
+                            widgets: null,
+                            layout: null,
+                            style: {
+                                border: "1px solid black",
+                                backgroundColor: "#222e3c",
+                                margin: "5px 10px 5px 10px"
+                            }
+                        },
+                        parentId: "main",
+                        child: []
+                    },
+                    {
+                        type: "panel",
                         id: "auxiliar",
                         params: {
                             widgets: null,
@@ -38,7 +53,23 @@ var App = {
                     },
                     {
                         type: "label",
-                        id: "header",
+                        id: "label1",
+                        params: {
+                            label: "Selecione uma das opções abaixo",
+                            targetUrl: "",
+                            style: {
+                                backgroundColor: "#222e3c",
+                                color: "white",
+                                fontSize: "14px",
+                                // position: "bottom-center"
+                            }
+                        },
+                        parentId: "description",
+                        child: []
+                    },
+                    {
+                        type: "label",
+                        id: "label2",
                         params: {
                             label: "Painel de controle",
                             targetUrl: "",
@@ -62,15 +93,15 @@ var App = {
                                 stretch: "horizontal"
                             },
                         },
-                        parentId: "main",
+                        parentId: "auxiliar",
                         child: [],
                     },
                     {
                         type: "button",
                         id: "button 1",
                         params: {
-                            label: "button 1",
-                            // onClick: function() {print("olá")},
+                            label: "Clear the map",
+                            onClick: function() {print("Clear the map")},
                             style: {
                                 backgroundColor: "red",
                                 color: "blue"
@@ -87,7 +118,7 @@ var App = {
                             // onClick: function() {print("olá")},
                             style: {
                                 backgroundColor: "red",
-                                color: "blue"
+                                color: "blue",
                             }
                         },
                         parentId: "auxiliar",
@@ -142,7 +173,7 @@ var App = {
                     style: {
                         border: "1px solid black",
                         backgroundColor: "222e3c",
-                        margin: "5px 10px 5px 10px",
+                        margin: "10px 10px 5px 10px",
                         textAlign: "center",
                         position: "bottom-right"
                     }
@@ -259,7 +290,7 @@ function render(obj) {
                 
                 var map = ui.Map( params );
                 
-                painels[obj.parentId].insert(2, map);
+                painels[obj.parentId].insert(3, map);
                 
             }
         },
