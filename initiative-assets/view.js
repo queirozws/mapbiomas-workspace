@@ -30,7 +30,8 @@ var App = {
                             layout: null,
                             style: {
                                 border: "1px solid black",
-                                backgroundColor: "blue"
+                                backgroundColor: "blue",
+                                margin: "15px 30px 15px 30px"
                             }
                         },
                         parent: "main",
@@ -56,7 +57,7 @@ var App = {
                             placeholder: "Escolha uma das opções",
                             onChange: function() {print("olá")},
                             style: {
-                                
+                                stretch: "horizontal"
                             },
                         },
                         parent: "main",
@@ -92,7 +93,7 @@ var App = {
                             // onClick: function() {print("olá")},
                             style: {}
                         },
-                        parent: "auxiliar",
+                        parent: "header",
                         child: [],
                     },
                     {
@@ -101,9 +102,24 @@ var App = {
                         params: {
                             label: "button 4",
                             // onClick: function() {print("olá")},
-                            style: {}
+                            style: {
+                                stretch: "horizontal"
+                            }
                         },
                         parent: "auxiliar",
+                        child: [],
+                    },
+                    {
+                        type: "map",
+                        name: "Map 1",
+                        params: {
+                            eeObject: ee.Image(),
+                            visParams: {},
+                            name: "Map",
+                            shown: true,
+                            opacity: 1
+                        },
+                        parent: "main",
                         child: [],
                     },
                 ]
@@ -113,10 +129,11 @@ var App = {
                 name: "auxiliar",
                 params: {
                     widgets: null,
-                    layout: null,
+                    layout: ui.Panel.Layout.Flow("horizontal"),
                     style: {
                         border: "1px solid black",
-                        backgroundColor: "red"
+                        backgroundColor: "red",
+                        margin: "5px 10px 5px 10px"
                     }
                 },
                 parent: "main",
@@ -214,6 +231,21 @@ function render(obj) {
                 var button = ui.Label( params );
                 
                 painels[obj.parent].add(button);
+                
+            }
+        },
+        "map": {
+            constructor: function (obj) {
+              
+                // var params = {
+                //     value: obj.params.value || "some label (" + obj.parent + " panel)", // || default value
+                //     targetUrl: obj.params.targetUrl || "", // || default value
+                //     style: obj.params.style || {} // || default value
+                // };
+                
+                var map = ui.Map( obj.params );
+                
+                painels[obj.parent].add(map);
                 
             }
         },
