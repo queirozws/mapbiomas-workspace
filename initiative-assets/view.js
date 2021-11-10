@@ -161,11 +161,11 @@ function render(obj) {
                 obj.parent
               
                 var params = {
-                    items: ["1","2","3","4","5"],
-                    placeholder: "Choose an option",
-                    value: null,
-                    onChange: null,
-                    disabled: null,
+                    items: obj.params.items || ["1","2","3","4","5"],
+                    placeholder: obj.params.placeholder || "Choose an option",
+                    value: obj.params.value || null,
+                    onChange: obj.params.onChange || null,
+                    disabled: obj.params.disabled || null,
                     style: obj.style
                 }
                 
