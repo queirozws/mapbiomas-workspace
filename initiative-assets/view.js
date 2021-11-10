@@ -12,7 +12,7 @@ var App = {
         ui: [
             {
                 type: "panel",
-                name: "mainPanel",
+                name: "main",
                 params: {
                     widgets: null,
                     layout: null,
@@ -33,34 +33,41 @@ var App = {
                                 backgroundColor: "blue"
                             }
                         },
-                        parent: "mainPanel",
+                        parent: "main",
                         child: []
                     },
                     {
                         type: "select",
                         name: "select",
                         params: {
+                            onChange: function() {print("olá")},
                             style: {
                                 placeholder: "Escolha uma das opções"
                             },
                         },
-                        parent: "mainPanel",
+                        parent: "main",
                         child: [],
                     },
                     {
                         type: "button",
                         name: "button 1",
                         params: {
-                            style: {}
+                            onChange: function() {print("olá")},
+                            style: {
+                                
+                            }
                         },
-                        parent: "mainPanel",
+                        parent: "main",
                         child: [],
                     },
                     {
                         type: "button",
                         name: "button 2",
                         params: {
-                            style: {}
+                            onChange: function() {print("olá")},
+                            style: {
+                                
+                            }
                         },
                         parent: "header",
                         child: [],
@@ -69,25 +76,31 @@ var App = {
                         type: "button",
                         name: "button 3",
                         params: {
-                            style: {}
+                            onChange: function() {print("olá")},
+                            style: {
+                                
+                            }
                         },
-                        parent: "auxPanel",
+                        parent: "auxiliar",
                         child: [],
                     },
                     {
                         type: "button",
                         name: "button 4",
                         params: {
-                            style: {}
+                            onChange: function() {print("olá")},
+                            style: {
+                                
+                            }
                         },
-                        parent: "auxPanel",
+                        parent: "auxiliar",
                         child: [],
                     },
                 ]
             },
             {
                 type: "panel",
-                name: "auxPanel",
+                name: "auxiliar",
                 params: {
                     widgets: null,
                     layout: null,
@@ -96,7 +109,7 @@ var App = {
                         backgroundColor: "red"
                     }
                 },
-                parent: "mainPanel",
+                parent: "main",
                 child: [],
             }
         ],
