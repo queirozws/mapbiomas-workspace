@@ -1,6 +1,6 @@
 /**
  * @Author: Wildson Queiroz
- * 
+ * @module: 
  */
 
 var loop = require("users/queirozws/packages:js/arrayFunctions.js").loop;
@@ -20,10 +20,8 @@ var App = {
                         width: "450px"
                     }
                 },
-                data: null,
                 parent: "root",
                 child: [
-        
                     {
                         type: "panel",
                         name: "header",
@@ -35,53 +33,54 @@ var App = {
                                 backgroundColor: "blue"
                             }
                         },
-                        data: null,
                         parent: "mainPanel",
                         child: []
                     },
                     {
                         type: "select",
                         name: "select",
-                        params: null,
-                        data: null,
+                        params: {
+                            style: {
+                                placeholder: "Escolha uma das opções"
+                            },
+                        },
                         parent: "mainPanel",
-                        style: {},
                         child: [],
                     },
                     {
                         type: "button",
                         name: "button 1",
-                        params: null,
-                        data: null,
+                        params: {
+                            style: {}
+                        },
                         parent: "mainPanel",
-                        style: {},
                         child: [],
                     },
                     {
                         type: "button",
                         name: "button 2",
-                        params: null,
-                        data: null,
+                        params: {
+                            style: {}
+                        },
                         parent: "header",
-                        style: {},
                         child: [],
                     },
                     {
                         type: "button",
                         name: "button 3",
-                        params: null,
-                        data: null,
+                        params: {
+                            style: {}
+                        },
                         parent: "auxPanel",
-                        style: {},
                         child: [],
                     },
                     {
                         type: "button",
                         name: "button 4",
-                        params: null,
-                        data: null,
+                        params: {
+                            style: {}
+                        },
                         parent: "auxPanel",
-                        style: {},
                         child: [],
                     },
                 ]
@@ -97,8 +96,6 @@ var App = {
                         backgroundColor: "red"
                     }
                 },
-                data: null,
-                style: {border: "1px solid black", backgroundColor: "red"},
                 parent: "mainPanel",
                 child: [],
             }
