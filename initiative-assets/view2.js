@@ -3,10 +3,93 @@
  * @module: 
  */
 
-var loop = require("users/queirozws/packages:js/arrayFunctions.js").loop;
+var metadataObj = require("users/queirozws/mb-workspace:initiative-assets/metadataList.js");
+
+var dataObj = require("users/queirozws/mb-workspace:initiative-assets/getData.js");
+
+var palette = require("users/mapbiomas/modules:Palettes.js").get('classification6');
+
 var logos = require('users/mapbiomas/modules:Logos.js');
 
+var products = metadataObj.products;
+
+var getMapId = dataObj.getMapId;
+
 var logo = logos.mapbiomas;
+
+var visParams = {
+    min: null,
+    max: null,
+    palette: null
+};
+
+// Object with initial selected options
+var selectedOptions = {
+    initiative: null,
+    collection: null,
+    theme: null,
+    type: null,
+    countries: null,
+    source: null,
+};
+
+// Object with select button options
+var options = {
+    initiative: [
+        "brazil",
+        "pampa",
+        "raisg",
+        "chaco",
+        "indonésia",
+        "af-trinacional"
+    ],
+    collection: ["1", "2", "3", "4", "5", "6"],
+    theme: [
+        "classification",
+        "integration",
+        "transition",
+        "quality"
+    ],
+    // asset_id: "string",
+    // description: "string",
+    type: [
+        "singleband-classification",
+        "singleband-integration",
+        "singleband-transition",
+        "singleband-quality",
+        "multiband-classification",
+        "multiband-integration",
+        "multiband-transition",
+        "multiband-quality",
+        "multiband-classification-collection",
+        "multiband-integration-collection",
+        "multiband-transition-collection",
+        "multiband-quality-collection",
+    ],
+    countries: [
+        "Brasil",
+        "Bolívia",
+        "Colômbia",
+        "Equador",
+        "Guiana",
+        "Guiana Francesa",
+        "Peru",
+        "Suriname",
+        "Venezuela",
+        "Paraguay"
+    ],
+    source: [ "imazon", "LAPIG/UFG", "Solved", "IPAM", "outros..." ]
+    // metadata: {
+    //     bands: {
+    //         prefix: "string_",
+    //     },
+    //     years:  [
+    //         [ "0000", "0000" ], [ "0000", "0000" ], [ "0000", "0000" ]
+    //     ],
+    //     biome: ["string"],
+    //     version: "0", // string || integer?
+    // }
+}
 
 var painels = {};
 
@@ -15,7 +98,6 @@ var index = 0;
 var App = {
     data: {},
     functions: {
-
         other: function() {}
     },
     view: {
@@ -373,8 +455,7 @@ var App = {
                 
             }
           
-        },        
-  
+        },
     },
     init: function() {
         
