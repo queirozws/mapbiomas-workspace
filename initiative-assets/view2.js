@@ -305,6 +305,19 @@ var App = {
                 },
             },
             {
+                type: "button",
+                id: "button 1",
+                parentId: "auxiliar",
+                params: {
+                    label: "Clear the map",
+                    onClick: function() {print("Clear the map")},
+                    style: {
+                        backgroundColor: "red",
+                        color: "blue"
+                    }
+                },
+            },
+            {
                 type: "map",
                 id: "Map 1",
                 parentId: "main",
