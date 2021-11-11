@@ -77,7 +77,7 @@ var App = {
                                 backgroundColor: "#222e3c",
                                 color: "white",
                                 fontSize: "20px",
-                                position: "bottom-center"
+                                position: "top-center"
                             }
                         },
                         parentId: "header",
@@ -169,13 +169,14 @@ var App = {
                 id: "header",
                 params: {
                     widgets: null,
-                    // layout: ui.Panel.Layout.absolute(),
+                    layout: ui.Panel.Layout.flow("vertical", false),
                     style: {
                         border: "1px solid black",
                         backgroundColor: "222e3c",
                         margin: "10px 10px 5px 10px",
-                        textAlign: "center",
-                        position: "bottom-right"
+                        // textAlign: "center",
+                        position: "bottom-right",
+                        // stretch: "horizontal"
                     }
                 },
                 index: 1,
