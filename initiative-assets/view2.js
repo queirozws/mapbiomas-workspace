@@ -210,7 +210,7 @@ function render(obj, index) {
                     
                 } else {
                   
-                    painels[obj.parentId].add(panel);
+                    painels[obj.parentId].insert(index, panel);
 
                     painels[obj.id] = panel;
 
@@ -234,7 +234,7 @@ function render(obj, index) {
                 
                 var select = ui.Select(params);
                 
-                painels[obj.parentId].add(select);
+                painels[obj.parentId].insert(index, select);
                 
             }
               
@@ -251,7 +251,7 @@ function render(obj, index) {
                 
                 var button = ui.Button(params);
                 
-                painels[obj.parentId].add(button);
+                painels[obj.parentId].insert(index, button);
                 
             }
         },
@@ -266,7 +266,7 @@ function render(obj, index) {
                 
                 var button = ui.Label( params );
                 
-                painels[obj.parentId].add(button);
+                painels[obj.parentId].insert(index, button);
                 
             }
         },
