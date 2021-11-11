@@ -127,19 +127,6 @@ var App = {
             },
             {
                 type: "button",
-                id: "button 2",
-                parentId: "auxiliar",
-                params: {
-                    label: "button 2",
-                    // onClick: function() {print("olá")},
-                    style: {
-                        backgroundColor: "red",
-                        // color: "black",
-                    }
-                },
-            },
-            {
-                type: "button",
                 id: "button 3",
                 parentId: "auxiliar",
                 params: {
@@ -148,6 +135,19 @@ var App = {
                     style: {
                         backgroundColor: "red",
                         // color: "blue"
+                    }
+                },
+            },
+            {
+                type: "button",
+                id: "button 2",
+                parentId: "auxiliar",
+                params: {
+                    label: "button 2",
+                    // onClick: function() {print("olá")},
+                    style: {
+                        backgroundColor: "red",
+                        // color: "black",
                     }
                 },
             },
