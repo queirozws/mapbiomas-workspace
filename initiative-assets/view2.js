@@ -181,7 +181,7 @@ var App = {
 
 var painels = {};
 
-function render(obj) {
+function render(obj, index) {
     
     // print(obj.id);
     
@@ -306,10 +306,14 @@ function isArray(currentLevel) {
 
 // loop(App.view.ui, render);
 
+var index = 0;
+
 App.view.ui.forEach(
     function (obj) {
         
-        render(obj)
+        index = index + 1;
+        
+        render(obj, index)
         
         
     }
