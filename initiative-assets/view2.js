@@ -24,149 +24,137 @@ var App = {
                         // stretch: "horizontal"
                     }
                 },
-                child: [
-                    {
-                        type: "panel",
-                        id: "description",
-                        parentId: "main",
-                        params: {
-                            widgets: null,
-                            layout: null,
-                            style: {
-                                border: "1px solid black",
-                                backgroundColor: "#222e3c",
-                                margin: "5px 10px 5px 10px"
-                            }
-                        },
-                        child: []
+            },
+            {
+                type: "panel",
+                id: "description",
+                parentId: "main",
+                params: {
+                    widgets: null,
+                    layout: null,
+                    style: {
+                        border: "1px solid black",
+                        backgroundColor: "#222e3c",
+                        margin: "5px 10px 5px 10px"
+                    }
+                },
+            },
+            {
+                type: "panel",
+                id: "auxiliar",
+                parentId: "main",
+                params: {
+                    widgets: null,
+                    layout: null,
+                    style: {
+                        border: "1px solid black",
+                        backgroundColor: "#222e3c",
+                        margin: "15px 30px 15px 30px"
+                    }
+                },
+            },
+            {
+                type: "label",
+                id: "label1",
+                parentId: "description",
+                params: {
+                    label: "Selecione uma das opções abaixo",
+                    targetUrl: "",
+                    style: {
+                        backgroundColor: "#222e3c",
+                        color: "white",
+                        fontSize: "14px",
+                        // position: "bottom-center"
+                    }
+                },
+            },
+            {
+                type: "label",
+                id: "label2",
+                parentId: "header",
+                params: {
+                    label: "Painel de controle",
+                    targetUrl: "",
+                    style: {
+                        backgroundColor: "#222e3c",
+                        color: "white",
+                        fontSize: "20px",
+                        position: "top-center"
+                    }
+                },
+            },
+            {
+                type: "select",
+                id: "select",
+                parentId: "auxiliar",
+                params: {
+                    placeholder: "Escolha uma das opções",
+                    // onChange: function() {print("olá")},
+                    style: {
+                        stretch: "horizontal"
                     },
-                    {
-                        type: "panel",
-                        id: "auxiliar",
-                        parentId: "main",
-                        params: {
-                            widgets: null,
-                            layout: null,
-                            style: {
-                                border: "1px solid black",
-                                backgroundColor: "#222e3c",
-                                margin: "15px 30px 15px 30px"
-                            }
-                        },
-                        child: []
-                    },
-                    {
-                        type: "label",
-                        id: "label1",
-                        parentId: "description",
-                        params: {
-                            label: "Selecione uma das opções abaixo",
-                            targetUrl: "",
-                            style: {
-                                backgroundColor: "#222e3c",
-                                color: "white",
-                                fontSize: "14px",
-                                // position: "bottom-center"
-                            }
-                        },
-                        child: []
-                    },
-                    {
-                        type: "label",
-                        id: "label2",
-                        parentId: "header",
-                        params: {
-                            label: "Painel de controle",
-                            targetUrl: "",
-                            style: {
-                                backgroundColor: "#222e3c",
-                                color: "white",
-                                fontSize: "20px",
-                                position: "top-center"
-                            }
-                        },
-                        child: []
-                    },
-                    {
-                        type: "select",
-                        id: "select",
-                        parentId: "auxiliar",
-                        params: {
-                            placeholder: "Escolha uma das opções",
-                            // onChange: function() {print("olá")},
-                            style: {
-                                stretch: "horizontal"
-                            },
-                        },
-                        child: [],
-                    },
-                    {
-                        type: "button",
-                        id: "button 1",
-                        parentId: "main",
-                        params: {
-                            label: "Clear the map",
-                            onClick: function() {print("Clear the map")},
-                            style: {
-                                backgroundColor: "red",
-                                color: "blue"
-                            }
-                        },
-                        child: [],
-                    },
-                    {
-                        type: "button",
-                        id: "button 2",
-                        parentId: "auxiliar",
-                        params: {
-                            label: "button 2",
-                            // onClick: function() {print("olá")},
-                            style: {
-                                backgroundColor: "red",
-                                // color: "black",
-                            }
-                        },
-                        child: [],
-                    },
-                    {
-                        type: "button",
-                        id: "button 3",
-                        parentId: "auxiliar",
-                        params: {
-                            label: "button 3",
-                            // onClick: function() {print("olá")},
-                            style: {
-                                backgroundColor: "red",
-                                // color: "blue"
-                            }
-                        },
-                        child: [],
-                    },
-                    {
-                        type: "button",
-                        id: "button 4",
-                        parentId: "auxiliar",
-                        params: {
-                            label: "button 4",
-                            // onClick: function() {print("olá")},
-                            style: {
-                                stretch: "horizontal"
-                            }
-                        },
-                        child: [],
-                    },
-                    {
-                        type: "map",
-                        id: "Map 1",
-                        parentId: "main",
-                        params: {
-                            center: {lat: -6, lon: -54, zoom: 3},
-                            onClick: null,
-                            style: {margin: "15px"}
-                        },
-                        child: [],
-                    },
-                ]
+                },
+            },
+            {
+                type: "button",
+                id: "button 1",
+                parentId: "main",
+                params: {
+                    label: "Clear the map",
+                    onClick: function() {print("Clear the map")},
+                    style: {
+                        backgroundColor: "red",
+                        color: "blue"
+                    }
+                },
+            },
+            {
+                type: "button",
+                id: "button 2",
+                parentId: "auxiliar",
+                params: {
+                    label: "button 2",
+                    // onClick: function() {print("olá")},
+                    style: {
+                        backgroundColor: "red",
+                        // color: "black",
+                    }
+                },
+            },
+            {
+                type: "button",
+                id: "button 3",
+                parentId: "auxiliar",
+                params: {
+                    label: "button 3",
+                    // onClick: function() {print("olá")},
+                    style: {
+                        backgroundColor: "red",
+                        // color: "blue"
+                    }
+                },
+            },
+            {
+                type: "button",
+                id: "button 4",
+                parentId: "auxiliar",
+                params: {
+                    label: "button 4",
+                    // onClick: function() {print("olá")},
+                    style: {
+                        stretch: "horizontal"
+                    }
+                },
+            },
+            {
+                type: "map",
+                id: "Map 1",
+                parentId: "main",
+                params: {
+                    center: {lat: -6, lon: -54, zoom: 3},
+                    onClick: null,
+                    style: {margin: "15px"}
+                },
             },
             {
                 type: "panel",
@@ -184,7 +172,6 @@ var App = {
                         // stretch: "horizontal"
                     }
                 },
-                child: [],
             }
         ],
   
