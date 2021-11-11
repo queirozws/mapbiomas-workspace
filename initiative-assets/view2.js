@@ -75,7 +75,21 @@ var App = {
                     style: {
                         border: "1px solid black",
                         backgroundColor: "#222e3c",
-                        margin: "15px 30px 15px 30px"
+                        margin: "5px 30px 5px 30px"
+                    }
+                },
+            },
+            {
+                type: "panel",
+                id: "map",
+                parentId: "main",
+                params: {
+                    widgets: null,
+                    layout: null,
+                    style: {
+                        border: "1px solid black",
+                        backgroundColor: "#222e3c",
+                        margin: "5px 30px 5px 30px"
                     }
                 },
             },
@@ -188,9 +202,35 @@ var App = {
                 },
             },
             {
+                type: "label",
+                id: "label1",
+                parentId: "map",
+                params: {
+                    label: "Preview:",
+                    targetUrl: "",
+                    style: {
+                        backgroundColor: "#222e3c",
+                        color: "white",
+                        fontSize: "14px",
+                        margin: "10px 0px 0px 15px"
+                        // position: "bottom-center"
+                    }
+                },
+            },
+            {
+                type: "map",
+                id: "Map 1",
+                parentId: "map",
+                params: {
+                    center: {lat: -6, lon: -54, zoom: 3},
+                    onClick: null,
+                    style: {margin: "15px"}
+                },
+            },
+            {
                 type: "button",
                 id: "button 1",
-                parentId: "auxiliar",
+                parentId: "map",
                 params: {
                     label: "Clear the map",
                     onClick: function() {print("Clear the map")},
@@ -202,29 +242,17 @@ var App = {
                 },
             },
             {
-                type: "label",
-                id: "label1",
+                type: "button",
+                id: "button 1",
                 parentId: "main",
                 params: {
-                    label: "Preview:",
-                    targetUrl: "",
+                    label: "Visualize assets",
+                    onClick: function() {print("Clear the map")},
                     style: {
-                        backgroundColor: "#222e3c",
-                        color: "white",
-                        fontSize: "14px",
-                        margin: "0px 0px 0px 15px"
-                        // position: "bottom-center"
+                        backgroundColor: "red",
+                        color: "blue",
+                        position: "bottom-right" // ?
                     }
-                },
-            },
-            {
-                type: "map",
-                id: "Map 1",
-                parentId: "main",
-                params: {
-                    center: {lat: -6, lon: -54, zoom: 3},
-                    onClick: null,
-                    style: {margin: "15px"}
                 },
             },
         ],
@@ -370,4 +398,4 @@ App.init();
 
 // print(painels);
 
-// 23:30
+// 23:59
