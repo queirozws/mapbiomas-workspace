@@ -4,6 +4,9 @@
  */
 
 var loop = require("users/queirozws/packages:js/arrayFunctions.js").loop;
+var logos = require('users/mapbiomas/modules:Logos.js');
+
+var logo = logos.mapbiomas;
 
 var App = {
     view: {
