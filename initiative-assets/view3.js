@@ -129,6 +129,7 @@ var app = {
                     placeholder: "FILTER BY INITIATIVE",
                     // onChange: function() {print("olá")},
                     style: {
+                        backgroundColor: "yellow",
                         stretch: "horizontal",
                         margin: "10px 10px 5px 10px"
                     },
@@ -203,7 +204,7 @@ var app = {
                     label: "Clear the map",
                     onClick: function() {print("Clear the map")},
                     style: {
-                        backgroundColor: "black",
+                        backgroundColor: "yellow",
                         color: "blue",
                         position: "bottom-right", // ?
                         margin: "10px 15px 10px 15px"
@@ -217,7 +218,7 @@ var app = {
                     label: "Visualize assets",
                     onClick: function() {print("Clear the map")},
                     style: {
-                        backgroundColor: "red",
+                        backgroundColor: "yellow",
                         color: "blue",
                         position: "bottom-right", // ?
                         margin: "5px 0px 10px 30px" // TOP | RIGHT | BOTTOM | LEFT
