@@ -118,7 +118,7 @@ var App = {
                             // onClick: function() {print("olá")},
                             style: {
                                 backgroundColor: "red",
-                                color: "blue",
+                                // color: "black",
                             }
                         },
                         parentId: "auxiliar",
@@ -132,7 +132,7 @@ var App = {
                             // onClick: function() {print("olá")},
                             style: {
                                 backgroundColor: "red",
-                                color: "blue"
+                                // color: "blue"
                             }
                         },
                         parentId: "auxiliar",
