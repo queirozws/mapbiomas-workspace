@@ -306,7 +306,9 @@ var App = {
                 params: {
                     center: {lat: -6, lon: -54, zoom: 3},
                     onClick: null,
-                    style: {margin: "15px"}
+                    style: {
+                        margin: "10px 15px 0px 15px"
+                    }
                 },
             },
             {
@@ -319,7 +321,8 @@ var App = {
                     style: {
                         backgroundColor: "red",
                         color: "blue",
-                        position: "bottom-right" // ?
+                        position: "bottom-right", // ?
+                        margin: "10px 15px 10px 15px"
                     }
                 },
             },
@@ -333,7 +336,8 @@ var App = {
                     style: {
                         backgroundColor: "red",
                         color: "blue",
-                        position: "bottom-right" // ?
+                        position: "bottom-right", // ?
+                        margin: "5px 0px 10px 30px" // TOP | RIGHT | BOTTOM | LEFT
                     }
                 },
             },
