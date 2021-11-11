@@ -14,6 +14,7 @@ var App = {
             {
                 type: "panel",
                 id: "main",
+                parentId: "root",
                 params: {
                     widgets: null,
                     layout: null,
@@ -22,11 +23,11 @@ var App = {
                         backgroundColor: "#222e3c"
                     }
                 },
-                parentId: "root",
                 child: [
                     {
                         type: "panel",
                         id: "description",
+                        parentId: "main",
                         params: {
                             widgets: null,
                             layout: null,
@@ -36,12 +37,12 @@ var App = {
                                 margin: "5px 10px 5px 10px"
                             }
                         },
-                        parentId: "main",
                         child: []
                     },
                     {
                         type: "panel",
                         id: "auxiliar",
+                        parentId: "main",
                         params: {
                             widgets: null,
                             layout: null,
@@ -51,12 +52,12 @@ var App = {
                                 margin: "15px 30px 15px 30px"
                             }
                         },
-                        parentId: "main",
                         child: []
                     },
                     {
                         type: "label",
                         id: "label1",
+                        parentId: "description",
                         params: {
                             label: "Selecione uma das opções abaixo",
                             targetUrl: "",
@@ -67,12 +68,12 @@ var App = {
                                 // position: "bottom-center"
                             }
                         },
-                        parentId: "description",
                         child: []
                     },
                     {
                         type: "label",
                         id: "label2",
+                        parentId: "header",
                         params: {
                             label: "Painel de controle",
                             targetUrl: "",
@@ -83,12 +84,12 @@ var App = {
                                 position: "top-center"
                             }
                         },
-                        parentId: "header",
                         child: []
                     },
                     {
                         type: "select",
                         id: "select",
+                        parentId: "auxiliar",
                         params: {
                             placeholder: "Escolha uma das opções",
                             // onChange: function() {print("olá")},
@@ -96,12 +97,12 @@ var App = {
                                 stretch: "horizontal"
                             },
                         },
-                        parentId: "auxiliar",
                         child: [],
                     },
                     {
                         type: "button",
                         id: "button 1",
+                        parentId: "main",
                         params: {
                             label: "Clear the map",
                             onClick: function() {print("Clear the map")},
@@ -110,12 +111,12 @@ var App = {
                                 color: "blue"
                             }
                         },
-                        parentId: "main",
                         child: [],
                     },
                     {
                         type: "button",
                         id: "button 2",
+                        parentId: "auxiliar",
                         params: {
                             label: "button 2",
                             // onClick: function() {print("olá")},
@@ -124,12 +125,12 @@ var App = {
                                 // color: "black",
                             }
                         },
-                        parentId: "auxiliar",
                         child: [],
                     },
                     {
                         type: "button",
                         id: "button 3",
+                        parentId: "auxiliar",
                         params: {
                             label: "button 3",
                             // onClick: function() {print("olá")},
@@ -138,12 +139,12 @@ var App = {
                                 // color: "blue"
                             }
                         },
-                        parentId: "auxiliar",
                         child: [],
                     },
                     {
                         type: "button",
                         id: "button 4",
+                        parentId: "auxiliar",
                         params: {
                             label: "button 4",
                             // onClick: function() {print("olá")},
@@ -151,18 +152,17 @@ var App = {
                                 stretch: "horizontal"
                             }
                         },
-                        parentId: "auxiliar",
                         child: [],
                     },
                     {
                         type: "map",
                         id: "Map 1",
+                        parentId: "main",
                         params: {
                             center: {lat: -6, lon: -54, zoom: 3},
                             onClick: null,
                             style: {margin: "15px"}
                         },
-                        parentId: "main",
                         child: [],
                     },
                 ]
@@ -170,6 +170,7 @@ var App = {
             {
                 type: "panel",
                 id: "header",
+                parentId: "main",
                 params: {
                     widgets: null,
                     layout: ui.Panel.Layout.flow("vertical", false),
@@ -182,8 +183,6 @@ var App = {
                         // stretch: "horizontal"
                     }
                 },
-                index: 1,
-                parentId: "main",
                 child: [],
             }
         ],
