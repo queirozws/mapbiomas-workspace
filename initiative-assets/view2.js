@@ -304,7 +304,16 @@ function isArray(currentLevel) {
     return currentLevel
 }
 
-loop(App.view.ui, render);
+// loop(App.view.ui, render);
+
+App.view.ui.forEach(
+    function (obj) {
+        
+        render(obj)
+        
+        
+    }
+);
 
 // print(painels);
 
