@@ -100,7 +100,7 @@ var app = {
                 },
             },
             {
-                id: "label1",
+                id: "label3",
                 parentId: "map",
                 params: {
                     label: "Preview:",
@@ -117,7 +117,7 @@ var app = {
         ],
         select: [
             {
-                id: "select",
+                id: "select1",
                 parentId: "auxiliar",
                 params: {
                     placeholder: "FILTER BY INITIATIVE",
@@ -129,7 +129,7 @@ var app = {
                 },
             },
             {
-                id: "select",
+                id: "select2",
                 parentId: "auxiliar",
                 params: {
                     placeholder: "FILTER BY COLLECTION",
@@ -141,7 +141,7 @@ var app = {
                 },
             },
             {
-                id: "select",
+                id: "select3",
                 parentId: "auxiliar",
                 params: {
                     placeholder: "FILTER BY THEME",
@@ -153,7 +153,7 @@ var app = {
                 },
             },
             {
-                id: "select",
+                id: "select4",
                 parentId: "auxiliar",
                 params: {
                     placeholder: "FILTER BY TYPE",
@@ -165,7 +165,7 @@ var app = {
                 },
             },
             {
-                id: "select",
+                id: "select5",
                 parentId: "auxiliar",
                 params: {
                     placeholder: "FILTER BY COUNTRIES",
@@ -177,7 +177,7 @@ var app = {
                 },
             },
             {
-                id: "select",
+                id: "select6",
                 parentId: "auxiliar",
                 params: {
                     placeholder: "FILTER BY SOURCE",
@@ -191,7 +191,7 @@ var app = {
         ],
         button: [
             {
-                id: "button 1",
+                id: "button1",
                 parentId: "map",
                 params: {
                     label: "Clear the map",
@@ -205,7 +205,7 @@ var app = {
                 },
             },
             {
-                id: "button 1",
+                id: "button2",
                 parentId: "main",
                 params: {
                     label: "Visualize assets",
@@ -221,7 +221,7 @@ var app = {
         ],
         map: [
             {
-                id: "Map 1",
+                id: "map1",
                 parentId: "map",
                 params: {
                     center: {lat: -6, lon: -54, zoom: 3},
@@ -251,7 +251,7 @@ Object.keys(widgets).forEach(
             function(obj) {
                 
                 // print(obj.type === widgetType)
-                print(obj.type+" - "+ obj.id)
+                print(widgetType+" - "+ obj.id)
                 
             }
         );
