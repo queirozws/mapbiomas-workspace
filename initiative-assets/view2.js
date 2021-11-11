@@ -115,7 +115,7 @@ var App = {
                         
                         var map = ui.Map( params );
                         
-                        painels[obj.parentId].insert(3, map);
+                        painels[obj.parentId].insert(index, map);
                         
                     }
                 },
@@ -315,6 +315,22 @@ var App = {
                         backgroundColor: "red",
                         color: "blue",
                         position: "bottom-right" // ?
+                    }
+                },
+            },
+            {
+                type: "label",
+                id: "label1",
+                parentId: "main",
+                params: {
+                    label: "Preview:",
+                    targetUrl: "",
+                    style: {
+                        backgroundColor: "#222e3c",
+                        color: "white",
+                        fontSize: "14px",
+                        margin: "0px 0px 0px 15px"
+                        // position: "bottom-center"
                     }
                 },
             },
