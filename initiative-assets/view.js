@@ -19,8 +19,9 @@ var App = {
                     widgets: null,
                     layout: null,
                     style: {
-                        width: "450px",
-                        backgroundColor: "#222e3c"
+                        // width: "450px",
+                        backgroundColor: "#222e3c",
+                        // stretch: "horizontal"
                     }
                 },
                 child: [
