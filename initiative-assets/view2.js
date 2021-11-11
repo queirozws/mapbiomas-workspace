@@ -27,6 +27,23 @@ var App = {
             },
             {
                 type: "panel",
+                id: "header",
+                parentId: "main",
+                params: {
+                    widgets: null,
+                    layout: ui.Panel.Layout.flow("vertical", false),
+                    style: {
+                        border: "1px solid black",
+                        backgroundColor: "222e3c",
+                        margin: "10px 10px 5px 10px",
+                        // textAlign: "center",
+                        position: "bottom-right",
+                        // stretch: "horizontal"
+                    }
+                },
+            },
+            {
+                type: "panel",
                 id: "description",
                 parentId: "main",
                 params: {
@@ -156,23 +173,6 @@ var App = {
                     style: {margin: "15px"}
                 },
             },
-            {
-                type: "panel",
-                id: "header",
-                parentId: "main",
-                params: {
-                    widgets: null,
-                    layout: ui.Panel.Layout.flow("vertical", false),
-                    style: {
-                        border: "1px solid black",
-                        backgroundColor: "222e3c",
-                        margin: "10px 10px 5px 10px",
-                        // textAlign: "center",
-                        position: "bottom-right",
-                        // stretch: "horizontal"
-                    }
-                },
-            }
         ],
   
     }
