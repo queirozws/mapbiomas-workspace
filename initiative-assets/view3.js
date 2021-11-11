@@ -2,7 +2,6 @@ var app = {
     ui: {
         panel: [
             {
-                type: "panel",
                 id: "main",
                 parentId: "root",
                 params: {
@@ -16,7 +15,6 @@ var app = {
                 },
             },
             {
-                type: "panel",
                 id: "header",
                 parentId: "main",
                 params: {
@@ -33,7 +31,6 @@ var app = {
                 },
             },
             {
-                type: "panel",
                 id: "description",
                 parentId: "main",
                 params: {
@@ -47,7 +44,6 @@ var app = {
                 },
             },
             {
-                type: "panel",
                 id: "auxiliar",
                 parentId: "main",
                 params: {
@@ -61,7 +57,6 @@ var app = {
                 },
             },
             {
-                type: "panel",
                 id: "map",
                 parentId: "main",
                 params: {
@@ -77,7 +72,6 @@ var app = {
         ],
         label: [
             {
-                type: "label",
                 id: "label1",
                 parentId: "description",
                 params: {
@@ -92,7 +86,6 @@ var app = {
                 },
             },
             {
-                type: "label",
                 id: "label2",
                 parentId: "header",
                 params: {
@@ -107,7 +100,6 @@ var app = {
                 },
             },
             {
-                type: "label",
                 id: "label1",
                 parentId: "map",
                 params: {
@@ -125,7 +117,6 @@ var app = {
         ],
         select: [
             {
-                type: "select",
                 id: "select",
                 parentId: "auxiliar",
                 params: {
@@ -138,7 +129,6 @@ var app = {
                 },
             },
             {
-                type: "select",
                 id: "select",
                 parentId: "auxiliar",
                 params: {
@@ -151,7 +141,6 @@ var app = {
                 },
             },
             {
-                type: "select",
                 id: "select",
                 parentId: "auxiliar",
                 params: {
@@ -164,7 +153,6 @@ var app = {
                 },
             },
             {
-                type: "select",
                 id: "select",
                 parentId: "auxiliar",
                 params: {
@@ -177,7 +165,6 @@ var app = {
                 },
             },
             {
-                type: "select",
                 id: "select",
                 parentId: "auxiliar",
                 params: {
@@ -190,7 +177,6 @@ var app = {
                 },
             },
             {
-                type: "select",
                 id: "select",
                 parentId: "auxiliar",
                 params: {
@@ -205,7 +191,6 @@ var app = {
         ],
         button: [
             {
-                type: "button",
                 id: "button 1",
                 parentId: "map",
                 params: {
@@ -220,7 +205,6 @@ var app = {
                 },
             },
             {
-                type: "button",
                 id: "button 1",
                 parentId: "main",
                 params: {
@@ -237,7 +221,6 @@ var app = {
         ],
         map: [
             {
-                type: "map",
                 id: "Map 1",
                 parentId: "map",
                 params: {
