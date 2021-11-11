@@ -313,7 +313,8 @@ var App = {
                     onClick: function() {print("Clear the map")},
                     style: {
                         backgroundColor: "red",
-                        color: "blue"
+                        color: "blue",
+                        position: "bottom-right" // ?
                     }
                 },
             },
