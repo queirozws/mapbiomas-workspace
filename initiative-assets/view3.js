@@ -16,6 +16,37 @@ var App = {
     function: {},
     view: {
         painels: {},
+        options: {
+            initiative: "initiative", // "brazil"
+            collection: "collection", // "6"
+            theme: "theme", // "classification"
+            asset_id: "asset_id", // "projects/mapbiomas-workspace/COLECAO6/mapbiomas-collection60-integration-v0-12"
+            description: "description", // "Dados de classificação da coleção 6 do Brasil"
+            type: "type", // "multiband-classification-collection"
+            countries: ["country"],
+            source: ["entity"],
+            metadata: {
+                bands: {
+                    prefix: "prefix_",
+                },
+                years: [
+                    [ "year" ], [ "year" ], [ "year" ],
+                    [ "year" ], [ "year" ], [ "year" ],
+                    [ "year" ], [ "year" ], [ "year" ],
+                    [ "year" ], [ "year" ], [ "year" ],
+                    [ "year" ], [ "year" ], [ "year" ],
+                    [ "year" ], [ "year" ], [ "year" ],
+                    [ "year" ], [ "year" ], [ "year" ],
+                    [ "year" ], [ "year" ], [ "year" ],
+                    [ "year" ], [ "year" ], [ "year" ],
+                    [ "year" ], [ "year" ], [ "year" ],
+                    [ "year" ], [ "year" ], [ "year" ],
+                    [ "year" ], [ "year" ], [ "year" ]
+                  ],
+                biome: ["biome"],
+                version: "1",
+            }
+        },
         ui: {
             panel: [
                 {
@@ -139,7 +170,10 @@ var App = {
                     parentId: "auxiliar",
                     params: {
                         placeholder: "FILTER BY INITIATIVE",
-                        onChange: function() {print("olá")},
+                        onChange: function(selectedOption) {
+                            App.view.options.initiative = selectedOption;
+                            print(App.view.options)
+                        },
                         style: {
                             backgroundColor: "yellow",
                             stretch: "horizontal",
@@ -255,7 +289,24 @@ var App = {
             checkBox: [],
             dataSlider: [],
         },
-        behavior: {},
+        behavior: {
+            select: function selectAssets(obj) {
+    
+    var keys = Object.keys(obj);
+    
+    var filtered = keys.filter( // TODO substituir .filter() por .some() ?
+        
+        function(key) {
+          
+            return ( (obj[key] === this[key]) )
+            
+        }, selectedOptions)
+    
+    // If the objects have some key with the same value, its size will be greater than 0
+    return filtered.length > 0
+
+}
+        },
         init: function (text) {
             
             var widgets = App.view.ui;
