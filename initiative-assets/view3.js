@@ -13,7 +13,7 @@ var logos = require('users/mapbiomas/modules:Logos.js');
 
 var App = {
     data: metadataObj.products,
-    function: {
+    functions: {
         getMapId: dataObj.getMapId,
     },
     view: {
@@ -268,7 +268,7 @@ var App = {
                           
                             selectedYears = 0;
                         
-                            var mapId = getMapId(obj, selectedYears);
+                            var mapId = App.functions.getMapId(obj, selectedYears);
                             
                             var layerName = obj.initiative + "-" + "collection-" + obj.collection + "-" + obj.theme;
                             
