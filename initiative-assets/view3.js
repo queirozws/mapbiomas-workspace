@@ -12,7 +12,7 @@ var palette = require("users/mapbiomas/modules:Palettes.js").get('classification
 var logos = require('users/mapbiomas/modules:Logos.js');
 
 var App = {
-    data: {},
+    data: metadataObj.products,
     function: {},
     view: {
         painels: {},
@@ -139,7 +139,7 @@ var App = {
                     parentId: "auxiliar",
                     params: {
                         placeholder: "FILTER BY INITIATIVE",
-                        // onChange: function() {print("olá")},
+                        onChange: function() {print("olá")},
                         style: {
                             backgroundColor: "yellow",
                             stretch: "horizontal",
@@ -152,7 +152,7 @@ var App = {
                     parentId: "auxiliar",
                     params: {
                         placeholder: "FILTER BY COLLECTION",
-                        // onChange: function() {print("olá")},
+                        onChange: function() {print("olá")},
                         style: {
                             stretch: "horizontal",
                             margin: "5px 0px 5px 0px"
@@ -164,7 +164,7 @@ var App = {
                     parentId: "auxiliar",
                     params: {
                         placeholder: "FILTER BY THEME",
-                        // onChange: function() {print("olá")},
+                        onChange: function() {print("olá")},
                         style: {
                             stretch: "horizontal",
                             margin: "5px 0px 5px 0px"
@@ -176,7 +176,7 @@ var App = {
                     parentId: "auxiliar",
                     params: {
                         placeholder: "FILTER BY TYPE",
-                        // onChange: function() {print("olá")},
+                        onChange: function() {print("olá")},
                         style: {
                             stretch: "horizontal",
                             margin: "5px 0px 5px 0px"
@@ -188,7 +188,7 @@ var App = {
                     parentId: "auxiliar",
                     params: {
                         placeholder: "FILTER BY COUNTRIES",
-                        // onChange: function() {print("olá")},
+                        onChange: function() {print("olá")},
                         style: {
                             stretch: "horizontal",
                             margin: "5px 0px 5px 0px"
@@ -255,6 +255,7 @@ var App = {
             checkBox: [],
             dataSlider: [],
         },
+        behavior: {},
         init: function (text) {
             
             var widgets = App.view.ui;
@@ -404,6 +405,8 @@ var App = {
     init: function() {
         
         App.view.init();
+        
+        print(App.data)
         
         // var render = this.view.render;
         
