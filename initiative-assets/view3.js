@@ -98,7 +98,7 @@ var App = {
                     parentId: "main",
                     params: {
                         widgets: null,
-                        layout: ui.Panel.Layout.flow("horizontal", false),
+                        layout: ui.Panel.Layout.flow("vertical", true),
                         style: {
                             border: "1px solid black",
                             backgroundColor: "#222e3c",
