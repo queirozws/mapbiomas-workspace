@@ -276,6 +276,8 @@ var App = {
                             
                             var selectedYears = 0;
                             
+                            // var obj = App.view.options;
+                        
                             App.data.forEach(
                                 function (obj) {
                                     
@@ -287,13 +289,10 @@ var App = {
                             
                                     // Map.addLayer(mapId, visParams, layerName, true, 1);
                                     Map.addLayer(mapId, {}, layerName, true, 1);
-                        
-                                    
+
                                 }
                             )
                             
-                            // var obj = App.view.options;
-                        
                         },
                         style: {
                             backgroundColor: "yellow",
