@@ -171,6 +171,7 @@ var App = {
                     id: "select1",
                     parentId: "auxiliar",
                     params: {
+                        items: [ "brazil",  "pampa", "raisg", "chaco", "indonésia", "af-trinacional" ],
                         placeholder: "FILTER BY INITIATIVE",
                         onChange: function(selectedOption) {
                             App.view.options.initiative = selectedOption;
@@ -203,6 +204,7 @@ var App = {
                     id: "select3",
                     parentId: "auxiliar",
                     params: {
+                        items: [ "classification", "integration", "transition", "quality" ],
                         placeholder: "FILTER BY THEME",
                         onChange: function() {print("olá")},
                         style: {
@@ -268,7 +270,7 @@ var App = {
                     parentId: "map",
                     params: {
                         label: "Visualize assets",
-                        onClick: function (obj, selectedYears) {
+                        onClick: function () { // function (obj, selectedYears) {
                           
                             selectedYears = 0;
                             
@@ -312,20 +314,20 @@ var App = {
         behavior: {
             select: function selectAssets(obj) {
     
-    var keys = Object.keys(obj);
-    
-    var filtered = keys.filter( // TODO substituir .filter() por .some() ?
-        
-        function(key) {
-          
-            return ( (obj[key] === this[key]) )
+                var keys = Object.keys(obj);
+                
+                var filtered = keys.filter( // TODO substituir .filter() por .some() ?
+                    
+                    function(key) {
+                      
+                        return ( (obj[key] === this[key]) )
+                        
+                    }, selectedOptions)
+                
+                // If the objects have some key with the same value, its size will be greater than 0
+                return filtered.length > 0
             
-        }, selectedOptions)
-    
-    // If the objects have some key with the same value, its size will be greater than 0
-    return filtered.length > 0
-
-}
+            }
         },
         init: function (text) {
             
