@@ -11,10 +11,11 @@ var palette = require("users/mapbiomas/modules:Palettes.js").get('classification
 
 var logos = require('users/mapbiomas/modules:Logos.js');
 
-var painels = {};
-
 var App = {
+    data: {},
+    function: {},
     view: {
+        painels: {},
         ui: {
             panel: [
                 {
@@ -254,7 +255,7 @@ var App = {
             checkBox: [],
             dataSlider: [],
         },
-        loop: function (text) {
+        init: function (text) {
             
             var widgets = App.view.ui;
             
@@ -280,7 +281,9 @@ var App = {
             );
         },
         render: function (widgetType, obj, index) {
-        
+            
+            var painels = App.view.painels;
+            
             var type = {
                 "panel": {
                     constructor: function (obj) {
@@ -400,22 +403,24 @@ var App = {
     },
     init: function() {
         
-        var render = this.view.render;
+        App.view.init();
         
-        this.view.ui.forEach(
-            function (obj) {
+        // var render = this.view.render;
+        
+        // this.view.ui.forEach(
+        //     function (obj) {
                 
-                index = index + 1;
+        //         index = index + 1;
                 
-                render(obj, index);
+        //         render(obj, index);
 
-            }
-        );
+        //     }
+        // );
 
     }
 }
 
-App.view.loop();
+App.init();
 
 print(ui.root.widgets().get(0).style().set({"background-color": "red", stretch: "both"}));
 
