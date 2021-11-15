@@ -362,7 +362,7 @@ function render(widgetType, obj, index) {
 
     } else {
         
-        print(obj.type)
+        // print(obj.type)
         
         type[obj.type].constructor(obj);
         
@@ -394,10 +394,7 @@ Object.keys(widgets).forEach(
 );
 
 
-print(ui.root.widgets().get(0).style().set({"background-color": "red", stretch: "both"}));
-
-
-
+// print(ui.root.widgets().get(0).style().set({"background-color": "red", stretch: "both"}));
 
 
 // 19:39
