@@ -13,7 +13,9 @@ var logos = require('users/mapbiomas/modules:Logos.js');
 
 var App = {
     data: metadataObj.products,
-    function: {},
+    function: {
+        getMapId: dataObj.getMapId,
+    },
     view: {
         painels: {},
         options: {
@@ -488,7 +490,7 @@ var App = {
 
 App.init();
 
-print(ui.root.widgets().get(0).style().set({"background-color": "red", stretch: "both"}));
+// print(ui.root.widgets().get(0).style().set({"background-color": "red", stretch: "both"}));
 
 
 // 19:39
