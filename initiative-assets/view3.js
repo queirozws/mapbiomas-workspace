@@ -17,31 +17,31 @@ var App = {
     view: {
         painels: {},
         options: {
-            initiative: "initiative", // "brazil"
-            collection: "collection", // "6"
-            theme: "theme", // "classification"
-            asset_id: "asset_id", // "projects/mapbiomas-workspace/COLECAO6/mapbiomas-collection60-integration-v0-12"
-            description: "description", // "Dados de classificação da coleção 6 do Brasil"
-            type: "type", // "multiband-classification-collection"
-            countries: ["country"],
-            source: ["entity"],
+            initiative: null, // "brazil"
+            collection: null, // "6"
+            theme: null, // "classification"
+            asset_id: null, // "projects/mapbiomas-workspace/COLECAO6/mapbiomas-collection60-integration-v0-12"
+            description: null, // "Dados de classificação da coleção 6 do Brasil"
+            type: null, // "multiband-classification-collection"
+            countries: [null],
+            source: [null],
             metadata: {
                 bands: {
-                    prefix: "prefix_",
+                    prefix: null,
                 },
                 years: [
-                    [ "year" ], [ "year" ], [ "year" ],
-                    [ "year" ], [ "year" ], [ "year" ],
-                    [ "year" ], [ "year" ], [ "year" ],
-                    [ "year" ], [ "year" ], [ "year" ],
-                    [ "year" ], [ "year" ], [ "year" ],
-                    [ "year" ], [ "year" ], [ "year" ],
-                    [ "year" ], [ "year" ], [ "year" ],
-                    [ "year" ], [ "year" ], [ "year" ],
-                    [ "year" ], [ "year" ], [ "year" ],
-                    [ "year" ], [ "year" ], [ "year" ],
-                    [ "year" ], [ "year" ], [ "year" ],
-                    [ "year" ], [ "year" ], [ "year" ]
+                    [ null ], [ null ], [ null ],
+                    [ null ], [ null ], [ null ],
+                    [ null ], [ null ], [ null ],
+                    [ null ], [ null ], [ null ],
+                    [ null ], [ null ], [ null ],
+                    [ null ], [ null ], [ null ],
+                    [ null ], [ null ], [ null ],
+                    [ null ], [ null ], [ null ],
+                    [ null ], [ null ], [ null ],
+                    [ null ], [ null ], [ null ],
+                    [ null ], [ null ], [ null ],
+                    [ null ], [ null ], [ null ]
                   ],
                 biome: ["biome"],
                 version: "1",
