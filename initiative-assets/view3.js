@@ -13,7 +13,7 @@ var logos = require('users/mapbiomas/modules:Logos.js');
 
 var painels = {};
 
-var app = {
+var App = {
     view: {
         ui: {
             panel: [
@@ -68,7 +68,8 @@ var app = {
                         style: {
                             border: "1px solid black",
                             backgroundColor: "#222e3c",
-                            margin: "5px 30px 5px 30px"
+                            margin: "5px 30px 5px 30px",
+                            padding: "5px 10px 5px 10px"
                         }
                     },
                 },
@@ -141,7 +142,7 @@ var app = {
                         style: {
                             backgroundColor: "yellow",
                             stretch: "horizontal",
-                            margin: "10px 10px 5px 10px"
+                            margin: "5px 0px 5px 0px"
                         },
                     },
                 },
@@ -153,7 +154,7 @@ var app = {
                         // onChange: function() {print("olá")},
                         style: {
                             stretch: "horizontal",
-                            margin: "10px 10px 5px 10px"
+                            margin: "5px 0px 5px 0px"
                         },
                     },
                 },
@@ -165,7 +166,7 @@ var app = {
                         // onChange: function() {print("olá")},
                         style: {
                             stretch: "horizontal",
-                            margin: "10px 10px 5px 10px"
+                            margin: "5px 0px 5px 0px"
                         },
                     },
                 },
@@ -177,7 +178,7 @@ var app = {
                         // onChange: function() {print("olá")},
                         style: {
                             stretch: "horizontal",
-                            margin: "10px 10px 5px 10px"
+                            margin: "5px 0px 5px 0px"
                         },
                     },
                 },
@@ -189,7 +190,7 @@ var app = {
                         // onChange: function() {print("olá")},
                         style: {
                             stretch: "horizontal",
-                            margin: "10px 10px 5px 10px"
+                            margin: "5px 0px 5px 0px"
                         },
                     },
                 },
@@ -201,7 +202,7 @@ var app = {
                         // onChange: function() {print("olá")},
                         style: {
                             stretch: "horizontal",
-                            margin: "10px 10px 5px 10px"
+                            margin: "5px 0px 5px 0px"
                         },
                     },
                 },
@@ -252,6 +253,31 @@ var app = {
             chart: [],
             checkBox: [],
             dataSlider: [],
+        },
+        loop: function (text) {
+            
+            var widgets = App.view.ui;
+            
+            Object.keys(widgets).forEach(
+                function (type) {
+                    
+                    var index = 0;
+            
+                    var widgetList = widgets[type];
+                    
+                    widgetList.forEach(
+                        function(obj) {
+                            
+                            index++;
+                            
+                            App.view.render(type, obj, index)
+                            
+                        }
+                    );
+                    
+                    
+                }
+            );
         },
         render: function (widgetType, obj, index) {
         
@@ -366,7 +392,7 @@ var app = {
                 
                 // print(obj.type)
                 
-                type[obj.type].constructor(obj);
+                type[widgetType].constructor(obj);
                 
             }
           
@@ -389,36 +415,7 @@ var app = {
     }
 }
 
-var widgets = app.ui;
-
-// function render(text) {
-//     print(text)
-// }
-
-// Object.keys(widgets).forEach(
-//     function (type) {
-        
-//         var index = 0;
-
-//         var widgetList = widgets[type];
-        
-//         widgetList.forEach(
-//             function(obj) {
-                
-//                 index++;
-                
-//                 obj.type = type;
-                
-//                 render(type, obj, index)
-                
-//             }
-//         );
-        
-        
-//     }
-// );
-
-App.init();
+App.view.loop();
 
 print(ui.root.widgets().get(0).style().set({"background-color": "red", stretch: "both"}));
 
