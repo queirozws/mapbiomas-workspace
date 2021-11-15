@@ -271,18 +271,28 @@ var App = {
                     params: {
                         label: "Visualize assets",
                         onClick: function () { // function (obj, selectedYears) {
-                          
-                            selectedYears = 0;
                             
-                            var obj = App.view.options;
+                            var mapId;
+                            
+                            var selectedYears = 0;
+                            
+                            App.data.forEach(
+                                function (obj) {
+                                    
+                                    mapId = App.functions.getMapId(obj, selectedYears) 
+                                    
+                                    Map.addLayer(mapId);
+                                    
+                                }
+                            )
+                            
+                            // var obj = App.view.options;
                         
-                            var mapId = App.functions.getMapId(obj, selectedYears);
+                            // var mapId = App.functions.getMapId(obj, selectedYears);
                             
-                            var layerName = obj.initiative + "-" + "collection-" + obj.collection + "-" + obj.theme;
+                            // var layerName = obj.initiative + "-" + "collection-" + obj.collection + "-" + obj.theme;
                             
-                            
-                            
-                            Map.addLayer(mapId, visParams, layerName, true, 1);
+                            // Map.addLayer(mapId, visParams, layerName, true, 1);
                         
                         },
                         style: {
@@ -477,6 +487,7 @@ var App = {
     },
     init: function() {
         
+        // Constrói a interface
         App.view.init();
         
         print(App.data)
