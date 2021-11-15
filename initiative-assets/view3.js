@@ -98,7 +98,7 @@ var App = {
                     parentId: "main",
                     params: {
                         widgets: null,
-                        layout: null,
+                        layout: ui.Panel.Layout.flow("horizontal", false),
                         style: {
                             border: "1px solid black",
                             backgroundColor: "#222e3c",
@@ -242,6 +242,31 @@ var App = {
                     parentId: "auxiliar",
                     params: {
                         placeholder: "FILTER BY SOURCE",
+                        // onChange: function() {print("olá")},
+                        style: {
+                            stretch: "horizontal",
+                            margin: "5px 0px 5px 0px"
+                        },
+                    },
+                },
+                {
+                    id: "select6",
+                    parentId: "auxiliar",
+                    params: {
+                        placeholder: "FILTER BY FIRST YEAR",
+                        // onChange: function() {print("olá")},
+                        style: {
+                            stretch: "horizontal",
+                            width: "180px",
+                            margin: "5px 0px 5px 0px"
+                        },
+                    },
+                },
+                {
+                    id: "select6",
+                    parentId: "auxiliar",
+                    params: {
+                        placeholder: "FILTER BY SECOND YEAR",
                         // onChange: function() {print("olá")},
                         style: {
                             stretch: "horizontal",
