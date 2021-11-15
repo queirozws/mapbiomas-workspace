@@ -207,13 +207,13 @@ var app = {
                         backgroundColor: "yellow",
                         color: "blue",
                         position: "bottom-right", // ?
-                        margin: "10px 15px 10px 15px"
+                        margin: "10px 0px 5px 15px"
                     }
                 },
             },
             {
                 id: "button2",
-                parentId: "main",
+                parentId: "map",
                 params: {
                     label: "Visualize assets",
                     onClick: function() {print("Clear the map")},
@@ -221,7 +221,7 @@ var app = {
                         backgroundColor: "yellow",
                         color: "blue",
                         position: "bottom-right", // ?
-                        margin: "5px 0px 10px 30px" // TOP | RIGHT | BOTTOM | LEFT
+                        margin: "5px 0px 10px 15px" // TOP | RIGHT | BOTTOM | LEFT
                     }
                 },
             },
@@ -394,7 +394,7 @@ Object.keys(widgets).forEach(
 );
 
 
-// print(ui.root.widgets().get(0).style().set({"background-color": "red", stretch: "both"}));
+print(ui.root.widgets().get(0).style().set({"background-color": "red", stretch: "both"}));
 
 
 // 19:39
