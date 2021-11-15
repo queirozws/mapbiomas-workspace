@@ -191,7 +191,7 @@ var App = {
                         items: ["1","2","3","4","5","6"],
                         placeholder: "FILTER BY COLLECTION",
                         onChange: function(selectedOption) {
-                            App.view.options.initiative = selectedOption;
+                            App.view.options.collection = selectedOption;
                             print(App.view.options)
                         },
                         style: {
@@ -276,9 +276,20 @@ var App = {
                             
                             var selectedYears = 0;
                             
-                            // var obj = App.view.options;
-                        
-                            App.data.forEach(
+                            var options = App.view.options;
+                            
+                            // filter products List;
+                            var filtered = App.data.filter( // TODO substituir .filter() por .some() ?
+                                
+                                function(key) {
+                                  
+                                    return ( (obj[key] === this[key]) )
+                                    
+                                }, options
+                            )
+
+                            // Add data to Map
+                            filtered.forEach(
                                 function (obj) {
                                     
                                     mapId = App.functions.getMapId(obj, selectedYears) 
