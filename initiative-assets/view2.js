@@ -363,9 +363,9 @@ var App = {
                         
                         if (obj.parentId === "root") {
                             
-                            // print(panel);
+                            print(panel);
                             // Map.add(panel);
-                            ui.root.add(panel);
+                            // ui.root.add(panel);
                             
                             painels[obj.id] = panel;
                             
