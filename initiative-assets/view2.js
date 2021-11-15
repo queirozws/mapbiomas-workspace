@@ -1,6 +1,6 @@
 /**
  * @Author: Wildson Queiroz
- * @module: 
+ * 
  */
 
 var metadataObj = require("users/queirozws/mb-workspace:initiative-assets/metadataList.js");
