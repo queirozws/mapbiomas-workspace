@@ -280,19 +280,19 @@ var App = {
                                 function (obj) {
                                     
                                     mapId = App.functions.getMapId(obj, selectedYears) 
+                                    // var mapId = App.functions.getMapId(obj, selectedYears);
+                            
                                     
-                                    Map.addLayer(mapId);
+                                    var layerName = obj.initiative + "-" + "collection-" + obj.collection + "-" + obj.theme;
+                            
+                                    // Map.addLayer(mapId, visParams, layerName, true, 1);
+                                    Map.addLayer(mapId, {}, layerName, true, 1);
+                        
                                     
                                 }
                             )
                             
                             // var obj = App.view.options;
-                        
-                            // var mapId = App.functions.getMapId(obj, selectedYears);
-                            
-                            // var layerName = obj.initiative + "-" + "collection-" + obj.collection + "-" + obj.theme;
-                            
-                            // Map.addLayer(mapId, visParams, layerName, true, 1);
                         
                         },
                         style: {
