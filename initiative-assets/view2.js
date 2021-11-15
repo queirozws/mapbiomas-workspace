@@ -329,7 +329,7 @@ var App = {
             {
                 type: "button",
                 id: "button 1",
-                parentId: "main",
+                parentId: "map",
                 params: {
                     label: "Visualize assets",
                     onClick: function() {print("Clear the map")},
@@ -337,7 +337,7 @@ var App = {
                         backgroundColor: "red",
                         color: "blue",
                         position: "bottom-right", // ?
-                        margin: "5px 0px 10px 30px" // TOP | RIGHT | BOTTOM | LEFT
+                        margin: "5px 0px 10px 15px" // TOP | RIGHT | BOTTOM | LEFT
                     }
                 },
             },
