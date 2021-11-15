@@ -43,8 +43,8 @@ var App = {
                     [ null ], [ null ], [ null ],
                     [ null ], [ null ], [ null ]
                   ],
-                biome: ["biome"],
-                version: "1",
+                biome: [null],
+                version: null,
             }
         },
         ui: {
@@ -262,7 +262,19 @@ var App = {
                     parentId: "map",
                     params: {
                         label: "Visualize assets",
-                        onClick: function() {print("Clear the map")},
+                        onClick: function (obj, selectedYears) {
+                          
+                            selectedYears = 0;
+                        
+                            var mapId = getMapId(obj, selectedYears);
+                            
+                            var layerName = obj.initiative + "-" + "collection-" + obj.collection + "-" + obj.theme;
+                            
+                            
+                            
+                            Map.addLayer(mapId, visParams, layerName, true, 1);
+                        
+                        },
                         style: {
                             backgroundColor: "yellow",
                             color: "blue",
