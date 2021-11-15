@@ -187,8 +187,12 @@ var App = {
                     id: "select2",
                     parentId: "auxiliar",
                     params: {
+                        items: ["1","2","3","4","5","6"],
                         placeholder: "FILTER BY COLLECTION",
-                        onChange: function() {print("olá")},
+                        onChange: function(selectedOption) {
+                            App.view.options.initiative = selectedOption;
+                            print(App.view.options)
+                        },
                         style: {
                             stretch: "horizontal",
                             margin: "5px 0px 5px 0px"
@@ -267,6 +271,8 @@ var App = {
                         onClick: function (obj, selectedYears) {
                           
                             selectedYears = 0;
+                            
+                            var obj = App.view.options;
                         
                             var mapId = App.functions.getMapId(obj, selectedYears);
                             
