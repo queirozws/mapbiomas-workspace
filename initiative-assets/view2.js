@@ -344,8 +344,6 @@ var App = {
         ],
         render: function (obj, index) {
     
-            // print(obj.id);
-            
             var type = {
                 "panel": {
                     constructor: function (obj) {
