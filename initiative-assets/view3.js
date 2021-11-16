@@ -376,7 +376,7 @@ var App = {
                                 
                                 function(key) {
                                   
-                                    return ( (obj[key] === this[key]) )
+                                    return ( (App.data[key] === this[key]) )
                                     
                                 }, dataModel
                             )
