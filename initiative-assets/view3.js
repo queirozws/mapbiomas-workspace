@@ -378,16 +378,16 @@ var App = {
                                     
                                     print(obj)
                                     
-                                    Object.keys(obj).map(
-                                        function (key) {
+                                    // Object.keys(obj).filter(
+                                    //     function (key) {
                                             
-                                            var test = obj[key] === dataModel[key];
+                                    //         var test = obj[key] === dataModel[key];
                                             
-                                            print(test);
+                                    //         print(test);
                                             
-                                            return test
-                                        }
-                                    );
+                                    //         return test
+                                    //     }
+                                    // );
                                     
                                     
                                     return true //( (obj === this[key]) )
@@ -621,4 +621,4 @@ var App = {
 
 App.init();
 
-// 01:39
+// 01:40
