@@ -263,7 +263,7 @@ var App = {
                     id: "select6",
                     parentId: "auxiliar",
                     params: {
-                        items: ["1","2","3","4","5","6"],
+                        items: [ "imazon", "LAPIG/UFG", "Solved", "IPAM", "outros..." ],
                         placeholder: "FILTER BY SOURCE",
                         onChange: function(selectedOption) {
                             App.view.dataModel.source = selectedOption;
