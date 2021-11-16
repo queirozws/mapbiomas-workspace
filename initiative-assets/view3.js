@@ -69,7 +69,7 @@ var App = {
                     parentId: "main",
                     params: {
                         widgets: null,
-                        layout: ui.Panel.Layout.flow("vertical", false),
+                        layout: null,
                         style: {
                             border: "1px solid black",
                             backgroundColor: "222e3c",
@@ -98,13 +98,14 @@ var App = {
                     parentId: "main",
                     params: {
                         widgets: null,
-                        layout: ui.Panel.Layout.flow("vertical", false),
+                        layout: ui.Panel.Layout.flow("horizontal", true),
                         style: {
-                            height: "600px",
+                            width: "360px",
                             border: "1px solid black",
                             backgroundColor: "#222e3c",
                             margin: "5px 30px 5px 30px",
-                            padding: "5px 10px 5px 10px"
+                            padding: "5px 10px 5px 10px",
+                            textAlign: "center"
                         }
                     },
                 },
@@ -179,9 +180,9 @@ var App = {
                             print(App.view.options)
                         },
                         style: {
-                            // width: "300px",
+                            width: "330px",
                             margin: "5px 0px 5px 0px",
-                            stretch: "horizontal",
+                            // stretch: "horizontal",
                             // position: "top-center"
                         },
                     },
@@ -197,9 +198,9 @@ var App = {
                             print(App.view.options)
                         },
                         style: {
-                            // width: "300px",
+                            width: "330px",
                             margin: "5px 0px 5px 0px",
-                            stretch: "horizontal",
+                            // stretch: "horizontal",
                             // position: "top-center"
                         },
                     },
@@ -212,9 +213,9 @@ var App = {
                         placeholder: "FILTER BY THEME",
                         onChange: function() {print("olá")},
                         style: {
-                            // width: "300px",
+                            width: "330px",
                             margin: "5px 0px 5px 0px",
-                            stretch: "horizontal",
+                            // stretch: "horizontal",
                             // position: "top-center"
                         },
                     },
@@ -227,9 +228,9 @@ var App = {
                         placeholder: "FILTER BY TYPE",
                         onChange: function() {print("olá")},
                         style: {
-                            // width: "300px",
+                            width: "330px",
                             margin: "5px 0px 5px 0px",
-                            stretch: "horizontal",
+                            // stretch: "horizontal",
                             // position: "top-center"
                         },
                     },
@@ -242,9 +243,9 @@ var App = {
                         placeholder: "FILTER BY COUNTRIES",
                         onChange: function() {print("olá")},
                         style: {
-                            // width: "300px",
+                            width: "330px",
                             margin: "5px 0px 5px 0px",
-                            stretch: "horizontal",
+                            // stretch: "horizontal",
                             // position: "top-center"
                         },
                     },
@@ -257,39 +258,39 @@ var App = {
                         placeholder: "FILTER BY SOURCE",
                         // onChange: function() {print("olá")},
                         style: {
-                            // width: "300px",
+                            width: "330px",
                             margin: "5px 0px 5px 0px",
-                            stretch: "horizontal",
+                            // stretch: "horizontal",
                             // position: "bottom-center",
                         },
                     },
                 },
                 {
-                    id: "select6",
+                    id: "select7",
                     parentId: "auxiliar",
                     params: {
                         items: ["1985","1986","1987","1988","1989","1990"],
                         placeholder: "FILTER BY FIRST YEAR",
                         // onChange: function() {print("olá")},
                         style: {
-                            // width: "350px",
-                            margin: "5px 0px 5px 0px",
-                            stretch: "horizontal",
+                            width: "160px",
+                            margin: "5px 5px 5px 0px",
+                            // stretch: "horizontal",
                             // position: "bottom-center",
                         },
                     },
                 },
                 {
-                    id: "select6",
+                    id: "select8",
                     parentId: "auxiliar",
                     params: {
                         items: ["1985","1986","1987","1988","1989","1990"],
                         placeholder: "FILTER BY SECOND YEAR",
                         // onChange: function() {print("olá")},
                         style: {
-                            // width: "180px",
-                            margin: "5px 0px 5px 0px",
-                            stretch: "horizontal",
+                            width: "160px",
+                            margin: "5px 0px 5px 5px",
+                            // stretch: "horizontal",
                             // position: "bottom-center",
                         },
                     },
@@ -428,11 +429,11 @@ var App = {
                     constructor: function (obj) {
                         
                         // var layout = ui.Panel.Layout.absolute();
-                        var layout = ui.Panel.Layout.flow("vertical", false);
+                        // var layout = ui.Panel.Layout.flow("vertical", true);
                         
                         var params = {
                             widgets: obj.params.widgets || null, // || default params
-                            layout: obj.params.layout || layout, // || default params
+                            layout: obj.params.layout || null, // || default params
                             style: obj.params.style || {width: "700px"} // || default params
                         }
                         
