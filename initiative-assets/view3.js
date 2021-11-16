@@ -283,7 +283,7 @@ var App = {
                     id: "select6",
                     parentId: "auxiliar",
                     params: {
-                        items: ["1","2","3","4","5","6"],
+                        items: ["1985","1986","1987","1988","1989","1990"],
                         placeholder: "FILTER BY SECOND YEAR",
                         // onChange: function() {print("olá")},
                         style: {
