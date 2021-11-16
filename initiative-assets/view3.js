@@ -223,6 +223,7 @@ var App = {
                     id: "select4",
                     parentId: "auxiliar",
                     params: {
+                        items: ["1","2","3","4","5","6"],
                         placeholder: "FILTER BY TYPE",
                         onChange: function() {print("olá")},
                         style: {
@@ -237,6 +238,7 @@ var App = {
                     id: "select5",
                     parentId: "auxiliar",
                     params: {
+                        items: ["1","2","3","4","5","6"],
                         placeholder: "FILTER BY COUNTRIES",
                         onChange: function() {print("olá")},
                         style: {
@@ -251,6 +253,7 @@ var App = {
                     id: "select6",
                     parentId: "auxiliar",
                     params: {
+                        items: ["1","2","3","4","5","6"],
                         placeholder: "FILTER BY SOURCE",
                         // onChange: function() {print("olá")},
                         style: {
@@ -265,6 +268,7 @@ var App = {
                     id: "select6",
                     parentId: "auxiliar",
                     params: {
+                        items: ["1985","1986","1987","1988","1989","1990"],
                         placeholder: "FILTER BY FIRST YEAR",
                         // onChange: function() {print("olá")},
                         style: {
@@ -279,6 +283,7 @@ var App = {
                     id: "select6",
                     parentId: "auxiliar",
                     params: {
+                        items: ["1","2","3","4","5","6"],
                         placeholder: "FILTER BY SECOND YEAR",
                         // onChange: function() {print("olá")},
                         style: {
