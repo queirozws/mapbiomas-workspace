@@ -25,8 +25,8 @@ var App = {
             asset_id: null, // "projects/mapbiomas-workspace/COLECAO6/mapbiomas-collection60-integration-v0-12"
             description: null, // "Dados de classificação da coleção 6 do Brasil"
             type: null, // "multiband-classification-collection"
-            countries: [null],
-            source: [null],
+            countries: null,
+            source: null,
             metadata: {
                 bands: {
                     prefix: null,
@@ -34,7 +34,7 @@ var App = {
                 years: [
                     [ null ]
                 ],
-                biome: [null],
+                biome: null,
                 version: null,
             }
         },
