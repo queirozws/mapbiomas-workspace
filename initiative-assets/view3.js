@@ -328,14 +328,14 @@ var App = {
                     parentId: "auxiliar",
                     params: {
                         items: [ "amazonia", "mata atlantica", "cerrado", "caatinga", "pampa", "pantanal" ],
-                        placeholder: "FILTER BY SECOND YEAR",
+                        placeholder: "FILTER BY BIOME",
                         onChange: function(selectedOption) {
                             App.view.dataModel.metadata.years = [ [selectedOption] ];
                             print(App.view.dataModel)
                         },
                         style: {
-                            width: "160px",
-                            margin: "5px 0px 5px 5px",
+                            width: "330px",
+                            margin: "5px 0px 5px 0px",
                             // stretch: "horizontal",
                             // position: "bottom-center",
                         },
