@@ -531,7 +531,9 @@ var App = {
                         
                         var map = ui.Map( params );
                         
-                        map.setControlVisibility(false).setLocked(true);
+                        map
+                            .setControlVisibility(false)
+                            .setLocked(true);
                         
                         painels[obj.parentId].insert(index, map);
                         
