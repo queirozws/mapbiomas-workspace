@@ -376,11 +376,11 @@ var App = {
                                 
                                 function(obj) {
                                     
-                                    // code
+                                    print(obj)
                                     
                                     
                                     
-                                    return ( (App.data[key] === this[key]) )
+                                    return true //( (obj === this[key]) )
                                     
                                 }, dataModel
                             )
