@@ -378,6 +378,16 @@ var App = {
                                     
                                     print(obj)
                                     
+                                    Object.keys(obj).map(
+                                        function (key) {
+                                            
+                                            var test = obj[key] === dataModel[key];
+                                            
+                                            print(test);
+                                            
+                                            return test
+                                        }
+                                    );
                                     
                                     
                                     return true //( (obj === this[key]) )
