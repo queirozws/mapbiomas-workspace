@@ -32,19 +32,8 @@ var App = {
                     prefix: null,
                 },
                 years: [
-                    [ null ], [ null ], [ null ],
-                    [ null ], [ null ], [ null ],
-                    [ null ], [ null ], [ null ],
-                    [ null ], [ null ], [ null ],
-                    [ null ], [ null ], [ null ],
-                    [ null ], [ null ], [ null ],
-                    [ null ], [ null ], [ null ],
-                    [ null ], [ null ], [ null ],
-                    [ null ], [ null ], [ null ],
-                    [ null ], [ null ], [ null ],
-                    [ null ], [ null ], [ null ],
-                    [ null ], [ null ], [ null ]
-                  ],
+                    [ null ]
+                ],
                 biome: [null],
                 version: null,
             }
@@ -211,7 +200,10 @@ var App = {
                     params: {
                         items: [ "classification", "integration", "transition", "quality" ],
                         placeholder: "FILTER BY THEME",
-                        onChange: function() {print("olá")},
+                        onChange: function(selectedOption) {
+                            App.view.dataModel.theme = selectedOption;
+                            print(App.view.dataModel)
+                        },
                         style: {
                             width: "330px",
                             margin: "5px 0px 5px 0px",
@@ -226,7 +218,10 @@ var App = {
                     params: {
                         items: ["1","2","3","4","5","6"],
                         placeholder: "FILTER BY TYPE",
-                        onChange: function() {print("olá")},
+                        onChange: function(selectedOption) {
+                            App.view.dataModel.type = selectedOption;
+                            print(App.view.dataModel)
+                        },
                         style: {
                             width: "330px",
                             margin: "5px 0px 5px 0px",
@@ -239,9 +234,23 @@ var App = {
                     id: "select5",
                     parentId: "auxiliar",
                     params: {
-                        items: ["1","2","3","4","5","6"],
+                        items: [
+                            "Brasil",
+                            "Bolívia",
+                            "Colômbia",
+                            "Equador",
+                            "Guiana",
+                            "Guiana Francesa",
+                            "Peru",
+                            "Suriname",
+                            "Venezuela",
+                            "Paraguay"
+                        ],
                         placeholder: "FILTER BY COUNTRIES",
-                        onChange: function() {print("olá")},
+                        onChange: function(selectedOption) {
+                            App.view.dataModel.countries = selectedOption;
+                            print(App.view.dataModel)
+                        },
                         style: {
                             width: "330px",
                             margin: "5px 0px 5px 0px",
@@ -256,7 +265,10 @@ var App = {
                     params: {
                         items: ["1","2","3","4","5","6"],
                         placeholder: "FILTER BY SOURCE",
-                        // onChange: function() {print("olá")},
+                        onChange: function(selectedOption) {
+                            App.view.dataModel.source = selectedOption;
+                            print(App.view.dataModel)
+                        },
                         style: {
                             width: "330px",
                             margin: "5px 0px 5px 0px",
@@ -276,7 +288,10 @@ var App = {
                             "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020",
                         ],
                         placeholder: "FILTER BY FIRST YEAR",
-                        // onChange: function() {print("olá")},
+                        onChange: function(selectedOption) {
+                            App.view.dataModel.metadata.years = [selectedOption];
+                            print(App.view.dataModel)
+                        },
                         style: {
                             width: "160px",
                             margin: "5px 5px 5px 0px",
@@ -296,7 +311,33 @@ var App = {
                             "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020",
                         ],
                         placeholder: "FILTER BY SECOND YEAR",
-                        // onChange: function() {print("olá")},
+                        onChange: function(selectedOption) {
+                            App.view.dataModel.metadata.years = [ [selectedOption] ];
+                            print(App.view.dataModel)
+                        },
+                        style: {
+                            width: "160px",
+                            margin: "5px 0px 5px 5px",
+                            // stretch: "horizontal",
+                            // position: "bottom-center",
+                        },
+                    },
+                },
+                {
+                    id: "select9",
+                    parentId: "auxiliar",
+                    params: {
+                        items: [
+                            "amazonia", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993",
+                            "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002",
+                            "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011",
+                            "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020",
+                        ],
+                        placeholder: "FILTER BY SECOND YEAR",
+                        onChange: function(selectedOption) {
+                            App.view.dataModel.metadata.years = [ [selectedOption] ];
+                            print(App.view.dataModel)
+                        },
                         style: {
                             width: "160px",
                             margin: "5px 0px 5px 5px",
@@ -452,9 +493,9 @@ var App = {
                         
                         if (obj.parentId === "root") {
                             
-                            print(panel);
+                            // print(panel);
                             // Map.add(panel);
-                            // ui.root.add(panel);
+                            ui.root.add(panel);
                             
                             painels[obj.id] = panel;
                             
