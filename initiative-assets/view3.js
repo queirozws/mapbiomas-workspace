@@ -374,12 +374,18 @@ var App = {
                             // filter products List;
                             var filtered = App.data.filter( // TODO substituir .filter() por .some() ?
                                 
-                                function(key) {
-                                  
+                                function(obj) {
+                                    
+                                    // code
+                                    
+                                    
+                                    
                                     return ( (App.data[key] === this[key]) )
                                     
                                 }, dataModel
                             )
+                            
+                            print(filtered);
 
                             // Add data to Map
                             filtered.forEach(
@@ -424,49 +430,6 @@ var App = {
             chart: [],
             checkBox: [],
             dataSlider: [],
-        },
-        // behavior: {
-        //     select: function selectAssets(obj) {
-    
-        //         var keys = Object.keys(obj);
-                
-        //         var filtered = keys.filter( // TODO substituir .filter() por .some() ?
-                    
-        //             function(key) {
-                      
-        //                 return ( (obj[key] === this[key]) )
-                        
-        //             }, selectedOptions)
-                
-        //         // If the objects have some key with the same value, its size will be greater than 0
-        //         return filtered.length > 0
-            
-        //     }
-        // },
-        init: function (text) {
-            
-            var widgets = App.view.ui;
-            
-            Object.keys(widgets).forEach(
-                function (type) {
-                    
-                    var index = 0;
-            
-                    var widgetList = widgets[type];
-                    
-                    widgetList.forEach(
-                        function(obj) {
-                            
-                            index++;
-                            
-                            App.view.render(type, obj, index)
-                            
-                        }
-                    );
-                    
-                    
-                }
-            );
         },
         render: function (widgetType, obj, index) {
             
@@ -591,7 +554,50 @@ var App = {
                 
             }
           
-        }
+        },
+        // behavior: {
+        //     select: function selectAssets(obj) {
+    
+        //         var keys = Object.keys(obj);
+                
+        //         var filtered = keys.filter( // TODO substituir .filter() por .some() ?
+                    
+        //             function(key) {
+                      
+        //                 return ( (obj[key] === this[key]) )
+                        
+        //             }, selectedOptions)
+                
+        //         // If the objects have some key with the same value, its size will be greater than 0
+        //         return filtered.length > 0
+            
+        //     }
+        // },
+        init: function (text) {
+            
+            var widgets = App.view.ui;
+            
+            Object.keys(widgets).forEach(
+                function (type) {
+                    
+                    var index = 0;
+            
+                    var widgetList = widgets[type];
+                    
+                    widgetList.forEach(
+                        function(obj) {
+                            
+                            index++;
+                            
+                            App.view.render(type, obj, index)
+                            
+                        }
+                    );
+                    
+                    
+                }
+            );
+        },
     },
     init: function() {
         
