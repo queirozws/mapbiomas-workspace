@@ -176,8 +176,8 @@ var App = {
                         items: [ "brazil",  "pampa", "raisg", "chaco", "indonésia", "af-trinacional" ],
                         placeholder: "FILTER BY INITIATIVE",
                         onChange: function(selectedOption) {
-                            App.view.options.initiative = selectedOption;
-                            print(App.view.options)
+                            App.view.dataModel.initiative = selectedOption;
+                            print(App.view.dataModel)
                         },
                         style: {
                             width: "330px",
@@ -194,8 +194,8 @@ var App = {
                         items: ["1","2","3","4","5","6"],
                         placeholder: "FILTER BY COLLECTION",
                         onChange: function(selectedOption) {
-                            App.view.options.collection = selectedOption;
-                            print(App.view.options)
+                            App.view.dataModel.collection = selectedOption;
+                            print(App.view.dataModel)
                         },
                         style: {
                             width: "330px",
@@ -332,7 +332,7 @@ var App = {
                             
                             var selectedYears = 0;
                             
-                            var options = App.view.options;
+                            var dataModel = App.view.dataModel;
                             
                             // filter products List;
                             var filtered = App.data.filter( // TODO substituir .filter() por .some() ?
@@ -341,7 +341,7 @@ var App = {
                                   
                                     return ( (obj[key] === this[key]) )
                                     
-                                }, options
+                                }, dataModel
                             )
 
                             // Add data to Map
@@ -563,18 +563,6 @@ var App = {
         
         print(App.data)
         
-        // var render = this.view.render;
-        
-        // this.view.ui.forEach(
-        //     function (obj) {
-                
-        //         index = index + 1;
-                
-        //         render(obj, index);
-
-        //     }
-        // );
-
     }
 }
 
