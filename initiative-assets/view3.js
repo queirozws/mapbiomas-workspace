@@ -47,7 +47,7 @@ var App = {
                         widgets: null,
                         layout: null,
                         style: {
-                            width: "420px",
+                            width: "440px",
                             backgroundColor: "#222e3c",
                             stretch: "horizontal"
                         }
@@ -105,6 +105,7 @@ var App = {
                         widgets: null,
                         layout: null,
                         style: {
+                            width: "360px",
                             border: "1px solid black",
                             backgroundColor: "#222e3c",
                             margin: "5px 30px 5px 30px"
