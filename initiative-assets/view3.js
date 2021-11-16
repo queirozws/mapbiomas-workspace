@@ -302,7 +302,7 @@ var App = {
                     parentId: "map",
                     params: {
                         label: "Clear the map",
-                        onClick: function() {print("Clear the map")},
+                        onClick: function() { Map.clear() },
                         style: {
                             backgroundColor: "yellow",
                             color: "blue",
@@ -365,7 +365,7 @@ var App = {
                     id: "map1",
                     parentId: "map",
                     params: {
-                        center: {lat: -15, lon: -57, zoom: 3},
+                        center: {lat: -14, lon: -57, zoom: 3},
                         onClick: null,
                         style: {
                             margin: "10px 15px 0px 15px",
@@ -520,6 +520,8 @@ var App = {
                         };
                         
                         var map = ui.Map( params );
+                        
+                        map.setControlVisibility(false).setLocked(true);
                         
                         painels[obj.parentId].insert(index, map);
                         
