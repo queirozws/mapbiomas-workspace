@@ -425,24 +425,24 @@ var App = {
             checkBox: [],
             dataSlider: [],
         },
-        behavior: {
-            select: function selectAssets(obj) {
+        // behavior: {
+        //     select: function selectAssets(obj) {
     
-                var keys = Object.keys(obj);
+        //         var keys = Object.keys(obj);
                 
-                var filtered = keys.filter( // TODO substituir .filter() por .some() ?
+        //         var filtered = keys.filter( // TODO substituir .filter() por .some() ?
                     
-                    function(key) {
+        //             function(key) {
                       
-                        return ( (obj[key] === this[key]) )
+        //                 return ( (obj[key] === this[key]) )
                         
-                    }, selectedOptions)
+        //             }, selectedOptions)
                 
-                // If the objects have some key with the same value, its size will be greater than 0
-                return filtered.length > 0
+        //         // If the objects have some key with the same value, its size will be greater than 0
+        //         return filtered.length > 0
             
-            }
-        },
+        //     }
+        // },
         init: function (text) {
             
             var widgets = App.view.ui;
@@ -604,10 +604,5 @@ var App = {
 }
 
 App.init();
-
-print(ui.root.widgets().get(0).widgets())
-
-// print(ui.root.widgets().get(0).style().set({"background-color": "red", stretch: "both"}));
-
 
 // 01:39
