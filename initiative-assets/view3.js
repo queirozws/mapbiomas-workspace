@@ -365,10 +365,11 @@ var App = {
                     id: "map1",
                     parentId: "map",
                     params: {
-                        center: {lat: -6, lon: -54, zoom: 3},
+                        center: {lat: -15, lon: -57, zoom: 3},
                         onClick: null,
                         style: {
-                            margin: "10px 15px 0px 15px"
+                            margin: "10px 15px 0px 15px",
+                            height: "290px"
                         }
                     },
                 },
