@@ -98,8 +98,9 @@ var App = {
                     parentId: "main",
                     params: {
                         widgets: null,
-                        layout: ui.Panel.Layout.flow("vertical", true),
+                        layout: ui.Panel.Layout.flow("vertical", false),
                         style: {
+                            height: "600px",
                             border: "1px solid black",
                             backgroundColor: "#222e3c",
                             margin: "5px 30px 5px 30px",
@@ -178,9 +179,10 @@ var App = {
                             print(App.view.options)
                         },
                         style: {
-                            backgroundColor: "yellow",
+                            // width: "300px",
+                            margin: "5px 0px 5px 0px",
                             stretch: "horizontal",
-                            margin: "5px 0px 5px 0px"
+                            // position: "top-center"
                         },
                     },
                 },
@@ -195,8 +197,10 @@ var App = {
                             print(App.view.options)
                         },
                         style: {
+                            // width: "300px",
+                            margin: "5px 0px 5px 0px",
                             stretch: "horizontal",
-                            margin: "5px 0px 5px 0px"
+                            // position: "top-center"
                         },
                     },
                 },
@@ -208,8 +212,10 @@ var App = {
                         placeholder: "FILTER BY THEME",
                         onChange: function() {print("olá")},
                         style: {
+                            // width: "300px",
+                            margin: "5px 0px 5px 0px",
                             stretch: "horizontal",
-                            margin: "5px 0px 5px 0px"
+                            // position: "top-center"
                         },
                     },
                 },
@@ -220,8 +226,10 @@ var App = {
                         placeholder: "FILTER BY TYPE",
                         onChange: function() {print("olá")},
                         style: {
+                            // width: "300px",
+                            margin: "5px 0px 5px 0px",
                             stretch: "horizontal",
-                            margin: "5px 0px 5px 0px"
+                            // position: "top-center"
                         },
                     },
                 },
@@ -232,8 +240,10 @@ var App = {
                         placeholder: "FILTER BY COUNTRIES",
                         onChange: function() {print("olá")},
                         style: {
+                            // width: "300px",
+                            margin: "5px 0px 5px 0px",
                             stretch: "horizontal",
-                            margin: "5px 0px 5px 0px"
+                            // position: "top-center"
                         },
                     },
                 },
@@ -244,8 +254,10 @@ var App = {
                         placeholder: "FILTER BY SOURCE",
                         // onChange: function() {print("olá")},
                         style: {
+                            // width: "300px",
+                            margin: "5px 0px 5px 0px",
                             stretch: "horizontal",
-                            margin: "5px 0px 5px 0px"
+                            // position: "bottom-center",
                         },
                     },
                 },
@@ -256,9 +268,10 @@ var App = {
                         placeholder: "FILTER BY FIRST YEAR",
                         // onChange: function() {print("olá")},
                         style: {
+                            // width: "350px",
+                            margin: "5px 0px 5px 0px",
                             stretch: "horizontal",
-                            width: "180px",
-                            margin: "5px 0px 5px 0px"
+                            // position: "bottom-center",
                         },
                     },
                 },
@@ -269,8 +282,10 @@ var App = {
                         placeholder: "FILTER BY SECOND YEAR",
                         // onChange: function() {print("olá")},
                         style: {
+                            // width: "180px",
+                            margin: "5px 0px 5px 0px",
                             stretch: "horizontal",
-                            margin: "5px 0px 5px 0px"
+                            // position: "bottom-center",
                         },
                     },
                 },
@@ -543,6 +558,12 @@ var App = {
 }
 
 App.init();
+
+Map.add(ui.Select(), ui.Select())
+
+// Map.add(ui.Select())
+
+print(ui.root.widgets().get(0).widgets())
 
 // print(ui.root.widgets().get(0).style().set({"background-color": "red", stretch: "both"}));
 
