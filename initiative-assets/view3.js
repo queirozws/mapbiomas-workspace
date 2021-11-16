@@ -18,7 +18,7 @@ var App = {
     },
     view: {
         painels: {},
-        options: {
+        dataModel: {
             initiative: null, // "brazil"
             collection: null, // "6"
             theme: null, // "classification"
@@ -579,10 +579,6 @@ var App = {
 }
 
 App.init();
-
-Map.add(ui.Select(), ui.Select())
-
-// Map.add(ui.Select())
 
 print(ui.root.widgets().get(0).widgets())
 
